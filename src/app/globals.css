@@ -1,3 +1,4 @@
+/* stylelint-disable at-rule-no-unknown */
 @import "tailwindcss";
 
 :root {
@@ -10,6 +11,60 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+}
+
+@theme {
+  --color-secondary-fixed-dim: #e9c349;
+  --color-surface-container-highest: #e5e2e1;
+  --color-primary: #003d9b;
+  --color-primary-fixed: #dae2ff;
+  --color-error: #ba1a1a;
+  --color-tertiary-container: #006758;
+  --color-on-surface-variant: #434654;
+  --color-primary-container: #0052cc;
+  --color-surface-container: #f0eded;
+  --color-on-background: #1c1b1b;
+  --color-inverse-surface: #313030;
+  --color-surface-container-high: #eae7e7;
+  --color-primary-fixed-dim: #b2c5ff;
+  --color-on-secondary-fixed-variant: #574500;
+  --color-surface-container-low: #f6f3f2;
+  --color-on-tertiary-fixed: #00201a;
+  --color-surface-tint: #0c56d0;
+  --color-tertiary-fixed-dim: #44ddc1;
+  --color-on-surface: #1c1b1b;
+  --color-error-container: #ffdad6;
+  --color-tertiary-fixed: #68fadd;
+  --color-on-secondary-fixed: #241a00;
+  --color-outline: #737685;
+  --color-on-tertiary-container: #55eace;
+  --color-on-error-container: #93000a;
+  --color-secondary: #735c00;
+  --color-secondary-container: #fed65b;
+  --color-on-primary-fixed: #001848;
+  --color-inverse-primary: #b2c5ff;
+  --color-outline-variant: #c3c6d6;
+  --color-on-primary-fixed-variant: #0040a2;
+  --color-on-error: #ffffff;
+  --color-on-secondary: #ffffff;
+  --color-background-custom: #fcf9f8; 
+  --color-on-primary-container: #c4d2ff;
+  --color-on-tertiary-fixed-variant: #005145;
+  --color-inverse-on-surface: #f3f0ef;
+  --color-on-secondary-container: #745c00;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface: #fcf9f8;
+  --color-tertiary: #004d41;
+  --color-surface-variant: #e5e2e1;
+  --color-on-primary: #ffffff;
+  --color-surface-dim: #dcd9d9;
+  --color-on-tertiary: #ffffff;
+  --color-surface-bright: #fcf9f8;
+  --color-secondary-fixed: #ffe088;
+
+  --font-headline: "var(--font-manrope)", sans-serif;
+  --font-body: "var(--font-inter)", sans-serif;
+  --font-label: "var(--font-inter)", sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {

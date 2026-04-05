@@ -23,6 +23,7 @@
 # misc
 .DS_Store
 *.pem
+Thumbs.db
 
 # debug
 npm-debug.log*
@@ -30,7 +31,7 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
+# env files
 .env*
 
 # vercel
@@ -39,3 +40,30 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# ──────────────────────────────────────
+# Project-specific ignores
+# ──────────────────────────────────────
+
+# Stitch design exports (large screenshots, not needed in repo)
+src/stitch-exports/
+
+# Generated client reports
+*.docx
+.~lock.*.docx#
+
+# Lint/debug output logs
+eslint_output.txt
+eslint_output_2.txt
+lint_output.txt
+
+# Test/scratch files
+test.html
+
+# Agent / AI tooling (local-only configs)
+.agents/
+skills-lock.json
+CLAUDE.md
+
+# Supabase local config
+supabase/
