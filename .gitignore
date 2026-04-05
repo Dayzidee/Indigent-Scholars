@@ -67,3 +67,10 @@ CLAUDE.md
 
 # Supabase local config
 supabase/
+supabase-schema-architecture.md
+
+# GitHub workflows
+.github/
+
+# Utility scripts (local-only)
+scripts/
