@@ -66,7 +66,7 @@ skills-lock.json
 CLAUDE.md
 
 # Supabase local config
-supabase/
+/supabase/
 supabase-schema-architecture.md
 
 # GitHub workflows
