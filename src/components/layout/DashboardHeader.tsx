@@ -1,11 +1,15 @@
 'use client'
 
-import { Bell, Search, User, ChevronDown } from 'lucide-react'
+import { Bell, Search, User, ChevronDown, Menu } from 'lucide-react'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { createBrowserClient } from '@supabase/ssr'
 
-export function DashboardHeader() {
+interface DashboardHeaderProps {
+  onMenuClick?: () => void
+}
+
+export function DashboardHeader({ onMenuClick }: DashboardHeaderProps) {
   const pathname = usePathname()
   const [userName, setUserName] = useState<string>('User')
   const [role, setRole] = useState<string>('')
@@ -61,13 +65,22 @@ export function DashboardHeader() {
   }
 
   return (
-    <header className="h-20 border-b border-slate-800 bg-slate-900/50 backdrop-blur-xl flex items-center justify-between px-8 sticky top-0 z-30">
+    <header className="h-20 border-b border-slate-800 bg-slate-900/50 backdrop-blur-md px-4 sm:px-8 flex items-center justify-between sticky top-0 z-30">
       <div className="flex flex-col">
-        <h1 className="text-xl font-bold text-white tracking-tight">
-          {getPageTitle()}
-        </h1>
+        <div className="flex items-center space-x-3">
+          <button 
+            onClick={onMenuClick}
+            className="lg:hidden p-2 -ml-2 text-slate-400 hover:text-white transition-colors"
+          >
+            <Menu className="w-6 h-6" />
+          </button>
+          <h1 className="text-xl font-bold text-white tracking-tight">
+            {getPageTitle()}
+          </h1>
+        </div>
         <div className="flex items-center text-xs text-slate-500 mt-0.5">
-          <span>Indigent-Sc</span>
+          <span className="hidden sm:inline">Indigent Scholars</span>
+          <span className="sm:hidden">IS</span>
           <span className="mx-1.5">•</span>
           <span className="capitalize">{role || 'Portal'}</span>
         </div>

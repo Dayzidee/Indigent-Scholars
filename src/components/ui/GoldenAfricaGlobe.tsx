@@ -16,7 +16,7 @@ export function GoldenAfricaGlobe() {
           opacity: { duration: 1.5, ease: "easeOut" },
           rotateY: { repeat: Infinity, duration: 40, ease: "linear" }
         }}
-        className="w-[800px] h-[800px]"
+        className="w-[300px] h-[300px] sm:w-[450px] sm:h-[450px] md:w-[600px] md:h-[600px] lg:w-[800px] lg:h-[800px]"
         style={{ transformStyle: 'preserve-3d' }}
       >
         <img

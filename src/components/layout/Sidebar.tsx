@@ -12,7 +12,8 @@ import {
   LogOut,
   Wallet,
   ShieldCheck,
-  UserCircle
+  UserCircle,
+  X
 } from 'lucide-react'
 
 // Define the shape of our navigation items
@@ -22,7 +23,12 @@ type NavItem = {
   icon: React.ComponentType<{ className?: string }>
 }
 
-export function Sidebar() {
+interface SidebarProps {
+  isOpen: boolean
+  setIsOpen: (open: boolean) => void
+}
+
+export function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
   const pathname = usePathname()
   const [role, setRole] = useState<'student' | 'sponsor' | 'admin' | null>(null)
 
@@ -87,49 +93,64 @@ export function Sidebar() {
   const navItems = getNavItems()
 
   return (
-    <div className="w-64 h-full bg-slate-900 border-r border-slate-800 flex flex-col pt-8">
-      {/* Branding */}
-      <div className="px-6 mb-10">
-        <Link href="/" className="flex items-center space-x-2">
-          <span className="text-xl font-bold bg-gradient-to-r from-teal-400 to-indigo-400 text-transparent bg-clip-text">
-            EdAfrica.
-          </span>
-        </Link>
+    <>
+      <div 
+        className={`fixed inset-y-0 left-0 z-50 w-64 bg-slate-900 border-r border-slate-800 flex flex-col pt-8 transform transition-transform duration-300 ease-in-out lg:relative lg:translate-x-0 ${
+          isOpen ? 'translate-x-0' : '-translate-x-full'
+        }`}
+      >
+        {/* Branding */}
+        <div className="px-6 mb-10 flex items-center justify-between">
+          <Link href="/" className="flex items-center space-x-2">
+            <span className="text-xl font-bold bg-gradient-to-r from-teal-400 to-indigo-400 text-transparent bg-clip-text">
+              EdAfrica.
+            </span>
+          </Link>
+          <button 
+            onClick={() => setIsOpen(false)}
+            className="lg:hidden p-1 text-slate-400 hover:text-white"
+          >
+            <X className="w-5 h-5" />
+          </button>
+        </div>
+
+        {/* Navigation */}
+        <nav className="flex-1 px-4 space-y-2 overflow-y-auto">
+          {navItems.map((item) => {
+            const isActive = pathname === item.href || pathname?.startsWith(`${item.href}/`)
+            const Icon = item.icon
+
+            return (
+              <Link
+                key={item.name}
+                href={item.href}
+                onClick={() => {
+                  if (window.innerWidth < 1024) setIsOpen(false)
+                }}
+                className={`flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors ${
+                  isActive 
+                    ? 'bg-indigo-500/10 text-indigo-400' 
+                    : 'text-slate-400 hover:text-slate-200 hover:bg-white/5'
+                }`}
+              >
+                <Icon className="w-5 h-5" />
+                <span className="font-medium">{item.name}</span>
+              </Link>
+            )
+          })}
+        </nav>
+
+        {/* User Actions */}
+        <div className="p-4 border-t border-slate-800">
+          <button
+            onClick={handleSignOut}
+            className="flex items-center space-x-3 w-full px-4 py-3 text-slate-400 hover:text-red-400 hover:bg-red-400/10 rounded-lg transition-colors text-left"
+          >
+            <LogOut className="w-5 h-5" />
+            <span className="font-medium">Sign Out</span>
+          </button>
+        </div>
       </div>
-
-      {/* Navigation */}
-      <nav className="flex-1 px-4 space-y-2">
-        {navItems.map((item) => {
-          const isActive = pathname === item.href || pathname?.startsWith(`${item.href}/`)
-          const Icon = item.icon
-
-          return (
-            <Link
-              key={item.name}
-              href={item.href}
-              className={`flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors ${
-                isActive 
-                  ? 'bg-indigo-500/10 text-indigo-400' 
-                  : 'text-slate-400 hover:text-slate-200 hover:bg-white/5'
-              }`}
-            >
-              <Icon className="w-5 h-5" />
-              <span className="font-medium">{item.name}</span>
-            </Link>
-          )
-        })}
-      </nav>
-
-      {/* User Actions */}
-      <div className="p-4 border-t border-slate-800">
-        <button
-          onClick={handleSignOut}
-          className="flex items-center space-x-3 w-full px-4 py-3 text-slate-400 hover:text-red-400 hover:bg-red-400/10 rounded-lg transition-colors text-left"
-        >
-          <LogOut className="w-5 h-5" />
-          <span className="font-medium">Sign Out</span>
-        </button>
-      </div>
-    </div>
+    </>
   )
 }
