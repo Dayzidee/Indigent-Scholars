@@ -1,10 +1,17 @@
 'use client';
 
 import Link from 'next/link';
+import { signInAction } from '@/lib/actions/auth';
+import { useSearchParams } from 'next/navigation';
+import { Suspense } from 'react';
 
-export default function LoginPage() {
+function LoginContent() {
+  const searchParams = useSearchParams();
+  const error = searchParams.get('error');
+  const message = searchParams.get('message');
+
   return (
-    <main className="flex-grow flex items-center justify-center px-6 py-24 relative overflow-hidden">
+    <main className="flex-grow flex items-center justify-center px-6 py-24 relative overflow-hidden bg-white z-[2]">
       {/* Subtle Background Elements */}
       <div className="absolute top-[-10%] right-[-5%] w-[40%] h-[40%] bg-primary-fixed-dim/20 rounded-full blur-[120px]"></div>
       <div className="absolute bottom-[-10%] left-[-5%] w-[30%] h-[30%] bg-secondary-container/10 rounded-full blur-[100px]"></div>
@@ -20,8 +27,22 @@ export default function LoginPage() {
           <p className="text-sm text-on-surface-variant">Continue your journey of scholarly excellence.</p>
         </div>
         
+        {/* Alerts */}
+        {error && (
+          <div className="mb-6 p-4 bg-error-container text-on-error-container rounded-lg text-sm font-medium border border-error/20 flex items-center gap-3">
+            <span className="material-symbols-outlined text-lg">error</span>
+            {error}
+          </div>
+        )}
+        {message && (
+          <div className="mb-6 p-4 bg-secondary-container text-on-secondary-container rounded-lg text-sm font-medium border border-secondary/20 flex items-center gap-3">
+            <span className="material-symbols-outlined text-lg">info</span>
+            {message}
+          </div>
+        )}
+
         {/* Form */}
-        <form className="space-y-6">
+        <form action={signInAction} className="space-y-6">
           <div>
             <label className="block text-sm font-semibold font-headline text-on-surface mb-2" htmlFor="email">Email Address</label>
             <input 
@@ -30,6 +51,7 @@ export default function LoginPage() {
               name="email" 
               placeholder="name@university.edu" 
               type="email"
+              required
             />
           </div>
           <div>
@@ -44,20 +66,9 @@ export default function LoginPage() {
                 name="password" 
                 placeholder="••••••••" 
                 type="password"
+                required
               />
-              <button className="absolute right-3 top-1/2 -translate-y-1/2 text-outline hover:text-on-surface-variant" type="button">
-                <span className="material-symbols-outlined text-xl">visibility</span>
-              </button>
             </div>
-          </div>
-          <div className="flex items-center">
-            <input 
-              className="w-4 h-4 text-primary bg-surface-container-low border-none rounded focus:ring-primary focus:ring-offset-0" 
-              id="remember" 
-              name="remember" 
-              type="checkbox"
-            />
-            <label className="ml-2 text-sm text-on-surface-variant" htmlFor="remember">Remember me for 30 days</label>
           </div>
           <button className="w-full py-4 bg-gradient-to-b from-[#0052CC] to-[#003D9B] text-white font-bold rounded-lg shadow-lg shadow-primary/20 hover:scale-[0.98] transition-transform active:scale-95" type="submit">
             Log In
@@ -105,5 +116,17 @@ export default function LoginPage() {
         </div>
       </div>
     </main>
+  );
+}
+
+export default function LoginPage() {
+  return (
+    <Suspense fallback={
+      <main className="flex-grow flex items-center justify-center bg-white px-6 py-24 animate-pulse">
+        <div className="w-full max-w-md bg-surface-container-low h-[500px] rounded-xl"></div>
+      </main>
+    }>
+      <LoginContent />
+    </Suspense>
   );
 }

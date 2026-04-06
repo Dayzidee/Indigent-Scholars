@@ -2,8 +2,7 @@
 
 import React, { useRef } from 'react';
 import Link from 'next/link';
-// import { FadeUpStagger } from "@/components/ui/FadeUpStagger"; // available for future use
-// import { useCountUp } from "@/hooks/useCountUp"; // available for future use
+import { motion } from 'framer-motion';
 
 export default function Home() {
   const carouselRef = useRef<HTMLDivElement>(null);
@@ -28,14 +27,7 @@ export default function Home() {
           id="hero"
           className="relative min-h-[90vh] flex flex-col items-center justify-center text-center px-6 overflow-hidden"
         >
-          {/* Animated Background Logo */}
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none -z-10">
-            <img
-              alt="EdAfrica Logo Watermark"
-              className="w-[600px] h-auto animate-slow-pulse opacity-[0.05]"
-              src="https://lh3.googleusercontent.com/aida/ADBb0uiQ8Sue3YcTbc1Gbi8NPcM59VY8BHYliMXdKfn1GdBhKmDMRKOWR6g2PDFjzs3EcsqqwZ3M0xRdDj0Azhn5X71mr2fXOfWfXu9-hjv_6G7y1472VYg3s9AYRfA0Xbue56fiim8DuJUr0ag8Hbz-RJPEdo687EMkCFeeIKBvd9142y4m6AlKnGtWc-G0qFMxwTY9PMaetlrVOY4vjUwaY8ainmrPYqhb5wZXfLZx0SzB48nqMQ9TlivHC4aikpzzMuWg9igQZEFTXw"
-            />
-          </div>
+
           <div className="max-w-4xl z-10">
             <div className="mb-6 flex justify-center">
               <span
@@ -45,7 +37,7 @@ export default function Home() {
                 school
               </span>
             </div>
-            <h1 className="serif-hero text-6xl md:text-8xl text-on-surface tracking-tight leading-[1.1] mb-8">
+            <h1 className="font-headline text-6xl md:text-8xl text-on-surface tracking-tight leading-[1.1] mb-8 font-bold">
               Empowering the next <br />generation of Nigerian minds.
             </h1>
             <p className="text-on-surface-variant text-lg md:text-xl max-w-2xl mx-auto mb-12 font-light leading-relaxed">
@@ -54,10 +46,10 @@ export default function Home() {
               precision.
             </p>
             <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
-              <button className="min-w-[200px] border-2 border-primary text-primary px-8 py-4 rounded-xl font-headline font-bold uppercase tracking-widest text-xs transition-all duration-300 hover:bg-primary hover:text-on-primary">
+              <button className="min-w-[200px] bg-primary text-white shadow-xl shadow-primary/20 hover:shadow-primary/40 hover:-translate-y-1 hover:bg-primary-container hover:text-on-primary-container px-8 py-4 rounded-xl font-headline font-bold uppercase tracking-widest text-xs transition-all duration-300">
                 For Students
               </button>
-              <button className="min-w-[200px] border-2 border-secondary text-secondary px-8 py-4 rounded-xl font-headline font-bold uppercase tracking-widest text-xs transition-all duration-300 hover:bg-secondary hover:text-on-secondary">
+              <button className="min-w-[200px] bg-secondary text-white shadow-xl shadow-secondary/20 hover:shadow-secondary/40 hover:-translate-y-1 hover:bg-secondary-container hover:text-secondary px-8 py-4 rounded-xl font-headline font-bold uppercase tracking-widest text-xs transition-all duration-300">
                 For Sponsors
               </button>
             </div>
@@ -105,7 +97,7 @@ export default function Home() {
               <span className="text-secondary font-headline font-bold text-xs uppercase tracking-[0.2em]">
                 Excellence Showcased
               </span>
-              <h2 className="text-4xl font-headline font-extrabold tracking-tighter mt-2 bg-gradient-to-r from-on-surface to-on-surface-variant bg-clip-text text-transparent">
+              <h2 className="text-4xl font-headline font-bold tracking-tight mt-2 bg-gradient-to-r from-on-surface to-on-surface-variant bg-clip-text text-transparent">
                 Verified Scholars
               </h2>
             </div>
@@ -213,7 +205,7 @@ export default function Home() {
         </section>
 
         {/* 'How It Works' Section */}
-        <section className="py-24 bg-surface/50 backdrop-blur-md relative z-10 selection:bg-primary/20">
+        <section className="py-24 bg-surface/50 backdrop-blur-md relative z-[1] selection:bg-primary/20">
           <div className="max-w-7xl mx-auto px-8 relative z-10">
             <div className="text-center mb-16">
               <span className="text-primary font-headline font-bold text-xs uppercase tracking-[0.2em]">
@@ -279,7 +271,7 @@ export default function Home() {
         </section>
 
         {/* Impact Tracker */}
-        <section className="bg-surface-container-low/80 backdrop-blur-md py-24 relative z-10 border-t border-outline-variant/10">
+        <section className="bg-surface-container-low/80 backdrop-blur-md py-24 relative z-[1] border-t border-outline-variant/10">
           <div className="max-w-7xl mx-auto px-8 relative z-10">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
               <div>
@@ -357,7 +349,7 @@ export default function Home() {
         </section>
 
         {/* Partners & Schools Section */}
-        <section className="py-24 bg-white/90 backdrop-blur-xl relative z-10">
+        <section className="py-24 bg-white/90 backdrop-blur-xl relative z-[1]">
           <div className="max-w-7xl mx-auto px-8 relative z-10">
             <div className="flex flex-col md:flex-row items-center justify-between gap-12">
               <div className="max-w-md">
@@ -389,7 +381,7 @@ export default function Home() {
         </section>
 
         {/* Contact Us Section */}
-        <section className="py-24 bg-surface-container-highest/50 backdrop-blur-2xl border-t border-outline-variant/10 relative z-10">
+        <section className="py-24 bg-surface-container-highest/50 backdrop-blur-2xl border-t border-outline-variant/10 relative z-[1]">
           <div className="max-w-7xl mx-auto px-8 relative z-10">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
               <div>

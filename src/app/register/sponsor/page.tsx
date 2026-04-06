@@ -1,150 +1,149 @@
 'use client';
 
 import Link from 'next/link';
+import { signUpAction } from '@/lib/actions/auth';
+import { useSearchParams } from 'next/navigation';
+import { Suspense } from 'react';
 
-export default function SponsorRegistrationPage() {
+function SponsorRegisterContent() {
+  const searchParams = useSearchParams();
+  const error = searchParams.get('error');
+
   return (
-    <main className="pt-32 pb-20 px-6 max-w-7xl mx-auto">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-        {/* Sidebar / Trust Section */}
-        <div className="lg:col-span-5 flex flex-col gap-8 lg:sticky lg:top-32">
+    <main className="pt-32 pb-20 px-6 min-h-screen bg-white relative z-[2]">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        
+        {/* Left Side: Testimonial/Info */}
+        <div className="lg:col-span-5 space-y-12">
           <div className="space-y-4">
-            <span className="inline-block px-4 py-1 bg-secondary-container text-secondary text-sm font-bold rounded-full uppercase tracking-widest">Sponsorship Portal</span>
-            <h1 className="text-5xl font-extrabold font-headline leading-tight tracking-tighter text-primary">
-              Shape the Future of <br/>Nigerian Scholars.
+            <span className="text-primary font-bold tracking-widest text-xs uppercase">Impact & Philanthropy</span>
+            <h1 className="text-5xl font-headline font-extrabold text-secondary leading-tight tracking-tighter">
+              Invest in <br/><span className="text-on-surface">Human Capital.</span>
             </h1>
-            <p className="text-lg text-on-surface-variant max-w-md">
-              Join an elite network of patrons providing more than just funding—you&apos;re providing a bridge to global leadership.
+            <p className="text-on-surface-variant text-lg leading-relaxed max-w-md">
+              Your contribution goes directly toward tuition, research materials, and institutional fees for Nigeria's brightest minds.
             </p>
           </div>
-          
-          {/* Impact Metric Bento */}
-          <div className="grid grid-cols-2 gap-4">
-            <div className="bg-surface-container-low p-6 rounded-xl space-y-2">
-              <div className="flex items-center gap-2 text-primary">
-                <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>school</span>
-                <span className="font-bold text-2xl">4.8k+</span>
+
+          <div className="bg-[#002B6B] p-8 rounded-2xl shadow-2xl relative overflow-hidden group">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/10 rounded-full -mr-16 -mt-16 blur-2xl group-hover:bg-secondary/20 transition-colors"></div>
+            <span className="material-symbols-outlined text-secondary text-4xl mb-6 block">format_quote</span>
+            <p className="text-white/90 text-lg font-medium leading-relaxed relative z-10 italic">
+              &quot;Sponsoring a scholar isn't just charity; it's a strategic investment in the future leaders who will build our nation's industries.&quot;
+            </p>
+            <div className="mt-8 flex items-center gap-4 relative z-10">
+              <div className="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center">
+                <span className="material-symbols-outlined text-secondary">verified_user</span>
               </div>
-              <p className="text-sm font-medium text-on-surface-variant">Scholars Funded</p>
-            </div>
-            <div className="bg-surface-container-low p-6 rounded-xl space-y-2">
-              <div className="flex items-center gap-2 text-tertiary">
-                <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>verified</span>
-                <span className="font-bold text-2xl">100%</span>
-              </div>
-              <p className="text-sm font-medium text-on-surface-variant">Transparency Rate</p>
-            </div>
-          </div>
-          
-          {/* Testimonial Card */}
-          <div className="relative bg-inverse-surface text-inverse-on-surface p-8 rounded-xl overflow-hidden">
-            <div className="absolute top-0 right-0 opacity-10 transform translate-x-1/4 -translate-y-1/4">
-              <span className="material-symbols-outlined text-9xl">format_quote</span>
-            </div>
-            <div className="relative z-10 space-y-6">
-              <p className="text-xl italic font-light leading-relaxed">
-                &quot;Partnering with Indigent-Sc has allowed our organization to directly impact the next generation of Nigerian tech leaders with absolute confidence in fund management.&quot;
-              </p>
-              <div className="flex items-center gap-4">
-                <img 
-                  className="w-12 h-12 rounded-full object-cover grayscale brightness-125" 
-                  alt="portrait of a confident female executive" 
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAN3XGLmOc9zk1FfPX7ZtiTfcyoBNshrg196qXfs7iWOeJjU4rvHCaha3YHzScLIFcLtB0Nca4BBY-gtxTJItJdX9DFGOjbIg8UFdzYoq-e_gTUMpEYsqa1Clszkp_lIDPeumTtZc6lh7SllGgRpUyXXMfcYeoZ3ujQDFT3Z5FVVajE1V0HwlGf6DgLgaTaLyCIDlUcbrIN6lkOvhsGWrf73srfEsUIvNEfEqvLy0SEOWHcOq2p4AKBcdJfr2jCdUL67j6EL_gLhz80"
-                />
-                <div>
-                  <p className="font-bold font-headline">Dr. Amaka Okafor</p>
-                  <p className="text-sm opacity-70">Director, Zenith Foundation</p>
-                </div>
+              <div>
+                <p className="text-white font-bold">Dr. Adewale K.</p>
+                <p className="text-secondary/80 text-xs uppercase tracking-tighter font-bold">Founding Patron</p>
               </div>
             </div>
           </div>
         </div>
-        
-        {/* Registration Form Canvas */}
-        <div className="lg:col-span-7">
-          <div className="bg-surface-container-lowest p-10 md:p-14 rounded-xl shadow-sm border border-outline-variant/20">
-            <h2 className="text-3xl font-bold font-headline mb-8 text-on-surface">Begin Your Journey</h2>
-            <form className="space-y-8">
-              {/* Full Name / Org Name */}
+
+        {/* Right Side: Registration Form */}
+        <div className="lg:col-span-7 bg-surface-container-lowest rounded-xl p-8 lg:p-12 shadow-2xl shadow-secondary/5 border border-outline-variant/10">
+          <div className="mb-10">
+            <h2 className="text-2xl font-headline font-extrabold text-on-surface tracking-tight">Sponsor Registration</h2>
+            <p className="text-on-surface-variant text-sm mt-2">Join our network of verified educational philanthropists.</p>
+          </div>
+
+          {error && (
+            <div className="mb-6 p-4 bg-error-container text-on-error-container rounded-lg text-sm font-medium border border-error/20 flex items-center gap-3">
+              <span className="material-symbols-outlined text-lg">error</span>
+              {error}
+            </div>
+          )}
+          
+          <form action={signUpAction} className="space-y-6">
+            <input type="hidden" name="role" value="sponsor" />
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
-                <label className="text-sm font-bold uppercase tracking-widest text-on-surface-variant flex items-center gap-2">
-                  <span className="material-symbols-outlined text-sm">person</span>
-                  Full Name / Organization Name
-                </label>
+                <label className="block text-xs font-bold text-on-surface-variant uppercase tracking-wider">Full Name / Contact Person</label>
                 <input 
-                  className="w-full bg-surface-container-low border-none rounded-xl py-4 px-6 focus:ring-2 focus:ring-[#D4AF37] focus:bg-surface-container-lowest transition-all font-medium text-on-surface placeholder:text-outline-variant/60" 
-                  placeholder="e.g., Global Tech Partners" 
+                  name="full_name"
+                  required
+                  className="w-full bg-surface-container-low border-none rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary/40 focus:bg-surface-container-lowest transition-all text-on-surface placeholder:text-outline-variant/60" 
+                  placeholder="e.g. Segun Arinze" 
                   type="text"
                 />
               </div>
-              
-              {/* Email Address */}
               <div className="space-y-2">
-                <label className="text-sm font-bold uppercase tracking-widest text-on-surface-variant flex items-center gap-2">
-                  <span className="material-symbols-outlined text-sm">mail</span>
-                  Corporate / Primary Email
-                </label>
+                <label className="block text-xs font-bold text-on-surface-variant uppercase tracking-wider">Email Address</label>
                 <input 
-                  className="w-full bg-surface-container-low border-none rounded-xl py-4 px-6 focus:ring-2 focus:ring-[#D4AF37] focus:bg-surface-container-lowest transition-all font-medium text-on-surface placeholder:text-outline-variant/60" 
-                  placeholder="contact@impact.org" 
+                  name="email"
+                  required
+                  className="w-full bg-surface-container-low border-none rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary/40 focus:bg-surface-container-lowest transition-all text-on-surface placeholder:text-outline-variant/60" 
+                  placeholder="s.arinze@foundation.org" 
                   type="email"
                 />
               </div>
-              
-              {/* Sponsor Type & Impact Area */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="space-y-2">
-                  <label className="text-sm font-bold uppercase tracking-widest text-on-surface-variant flex items-center gap-2">
-                    <span className="material-symbols-outlined text-sm">category</span>
-                    Sponsor Type
-                  </label>
-                  <select className="w-full bg-surface-container-low border-none rounded-xl py-4 px-6 focus:ring-2 focus:ring-[#D4AF37] focus:bg-surface-container-lowest transition-all font-medium text-on-surface appearance-none cursor-pointer">
-                    <option>Individual</option>
-                    <option>Organization</option>
-                    <option>Governmental Body</option>
-                  </select>
-                </div>
-                <div className="space-y-2">
-                  <label className="text-sm font-bold uppercase tracking-widest text-on-surface-variant flex items-center gap-2">
-                    <span className="material-symbols-outlined text-sm">target</span>
-                    Impact Area
-                  </label>
-                  <select className="w-full bg-surface-container-low border-none rounded-xl py-4 px-6 focus:ring-2 focus:ring-[#D4AF37] focus:bg-surface-container-lowest transition-all font-medium text-on-surface appearance-none cursor-pointer">
-                    <option>STEM &amp; Innovation</option>
-                    <option>Medical Sciences</option>
-                    <option>Social Leadership</option>
-                    <option>Creative Arts</option>
-                  </select>
-                </div>
+            </div>
+
+            <div className="space-y-2">
+              <label className="block text-xs font-bold text-on-surface-variant uppercase tracking-wider">Create Password</label>
+              <input 
+                name="password"
+                required
+                minLength={8}
+                className="w-full bg-surface-container-low border-none rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary/40 focus:bg-surface-container-lowest transition-all text-on-surface placeholder:text-outline-variant/60" 
+                placeholder="Min. 8 characters" 
+                type="password"
+              />
+            </div>
+            
+            <div className="space-y-2">
+              <label className="block text-xs font-bold text-on-surface-variant uppercase tracking-wider">Organization Name (Optional)</label>
+              <div className="relative">
+                <input 
+                  name="org_name"
+                  className="w-full bg-surface-container-low border-none rounded-lg pl-12 pr-4 py-3 focus:ring-2 focus:ring-primary/40 focus:bg-surface-container-lowest transition-all text-on-surface placeholder:text-outline-variant/60" 
+                  placeholder="Legal entity or foundation name" 
+                  type="text"
+                />
+                <span className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline-variant">corporate_fare</span>
               </div>
-              
-              {/* Checkbox Agreement */}
-              <div className="flex items-start gap-4 pt-4">
-                <div className="mt-1">
-                  <input className="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
-                </div>
-                <p className="text-sm text-on-surface-variant leading-relaxed">
-                  I agree to the <Link className="text-primary font-bold underline decoration-primary/20 hover:decoration-primary" href="#">Partnership Agreement</Link> and acknowledge that my contribution will be governed by Indigent-Sc&apos;s impact transparency protocols.
+            </div>
+
+            <div className="space-y-2">
+              <label className="block text-xs font-bold text-on-surface-variant uppercase tracking-wider">Sponsorship Type</label>
+              <select name="type" className="w-full bg-surface-container-low border-none rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary/40 focus:bg-surface-container-lowest transition-all text-on-surface appearance-none">
+                <option>Individual Philanthropist</option>
+                <option>Corporate Social Responsibility (CSR)</option>
+                <option>Non-Profit Foundation</option>
+                <option>Alumni Association</option>
+              </select>
+            </div>
+            
+            <div className="pt-4">
+              <div className="flex items-start gap-3 mb-8">
+                <input required className="mt-1 rounded text-secondary focus:ring-secondary border-outline-variant" type="checkbox"/>
+                <p className="text-xs text-on-surface-variant leading-relaxed">
+                  I agree to the <Link className="text-secondary font-bold hover:underline" href="#">Sponsorship Charter</Link> and verify that all funds are provided in compliance with anti-money laundering regulations.
                 </p>
               </div>
-              
-              {/* CTA Section */}
-              <div className="pt-6">
-                <button type="button" className="w-full py-5 rounded-xl bg-gradient-to-b from-[#0052CC] to-[#003D9B] text-white font-headline font-extrabold text-lg flex items-center justify-center gap-3 hover:shadow-lg hover:shadow-primary/20 transition-all active:scale-[0.98]">
-                  Start Your Impact
-                  <span className="material-symbols-outlined">arrow_forward</span>
-                </button>
-                <p className="text-center mt-6 text-sm text-on-surface-variant">
-                  Need custom sponsorship tiers? <Link className="text-secondary font-bold hover:underline" href="#">Download Prospectus</Link>
-                </p>
-                <p className="text-center text-sm text-on-surface-variant mt-2">
-                  Already have an account? <Link className="text-primary font-bold hover:underline" href="/login">Log in here</Link>
-                </p>
-              </div>
-            </form>
-          </div>
+              <button type="submit" className="w-full py-4 bg-secondary text-on-secondary font-headline font-extrabold text-lg rounded-xl shadow-xl shadow-secondary/10 hover:opacity-90 hover:shadow-2xl hover:shadow-secondary/20 hover:-translate-y-1 transition-all duration-300 active:scale-[0.98]">
+                Register as Sponsor
+              </button>
+            </div>
+            
+            <p className="text-center text-sm text-on-surface-variant mt-6">
+              Already a partner? <Link className="text-secondary font-bold hover:underline" href="/login">Log in here</Link>
+            </p>
+          </form>
         </div>
       </div>
     </main>
+  );
+}
+
+export default function SponsorRegistrationPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-white animate-pulse" />}>
+      <SponsorRegisterContent />
+    </Suspense>
   );
 }

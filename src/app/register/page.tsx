@@ -45,7 +45,7 @@ export default function ChooseYourPathPage() {
                 </li>
               </ul>
             </div>
-            <button className="w-full py-4 px-6 bg-primary text-on-primary font-headline font-bold rounded-lg hover:bg-primary-container transition-colors transform active:scale-95 duration-200 flex items-center justify-center gap-2 group-hover:shadow-lg">
+            <button className="w-full py-4 px-6 bg-[#0052CC] text-white font-headline font-extrabold rounded-xl hover:bg-[#003D9B] hover:shadow-xl hover:shadow-primary/20 transition-all transform active:scale-95 duration-300 flex items-center justify-center gap-2 group-hover:-translate-y-1">
               Select &amp; Continue
               <span className="material-symbols-outlined">arrow_forward</span>
             </button>
@@ -78,7 +78,7 @@ export default function ChooseYourPathPage() {
                 </li>
               </ul>
             </div>
-            <button className="w-full py-4 px-6 bg-secondary text-on-secondary font-headline font-bold rounded-lg hover:bg-secondary-fixed-dim transition-colors transform active:scale-95 duration-200 flex items-center justify-center gap-2 group-hover:shadow-lg">
+            <button className="w-full py-4 px-6 bg-white text-secondary font-headline font-extrabold rounded-xl hover:bg-secondary-container hover:text-secondary hover:shadow-xl transition-all transform active:scale-95 duration-300 flex items-center justify-center gap-2 group-hover:-translate-y-1">
               Select &amp; Continue
               <span className="material-symbols-outlined">arrow_forward</span>
             </button>

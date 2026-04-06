@@ -1,20 +1,20 @@
 import type { Metadata } from "next";
-import { Inter, Manrope } from "next/font/google";
+import { Plus_Jakarta_Sans, Outfit } from "next/font/google";
 import "./globals.css";
 import { ModalProvider } from "@/components/providers/ModalProvider";
-import { SceneLoader } from "@/components/canvas/SceneLoader";
-
+import { GoldenAfricaGlobe } from "@/components/ui/GoldenAfricaGlobe";
 // ─── Design system fonts ─────────────────────────────────────
-const inter = Inter({
-  variable: "--font-inter",
+const plusJakarta = Plus_Jakarta_Sans({
+  variable: "--font-plus-jakarta",
   subsets: ["latin"],
   display: "swap",
 });
 
-const manrope = Manrope({
-  variable: "--font-manrope",
+const outfit = Outfit({
+  variable: "--font-outfit",
   subsets: ["latin"],
   display: "swap",
+  weight: ["400", "500", "600", "700", "800"],
 });
 
 // ─── Metadata ────────────────────────────────────────────────
@@ -36,7 +36,8 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${manrope.variable} h-full antialiased`}
+      className={`${plusJakarta.variable} ${outfit.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
       <head>
         {/* Material Symbols for Stitch's icon system */}
@@ -52,8 +53,8 @@ export default function RootLayout({
             {children}
           </main>
           <Footer />
-          {/* 3D background — fixed, behind all content, SSR-safe */}
-          <SceneLoader />
+          {/* Global Golden 3D Background */}
+          <GoldenAfricaGlobe />
         </ModalProvider>
       </body>
     </html>

@@ -1,0 +1,127 @@
+'use client';
+
+import { useEffect, useState } from 'react';
+import { DashboardLayout } from '@/components/layout/DashboardLayout';
+import { getAllProfiles } from '@/lib/actions/admin';
+import { 
+  Users, 
+  Search, 
+  Filter, 
+  MoreVertical, 
+  Mail, 
+  Shield, 
+  GraduationCap, 
+  Building,
+  ChevronRight,
+  UserCheck
+} from 'lucide-react';
+
+export default function AdminUsers() {
+  const [profiles, setProfiles] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function loadProfiles() {
+      try {
+        const data = await getAllProfiles();
+        setProfiles(data || []);
+      } catch (e) {
+        console.error(e);
+      }
+      setLoading(false);
+    }
+    loadProfiles();
+  }, []);
+
+  const getRoleBadge = (role: string) => {
+    switch(role) {
+      case 'admin': return <span className="px-2 py-0.5 rounded text-[10px] font-black uppercase tracking-widest bg-rose-500/10 text-rose-500 border border-rose-500/20">Admin</span>;
+      case 'sponsor': return <span className="px-2 py-0.5 rounded text-[10px] font-black uppercase tracking-widest bg-indigo-500/10 text-indigo-500 border border-indigo-500/20">Sponsor</span>;
+      case 'student': return <span className="px-2 py-0.5 rounded text-[10px] font-black uppercase tracking-widest bg-teal-500/10 text-teal-500 border border-teal-500/20">Scholar</span>;
+      default: return <span className="px-2 py-0.5 rounded text-[10px] font-black uppercase tracking-widest bg-slate-800 text-slate-500">Unassigned</span>;
+    }
+  };
+
+  return (
+    <DashboardLayout>
+      <div className="space-y-10">
+        <header className="flex flex-col md:flex-row md:items-center justify-between gap-8">
+          <div>
+            <h2 className="text-3xl font-bold text-white mb-2">Platform Registry</h2>
+            <p className="text-slate-500 font-medium tracking-wide flex items-center">
+              <UserCheck className="w-4 h-4 mr-2 text-indigo-400" />
+              Manage and monitor all platform participants.
+            </p>
+          </div>
+          <div className="flex gap-4">
+            <div className="relative">
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
+              <input 
+                type="text" 
+                placeholder="Search name, email, or ID..." 
+                className="pl-12 pr-4 py-3 bg-slate-900 border border-slate-800 rounded-xl text-white text-sm focus:outline-none focus:border-indigo-500/50 w-80 transition-all font-medium"
+              />
+            </div>
+            <button className="px-4 py-3 bg-slate-900 border border-slate-800 rounded-xl text-slate-400 hover:text-white transition-colors">
+              <Filter className="w-4 h-4" />
+            </button>
+          </div>
+        </header>
+
+        {/* User CRM Table */}
+        <div className="rounded-3xl border border-slate-800 bg-slate-900/20 shadow-2xl overflow-hidden backdrop-blur-xl">
+          <table className="w-full text-left border-collapse">
+            <thead>
+              <tr className="border-b border-slate-800 bg-slate-900/40">
+                <th className="px-8 py-5 text-xs font-black text-slate-500 uppercase tracking-widest">Participant</th>
+                <th className="px-8 py-5 text-xs font-black text-slate-500 uppercase tracking-widest">Authorization</th>
+                <th className="px-8 py-5 text-xs font-black text-slate-500 uppercase tracking-widest">Contact</th>
+                <th className="px-8 py-5 text-xs font-black text-slate-500 uppercase tracking-widest">Joined</th>
+                <th className="px-8 py-5 text-xs font-black text-slate-500 uppercase tracking-widest text-right">Details</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-800/50">
+              {profiles.length === 0 ? (
+                <tr><td colSpan={5} className="px-8 py-20 text-center italic text-slate-500">No users found in the system.</td></tr>
+              ) : (
+                profiles.map((user, i) => (
+                  <tr key={i} className="hover:bg-white/[0.02] transition-colors group">
+                    <td className="px-8 py-6">
+                      <div className="flex items-center space-x-4">
+                        <div className="w-12 h-12 rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-500 shadow-inner group-hover:border-indigo-500/50 transition-colors">
+                          {user.role === 'student' ? <GraduationCap className="w-5 h-5" /> : 
+                           user.role === 'sponsor' ? <Building className="w-5 h-5" /> : 
+                           <Shield className="w-5 h-5" />}
+                        </div>
+                        <div>
+                          <p className="text-sm font-bold text-white uppercase tracking-tight group-hover:text-indigo-400 transition-colors">{user.full_name || 'Anonymous User'}</p>
+                          <p className="text-[10px] text-slate-600 font-bold uppercase tracking-widest mt-0.5">UID: {user.id.slice(0, 8)}</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td className="px-8 py-6">
+                      {getRoleBadge(user.role)}
+                    </td>
+                    <td className="px-8 py-6">
+                      <div className="flex flex-col space-y-1">
+                        <span className="text-xs font-medium text-slate-400 flex items-center"><Mail className="w-3 h-3 mr-1.5 opacity-50" />{user.email}</span>
+                      </div>
+                    </td>
+                    <td className="px-8 py-6">
+                      <p className="text-xs font-bold text-slate-500 uppercase tracking-widest">Oct 2023</p>
+                    </td>
+                    <td className="px-8 py-6 text-right">
+                      <button className="p-2 rounded-lg bg-slate-800/50 hover:bg-slate-700 text-slate-400 hover:text-white transition-all shadow-lg group/more">
+                        <ChevronRight className="w-4 h-4 group-hover/more:translate-x-0.5 transition-transform" />
+                      </button>
+                    </td>
+                  </tr>
+                ))
+              )}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </DashboardLayout>
+  );
+}

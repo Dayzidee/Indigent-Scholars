@@ -18,10 +18,10 @@ export default function AboutPage() {
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-8 w-full">
           <FadeUpStagger className="max-w-3xl">
-            <h1 className="text-white text-6xl md:text-7xl font-extrabold tracking-tight mb-6 leading-[1.1]">
+            <h1 className="text-white text-5xl md:text-7xl font-headline font-bold tracking-tight mb-6 leading-[1.15]">
               Preparing Nigeria for the future
             </h1>
-            <p className="text-primary-fixed-dim text-xl md:text-2xl font-light mb-10 leading-relaxed">
+            <p className="text-blue-100 text-xl md:text-2xl font-light mb-10 leading-relaxed">
               Connecting the most promising indigent scholars with visionaries who believe that access to education is the ultimate catalyst for nation-building.
             </p>
             <div className="flex gap-4">
@@ -35,12 +35,12 @@ export default function AboutPage() {
       </section>
 
       {/* Impact Section */}
-      <section className="py-24 bg-surface">
+      <section className="py-24 bg-white/80 backdrop-blur-sm relative z-[1]">
         <div className="max-w-7xl mx-auto px-8">
           <div className="flex flex-col md:flex-row gap-16 items-center">
             <div className="w-full md:w-1/2">
               <SlideIn direction="right">
-                <h2 className="text-4xl md:text-5xl font-extrabold text-primary mb-8 tracking-tight">Changing Lives Through Access to Education</h2>
+                <h2 className="text-4xl md:text-5xl font-headline font-bold text-primary mb-8 tracking-tight">Changing Lives Through Access to Education</h2>
                 <p className="text-lg text-on-surface-variant leading-relaxed mb-8">
                   We are on a mission to bridge the gap between financial constraints and academic brilliance. By leveraging technology, we ensure that every talented Nigerian student has a seat in the lecture hall.
                 </p>
@@ -51,14 +51,14 @@ export default function AboutPage() {
             </div>
             <div className="w-full md:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-6">
               <SlideIn direction="left" delay={0.2}>
-                <div className="bg-surface-container-lowest p-8 rounded-xl shadow-sm border-b-4 border-primary h-full">
+                <div className="bg-white/90 backdrop-blur-sm p-8 rounded-xl shadow-sm border-b-4 border-primary h-full">
                   <div className="text-5xl font-black text-primary mb-2">50,000</div>
                   <div className="text-sm uppercase tracking-widest font-bold text-on-surface-variant">Scholars Goal</div>
                   <p className="mt-4 text-on-surface-variant text-sm">Empowering the next generation of Nigerian leaders by 2030.</p>
                 </div>
               </SlideIn>
               <SlideIn direction="left" delay={0.4}>
-                <div className="bg-surface-container-lowest p-8 rounded-xl shadow-sm border-b-4 border-[#D4AF37] h-full">
+                <div className="bg-white/90 backdrop-blur-sm p-8 rounded-xl shadow-sm border-b-4 border-[#D4AF37] h-full">
                   <div className="text-5xl font-black text-[#D4AF37] mb-2">3X</div>
                   <div className="text-sm uppercase tracking-widest font-bold text-on-surface-variant">Income Increase</div>
                   <p className="mt-4 text-on-surface-variant text-sm">Average career earnings growth for our verified graduates.</p>
@@ -70,20 +70,20 @@ export default function AboutPage() {
       </section>
 
       {/* Vision, Mission & Values */}
-      <section className="py-24 bg-surface-container-low">
+      <section className="py-24 bg-white/60 backdrop-blur-sm relative z-[1]">
         <div className="max-w-7xl mx-auto px-8">
           <FadeUpStagger className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            <div className="bg-white p-10 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] focus-within:ring-2 ring-primary">
+            <div className="bg-white/85 backdrop-blur-sm p-10 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.06)] focus-within:ring-2 ring-primary">
               <span className="material-symbols-outlined text-4xl text-primary mb-6" style={{fontVariationSettings: "'FILL' 1"}}>visibility</span>
               <h3 className="text-2xl font-bold mb-4">Vision</h3>
               <p className="text-on-surface-variant leading-relaxed">To unlock the potential of every aspiring young mind in Nigeria, creating a nation where financial barriers no longer dictate the limits of human achievement.</p>
             </div>
-            <div className="bg-white p-10 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] focus-within:ring-2 ring-primary">
+            <div className="bg-white/85 backdrop-blur-sm p-10 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.06)] focus-within:ring-2 ring-primary">
               <span className="material-symbols-outlined text-4xl text-primary mb-6" style={{fontVariationSettings: "'FILL' 1"}}>rocket_launch</span>
               <h3 className="text-2xl font-bold mb-4">Mission</h3>
               <p className="text-on-surface-variant leading-relaxed">To expand access to higher education through a comprehensive digital platform that connects verified talent with sponsors through transparent, high-impact grants.</p>
             </div>
-            <div className="bg-white p-10 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] focus-within:ring-2 ring-primary">
+            <div className="bg-white/85 backdrop-blur-sm p-10 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.06)] focus-within:ring-2 ring-primary">
               <div className="grid grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <span className="material-symbols-outlined text-primary text-2xl">favorite</span>
@@ -110,10 +110,10 @@ export default function AboutPage() {
       </section>
 
       {/* Founder Section */}
-      <section className="py-24 bg-surface overflow-hidden">
+      <section className="py-24 bg-white/70 backdrop-blur-sm relative z-[1] overflow-hidden">
         <div className="max-w-7xl mx-auto px-8">
           <SlideIn direction="up">
-            <div className="relative bg-inverse-surface rounded-3xl p-12 md:p-20 overflow-hidden">
+            <div className="relative bg-secondary rounded-3xl p-12 md:p-20 overflow-hidden">
               <div className="absolute top-0 right-0 w-1/3 h-full bg-primary/20 transform skew-x-12 translate-x-20"></div>
               <div className="flex flex-col md:flex-row gap-16 relative z-10">
                 <div className="w-full md:w-1/3">
@@ -129,7 +129,7 @@ export default function AboutPage() {
                 </div>
                 <div className="w-full md:w-2/3 text-white">
                   <h4 className="text-[#D4AF37] font-bold tracking-[0.2em] uppercase text-sm mb-4">A Message from the Founder</h4>
-                  <h2 className="text-4xl md:text-5xl font-bold mb-8 leading-tight">Why we built Indigent-Sc</h2>
+                  <h2 className="text-4xl md:text-5xl font-headline font-bold mb-8 leading-tight">Why we built Indigent-Sc</h2>
                   <div className="space-y-6 text-lg text-stone-300 leading-relaxed">
                     <p>&quot;Nigeria&apos;s greatest resource isn&apos;t under our feet; it&apos;s between the ears of our youth. Growing up, I saw too many brilliant minds forced to trade their textbooks for street vending because they couldn&apos;t afford school fees.&quot;</p>
                     <p>&quot;Indigent-Sc was born from a simple belief: poverty should never be a death sentence for dreams. We&apos;ve built a bridge that doesn&apos;t just provide cash—it provides a community of believers for every scholar.&quot;</p>
@@ -143,9 +143,9 @@ export default function AboutPage() {
       </section>
 
       {/* Leadership Team */}
-      <section className="py-24 bg-surface">
+      <section className="py-24 bg-white/75 backdrop-blur-sm relative z-[1]">
         <div className="max-w-7xl mx-auto px-8 text-center mb-16">
-          <h2 className="text-4xl font-extrabold text-primary mb-4">Leadership & Transparency</h2>
+          <h2 className="text-4xl font-headline font-bold text-primary mb-4">Leadership & Transparency</h2>
           <p className="text-on-surface-variant max-w-2xl mx-auto">Meet the architects behind the platform, dedicated to scaling educational equity across all 36 states.</p>
         </div>
         <FadeUpStagger className="max-w-7xl mx-auto px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -189,10 +189,10 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-primary text-white text-center">
+      <section className="py-24 bg-primary text-white text-center relative z-[1]">
         <SlideIn direction="up" className="max-w-4xl mx-auto px-8">
-          <h2 className="text-4xl md:text-5xl font-extrabold mb-8">Ready to sponsor a future?</h2>
-          <p className="text-primary-fixed-dim text-xl mb-12">Join hundreds of sponsors already making a difference in the lives of brilliant Nigerian scholars.</p>
+          <h2 className="text-4xl md:text-5xl font-headline font-bold mb-8">Ready to sponsor a future?</h2>
+          <p className="text-blue-100 text-xl mb-12">Join hundreds of sponsors already making a difference in the lives of brilliant Nigerian scholars.</p>
           <div className="flex flex-wrap justify-center gap-6">
             <button className="bg-white text-primary px-10 py-4 rounded-xl font-bold text-lg hover:bg-stone-100 transition-all">Become a Sponsor</button>
             <button className="border-2 border-white/30 text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-white/10 transition-all">View Student Profiles</button>

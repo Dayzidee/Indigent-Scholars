@@ -1,0 +1,109 @@
+'use client'
+
+import { Bell, Search, User, ChevronDown } from 'lucide-react'
+import { usePathname } from 'next/navigation'
+import { useEffect, useState } from 'react'
+import { createBrowserClient } from '@supabase/ssr'
+
+export function DashboardHeader() {
+  const pathname = usePathname()
+  const [userName, setUserName] = useState<string>('User')
+  const [role, setRole] = useState<string>('')
+
+  const supabase = createBrowserClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+  )
+
+  useEffect(() => {
+    async function getUserInfo() {
+      const { data: { user } } = await supabase.auth.getUser()
+      if (user) {
+        const { data: profile } = await supabase
+          .from('profiles')
+          .select('full_name, role')
+          .eq('id', user.id)
+          .single()
+        
+        if (profile) {
+          setUserName(profile.full_name || user.email?.split('@')[0] || 'User')
+          setRole(profile.role || '')
+        }
+      }
+    }
+    getUserInfo()
+  }, [supabase])
+
+  // Derive page title from pathname
+  const getPageTitle = () => {
+    const segments = pathname?.split('/').filter(Boolean) || []
+    if (segments.length === 0) return 'Dashboard'
+    
+    // Last segment usually represents the page
+    const lastSegment = segments[segments.length - 1]
+    
+    // Mapping for better titles
+    const titleMap: Record<string, string> = {
+      'student': 'Scholar Dashboard',
+      'sponsor': 'Sponsor Overview',
+      'admin': 'Global Command Center',
+      'application': 'My Scholarship Application',
+      'matches': 'Sponsor Matchmaking',
+      'profile': 'My Academic Profile',
+      'discover': 'Discover Scholars',
+      'ledger': 'Funding Ledger',
+      'verification': 'Verification Center',
+      'users': 'User Management',
+      'settings': 'Platform Settings'
+    }
+
+    return titleMap[lastSegment] || lastSegment.charAt(0).toUpperCase() + lastSegment.slice(1)
+  }
+
+  return (
+    <header className="h-20 border-b border-slate-800 bg-slate-900/50 backdrop-blur-xl flex items-center justify-between px-8 sticky top-0 z-30">
+      <div className="flex flex-col">
+        <h1 className="text-xl font-bold text-white tracking-tight">
+          {getPageTitle()}
+        </h1>
+        <div className="flex items-center text-xs text-slate-500 mt-0.5">
+          <span>Indigent-Sc</span>
+          <span className="mx-1.5">•</span>
+          <span className="capitalize">{role || 'Portal'}</span>
+        </div>
+      </div>
+
+      <div className="flex items-center space-x-6">
+        {/* Search Placeholder */}
+        <div className="hidden md:flex items-center bg-slate-800/50 border border-slate-700/50 rounded-full px-4 py-1.5 focus-within:border-teal-500/50 transition-all">
+          <Search className="w-4 h-4 text-slate-500" />
+          <input 
+            type="text" 
+            placeholder="Search platform..." 
+            className="bg-transparent border-none focus:ring-0 text-sm text-slate-300 w-48 ml-2"
+          />
+        </div>
+
+        {/* Action Icons */}
+        <div className="flex items-center space-x-3 border-r border-slate-800 pr-6">
+          <button className="relative p-2 text-slate-400 hover:text-white transition-colors">
+            <Bell className="w-5 h-5" />
+            <span className="absolute top-2 right-2 w-2 h-2 bg-teal-500 rounded-full border-2 border-slate-900"></span>
+          </button>
+        </div>
+
+        {/* User Profile */}
+        <div className="flex items-center space-x-3 group cursor-pointer">
+          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-teal-500/20 to-indigo-500/20 border border-slate-700 flex items-center justify-center group-hover:border-teal-500/50 transition-all">
+            <User className="w-5 h-5 text-teal-400" />
+          </div>
+          <div className="hidden lg:block text-left">
+            <p className="text-sm font-semibold text-white leading-none capitalize">{userName}</p>
+            <p className="text-xs text-slate-500 mt-1 capitalize">{role}</p>
+          </div>
+          <ChevronDown className="w-4 h-4 text-slate-500 group-hover:text-white transition-colors" />
+        </div>
+      </div>
+    </header>
+  )
+}

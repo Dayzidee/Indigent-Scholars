@@ -5,7 +5,7 @@ import { SlideIn } from '@/components/ui/SlideIn';
 
 export default function SponsorsPage() {
   return (
-    <main className="pt-24">
+    <main className="pt-24 bg-white relative z-[2]">
       {/* Hero Section */}
       <section className="relative px-8 py-20 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <SlideIn direction="right" className="z-10">
