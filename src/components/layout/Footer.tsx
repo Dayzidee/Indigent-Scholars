@@ -1,13 +1,50 @@
+'use client';
+
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { motion } from 'framer-motion';
 
 export function Footer() {
+  const pathname = usePathname();
+
+  // Hide Footer on dashboard routes
+  if (pathname?.startsWith('/dashboard')) return null;
   return (
     <footer className="bg-[#1C1B1B] w-full mt-20 relative z-10" id="footer">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-8 px-12 py-16 w-full max-w-7xl mx-auto">
         <div className="col-span-2 md:col-span-1">
-          <div className="text-lg font-black text-white mb-6 uppercase tracking-widest">
-            Indigent-Sc
-          </div>
+          <Link href="/" className="group block mb-6">
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              className="flex items-center"
+            >
+              {"Indigent-Sc".split("").map((char, index) => (
+                <motion.span
+                  key={index}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ 
+                    delay: index * 0.05,
+                    duration: 0.4,
+                    ease: "easeOut"
+                  }}
+                  className="text-lg font-black text-white uppercase tracking-widest inline-block group-hover:text-teal-400 transition-colors"
+                >
+                  {char}
+                </motion.span>
+              ))}
+              <motion.div 
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.6 }}
+                className="w-1.5 h-1.5 rounded-full bg-teal-400 ml-1 mb-1 shadow-[0_0_8px_rgba(45,212,191,0.6)]"
+              />
+            </motion.div>
+          </Link>
           <p className="text-neutral-400 text-xs leading-relaxed max-w-xs">
             A high-end editorial EdTech platform dedicated to empowering
             Nigerian scholars through transparent philanthropy.

@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import { motion } from 'framer-motion'
 import { usePathname } from 'next/navigation'
 import { createBrowserClient } from '@supabase/ssr'
 import { useEffect, useState } from 'react'
@@ -47,7 +48,7 @@ export function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
           .select('role')
           .eq('id', user.id)
           .single()
-        
+
         if (data?.role) {
           setRole(data.role as any)
         }
@@ -61,10 +62,10 @@ export function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
     switch (role) {
       case 'student':
         return [
-          { name: 'Dashboard', href: '/student', icon: LayoutDashboard },
-          { name: 'My Application', href: '/student/application', icon: FileText },
-          { name: 'Sponsor Matches', href: '/student/matches', icon: Users },
-          { name: 'Profile', href: '/student/profile', icon: UserCircle },
+          { name: 'Dashboard', href: '/dashboard/student', icon: LayoutDashboard },
+          { name: 'My Application', href: '/dashboard/student/application', icon: FileText },
+          { name: 'Sponsor Matches', href: '/dashboard/student/matches', icon: Users },
+          { name: 'Profile', href: '/dashboard/student/settings', icon: UserCircle },
         ]
       case 'sponsor':
         return [
@@ -94,19 +95,42 @@ export function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
 
   return (
     <>
-      <div 
-        className={`fixed inset-y-0 left-0 z-50 w-64 bg-slate-900 border-r border-slate-800 flex flex-col pt-8 transform transition-transform duration-300 ease-in-out lg:relative lg:translate-x-0 ${
-          isOpen ? 'translate-x-0' : '-translate-x-full'
-        }`}
+      <div
+        className={`fixed inset-y-0 left-0 z-50 w-64 bg-slate-900 border-r border-slate-800 flex flex-col pt-8 transform transition-transform duration-300 ease-in-out lg:relative lg:translate-x-0 ${isOpen ? 'translate-x-0' : '-translate-x-full'
+          }`}
       >
-        {/* Branding */}
         <div className="px-6 mb-10 flex items-center justify-between">
-          <Link href="/" className="flex items-center space-x-2">
-            <span className="text-xl font-bold bg-gradient-to-r from-teal-400 to-indigo-400 text-transparent bg-clip-text">
-              EdAfrica.
-            </span>
+          <Link href="/" className="flex items-center space-x-2 group">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              className="flex items-center"
+            >
+              {"Indigent-Sc".split("").map((char, index) => (
+                <motion.span
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.5 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{
+                    delay: 0.1 + index * 0.03,
+                    type: "spring",
+                    stiffness: 200
+                  }}
+                  className="text-xl font-black bg-gradient-to-r from-teal-400 via-indigo-400 to-teal-400 bg-[length:200%_auto] text-transparent bg-clip-text inline-block hover:animate-shimmer"
+                >
+                  {char}
+                </motion.span>
+              ))}
+              <motion.div
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ delay: 0.6 }}
+                className="w-1.5 h-1.5 rounded-full bg-teal-400 ml-0.5 mt-2 shadow-[0_0_8px_rgba(45,212,191,0.6)]"
+              />
+            </motion.div>
           </Link>
-          <button 
+          <button
             onClick={() => setIsOpen(false)}
             className="lg:hidden p-1 text-slate-400 hover:text-white"
           >
@@ -127,11 +151,10 @@ export function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
                 onClick={() => {
                   if (window.innerWidth < 1024) setIsOpen(false)
                 }}
-                className={`flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors ${
-                  isActive 
-                    ? 'bg-indigo-500/10 text-indigo-400' 
+                className={`flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors ${isActive
+                    ? 'bg-indigo-500/10 text-indigo-400'
                     : 'text-slate-400 hover:text-slate-200 hover:bg-white/5'
-                }`}
+                  }`}
               >
                 <Icon className="w-5 h-5" />
                 <span className="font-medium">{item.name}</span>

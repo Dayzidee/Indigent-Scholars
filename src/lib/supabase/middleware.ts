@@ -37,7 +37,7 @@ export async function updateSession(request: NextRequest) {
 
   const isAuthRoute = request.nextUrl.pathname.startsWith('/login') || request.nextUrl.pathname.startsWith('/register')
   const isDashboardRoute = request.nextUrl.pathname.startsWith('/dashboard') || 
-                           request.nextUrl.pathname.startsWith('/student') || 
+                           request.nextUrl.pathname.startsWith('/dashboard/student') || 
                            request.nextUrl.pathname.startsWith('/sponsor') || 
                            request.nextUrl.pathname.startsWith('/admin')
 
@@ -70,12 +70,12 @@ export async function updateSession(request: NextRequest) {
     // Student trying to access sponsor/admin routes
     if (role === 'student' && (path.startsWith('/sponsor') || path.startsWith('/admin'))) {
       const url = request.nextUrl.clone()
-      url.pathname = '/student'
+      url.pathname = '/dashboard/student'
       return NextResponse.redirect(url)
     }
 
     // Sponsor trying to access student/admin routes
-    if (role === 'sponsor' && (path.startsWith('/student') || path.startsWith('/admin'))) {
+    if (role === 'sponsor' && (path.startsWith('/dashboard/student') || path.startsWith('/admin'))) {
       const url = request.nextUrl.clone()
       url.pathname = '/sponsor'
       return NextResponse.redirect(url)

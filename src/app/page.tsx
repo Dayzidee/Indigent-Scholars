@@ -168,21 +168,21 @@ export default function Home() {
                 <div className="flex -space-x-4 hover:space-x-[-8px] transition-all duration-300">
                   <div className="w-12 h-12 rounded-full border-2 border-surface bg-neutral-200 overflow-hidden transform transition-transform hover:scale-110 hover:z-10 object-cover shadow-sm">
                     <img
-                        className="w-full h-full object-cover"
+                      className="w-full h-full object-cover"
                       alt="Student 1"
                       src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPadQTDXvdh_2W79fq73usheXqlPQulQbGbA0uGI_IGwLeFt4vX1FMKq3b99C68s6nNfYXQHTDs56EG_OREPBdxuEh4W5CJ3FHaMktb5yL3vhL5wFSpzwo8syIXE5p1jRV0c5vRYeUxaLGPVkAAvXk6XffwmVxH_D6N8Qsa4MRYnvVJHCSt3-DTpB4uw3ByXQixI-27JGYxnLc68syPZsAaoc5-oD6yJ_lm6GEQFXhPoFLfCR36bNEvCS4J_Pv3kpq5Hxr77kaug0I"
                     />
                   </div>
                   <div className="w-12 h-12 rounded-full border-2 border-surface bg-neutral-300 overflow-hidden transform transition-transform hover:scale-110 hover:z-10 object-cover shadow-sm">
                     <img
-                        className="w-full h-full object-cover"
+                      className="w-full h-full object-cover"
                       alt="Student 2"
                       src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUkK5ptGuFrgBB7-_IG6Qpo_v7_JXZrU6CbfiitqypbuxivbfymkJtekX0YfUhLvv-FZCMpnGbjFD93vPtUdyTXr793Io3IXILVTI_FHB8JTTIF7nIaM7xaFuk9FOagP6aya7AjjdL36iPXviXE41Ylgl_et76ROCXq8oU3Jhv9Dc4FWy29VlqgU5zf24TkLDMymHRxnSPaETgYZBWfSoUclvS1eEiImWno1TUa9w817xR59fHittImScK0DyzgJGf2oQP5OjfcFjl"
                     />
                   </div>
                   <div className="w-12 h-12 rounded-full border-2 border-surface bg-neutral-400 overflow-hidden transform transition-transform hover:scale-110 hover:z-10 object-cover shadow-sm">
                     <img
-                        className="w-full h-full object-cover"
+                      className="w-full h-full object-cover"
                       alt="Student 3"
                       src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYwzzeQJLjimrEQ08tOuRAvH6iJRmM0pAHbU1pkLcrmanErsc10JPQv1v7M9GU-F4m5xq4G9kSmbbfMWYBl3oGaR4Zau2HBBjn6SlDDm-IomJ-zdUPCAjrRxpTwKwrsJRsgC3lDby1xgozHPFGyKsYgyeidRJDV5DYJDoRWSa4BiclTz2XKu1pF2DbjzpyKTkMCh1kiiyQwl7oLiOSnrZoAnjh5DFnEt3dP6n6JyeWRPu3E2zrcJYVsZlvP08FjF4Rv2u_mI70JJqP"
                     />
@@ -370,7 +370,7 @@ export default function Home() {
               </div>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-8 flex-1">
                 {["UNILAG", "UI IBADAN", "ABU ZARIA", "UNN", "LASU", "OAU IFE"].map((school, i) => (
-                    <div key={i} className="h-20 flex items-center justify-center grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300 transform hover:scale-110 cursor-pointer">
+                  <div key={i} className="h-20 flex items-center justify-center grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300 transform hover:scale-110 cursor-pointer">
                     <span className="font-bold text-xl text-neutral-500 hover:text-primary tracking-tight">{school}</span>
                     <span className="material-symbols-outlined opacity-0 group-hover:opacity-100 absolute -right-2 top-0 text-secondary text-xs transition-opacity delay-75">verified</span>
                   </div>
@@ -677,7 +677,7 @@ export default function Home() {
                     className="text-neutral-500 font-bold text-sm px-4 hover:text-primary transition-colors flex items-center gap-1"
                     onClick={scrollLeft}
                   >
-                     <span className="material-symbols-outlined text-sm">arrow_back</span>
+                    <span className="material-symbols-outlined text-sm">arrow_back</span>
                     Previous
                   </button>
                   <button className="bg-primary text-white px-10 py-4 rounded-xl font-headline font-extrabold text-sm shadow-[0_8px_20px_rgba(0,82,204,0.3)] hover:shadow-[0_10px_25px_rgba(0,82,204,0.4)] hover:-translate-y-1 hover:bg-[#0042a3] transition-all duration-300">

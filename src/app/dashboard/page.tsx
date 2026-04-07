@@ -33,7 +33,7 @@ export default async function DashboardPage() {
   }
 
   if (profile.role === 'student') {
-    return redirect('/student');
+    return redirect('/dashboard/student');
   }
 
   if (profile.role === 'admin') {

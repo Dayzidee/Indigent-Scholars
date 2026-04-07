@@ -28,8 +28,8 @@ export async function submitApplication(formData: {
 
   if (error) throw error
 
-  revalidatePath('/student')
-  revalidatePath('/student/application')
+  revalidatePath('/dashboard/student')
+  revalidatePath('/dashboard/student/application')
   return data
 }
 
@@ -46,5 +46,30 @@ export async function getStudentApplication() {
     .single()
 
   if (error && error.code !== 'PGRST116') throw error // PGRST116 is no rows found
+  return data
+}
+
+export async function updateProfileAction(formData: {
+  full_name: string
+  email: string
+}) {
+  const supabase = await createClient()
+  const { data: { user } } = await supabase.auth.getUser()
+
+  if (!user) throw new Error('Unauthorized')
+
+  const { data, error } = await supabase
+    .from('profiles')
+    .update({
+      full_name: formData.full_name,
+      email: formData.email,
+    })
+    .eq('id', user.id)
+    .select()
+    .single()
+
+  if (error) throw error
+
+  revalidatePath('/dashboard/student/settings')
   return data
 }

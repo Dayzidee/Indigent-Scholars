@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Outfit } from "next/font/google";
 import "./globals.css";
 import { ModalProvider } from "@/components/providers/ModalProvider";
-import { GoldenAfricaGlobe } from "@/components/ui/GoldenAfricaGlobe";
+import { NavigationWrapper } from "@/components/layout/NavigationWrapper";
+
 // ─── Design system fonts ─────────────────────────────────────
 const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",
@@ -23,9 +24,6 @@ export const metadata: Metadata = {
   description:
     "Nigeria's most prestigious academic support ecosystem. Connecting verified scholars with sponsors.",
 };
-
-import { TopNav } from "@/components/layout/TopNav";
-import { Footer } from "@/components/layout/Footer";
 
 // ─── Root Layout ─────────────────────────────────────────────
 export default function RootLayout({
@@ -48,13 +46,9 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col font-body bg-surface text-on-surface selection:bg-secondary-container">
         <ModalProvider>
-          <TopNav />
-          <main className="flex-1">
+          <NavigationWrapper>
             {children}
-          </main>
-          <Footer />
-          {/* Global Golden 3D Background */}
-          <GoldenAfricaGlobe />
+          </NavigationWrapper>
         </ModalProvider>
       </body>
     </html>

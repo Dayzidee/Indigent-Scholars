@@ -10,6 +10,9 @@ export function TopNav() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
 
+  // Hide TopNav on dashboard routes
+  if (pathname?.startsWith('/dashboard')) return null;
+
   const navLinks = [
     { label: 'Home', href: '/' },
     { label: 'About', href: '/about' },
@@ -18,19 +21,43 @@ export function TopNav() {
   ];
 
   return (
-    <motion.nav 
+    <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-neutral-200"
     >
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-        <Link href="/" className="flex items-center space-x-2 shrink-0">
-          <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-on-primary font-bold">
-            IS
-          </div>
-          <div className="text-xl font-bold tracking-tighter text-primary whitespace-nowrap">
-            Indigent Scholars
-          </div>
+        <Link href="/" className="flex items-center space-x-2 group relative">
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="flex items-center"
+          >
+            {"Indigent-Sc".split("").map((char, index) => (
+              <motion.span
+                key={index}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  delay: 0.1 + index * 0.03,
+                  duration: 0.4,
+                  ease: "easeOut"
+                }}
+                className="text-xl font-black bg-gradient-to-r from-blue-600 via-indigo-500 to-blue-600 bg-[length:200%_auto] text-transparent bg-clip-text inline-block hover:animate-shimmer"
+              >
+                {char}
+              </motion.span>
+            ))}
+
+            {/* Subtle accent dot */}
+            <motion.span
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ delay: 0.6, type: "spring", stiffness: 200 }}
+              className="w-1.5 h-1.5 rounded-full bg-blue-600 ml-0.5 mt-2 shadow-[0_0_8px_rgba(37,99,235,0.6)]"
+            />
+          </motion.div>
         </Link>
 
         {/* Desktop Nav */}
@@ -39,11 +66,10 @@ export function TopNav() {
             <Link
               key={item.href}
               href={item.href}
-              className={`font-manrope tracking-tight text-sm font-semibold transition-colors ${
-                 (pathname === item.href || (item.href !== '/' && pathname.startsWith(item.href)))
+              className={`font-manrope tracking-tight text-sm font-semibold transition-colors ${(pathname === item.href || (item.href !== '/' && pathname.startsWith(item.href)))
                   ? 'text-primary border-b-2 border-primary'
                   : 'text-neutral-600 hover:text-primary border-b-2 border-transparent'
-              }`}
+                }`}
             >
               {item.label}
             </Link>
@@ -65,7 +91,7 @@ export function TopNav() {
           </div>
 
           {/* Mobile Menu Toggle */}
-          <button 
+          <button
             className="md:hidden p-2 text-neutral-600"
             onClick={() => setIsOpen(!isOpen)}
           >
@@ -89,11 +115,10 @@ export function TopNav() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setIsOpen(false)}
-                  className={`font-manrope tracking-tight text-lg font-semibold transition-colors ${
-                    (pathname === item.href || (item.href !== '/' && pathname.startsWith(item.href)))
+                  className={`font-manrope tracking-tight text-lg font-semibold transition-colors ${(pathname === item.href || (item.href !== '/' && pathname.startsWith(item.href)))
                       ? 'text-primary'
                       : 'text-neutral-600'
-                  }`}
+                    }`}
                 >
                   {item.label}
                 </Link>
