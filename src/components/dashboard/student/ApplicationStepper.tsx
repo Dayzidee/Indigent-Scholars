@@ -22,7 +22,8 @@ export function ApplicationStepper({ steps, className }: ApplicationStepperProps
   const progressPercentage = (progressIndex / (steps.length - 1)) * 100
 
   return (
-    <div className={cn("relative mb-16 px-4", className)}>
+    <div className={cn("relative mb-16 overflow-x-auto pb-4 sm:pb-0 scrollbar-hide", className)}>
+      <div className="min-w-[400px] relative px-4">
       {/* Background Line */}
       <div className="absolute top-1/2 left-0 w-full h-1 bg-surface-container-high -translate-y-1/2 rounded-full" />
       
@@ -63,5 +64,6 @@ export function ApplicationStepper({ steps, className }: ApplicationStepperProps
         ))}
       </div>
     </div>
+  </div>
   )
 }
