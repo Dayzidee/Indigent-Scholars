@@ -5,7 +5,16 @@ import Image from 'next/image'
 import { cn } from '@/lib/utils'
 import { useState } from 'react'
 
-const teamMembers = [
+interface TeamMember {
+  name: string
+  email: string
+  role: string
+  roleColor: string
+  initial?: string
+  image?: string
+}
+
+const teamMembers: TeamMember[] = [
   { name: 'Adebola Williams', email: 'adebola.w@globalscholars.org', initial: 'AW', role: 'Admin', roleColor: 'bg-primary/10 text-primary' },
   { 
     name: 'Chioma Okeke', 
@@ -199,7 +208,7 @@ export function SponsorSettings() {
               {teamMembers.map((member, idx) => (
                 <div key={idx} className="flex items-center justify-between p-5 bg-surface-container-low/30 rounded-3xl hover:bg-surface-container-low/60 transition-all border border-transparent hover:border-outline-variant/10 group">
                   <div className="flex items-center gap-5">
-                    <div className={cn("w-12 h-12 rounded-2xl flex items-center justify-center font-black text-sm shadow-inner transition-transform group-hover:scale-105 duration-500 overflow-hidden", member.bgColor || member.roleColor)}>
+                    <div className={cn("w-12 h-12 rounded-2xl flex items-center justify-center font-black text-sm shadow-inner transition-transform group-hover:scale-105 duration-500 overflow-hidden", member.roleColor)}>
                       {member.image ? (
                         <Image src={member.image} alt={member.name} width={48} height={48} className="w-full h-full object-cover" />
                       ) : member.initial}
