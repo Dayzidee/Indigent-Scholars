@@ -8,22 +8,10 @@ import { ActionCard } from './ActionCard'
 export function RedesignedHero() {
   return (
     <section className="relative pt-12 md:pt-20 pb-8 px-6 lg:px-12 max-w-7xl mx-auto overflow-hidden">
-      {/* Ambient Rotating Background (The Oracle) */}
-      <div className="absolute inset-0 -z-20 flex items-center justify-center pointer-events-none opacity-60">
-        <motion.div
-           animate={{ rotate: 360 }}
-           transition={{ duration: 80, repeat: Infinity, ease: 'linear' }}
-           className="relative w-[600px] h-[600px] md:w-[800px] md:h-[800px]"
-        >
-          <div className="absolute inset-0 border-[1.5px] border-primary/10 rounded-full scale-100" />
-          <div className="absolute inset-0 border-[1px] border-primary/20 rounded-full scale-[0.8] rotate-45" />
-          <div className="absolute inset-0 border-[1px] border-secondary/10 rounded-full scale-[0.6] -rotate-12" />
-        </motion.div>
-      </div>
 
       <div className="flex flex-col gap-8 md:gap-10 relative z-10">
         {/* Top Section: Centralized Countdown & Goal */}
-        <div className="space-y-4 text-center max-w-4xl mx-auto">
+        <div className="space-y-4 text-center max-w-4xl mx-auto p-8 rounded-[3rem] bg-white/5 backdrop-blur-xl border border-white/10">
           <MissionCountdown />
           <motion.p 
             initial={{ opacity: 0, scale: 0.98 }}

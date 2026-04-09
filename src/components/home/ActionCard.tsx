@@ -16,7 +16,7 @@ export function ActionCard({ title, description, href, buttonText, variant = 'pr
   return (
     <motion.div
       whileHover={{ y: -3, scale: 1.01 }}
-      className="group relative bg-surface-container-lowest p-7 rounded-[1.5rem] border border-outline-variant/10 shadow-xl shadow-primary/[0.01] flex flex-col gap-5 overflow-hidden max-w-sm"
+      className="group relative bg-white/5 backdrop-blur-xl p-7 rounded-[1.5rem] border border-white/10 shadow-xl shadow-primary/[0.01] flex flex-col gap-5 overflow-hidden max-w-sm"
     >
       {/* Accent Glow */}
       <div className={cn(

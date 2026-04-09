@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 
 export function ImpactTypography() {
   return (
-    <section className="px-6 lg:px-12 py-16 max-w-7xl mx-auto">
+    <section className="px-6 lg:px-12 py-16 max-w-7xl mx-auto backdrop-blur-3xl bg-white/5 rounded-[4rem] border border-white/5 my-12">
       <div className="flex flex-col gap-10">
         <div className="space-y-4">
           <motion.h2 
