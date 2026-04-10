@@ -9,8 +9,9 @@ async function loginAs(page: Page, email: string, pass: string) {
   await page.getByLabel(/Password/i).fill(pass);
   // Target the specific hardened button ID to avoid nav ambiguity
   await page.locator('#login-submit-btn').click();
-  await page.waitForTimeout(1000);
-  await page.waitForURL(/.*dashboard.*/, { timeout: 15000 });
+  
+  // Use a web-first assertion to wait for the redirect
+  await expect(page).toHaveURL(/.*dashboard.*/, { timeout: 15000 });
 }
 
 test.describe('Authenticated Dashboard Audit - Sponsor Portfolio', () => {

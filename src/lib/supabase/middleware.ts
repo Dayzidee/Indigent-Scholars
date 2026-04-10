@@ -36,10 +36,10 @@ export async function updateSession(request: NextRequest) {
   } = await supabase.auth.getUser()
 
   const isAuthRoute = request.nextUrl.pathname.startsWith('/login') || request.nextUrl.pathname.startsWith('/register')
-  const isDashboardRoute = request.nextUrl.pathname.startsWith('/dashboard') || 
-                           request.nextUrl.pathname.startsWith('/dashboard/student') || 
-                           request.nextUrl.pathname.startsWith('/sponsor') || 
-                           request.nextUrl.pathname.startsWith('/admin')
+  const isDashboardRoute = 
+    request.nextUrl.pathname === '/dashboard' ||
+    request.nextUrl.pathname.startsWith('/dashboard/') || 
+    request.nextUrl.pathname.startsWith('/admin')
 
   // 1. Not logged in and trying to access a protected route
   if (!user && isDashboardRoute) {
@@ -68,7 +68,7 @@ export async function updateSession(request: NextRequest) {
     const path = request.nextUrl.pathname
 
     // Student trying to access sponsor/admin routes
-    if (role === 'student' && (path.startsWith('/sponsor') || path.startsWith('/admin'))) {
+    if (role === 'student' && (path.startsWith('/dashboard/sponsor') || path.startsWith('/admin'))) {
       const url = request.nextUrl.clone()
       url.pathname = '/dashboard/student'
       return NextResponse.redirect(url)
@@ -77,7 +77,7 @@ export async function updateSession(request: NextRequest) {
     // Sponsor trying to access student/admin routes
     if (role === 'sponsor' && (path.startsWith('/dashboard/student') || path.startsWith('/admin'))) {
       const url = request.nextUrl.clone()
-      url.pathname = '/sponsor'
+      url.pathname = '/dashboard/sponsor'
       return NextResponse.redirect(url)
     }
 

@@ -8,8 +8,11 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   reporter: 'html',
+  expect: {
+    timeout: 10000,
+  },
   use: {
-    baseURL: 'http://localhost:3000',
+    baseURL: 'http://127.0.0.1:3000',
     trace: 'on-first-retry',
   },
 
@@ -28,4 +31,10 @@ export default defineConfig({
       use: { ...devices['iPhone SE'], defaultBrowserType: 'chromium' },
     },
   ],
+  webServer: {
+    command: 'npm run dev',
+    url: 'http://127.0.0.1:3000',
+    reuseExistingServer: !process.env.CI,
+    timeout: 120000,
+  },
 });
