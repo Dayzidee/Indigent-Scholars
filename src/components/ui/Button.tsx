@@ -57,14 +57,7 @@ export function Button({
       {/* Loading Spinner */}
       {isLoading && (
         <div className="absolute inset-0 flex items-center justify-center">
-          <motion.div
-            animate={{ rotate: 360 }}
-            transition={{ duration: 0.8, repeat: Infinity, ease: "linear" }}
-            className={cn(
-              "w-5 h-5 border-2 rounded-full",
-              variant === 'primary' || variant === 'secondary' ? "border-white/30 border-t-white" : "border-zinc-300 border-t-[#0052CC]"
-            )}
-          />
+          <span className="material-symbols-outlined text-[1.5em] animate-spin">refresh</span>
         </div>
       )}
 

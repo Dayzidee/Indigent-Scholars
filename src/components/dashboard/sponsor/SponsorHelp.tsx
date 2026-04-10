@@ -42,7 +42,7 @@ export function SponsorHelp() {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search for articles, guides..."
-            className="w-full bg-white border border-zinc-200 rounded-2xl md:rounded-[32px] py-4 md:py-6 pl-14 md:pl-16 pr-6 md:pr-8 text-sm md:text-lg font-medium shadow-xl shadow-zinc-200/50 focus:border-[#0052CC]/30 focus:ring-4 focus:ring-[#0052CC]/5 transition-all font-body outline-none"
+            className="w-full bg-white border border-zinc-200 rounded-2xl lg:rounded-[32px] py-4 md:py-6 pl-14 md:pl-16 pr-6 md:pr-8 text-sm md:text-lg font-medium shadow-xl shadow-zinc-200/50 focus:border-[#0052CC]/30 focus:ring-4 focus:ring-[#0052CC]/5 transition-all font-body outline-none"
           />
         </div>
       </section>
@@ -53,9 +53,9 @@ export function SponsorHelp() {
           <motion.div 
             key={cat.id}
             whileHover={{ y: -5 }}
-            className="bg-white p-6 md:p-8 rounded-[32px] md:rounded-[40px] border border-zinc-100 shadow-sm hover:shadow-xl hover:shadow-[#0052CC]/5 transition-all group cursor-pointer"
+            className="bg-white p-6 md:p-8 rounded-3xl lg:rounded-[40px] border border-zinc-100 shadow-sm hover:shadow-xl hover:shadow-[#0052CC]/5 transition-all group cursor-pointer"
           >
-            <div className="w-12 h-12 md:w-16 md:h-16 rounded-[18px] md:rounded-[24px] bg-[#0052CC]/5 flex items-center justify-center mb-4 md:mb-6 group-hover:bg-[#0052CC] group-hover:text-white transition-all">
+            <div className="w-12 h-12 md:w-16 md:h-16 rounded-2xl lg:rounded-[24px] bg-[#0052CC]/5 flex items-center justify-center mb-4 md:mb-6 group-hover:bg-[#0052CC] group-hover:text-white transition-all">
               <span className="material-symbols-outlined text-2xl md:text-3xl">{cat.icon}</span>
             </div>
             <h3 className="text-lg md:text-xl font-bold text-zinc-900 mb-1 md:mb-2 font-headline">{cat.title}</h3>
@@ -65,11 +65,11 @@ export function SponsorHelp() {
       </section>
 
       {/* FAQs */}
-      <section className="bg-zinc-50 rounded-[48px] p-8 md:p-12 border border-zinc-100">
+      <section className="bg-zinc-50 rounded-3xl lg:rounded-[48px] p-6 sm:p-12 border border-zinc-100">
         <h2 className="text-3xl font-black text-zinc-900 mb-10 font-headline tracking-tight px-4 text-center">Frequently Asked Questions</h2>
         <div className="grid gap-4">
           {faqs.map((faq, i) => (
-            <div key={i} className="bg-white p-6 md:p-8 rounded-[32px] border border-zinc-100 hover:border-[#0052CC]/20 transition-all">
+            <div key={i} className="bg-white p-6 md:p-8 rounded-3xl lg:rounded-[32px] border border-zinc-100 hover:border-[#0052CC]/20 transition-all">
               <h4 className="font-black text-lg text-zinc-900 mb-3 font-headline leading-tight">{faq.question}</h4>
               <p className="text-zinc-500 text-sm font-body leading-relaxed">{faq.answer}</p>
             </div>
@@ -78,7 +78,7 @@ export function SponsorHelp() {
       </section>
 
       {/* Contact Banner */}
-      <section className="bg-[#0052CC] rounded-[48px] p-10 md:p-16 text-center space-y-8 shadow-2xl shadow-blue-600/20 relative overflow-hidden group">
+      <section className="bg-[#0052CC] rounded-3xl lg:rounded-[48px] p-8 md:p-16 text-center space-y-8 shadow-2xl shadow-blue-600/20 relative overflow-hidden group">
         <div className="absolute top-0 right-0 opacity-10 pointer-events-none transform translate-x-1/4 -translate-y-1/4 group-hover:scale-110 transition-transform duration-1000">
           <span className="material-symbols-outlined text-[300px] text-white">support_agent</span>
         </div>

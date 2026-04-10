@@ -22,7 +22,7 @@ export default function SponsorLayout({ children }: SponsorLayoutProps) {
       <div className="flex-1 lg:ml-64 transition-all duration-300 min-h-screen flex flex-col relative min-w-0 max-w-full overflow-x-hidden">
         <SponsorTopNavBar onMenuClick={() => setIsSidebarOpen(true)} />
         
-        <main className="pt-16 flex-1 relative p-4 md:p-8 lg:p-10 min-w-0">
+        <main className="pt-24 md:pt-32 flex-1 relative p-4 md:p-8 lg:p-10 min-w-0">
           <AnimatePresence mode="wait">
             <motion.div
               key={usePathname()}

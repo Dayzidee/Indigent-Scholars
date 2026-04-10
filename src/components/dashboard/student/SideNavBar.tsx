@@ -65,7 +65,6 @@ export function SideNavBar({ isOpen, onClose }: SideNavBarProps) {
         <div className="px-6 py-10 flex justify-between items-center border-b border-zinc-50">
           <div>
             <h1 className="text-xl font-black text-[#0052CC] tracking-tighter font-headline mb-0.5">INDIGENT-SC</h1>
-            <p className="text-[9px] text-zinc-400 font-extrabold font-headline uppercase tracking-[0.2em] leading-none">Architecture of Hope</p>
           </div>
           <button onClick={onClose} className="md:hidden p-2 hover:bg-zinc-200 rounded-lg transition-colors">
             <span className="material-symbols-outlined text-zinc-600">close</span>
@@ -97,9 +96,11 @@ export function SideNavBar({ isOpen, onClose }: SideNavBarProps) {
         </nav>
 
         <div className="p-4 border-t border-zinc-100">
-          <button className="w-full py-3 px-4 bg-[#003d9b] text-white font-semibold rounded-xl hover:opacity-90 transition-all flex items-center justify-center gap-2 font-headline tracking-tight">
-            Apply for Funding
-          </button>
+          <Link href="/dashboard/student/application">
+            <button className="w-full py-3 px-4 bg-[#003d9b] text-white font-semibold rounded-xl hover:opacity-90 transition-all flex items-center justify-center gap-2 font-headline tracking-tight">
+              Apply for Funding
+            </button>
+          </Link>
         </div>
 
         <div className="px-2 pb-6 space-y-2">

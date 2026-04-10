@@ -74,7 +74,7 @@ export function SearchableSelect({
           hasValue ? "text-zinc-900" : "text-zinc-400",
           icon && "pl-2"
         )}>
-          {value || placeholder || "Select..."}
+          {(isOpen || hasValue) ? (value || placeholder || "Select...") : ""}
         </div>
 
         {/* Dropdown Arrow */}

@@ -81,7 +81,7 @@ export function CategorizedProfile() {
       </Section>
 
       {/* 3. Test Scores */}
-      <Section title="Metrics" subtitle="Academic Performance" icon="assessment" colorClass="bg-amber-50 text-amber-600">
+      <Section title="Test Scores" subtitle="Academic Performance" icon="assessment" colorClass="bg-amber-50 text-amber-600">
         <div className="space-y-4">
            {/* CGPA Card */}
            <div className="bg-amber-100/30 p-4 rounded-2xl border border-amber-100 flex items-center justify-between">
@@ -97,8 +97,8 @@ export function CategorizedProfile() {
            <div className="grid grid-cols-2 gap-4 pt-2">
              <DataItem label="JAMB Score" value="312" />
              <DataItem label="WAEC Result" value="8 Distinctions" />
+             <DataItem label="Post-UTME" value="288" />
              <DataItem label="Scholarship Rank" value="Top 5%" />
-             <DataItem label="Attendance" value="98%" />
            </div>
         </div>
       </Section>

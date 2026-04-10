@@ -81,7 +81,7 @@ export function SponsorEducation() {
           { label: 'Active Scholarships', value: '128', color: 'text-[#0052CC]', icon: 'school' },
           { label: 'Upcoming Payments', value: '₦1.2M', color: 'text-zinc-900', icon: 'payments' }
         ].map((metric, i) => (
-          <div key={i} className="bg-white p-8 rounded-[32px] border border-zinc-100 shadow-sm flex items-center justify-between group">
+          <div key={i} className="bg-white p-6 sm:p-8 rounded-3xl lg:rounded-[32px] border border-zinc-100 shadow-sm flex items-center justify-between group">
             <div className="space-y-2">
               <p className="text-[10px] font-black uppercase tracking-widest text-zinc-400 font-label">{metric.label}</p>
               <p className={cn("text-3xl font-black font-headline", metric.color)}>{metric.value}</p>
@@ -94,7 +94,7 @@ export function SponsorEducation() {
       </section>
 
       {/* Table Interface (IMAGE_2 Alignment) */}
-      <section className="bg-white rounded-[32px] border border-zinc-100 shadow-sm overflow-hidden min-h-[500px] flex flex-col">
+      <section className="bg-white rounded-3xl lg:rounded-[32px] border border-zinc-100 shadow-sm overflow-hidden min-h-[500px] flex flex-col">
         {/* Table Toolbar */}
         <div className="p-6 border-b border-zinc-50 flex flex-col md:flex-row justify-between gap-6 items-center">
           <div className="flex bg-zinc-100 p-1.5 rounded-2xl w-full md:w-auto overflow-x-auto scrollbar-hide">

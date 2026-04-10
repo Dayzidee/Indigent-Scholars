@@ -4,6 +4,8 @@ import Link from 'next/link';
 import { signUpAction } from '@/lib/actions/auth';
 import { useSearchParams } from 'next/navigation';
 import { Suspense } from 'react';
+import { DocumentUpload } from '@/components/ui/DocumentUpload';
+import { AuthSubmitButton } from '@/components/auth/AuthSubmitButton';
 
 function SponsorRegisterContent() {
   const searchParams = useSearchParams();
@@ -117,6 +119,17 @@ function SponsorRegisterContent() {
                 <option>Alumni Association</option>
               </select>
             </div>
+
+            <div className="pt-6 border-t border-outline-variant/10">
+              <div className="flex items-center gap-3 mb-6">
+                <span className="w-8 h-8 rounded-full bg-secondary text-on-secondary flex items-center justify-center text-[10px] font-black">AI</span>
+                <h3 className="text-xs font-black uppercase tracking-[0.2em] text-secondary font-label">Identity Verification</h3>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <DocumentUpload label="National Identity (NIN)" icon="badge" className="bg-white" />
+                <DocumentUpload label="Voter's Card" icon="how_to_reg" className="bg-white" />
+              </div>
+            </div>
             
             <div className="pt-4">
               <div className="flex items-start gap-3 mb-8">
@@ -125,9 +138,11 @@ function SponsorRegisterContent() {
                   I agree to the <Link className="text-secondary font-bold hover:underline" href="#">Sponsorship Charter</Link> and verify that all funds are provided in compliance with anti-money laundering regulations.
                 </p>
               </div>
-              <button type="submit" className="w-full py-4 bg-secondary text-on-secondary font-headline font-extrabold text-lg rounded-xl shadow-xl shadow-secondary/10 hover:opacity-90 hover:shadow-2xl hover:shadow-secondary/20 hover:-translate-y-1 transition-all duration-300 active:scale-[0.98]">
-                Register as Sponsor
-              </button>
+              <AuthSubmitButton 
+                label="Register as Sponsor"
+                loadingLabel="Registering..."
+                className="bg-secondary text-on-secondary font-headline font-extrabold text-lg rounded-xl shadow-xl shadow-secondary/10 hover:opacity-90 hover:shadow-2xl hover:shadow-secondary/20 hover:-translate-y-1 transition-all duration-300 active:scale-[0.98]"
+              />
             </div>
             
             <p className="text-center text-sm text-on-surface-variant mt-6">

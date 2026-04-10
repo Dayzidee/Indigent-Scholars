@@ -9,6 +9,29 @@ import { GoldenAfricaGlobe } from '@/components/ui/GoldenAfricaGlobe';
 
 export default function Home() {
   const carouselRef = useRef<HTMLDivElement>(null);
+  
+  const [formData, setFormData] = React.useState({
+    fullName: '',
+    email: '',
+    phone: '',
+    gender: '',
+    dateOfBirth: '',
+    maritalStatus: '',
+    university: '',
+    programOfStudy: '',
+    yearOfStudy: '',
+    studentId: '',
+    stateOfOrigin: '',
+    lga: '',
+    jambRegNumber: '',
+    matricNumber: '',
+    waecPin: '',
+    waecSerial: '',
+    lastGpa: '',
+    admissionLetterDesc: '',
+    govIdDesc: ''
+  });
+
 
   const scrollLeft = () => {
     if (carouselRef.current) {
@@ -424,51 +447,139 @@ export default function Home() {
             ref={carouselRef}
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
-            {/* Slide 1: Basic Details */}
-            <div className="min-w-full snap-center bg-white/10 backdrop-blur-2xl rounded-[3rem] border border-white/10 shadow-2xl p-10 md:p-16">
-              <div className="flex items-center gap-6 mb-12">
+            {/* Slide 1: Comprehensive Data Input */}
+            <div className="min-w-full snap-center bg-white/10 backdrop-blur-2xl rounded-[3rem] border border-white/10 shadow-2xl p-10 md:p-14">
+              <div className="flex items-center gap-6 mb-10">
                 <div className="w-16 h-16 rounded-[1.5rem] bg-white/5 flex items-center justify-center border border-white/10 shadow-inner">
                   <span className="material-symbols-outlined text-primary text-3xl">
-                    person_outline
+                    edit_note
                   </span>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-headline font-black text-on-surface">1. Basic Details</h3>
-                  <p className="text-[10px] font-black text-neutral-400 uppercase tracking-widest mt-1 font-label">
-                    Personal Information
+                  <h3 className="text-2xl font-headline font-black text-on-surface tracking-tight">1. Scholar Credentials</h3>
+                  <p className="text-[10px] font-black text-neutral-400 uppercase tracking-widest mt-1 font-label leading-none">
+                    Complete your high-granularity profile
                   </p>
                 </div>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {[
-                  { label: 'Full Name', placeholder: 'e.g. Adebayo Chioma' },
-                  { label: 'Email Address', placeholder: 'name@university.edu.ng' },
-                  { label: 'University Name', placeholder: 'e.g. University of Lagos' },
-                  { label: 'Student ID Number', placeholder: 'e.g. 2024/001/ENG' }
-                ].map(field => (
-                  <div key={field.label} className="space-y-3">
-                    <label className="text-[11px] font-black uppercase tracking-widest text-neutral-500 ml-1 font-label">
-                      {field.label}
-                    </label>
-                    <input
-                      className="w-full bg-surface-container-low border border-transparent rounded-2xl p-5 text-sm font-medium focus:border-secondary focus:ring-4 focus:ring-secondary/5 transition-all outline-none"
-                      placeholder={field.placeholder}
-                      type="text"
-                    />
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-y-8 gap-x-6 max-h-[450px] overflow-y-auto pr-4 custom-scrollbar">
+                {/* Section A: Personal */}
+                <div className="space-y-6">
+                  <p className="text-[10px] font-black text-primary uppercase tracking-[0.2em] mb-4">A. Identity</p>
+                  <div className="space-y-4">
+                    <div className="space-y-2">
+                       <label className="text-[10px] font-black uppercase text-neutral-500 ml-1">Full Legal Name</label>
+                       <input value={formData.fullName} onChange={(e) => setFormData({...formData, fullName: e.target.value})} className="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-xs font-medium focus:border-primary outline-none transition-all" placeholder="As on ID" />
+                    </div>
+                    <div className="space-y-2">
+                       <label className="text-[10px] font-black uppercase text-neutral-500 ml-1">Email Address</label>
+                       <input value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} className="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-xs font-medium focus:border-primary outline-none transition-all" placeholder="name@university.edu" />
+                    </div>
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="space-y-2">
+                         <label className="text-[10px] font-black uppercase text-neutral-500 ml-1">Phone</label>
+                         <input value={formData.phone} onChange={(e) => setFormData({...formData, phone: e.target.value})} className="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-xs font-medium focus:border-primary outline-none transition-all" placeholder="+234..." />
+                      </div>
+                      <div className="space-y-2">
+                         <label className="text-[10px] font-black uppercase text-neutral-500 ml-1">Gender</label>
+                         <select value={formData.gender} onChange={(e) => setFormData({...formData, gender: e.target.value})} className="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-xs font-medium focus:border-primary outline-none transition-all appearance-none cursor-pointer">
+                           <option value="" disabled className="bg-zinc-900">Select</option>
+                           <option value="male" className="bg-zinc-900">Male</option>
+                           <option value="female" className="bg-zinc-900">Female</option>
+                         </select>
+                      </div>
+                    </div>
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="space-y-2">
+                         <label className="text-[10px] font-black uppercase text-neutral-500 ml-1">Date of Birth</label>
+                         <input type="date" value={formData.dateOfBirth} onChange={(e) => setFormData({...formData, dateOfBirth: e.target.value})} className="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-xs font-medium focus:border-primary outline-none transition-all" />
+                      </div>
+                      <div className="space-y-2">
+                         <label className="text-[10px] font-black uppercase text-neutral-500 ml-1">Marital Status</label>
+                         <select value={formData.maritalStatus} onChange={(e) => setFormData({...formData, maritalStatus: e.target.value})} className="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-xs font-medium focus:border-primary outline-none transition-all appearance-none cursor-pointer">
+                           <option value="" disabled className="bg-zinc-900">Select</option>
+                           <option value="single" className="bg-zinc-900">Single</option>
+                           <option value="married" className="bg-zinc-900">Married</option>
+                         </select>
+                      </div>
+                    </div>
                   </div>
-                ))}
+                </div>
+
+                {/* Section B: Geographic */}
+                <div className="space-y-6">
+                  <p className="text-[10px] font-black text-primary uppercase tracking-[0.2em] mb-4">B. Origins & Institution</p>
+                  <div className="space-y-4">
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="space-y-2">
+                         <label className="text-[10px] font-black uppercase text-neutral-500 ml-1">State</label>
+                         <input value={formData.stateOfOrigin} onChange={(e) => setFormData({...formData, stateOfOrigin: e.target.value})} className="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-xs font-medium focus:border-primary outline-none transition-all" placeholder="State" />
+                      </div>
+                      <div className="space-y-2">
+                         <label className="text-[10px] font-black uppercase text-neutral-500 ml-1">LGA</label>
+                         <input value={formData.lga} onChange={(e) => setFormData({...formData, lga: e.target.value})} className="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-xs font-medium focus:border-primary outline-none transition-all" placeholder="LGA" />
+                      </div>
+                    </div>
+                    <div className="space-y-2">
+                       <label className="text-[10px] font-black uppercase text-neutral-500 ml-1">University Name</label>
+                       <input value={formData.university} onChange={(e) => setFormData({...formData, university: e.target.value})} className="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-xs font-medium focus:border-primary outline-none transition-all" placeholder="University" />
+                    </div>
+                    <div className="space-y-2">
+                       <label className="text-[10px] font-black uppercase text-neutral-500 ml-1">Course of Study</label>
+                       <input value={formData.programOfStudy} onChange={(e) => setFormData({...formData, programOfStudy: e.target.value})} className="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-xs font-medium focus:border-primary outline-none transition-all" placeholder="e.g. Computer Science" />
+                    </div>
+                    <div className="space-y-2">
+                       <label className="text-[10px] font-black uppercase text-neutral-500 ml-1">Year of Study</label>
+                       <input value={formData.yearOfStudy} onChange={(e) => setFormData({...formData, yearOfStudy: e.target.value})} className="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-xs font-medium focus:border-primary outline-none transition-all" placeholder="e.g. 3rd Year" />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Section C: Academic IDs */}
+                <div className="space-y-6">
+                  <p className="text-[10px] font-black text-primary uppercase tracking-[0.2em] mb-4">C. Verification</p>
+                  <div className="space-y-4">
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="space-y-2">
+                         <label className="text-[10px] font-black uppercase text-neutral-500 ml-1">JAMB Reg</label>
+                         <input value={formData.jambRegNumber} onChange={(e) => setFormData({...formData, jambRegNumber: e.target.value})} className="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-xs font-medium focus:border-primary outline-none transition-all" placeholder="JAMB No." />
+                      </div>
+                      <div className="space-y-2">
+                         <label className="text-[10px] font-black uppercase text-neutral-500 ml-1">Matric No.</label>
+                         <input value={formData.matricNumber} onChange={(e) => setFormData({...formData, matricNumber: e.target.value})} className="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-xs font-medium focus:border-primary outline-none transition-all" placeholder="Matric No." />
+                      </div>
+                    </div>
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="space-y-2">
+                         <label className="text-[10px] font-black uppercase text-neutral-500 ml-1">WAEC PIN</label>
+                         <input value={formData.waecPin} onChange={(e) => setFormData({...formData, waecPin: e.target.value})} className="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-xs font-medium focus:border-primary outline-none transition-all" placeholder="PIN" />
+                      </div>
+                      <div className="space-y-2">
+                         <label className="text-[10px] font-black uppercase text-neutral-500 ml-1">WAEC Serial</label>
+                         <input value={formData.waecSerial} onChange={(e) => setFormData({...formData, waecSerial: e.target.value})} className="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-xs font-medium focus:border-primary outline-none transition-all" placeholder="Serial" />
+                      </div>
+                    </div>
+                    <div className="space-y-2">
+                       <label className="text-[10px] font-black uppercase text-neutral-500 ml-1">Recent CGPA</label>
+                       <input value={formData.lastGpa} onChange={(e) => setFormData({...formData, lastGpa: e.target.value})} className="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-xs font-medium focus:border-primary outline-none transition-all" placeholder="e.g. 4.50 / 5.0" />
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className="mt-16 flex justify-end">
+
+              <div className="mt-12 flex justify-end">
                 <button
-                  className="bg-secondary text-on-secondary px-10 py-4 rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-secondary-container transition-all shadow-xl shadow-secondary/20"
+                  className="bg-secondary text-on-secondary px-10 py-4 rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-secondary-container transition-all shadow-xl shadow-secondary/20 flex items-center gap-3"
                   onClick={scrollRight}
                 >
                   Next Step
+                  <span className="material-symbols-outlined text-sm">arrow_forward</span>
                 </button>
               </div>
             </div>
 
-            {/* Slide 2: File Uploads */}
+            {/* Slide 2: Contextual Document Uploads */}
             <div className="min-w-full snap-center bg-white/10 backdrop-blur-2xl rounded-[3rem] border border-white/10 shadow-2xl p-10 md:p-16">
               <div className="flex items-center gap-6 mb-12">
                 <div className="w-16 h-16 rounded-[1.5rem] bg-white/5 flex items-center justify-center border border-white/10 shadow-inner">
@@ -477,30 +588,43 @@ export default function Home() {
                   </span>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-headline font-black text-on-surface">2. File Uploads</h3>
+                  <h3 className="text-2xl font-headline font-black text-on-surface">2. Verification Vault</h3>
                   <p className="text-[10px] font-black text-neutral-400 uppercase tracking-widest mt-1 font-label">
-                    Verification Documents
+                    Upload & Describe your documents
                   </p>
                 </div>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                 {[
-                  { icon: 'description', title: 'University Admission Letter' },
-                  { icon: 'badge', title: 'Government ID (Voter\'s/NIN)' }
+                  { icon: 'description', title: 'Admission Letter', key: 'admissionLetterDesc' },
+                  { icon: 'badge', title: 'National Identity (NIN)', key: 'govIdDesc' }
                 ].map(upload => (
-                  <div key={upload.title} className="border-4 border-dashed border-outline-variant/20 rounded-[2.5rem] p-12 text-center hover:border-secondary hover:bg-secondary/5 transition-all cursor-pointer group/upload bg-surface-container-low/30">
-                    <span className="material-symbols-outlined text-6xl text-neutral-300 group-hover/upload:text-secondary mb-6 transition-colors duration-500">
-                      {upload.icon}
-                    </span>
-                    <h4 className="text-base font-black mb-3 text-on-surface">
-                      {upload.title}
-                    </h4>
-                    <p className="text-xs text-on-surface-variant font-bold uppercase tracking-widest group-hover/upload:text-secondary transition-colors">
-                      Click to Browse
-                    </p>
+                  <div key={upload.title} className="space-y-6">
+                    <div className="border-[3px] border-dashed border-white/10 rounded-[2.5rem] p-10 text-center hover:border-secondary hover:bg-white/5 transition-all cursor-pointer group/upload bg-black/20">
+                      <span className="material-symbols-outlined text-5xl text-neutral-500 group-hover/upload:text-secondary mb-4 transition-colors">
+                        {upload.icon}
+                      </span>
+                      <h4 className="text-sm font-black text-on-surface uppercase tracking-widest mb-2 font-label">
+                        {upload.title}
+                      </h4>
+                      <p className="text-[10px] text-neutral-400 font-bold uppercase tracking-widest">
+                        Click to Browse
+                      </p>
+                    </div>
+                    <div className="space-y-2 px-2">
+                       <label className="text-[9px] font-black uppercase text-primary tracking-widest">Document Description</label>
+                       <input 
+                         value={formData[upload.key as keyof typeof formData]} 
+                         onChange={(e) => setFormData({...formData, [upload.key]: e.target.value})}
+                         className="w-full bg-white/5 border border-white/10 rounded-xl p-3 text-[11px] font-medium focus:border-secondary outline-none transition-all" 
+                         placeholder="e.g. Official letter from UNILAG Registrar" 
+                       />
+                    </div>
                   </div>
                 ))}
               </div>
+
               <div className="mt-16 flex justify-between items-center">
                 <button
                   className="text-neutral-500 font-black text-xs uppercase tracking-widest hover:text-primary transition-colors flex items-center gap-3 font-label"
@@ -510,76 +634,71 @@ export default function Home() {
                   Previous
                 </button>
                 <button
-                  className="bg-secondary text-on-secondary px-10 py-4 rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-secondary-container transition-all shadow-xl shadow-secondary/20"
+                  className="bg-secondary text-on-secondary px-10 py-4 rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-secondary-container transition-all shadow-xl shadow-secondary/20 flex items-center gap-3"
                   onClick={scrollRight}
                 >
                   Next Step
+                  <span className="material-symbols-outlined text-sm">arrow_forward</span>
                 </button>
               </div>
             </div>
 
-            {/* Slide 3: Review & Submit */}
-            <div className="min-w-full snap-center bg-white/10 backdrop-blur-2xl rounded-[3rem] border border-white/10 shadow-2xl p-10 md:p-16">
-              <div className="flex items-center gap-6 mb-12">
-                <div className="w-16 h-16 rounded-[1.5rem] bg-white/5 flex items-center justify-center border border-white/10 shadow-inner">
-                  <span className="material-symbols-outlined text-primary text-3xl">
-                    verified_user
-                  </span>
-                </div>
+            {/* Slide 3: The Impact Advertisement */}
+            <div className="min-w-full snap-center bg-zinc-900 overflow-hidden rounded-[3rem] border border-white/10 shadow-2xl relative group">
+              <img 
+                src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=2070" 
+                className="absolute inset-0 w-full h-full object-cover opacity-20 grayscale group-hover:scale-110 transition-transform duration-1000"
+                alt="Advancement"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/40 to-transparent"></div>
+              
+              <div className="relative z-10 p-12 md:p-20 h-full flex flex-col justify-between">
                 <div>
-                  <h3 className="text-2xl font-headline font-black text-on-surface">3. Review & Submit</h3>
-                  <p className="text-[10px] font-black text-neutral-400 uppercase tracking-widest mt-1 font-label">
-                    Final Verification
-                  </p>
+                   <span className="inline-block px-4 py-1.5 bg-primary/20 text-primary border border-primary/30 text-[10px] font-black rounded-full mb-8 uppercase tracking-[0.3em]">
+                     Your Future Starts Now
+                   </span>
+                   <h3 className="text-4xl md:text-5xl font-headline font-black text-white tracking-tighter mb-6 leading-[0.9]">
+                     Join the Elite Registry of <span className="text-secondary">Verified scholars.</span>
+                   </h3>
+                   <p className="text-zinc-400 text-lg max-w-xl font-body font-medium leading-relaxed">
+                     By submitting this quick apply, you enter our direct-impact pipeline. 
+                     Get verified, get seen by worldwide corporate sponsors, and secure 
+                     the funding your talent deserves.
+                   </p>
                 </div>
-              </div>
-              <div className="bg-surface-container-low/50 border border-outline-variant/10 rounded-[2rem] p-10 mb-10">
-                <div className="grid grid-cols-2 gap-y-10 gap-x-12">
-                  <div>
-                    <p className="text-[11px] font-black uppercase text-neutral-400 tracking-widest mb-2 font-label">Full Name</p>
-                    <p className="font-black text-xl text-on-surface font-body tracking-tight">John Adebayo</p>
-                  </div>
-                  <div>
-                    <p className="text-[11px] font-black uppercase text-neutral-400 tracking-widest mb-2 font-label">ID Number</p>
-                    <p className="font-black text-xl text-on-surface font-body tracking-tight">L-09231-MAT</p>
-                  </div>
-                  <div className="col-span-2 border-t border-outline-variant/10 pt-10">
-                    <p className="text-[11px] font-black uppercase text-neutral-400 tracking-widest mb-6 font-label">Files Attached</p>
-                    <div className="flex flex-wrap gap-4">
-                      {['admission_letter.pdf', 'nin_slip.png'].map(file => (
-                        <span key={file} className="px-6 py-3 bg-white border border-outline-variant/20 rounded-full text-xs font-black flex items-center gap-3 shadow-xl shadow-black/[0.03] text-on-surface">
-                          <span className="material-symbols-outlined text-lg text-secondary">check_circle</span>
-                          {file}
-                        </span>
+
+                <div className="space-y-8">
+                   <div className="flex flex-wrap gap-8">
+                      {[
+                        { label: 'Network', value: '500+ Schools' },
+                        { label: 'Funding', value: '₦2B+ Target' },
+                        { label: 'Success', value: '98% Graduation' }
+                      ].map(stat => (
+                        <div key={stat.label}>
+                          <p className="text-[10px] font-black text-zinc-500 uppercase tracking-widest mb-1">{stat.label}</p>
+                          <p className="text-xl font-headline font-black text-white">{stat.value}</p>
+                        </div>
                       ))}
-                    </div>
-                  </div>
+                   </div>
+                   
+                   <div className="flex items-center justify-between pt-8 border-t border-white/10">
+                      <button
+                        className="text-neutral-500 font-black text-xs uppercase tracking-widest hover:text-white transition-colors flex items-center gap-3 font-label"
+                        onClick={scrollLeft}
+                      >
+                        <span className="material-symbols-outlined text-lg">arrow_back</span>
+                        Back
+                      </button>
+                      <button className="bg-primary text-white px-14 py-6 rounded-[2rem] font-black text-sm uppercase tracking-[0.2em] shadow-2xl shadow-primary/40 hover:scale-[1.05] hover:bg-primary-container transition-all flex items-center gap-4 group/btn">
+                        Complete Submission
+                        <span className="material-symbols-outlined group-hover/btn:translate-x-1 transition-transform">rocket_launch</span>
+                      </button>
+                   </div>
                 </div>
-              </div>
-              <div className="flex items-start gap-4 mb-12 bg-primary/5 p-6 rounded-[1.5rem] border border-primary/10">
-                <input
-                  className="w-6 h-6 mt-1 rounded-lg border-primary/20 text-primary focus:ring-primary cursor-pointer transition-all"
-                  type="checkbox"
-                  id="terms"
-                />
-                <label className="text-sm text-on-surface-variant font-medium leading-relaxed cursor-pointer" htmlFor="terms">
-                  I agree to the <Link className="text-primary font-black underline decoration-2 underline-offset-4" href="#">Terms & Conditions</Link> and verify that all information is authentic.
-                </label>
-              </div>
-              <div className="flex justify-between items-center">
-                <button
-                  className="text-neutral-500 font-black text-xs uppercase tracking-widest hover:text-primary transition-colors flex items-center gap-3 font-label"
-                  onClick={scrollLeft}
-                >
-                  <span className="material-symbols-outlined text-lg">arrow_back</span>
-                  Previous
-                </button>
-                <button className="bg-primary text-white px-12 py-5 rounded-2xl font-black text-xs uppercase tracking-[0.2em] shadow-2xl shadow-primary/30 hover:bg-primary-container transition-all transform hover:scale-[1.05]">
-                  Submit Application
-                </button>
               </div>
             </div>
           </div>
+
 
           {/* Pagination */}
           <div className="flex justify-center gap-4 mt-12">

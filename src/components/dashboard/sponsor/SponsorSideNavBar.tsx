@@ -17,6 +17,8 @@ const navLinks = [
 ]
 
 import { motion, AnimatePresence } from 'framer-motion'
+import { useRecentlyViewed } from '@/hooks/useRecentlyViewed'
+import { STUDENTS_DATA } from '@/lib/constants/mock-data'
 
 interface SponsorSideNavBarProps {
   isOpen?: boolean
@@ -26,6 +28,12 @@ interface SponsorSideNavBarProps {
 export function SponsorSideNavBar({ isOpen, onClose }: SponsorSideNavBarProps) {
   const pathname = usePathname()
   const [isPending, startTransition] = useTransition()
+  const { recentIds } = useRecentlyViewed()
+  
+  const recentStudents = recentIds
+    .map(id => STUDENTS_DATA.find(s => s.id === id))
+    .filter(Boolean)
+    .slice(0, 3)
 
   const handleSignOut = () => {
     startTransition(async () => {
@@ -101,12 +109,14 @@ export function SponsorSideNavBar({ isOpen, onClose }: SponsorSideNavBarProps) {
 
         {/* Footer Actions */}
         <div className="mt-auto space-y-2 pt-6">
-          <button 
-            id="fund-scholarship-sidebar"
-            className="w-full mb-6 py-3.5 px-4 bg-[#0052CC] text-white font-bold rounded-xl text-sm scale-98 active:scale-95 hover:bg-[#0047b3] transition-all shadow-md shadow-blue-600/10 font-headline uppercase tracking-wide"
-          >
-            Fund Scholarship
-          </button>
+          <Link href="/dashboard/sponsor/fund" className="block w-full" onClick={onClose}>
+            <button 
+              id="fund-scholarship-sidebar"
+              className="w-full mb-6 py-3.5 px-4 bg-[#0052CC] text-white font-bold rounded-xl text-sm scale-98 active:scale-95 hover:bg-[#0047b3] transition-all shadow-md shadow-blue-600/10 font-headline uppercase tracking-wide"
+            >
+              Fund Scholarship
+            </button>
+          </Link>
           
           <button 
             onClick={handleSignOut}
@@ -116,7 +126,10 @@ export function SponsorSideNavBar({ isOpen, onClose }: SponsorSideNavBarProps) {
               isPending && "opacity-50 cursor-not-allowed"
             )}
           >
-            <span className="material-symbols-outlined text-xl text-zinc-400 group-hover:text-red-600">
+            <span className={cn(
+              "material-symbols-outlined text-xl text-zinc-400 group-hover:text-red-600",
+              isPending && "animate-spin"
+            )}>
               {isPending ? 'refresh' : 'logout'}
             </span>
             <span className="text-sm font-medium text-left">

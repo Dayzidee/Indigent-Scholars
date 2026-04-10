@@ -23,7 +23,8 @@ export function OutlinedInput({
   ...props
 }: OutlinedInputProps) {
   const [isFocused, setIsFocused] = useState(false)
-  const hasValue = value !== undefined && value !== null && value !== ''
+  const isDate = props.type === 'date'
+  const hasValue = (value !== undefined && value !== null && value !== '') || isDate
 
   const handleFocus = (e: React.FocusEvent<HTMLInputElement>) => {
     setIsFocused(true)
@@ -62,10 +63,10 @@ export function OutlinedInput({
           onFocus={handleFocus}
           onBlur={handleBlur}
           className={cn(
-            "flex-1 w-full bg-transparent px-4 py-4 text-sm font-medium text-zinc-900 focus:outline-none placeholder:opacity-0",
+            "flex-1 w-full bg-transparent px-4 py-4 text-sm font-medium text-zinc-900 focus:outline-none",
             icon && "pl-2"
           )}
-          placeholder={label}
+          placeholder={ (!isFocused && !hasValue) ? "" : props.placeholder }
         />
 
         {/* Floating Label */}

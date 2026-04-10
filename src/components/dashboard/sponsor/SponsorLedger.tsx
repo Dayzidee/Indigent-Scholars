@@ -1,18 +1,53 @@
 'use client'
 
+import { useState, useEffect } from 'react'
+import { useSearchParams } from 'next/navigation'
 import { motion } from 'framer-motion'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/Button'
 
-const transactions = [
-  { date: 'Oct 24, 2023', time: '09:42 AM', name: 'Adebayo Olumide', initial: 'AO', bgColor: 'bg-blue-100 text-blue-700', ref: 'SCH-772910-NG', amount: '₦450,000', status: 'Completed', statusColor: 'bg-tertiary-fixed-dim/20 text-tertiary', dotColor: 'bg-tertiary', dept: 'Engineering • Year 2' },
-  { date: 'Oct 22, 2023', time: '02:15 PM', name: 'Chisom Nwosu', initial: 'CN', bgColor: 'bg-amber-100 text-amber-700', ref: 'SCH-883012-NG', amount: '₦1,200,000', status: 'Transferred', statusColor: 'bg-primary-fixed/30 text-primary', dotColor: 'bg-primary', pulse: true, dept: 'Medicine • Year 1' },
-  { date: 'Oct 20, 2023', time: '11:05 AM', name: 'Ibrahim Ezekiel', initial: 'IE', bgColor: 'bg-neutral-100 text-neutral-600', ref: 'SCH-112233-NG', amount: '₦320,000', status: 'Pledged', statusColor: 'bg-surface-container-highest text-neutral-500', dotColor: 'bg-neutral-400', dept: 'Computer Science • Year 3' },
-  { date: 'Oct 19, 2023', time: '08:30 AM', name: 'Fatima Abubakar', initial: 'FA', bgColor: 'bg-purple-100 text-purple-700', ref: 'SCH-994851-NG', amount: '₦580,000', status: 'Completed', statusColor: 'bg-tertiary-fixed-dim/20 text-tertiary', dotColor: 'bg-tertiary', dept: 'Law • Year 4' },
-  { date: 'Oct 15, 2023', time: '04:55 PM', name: 'Samuel Uche', initial: 'SU', bgColor: 'bg-emerald-100 text-emerald-700', ref: 'SCH-551092-NG', amount: '₦450,000', status: 'Completed', statusColor: 'bg-tertiary-fixed-dim/20 text-tertiary', dotColor: 'bg-tertiary', dept: 'Economics • Year 2' },
+interface Transaction {
+  date: string;
+  time: string;
+  name: string;
+  initial: string;
+  bgColor: string;
+  ref: string;
+  amount: string;
+  status: string;
+  statusColor?: string;
+  dotColor?: string;
+  dept: string;
+  type: string;
+  pulse?: boolean;
+}
+
+const transactions: Transaction[] = [
+  { date: 'Oct 24, 2023', time: '09:42 AM', name: 'Adebayo Olumide', initial: 'AO', bgColor: 'bg-blue-100 text-blue-700', ref: 'SCH-772910-NG', amount: '₦450,000', status: 'Completed', statusColor: 'bg-tertiary-fixed-dim/20 text-tertiary', dotColor: 'bg-tertiary', dept: 'Engineering • Year 2', type: 'Scholarship' },
+  { date: 'Oct 22, 2023', time: '02:15 PM', name: 'Chisom Nwosu', initial: 'CN', bgColor: 'bg-amber-100 text-amber-700', ref: 'SCH-883012-NG', amount: '₦1,200,000', status: 'Transferred', statusColor: 'bg-primary-fixed/30 text-primary', dotColor: 'bg-primary', pulse: true, dept: 'Medicine • Year 1', type: 'Scholarship' },
+  { date: 'Oct 20, 2023', time: '11:05 AM', name: 'Ibrahim Ezekiel', initial: 'IE', bgColor: 'bg-neutral-100 text-neutral-600', ref: 'SCH-112233-NG', amount: '₦320,000', status: 'Pledged', statusColor: 'bg-surface-container-highest text-neutral-500', dotColor: 'bg-neutral-400', dept: 'Computer Science • Year 3', type: 'Scholarship' },
+]
+
+const deposits: Transaction[] = [
+  { date: 'Oct 26, 2023', time: '10:00 AM', name: 'Wallet Top-up', initial: 'WT', bgColor: 'bg-emerald-100 text-emerald-700', ref: 'DEP-123456-NG', amount: '₦5,000,000', status: 'Completed', statusColor: 'bg-emerald-50 text-emerald-600', dotColor: 'bg-emerald-600', dept: 'Via Bank Transfer', type: 'Deposit' },
+  { date: 'Oct 18, 2023', time: '03:30 PM', name: 'Card Deposit', initial: 'CD', bgColor: 'bg-emerald-100 text-emerald-700', ref: 'DEP-789012-NG', amount: '₦2,500,000', status: 'Completed', statusColor: 'bg-emerald-50 text-emerald-600', dotColor: 'bg-emerald-600', dept: 'Via Paystack', type: 'Deposit' },
 ]
 
 export function SponsorLedger() {
+  const searchParams = useSearchParams()
+  const [activeTab, setActiveTab] = useState('Scholarships')
+  
+  useEffect(() => {
+    if (searchParams?.get('action') === 'topup') {
+      setActiveTab('Deposits')
+      // Optional: scroll to the card section
+      const walletCard = document.getElementById('wallet-balance-card')
+      if (walletCard) walletCard.scrollIntoView({ behavior: 'smooth' })
+    }
+  }, [searchParams])
+
+  const displayData = activeTab === 'Deposits' ? deposits : transactions
+
   return (
     <motion.div 
       initial={{ opacity: 0, y: 10 }}
@@ -44,7 +79,7 @@ export function SponsorLedger() {
 
       {/* Ledger Stats */}
       <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div className="bg-white p-8 rounded-[32px] shadow-sm border border-zinc-100 flex flex-col justify-between">
+        <div className="bg-white p-6 sm:p-8 rounded-3xl lg:rounded-[32px] shadow-sm border border-zinc-100 flex flex-col justify-between">
           <div>
             <p className="text-[10px] font-black text-zinc-400 font-label uppercase tracking-[0.2em] mb-2">Total Committed</p>
             <p className="text-3xl font-black text-zinc-900 font-headline leading-tight font-headline">₦42,500,000</p>
@@ -55,7 +90,7 @@ export function SponsorLedger() {
           </div>
         </div>
 
-        <div className="bg-white p-8 rounded-[32px] shadow-sm border border-zinc-100 flex flex-col justify-between">
+        <div className="bg-white p-6 sm:p-8 rounded-3xl lg:rounded-[32px] shadow-sm border border-zinc-100 flex flex-col justify-between">
           <div>
             <p className="text-[10px] font-black text-zinc-400 font-label uppercase tracking-[0.2em] mb-2">Active Scholars</p>
             <p className="text-3xl font-black text-zinc-900 font-headline leading-tight font-headline">128</p>
@@ -70,7 +105,7 @@ export function SponsorLedger() {
           </div>
         </div>
 
-        <div className="bg-white p-8 rounded-[32px] shadow-sm border border-zinc-100 flex flex-col justify-between">
+        <div className="bg-white p-6 sm:p-8 rounded-3xl lg:rounded-[32px] shadow-sm border border-zinc-100 flex flex-col justify-between">
           <div>
             <p className="text-[10px] font-black text-zinc-400 font-label uppercase tracking-[0.2em] mb-2">In Queue</p>
             <p className="text-3xl font-black text-zinc-900 font-headline leading-tight font-headline">₦2,140,000</p>
@@ -84,23 +119,34 @@ export function SponsorLedger() {
               <p className="text-[10px] font-bold text-white/70 font-label uppercase tracking-[0.2em] mb-1">Wallet Balance</p>
               <p className="text-2xl md:text-3xl font-bold text-white font-headline leading-tight">₦8,920,450</p>
             </div>
-            <Button variant="glass" size="sm" className="w-fit text-[10px] uppercase tracking-widest px-6">Top up account</Button>
+            <div className="flex flex-wrap gap-2">
+              <Button variant="glass" size="sm" className="text-[10px] uppercase tracking-widest px-4">Top up</Button>
+              <Button 
+                variant="glass" 
+                size="sm" 
+                className={cn("text-[10px] uppercase tracking-widest px-4 bg-white/10", activeTab === 'Deposits' && "bg-white text-[#0052CC] shadow-inner")}
+                onClick={() => setActiveTab('Deposits')}
+              >
+                Recent Deposits
+              </Button>
+            </div>
           </div>
           <span className="material-symbols-outlined absolute -right-6 -top-6 text-7xl md:text-8xl text-white/10 rotate-12 transition-transform group-hover:rotate-0 duration-700" style={{ fontVariationSettings: "'wght' 300" }}>account_balance</span>
         </div>
       </section>
 
       {/* Ledger Table Section */}
-      <section className="bg-white rounded-[40px] shadow-sm overflow-hidden border border-zinc-100 flex flex-col">
-        <div className="p-6 md:p-8 border-b border-zinc-50 flex flex-col md:flex-row justify-between gap-6 items-center">
+      <section className="bg-white rounded-3xl lg:rounded-[40px] shadow-sm overflow-hidden border border-zinc-100 flex flex-col">
+        <div className="p-5 sm:p-8 border-b border-zinc-50 flex flex-col md:flex-row justify-between gap-6 items-center">
           <div className="w-full md:w-auto overflow-x-auto no-scrollbar -mx-6 px-6 md:mx-0 md:px-0">
             <div className="flex bg-zinc-100 p-1 rounded-xl md:rounded-2xl w-fit">
-              {['All Time', 'Pending', 'Completed'].map((tab, i) => (
+              {['Scholarships', 'Deposits'].map((tab) => (
                 <button 
                   key={tab}
+                  onClick={() => setActiveTab(tab)}
                   className={cn(
                     "px-6 md:px-8 py-2 md:py-2.5 rounded-lg md:rounded-xl text-[10px] font-bold uppercase tracking-widest transition-all font-label whitespace-nowrap",
-                    i === 0 ? "bg-white text-[#0052CC] shadow-sm" : "text-zinc-500 hover:text-zinc-800"
+                    activeTab === tab ? "bg-white text-[#0052CC] shadow-sm" : "text-zinc-500 hover:text-zinc-800"
                   )}
                 >
                   {tab}
@@ -122,7 +168,9 @@ export function SponsorLedger() {
             <thead>
               <tr className="border-b border-zinc-50/50">
                 <th className="px-8 py-6 text-[10px] font-black text-zinc-400 uppercase tracking-[0.2em] font-label whitespace-nowrap">Date</th>
-                <th className="px-8 py-6 text-[10px] font-black text-zinc-400 uppercase tracking-[0.2em] font-label whitespace-nowrap">Student Name</th>
+                <th className="px-8 py-6 text-[10px] font-black text-zinc-400 uppercase tracking-[0.2em] font-label whitespace-nowrap">
+                  {activeTab === 'Deposits' ? 'Source' : 'Student Name'}
+                </th>
                 <th className="px-8 py-6 text-[10px] font-black text-zinc-400 uppercase tracking-[0.2em] font-label whitespace-nowrap">Reference ID</th>
                 <th className="px-8 py-6 text-[10px] font-black text-zinc-400 uppercase tracking-[0.2em] font-label whitespace-nowrap">Amount</th>
                 <th className="px-8 py-6 text-[10px] font-black text-zinc-400 uppercase tracking-[0.2em] font-label whitespace-nowrap">Status</th>
@@ -130,9 +178,9 @@ export function SponsorLedger() {
               </tr>
             </thead>
             <tbody className="divide-y divide-zinc-50/50">
-              {transactions.map((tx, idx) => (
+              {displayData.map((tx, idx) => (
                 <tr key={idx} className="hover:bg-zinc-50/30 transition-colors group cursor-pointer">
-                  <td className="px-8 py-6 whitespace-nowrap">
+                  <td className="px-6 sm:px-8 py-6 whitespace-nowrap">
                     <span className="block text-sm font-extrabold text-zinc-900 font-headline leading-tight">{tx.date}</span>
                     <span className="block text-[10px] text-zinc-400 font-black mt-1 uppercase tracking-widest font-label">{tx.time}</span>
                   </td>
@@ -179,11 +227,11 @@ export function SponsorLedger() {
              <h3 className="text-xl font-black font-headline tracking-tight text-zinc-900">Audit Trail Highlights</h3>
           </div>
           <div className="grid grid-cols-1 gap-4">
-            <div className="flex gap-8 p-8 rounded-[32px] bg-white shadow-sm border border-zinc-100 group cursor-default hover:border-[#0052CC]/20 transition-all">
+            <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 p-6 sm:p-8 rounded-3xl lg:rounded-[32px] bg-white shadow-sm border border-zinc-100 group cursor-default hover:border-[#0052CC]/20 transition-all">
               <div className="w-14 h-14 rounded-2xl bg-zinc-50 flex items-center justify-center text-zinc-400 shrink-0 transition-all group-hover:scale-110 group-hover:text-[#0052CC] border border-zinc-100">
                 <span className="material-symbols-outlined text-2xl" style={{ fontVariationSettings: "'FILL' 1" }}>security</span>
               </div>
-              <div className="space-y-2 border-l border-zinc-100 pl-8">
+              <div className="space-y-2 sm:border-l border-zinc-100 sm:pl-8">
                 <p className="text-sm font-extrabold text-zinc-900 font-headline">External Audit Completed</p>
                 <p className="text-xs text-zinc-500 font-body leading-relaxed max-w-lg">
                   Q3 Disbursement reports were verified by Grant Thornton Nigeria with zero discrepancies found. Funds reached all intended scholars.
@@ -194,11 +242,11 @@ export function SponsorLedger() {
               </div>
             </div>
 
-            <div className="flex gap-8 p-8 rounded-[32px] bg-white shadow-sm border border-zinc-100 group cursor-default hover:border-[#0052CC]/20 transition-all">
+            <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 p-6 sm:p-8 rounded-3xl lg:rounded-[32px] bg-white shadow-sm border border-zinc-100 group cursor-default hover:border-[#0052CC]/20 transition-all">
               <div className="w-14 h-14 rounded-2xl bg-zinc-50 flex items-center justify-center text-zinc-400 shrink-0 transition-all group-hover:scale-110 group-hover:text-[#0052CC] border border-zinc-100">
                 <span className="material-symbols-outlined text-2xl" style={{ fontVariationSettings: "'FILL' 1" }}>history_edu</span>
               </div>
-              <div className="space-y-2 border-l border-zinc-100 pl-8">
+              <div className="space-y-2 sm:border-l border-zinc-100 sm:pl-8">
                 <p className="text-sm font-extrabold text-zinc-900 font-headline">New Pledges Pending</p>
                 <p className="text-xs text-zinc-500 font-body leading-relaxed max-w-lg">
                   You have ₦1,450,000 in upcoming scholarship pledges that require transfer confirmation by Nov 5th for the upcoming semester.
@@ -209,7 +257,7 @@ export function SponsorLedger() {
         </div>
 
         {/* Impact Tier Card */}
-        <div className="bg-zinc-900 rounded-[40px] p-10 text-white relative overflow-hidden group shadow-2xl flex flex-col justify-between min-h-[400px]">
+        <div className="bg-zinc-900 rounded-3xl lg:rounded-[40px] p-6 sm:p-10 text-white relative overflow-hidden group shadow-2xl flex flex-col justify-between min-h-[350px] sm:min-h-[400px]">
           <div className="absolute top-0 right-0 w-64 h-64 bg-[#0052CC]/20 rounded-full blur-[100px] transition-transform duration-1000 group-hover:scale-110"></div>
           
           <div className="relative z-10">

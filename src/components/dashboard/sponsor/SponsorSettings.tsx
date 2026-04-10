@@ -45,7 +45,7 @@ export function SponsorSettings() {
       {/* Bento Grid Layout */}
       <div className="grid grid-cols-12 gap-8">
         {/* Section 1: Organization Profile */}
-        <section className="col-span-12 lg:col-span-8 bg-surface-container-lowest rounded-[24px] md:rounded-[2rem] p-6 md:p-8 lg:p-10 border border-outline-variant/10 shadow-xl shadow-primary/[0.02]">
+        <section className="col-span-12 lg:col-span-8 bg-surface-container-lowest rounded-3xl lg:rounded-[2rem] p-6 sm:p-8 lg:p-10 border border-outline-variant/10 shadow-xl shadow-primary/[0.02]">
           <div className="flex flex-col sm:flex-row justify-between items-start gap-6 mb-8 md:mb-10">
             <div>
               <h2 className="text-xl md:text-2xl font-bold font-headline text-on-surface mb-1">Organization Profile</h2>
@@ -60,7 +60,7 @@ export function SponsorSettings() {
             {/* Logo Upload */}
             <div className="flex flex-col items-center gap-4">
               <div className="relative group">
-                <div className="w-40 h-40 rounded-[2.5rem] bg-surface-container-low flex items-center justify-center overflow-hidden border-2 border-dashed border-outline-variant/30 group-hover:border-primary/50 transition-colors">
+                <div className="w-40 h-40 rounded-3xl lg:rounded-[2.5rem] bg-surface-container-low flex items-center justify-center overflow-hidden border-2 border-dashed border-outline-variant/30 group-hover:border-primary/50 transition-colors">
                   <Image 
                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpRnMHTc9E2XzfmlqtwQyOaH49Lh7084ipR1-y-s7dOD5qNZnoU4dSGePcO8UjHvLfsiJugIXl3B0UPxjzWWUeu1AAd-WBCaU3W2RC7ZawbEMkO9VIf16AXKhV0uj7lj7aGblGShFsTck-Vycho7qns11L08BXFFbnYfenEQ5ZirLyxk-dTl7il6qYadY4mjqyJR0OQoPS377kFHDqVX0r1NZOrZZKaemqLZT21Md_eKkKFI6ws3fxE09HXy_ekT-MoqiRaquZHsx7"
                     alt="Organization Logo"
@@ -109,7 +109,7 @@ export function SponsorSettings() {
         </section>
 
         {/* Section 2: Verification Status */}
-        <section className="col-span-12 lg:col-span-4 bg-[#FCF9F8] rounded-[24px] md:rounded-[2rem] p-6 md:p-8 lg:p-10 border border-outline-variant/10 relative overflow-hidden shadow-xl shadow-primary/[0.01]">
+        <section className="col-span-12 lg:col-span-4 bg-[#FCF9F8] rounded-3xl lg:rounded-[2rem] p-6 sm:p-8 lg:p-10 border border-outline-variant/10 relative overflow-hidden shadow-xl shadow-primary/[0.01]">
           <div className="absolute -top-20 -right-20 w-64 h-64 bg-secondary/5 rounded-full blur-3xl"></div>
           <h2 className="text-xl md:text-2xl font-bold font-headline text-on-surface mb-6 md:mb-8">Verification</h2>
           
@@ -149,7 +149,7 @@ export function SponsorSettings() {
         {/* Section 3: Security & 4: Team Management */}
         <section className="col-span-12 grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Security Card */}
-          <div className="bg-surface-container-lowest rounded-[2rem] p-6 md:p-10 border border-outline-variant/10 shadow-xl shadow-primary/[0.02]">
+          <div className="bg-surface-container-lowest rounded-3xl lg:rounded-[2rem] p-6 sm:p-10 border border-outline-variant/10 shadow-xl shadow-primary/[0.02]">
             <div className="flex items-center gap-4 mb-8 md:mb-10">
               <span className="w-10 h-10 rounded-xl bg-primary/5 flex items-center justify-center text-primary shrink-0">
                 <span className="material-symbols-outlined text-2xl" style={{ fontVariationSettings: "'FILL' 1" }}>security</span>
@@ -190,7 +190,7 @@ export function SponsorSettings() {
           </div>
 
           {/* Team Management Card */}
-          <div className="bg-surface-container-lowest rounded-[2rem] p-6 md:p-10 border border-outline-variant/10 shadow-xl shadow-primary/[0.02]">
+          <div className="bg-surface-container-lowest rounded-3xl lg:rounded-[2rem] p-6 sm:p-10 border border-outline-variant/10 shadow-xl shadow-primary/[0.02]">
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 md:mb-10">
               <div className="flex items-center gap-4">
                 <span className="w-10 h-10 rounded-xl bg-primary/5 flex items-center justify-center text-primary shrink-0">
@@ -233,7 +233,7 @@ export function SponsorSettings() {
         </section>
 
         {/* Floating Impact Note: Architecture of Change */}
-        <section className="col-span-12 bg-inverse-surface rounded-[2.5rem] p-12 lg:p-16 text-inverse-on-surface relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-12 group">
+        <section className="col-span-12 bg-inverse-surface rounded-3xl lg:rounded-[2.5rem] p-8 lg:p-16 text-inverse-on-surface relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-12 group">
           <div className="absolute -right-20 -bottom-20 opacity-10 pointer-events-none transition-transform duration-1000 group-hover:scale-110 group-hover:-rotate-12">
             <span className="material-symbols-outlined text-[300px]" style={{ fontVariationSettings: "'wght' 100" }}>architecture</span>
           </div>
@@ -245,7 +245,7 @@ export function SponsorSettings() {
             </p>
           </div>
           
-          <div className="relative z-10 flex flex-col items-center gap-3 bg-white/5 backdrop-blur-3xl px-12 py-10 rounded-[2.5rem] border border-white/10 shadow-2xl">
+          <div className="relative z-10 flex flex-col items-center gap-3 bg-white/5 backdrop-blur-3xl px-8 py-6 sm:px-12 sm:py-10 rounded-3xl lg:rounded-[2.5rem] border border-white/10 shadow-2xl">
             <p className="text-secondary-fixed text-6xl font-black tracking-tighter font-headline">142</p>
             <p className="text-[10px] font-black uppercase tracking-[0.3em] opacity-60 font-label whitespace-nowrap">Scholars Enabled</p>
           </div>

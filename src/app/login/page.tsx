@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { signInAction } from '@/lib/actions/auth';
 import { useSearchParams } from 'next/navigation';
 import { Suspense } from 'react';
+import { AuthSubmitButton } from '@/components/auth/AuthSubmitButton';
 
 function LoginContent() {
   const searchParams = useSearchParams();
@@ -70,9 +71,12 @@ function LoginContent() {
               />
             </div>
           </div>
-          <button id="login-submit-btn" className="w-full py-4 bg-gradient-to-b from-[#0052CC] to-[#003D9B] text-white font-bold rounded-lg shadow-lg shadow-primary/20 hover:scale-[0.98] transition-transform active:scale-95" type="submit">
-            Log In
-          </button>
+          <AuthSubmitButton 
+            id="login-submit-btn" 
+            label="Log In" 
+            loadingLabel="Signing In..." 
+            className="bg-gradient-to-b from-[#0052CC] to-[#003D9B] text-white font-bold rounded-lg shadow-lg shadow-primary/20 hover:scale-[0.98] active:scale-95"
+          />
         </form>
         
         {/* Separator */}

@@ -35,7 +35,7 @@ Scholarship Admin Team`
 
 export default function StudentApplicationPage() {
   const [formData, setFormData] = useState({
-    amount: '1500',
+    amount: '150000',
     story: 'I am a highly motivated Chemical Engineering student at the University of Lagos. Despite the financial hurdles, I have maintained a 4.72 CGPA. This scholarship will ensure I finish my final year and contribute to sustainable energy solutions in Nigeria.'
   })
 
@@ -67,7 +67,7 @@ export default function StudentApplicationPage() {
                <div className="space-y-8">
                   <div className="max-w-xs">
                     <OutlinedInput 
-                      label="Requested Amount ($)" 
+                      label="Requested Amount (₦)" 
                       icon="payments"
                       value={formData.amount}
                       onChange={(e) => setFormData({ ...formData, amount: e.target.value })}
@@ -88,6 +88,36 @@ export default function StudentApplicationPage() {
                   </div>
                </div>
             </Card>
+          </section>
+
+          {/* SECTION 1.5: APPLY FOR FUNDING PROMO */}
+          <section>
+            <div className="bg-[#0052CC] rounded-[40px] p-10 lg:p-14 text-white relative overflow-hidden group">
+               <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+                  <div className="flex-1">
+                     <div className="flex items-center gap-3 mb-4">
+                        <span className="px-3 py-1 rounded-full bg-white/10 text-white text-[8px] font-black uppercase tracking-widest border border-white/10">Action Required</span>
+                        <h4 className="text-sm font-black text-blue-200 uppercase tracking-[0.2em]">Next Step</h4>
+                     </div>
+                     <h3 className="text-3xl font-headline font-black tracking-tight mb-4">Apply for Funding</h3>
+                     <p className="text-blue-100 font-medium leading-relaxed max-w-xl">
+                        Your profile is ready. By applying for funding, your verified credentials and scholarship narrative will be submitted to the Indigent Scholars Aid committee for final review.
+                     </p>
+                  </div>
+                  <Button 
+                    variant="secondary" 
+                    size="lg" 
+                    iconRight="arrow_forward"
+                    onClick={() => window.location.href = '/dashboard/student/apply-funding'}
+                  >
+                    Start Funding Application
+                  </Button>
+               </div>
+               
+               {/* Background Decorative Elements */}
+               <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -mr-20 -mt-20 blur-3xl group-hover:bg-white/10 transition-all duration-700" />
+               <div className="absolute bottom-0 left-0 w-48 h-48 bg-blue-900/50 rounded-full -ml-10 -mb-10 blur-2xl" />
+            </div>
           </section>
 
           {/* SECTION 2: GMAIL-STYLE MESSAGING CENTER */}

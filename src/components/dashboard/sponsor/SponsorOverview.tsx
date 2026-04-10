@@ -4,14 +4,25 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/Button'
+import { useRecentlyViewed } from '@/hooks/useRecentlyViewed'
+import { STUDENTS_DATA } from '@/lib/constants/mock-data'
+import Link from 'next/link'
 
 export function SponsorOverview() {
+  const { recentIds } = useRecentlyViewed()
+  
+  const recentStudents = recentIds
+    .map(id => STUDENTS_DATA.find(s => s.id === id))
+    .filter(Boolean)
+    .slice(0, 4)
+
   return (
     <motion.div 
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       className="w-full max-w-7xl mx-auto space-y-6 md:space-y-12 pb-10"
     >
+
       {/* Header Content */}
       <section className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-8">
         <div className="space-y-2">
@@ -21,19 +32,56 @@ export function SponsorOverview() {
           </p>
         </div>
         <div className="flex gap-2 w-full md:w-auto mt-4 md:mt-0">
-          <Button variant="outline" className="flex-1 md:flex-none">
+          <Button variant="outline" className="flex-1 md:flex-none font-black tracking-tight">
             Export Report
           </Button>
-          <Button iconLeft="add" className="flex-1 md:flex-none">
-            New Grant
-          </Button>
+          <Link href="/dashboard/sponsor/fund">
+            <Button 
+                iconLeft="search" 
+                className="flex-1 md:flex-none font-black tracking-tight shadow-xl shadow-blue-500/20"
+            >
+                Discover Scholars
+            </Button>
+          </Link>
         </div>
       </section>
+
+      {/* Recently Viewed Shortcuts */}
+      {recentStudents.length > 0 && (
+         <section className="space-y-6">
+            <div className="flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                   <span className="material-symbols-outlined text-zinc-400">history</span>
+                   <h3 className="text-xl font-black font-headline tracking-tight text-zinc-900">Recently Viewed Scholars</h3>
+                </div>
+                <Link href="/dashboard/sponsor/fund" className="text-[10px] font-black uppercase tracking-widest text-[#0052CC] hover:underline">See All</Link>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                {recentStudents.map((student: any, i: number) => (
+                  <Link key={student.id} href={`/students/${student.id}`}>
+                    <motion.div 
+                      whileHover={{ y: -4 }}
+                      className="bg-white p-4 sm:p-6 rounded-3xl border border-zinc-100 shadow-sm hover:shadow-xl hover:border-blue-100 transition-all flex items-center gap-4 group"
+                    >
+                        <div className="w-12 h-12 rounded-2xl bg-zinc-50 overflow-hidden shrink-0 border border-zinc-100">
+                           <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=400&auto=format&fit=crop&q=60" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt={student.name} />
+                        </div>
+                        <div className="min-w-0">
+                           <p className="font-headline font-black text-zinc-900 truncate leading-tight group-hover:text-[#0052CC] transition-colors">{student.name}</p>
+                           <p className="text-[9px] font-medium text-zinc-400 truncate">{student.university} • {student.gpa}</p>
+                        </div>
+                    </motion.div>
+                  </Link>
+                ))}
+            </div>
+         </section>
+      )}
 
       {/* Hero Impact Stats */}
       <section className="grid grid-cols-12 gap-6">
         {/* Primary Stats Card */}
-        <div className="col-span-12 lg:col-span-8 bg-white rounded-[24px] md:rounded-[32px] p-6 md:p-10 flex flex-col justify-between relative shadow-sm border border-zinc-100">
+        <div className="col-span-12 lg:col-span-8 bg-white rounded-3xl lg:rounded-[32px] p-6 sm:p-10 flex flex-col justify-between relative shadow-sm border border-zinc-100">
           <div className="relative z-10 flex flex-col md:flex-row justify-between gap-8 md:gap-12">
             <div className="space-y-2">
               <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400 font-label">Total Amount Funded</label>
@@ -84,7 +132,7 @@ export function SponsorOverview() {
         </div>
 
         {/* Improved Milestone Card (Exact Color Match) */}
-        <div className="col-span-12 lg:col-span-4 bg-[#D4AF37] text-white rounded-[24px] md:rounded-[32px] p-8 md:p-10 relative overflow-hidden flex flex-col justify-between group shadow-xl shadow-[#D4AF37]/20 border border-white/10">
+        <div className="col-span-12 lg:col-span-4 bg-[#D4AF37] text-white rounded-3xl lg:rounded-[32px] p-6 sm:p-10 relative overflow-hidden flex flex-col justify-between group shadow-xl shadow-[#D4AF37]/20 border border-white/10">
           <div className="absolute bottom-[-10%] right-[-10%] opacity-10">
             <span className="material-symbols-outlined text-[140px] md:text-[200px] font-black">rewarded_ads</span>
           </div>
@@ -173,7 +221,7 @@ export function SponsorOverview() {
         </div>
 
         {/* Recent Funding - Ultra-Robust Alignment */}
-        <div className="col-span-12 lg:col-span-5 bg-zinc-50/50 rounded-[32px] md:rounded-[40px] px-3 py-6 sm:p-8 lg:p-10 border border-zinc-100 shadow-sm flex flex-col">
+        <div className="col-span-12 lg:col-span-5 bg-zinc-50/50 rounded-3xl lg:rounded-[40px] px-4 py-6 sm:p-10 border border-zinc-100 shadow-sm flex flex-col">
           <div className="flex justify-between items-center mb-6 md:mb-10">
             <h3 className="text-xl font-black font-headline tracking-tight">Recent Funding</h3>
             <Button variant="ghost" size="sm" className="text-[10px] tracking-widest px-2">View Ledger</Button>
@@ -205,14 +253,15 @@ export function SponsorOverview() {
         </div>
       </section>
 
-      {/* Simplified FAB */}
-      <motion.button 
-        whileHover={{ scale: 1.1, rotate: 90 }}
-        whileTap={{ scale: 0.9 }}
-        className="fixed bottom-24 right-4 md:bottom-28 md:right-8 w-14 h-14 md:w-16 md:h-16 bg-[#0052CC] rounded-full shadow-[0_20px_50px_rgba(0,82,204,0.4)] flex items-center justify-center text-white z-50 transition-all font-bold"
-      >
-        <span className="material-symbols-outlined text-3xl">add</span>
-      </motion.button>
+      <Link href="/dashboard/sponsor/fund">
+        <motion.button 
+            whileHover={{ scale: 1.1, rotate: 90 }}
+            whileTap={{ scale: 0.9 }}
+            className="fixed bottom-24 right-4 md:bottom-28 md:right-8 w-14 h-14 md:w-16 md:h-16 bg-[#0052CC] rounded-full shadow-[0_20px_50px_rgba(0,82,204,0.4)] flex items-center justify-center text-white z-50 transition-all font-bold"
+        >
+            <span className="material-symbols-outlined text-3xl">search</span>
+        </motion.button>
+      </Link>
     </motion.div>
   )
 }

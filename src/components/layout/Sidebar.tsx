@@ -4,7 +4,8 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { usePathname } from 'next/navigation'
 import { createBrowserClient } from '@supabase/ssr'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useTransition } from 'react'
+import { cn } from '@/lib/utils'
 import {
   LayoutDashboard,
   FileText,
@@ -32,6 +33,7 @@ interface SidebarProps {
 export function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
   const pathname = usePathname()
   const [role, setRole] = useState<'student' | 'sponsor' | 'admin' | null>(null)
+  const [isPending, startTransition] = useTransition()
 
   // Initialize Supabase client
   const supabase = createBrowserClient(
@@ -86,9 +88,11 @@ export function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
     }
   }
 
-  const handleSignOut = async () => {
-    await supabase.auth.signOut()
-    window.location.href = '/login'
+  const handleSignOut = () => {
+    startTransition(async () => {
+      await supabase.auth.signOut()
+      window.location.href = '/login'
+    })
   }
 
   const navItems = getNavItems()
@@ -167,10 +171,20 @@ export function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
         <div className="p-4 border-t border-slate-800">
           <button
             onClick={handleSignOut}
-            className="flex items-center space-x-3 w-full px-4 py-3 text-slate-400 hover:text-red-400 hover:bg-red-400/10 rounded-lg transition-colors text-left"
+            disabled={isPending}
+            className={cn(
+              "flex items-center space-x-3 w-full px-4 py-3 text-slate-400 hover:text-red-400 hover:bg-red-400/10 rounded-lg transition-colors text-left",
+              isPending && "opacity-50 cursor-not-allowed"
+            )}
           >
-            <LogOut className="w-5 h-5" />
-            <span className="font-medium">Sign Out</span>
+            {isPending ? (
+              <span className="material-symbols-outlined w-5 h-5 text-red-400 animate-spin">refresh</span>
+            ) : (
+              <LogOut className="w-5 h-5" />
+            )}
+            <span className="font-medium">
+              {isPending ? 'Signing Out...' : 'Sign Out'}
+            </span>
           </button>
         </div>
       </div>
