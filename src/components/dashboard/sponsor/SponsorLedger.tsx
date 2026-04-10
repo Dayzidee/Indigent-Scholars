@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { cn } from '@/lib/utils'
+import { Button } from '@/components/ui/Button'
 
 const transactions = [
   { date: 'Oct 24, 2023', time: '09:42 AM', name: 'Adebayo Olumide', initial: 'AO', bgColor: 'bg-blue-100 text-blue-700', ref: 'SCH-772910-NG', amount: '₦450,000', status: 'Completed', statusColor: 'bg-tertiary-fixed-dim/20 text-tertiary', dotColor: 'bg-tertiary', dept: 'Engineering • Year 2' },
@@ -16,138 +17,150 @@ export function SponsorLedger() {
     <motion.div 
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
-      className="max-w-7xl mx-auto space-y-12"
+      className="max-w-7xl mx-auto space-y-10 pb-20"
     >
       {/* Header Section */}
-      <section className="flex flex-col md:flex-row justify-between items-end gap-6 mb-10">
-        <div className="space-y-3">
-          <nav className="flex items-center gap-2 text-[10px] font-black text-primary tracking-[0.2em] uppercase font-label">
+      <section className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-8">
+        <div className="space-y-1">
+          <nav className="flex items-center gap-2 text-[10px] font-black text-[#0052CC] tracking-[0.2em] uppercase font-label">
             <span>Accounting</span>
-            <span className="material-symbols-outlined text-[10px]" style={{ fontVariationSettings: "'wght' 900" }}>chevron_right</span>
-            <span className="text-neutral-400">Transaction History</span>
+            <span className="material-symbols-outlined text-[10px]">chevron_right</span>
+            <span className="text-zinc-400">Transaction History</span>
           </nav>
-          <h1 className="text-4xl lg:text-5xl font-black font-headline tracking-tight text-on-surface">Funding Ledger</h1>
-          <p className="text-neutral-500 font-medium font-body leading-relaxed max-w-xl">
-            Real-time audit log of scholarship disbursements and commitments.
+          <h1 className="text-4xl font-black font-headline tracking-tighter text-zinc-900 leading-none">Funding Ledger</h1>
+          <p className="text-zinc-500 font-body text-sm max-w-xl">
+            Real-time audit log of scholarship disbursements and commitments across all institutions.
           </p>
         </div>
         <div className="flex gap-3">
-          <button className="flex items-center gap-2 px-6 py-3 rounded-xl border border-outline-variant/20 bg-surface-container-lowest text-on-surface text-sm font-bold hover:bg-surface-container transition-all font-headline shadow-sm">
-            <span className="material-symbols-outlined text-lg" style={{ fontVariationSettings: "'wght' 700" }}>file_download</span>
+          <Button variant="outline" iconLeft="file_download">
             Export CSV
-          </button>
-          <button className="flex items-center gap-2 px-8 py-3 rounded-xl bg-gradient-to-b from-primary-container to-primary text-white text-sm font-bold hover:opacity-90 active:scale-95 transition-all font-headline shadow-lg text-shadow-sm">
-            <span className="material-symbols-outlined text-lg" style={{ fontVariationSettings: "'wght' 700" }}>add</span>
+          </Button>
+          <Button iconLeft="add">
             Fund Scholarship
-          </button>
+          </Button>
         </div>
       </section>
 
-      {/* Ledger Stats Bento */}
+      {/* Ledger Stats */}
       <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div className="bg-surface-container-lowest p-8 rounded-2xl shadow-sm border-l-4 border-primary border border-outline-variant/10">
-          <p className="text-[10px] font-black text-neutral-400 font-label uppercase tracking-[0.2em] mb-2">Total Committed</p>
-          <p className="text-3xl font-black text-on-surface font-headline leading-tight">₦42,500,000</p>
-          <div className="mt-4 flex items-center text-[10px] text-tertiary font-black uppercase tracking-wider bg-tertiary/5 px-2 py-1 rounded-lg w-fit">
-            <span className="material-symbols-outlined text-[14px] mr-1" style={{ fontVariationSettings: "'wght' 700" }}>trending_up</span>
+        <div className="bg-white p-8 rounded-[32px] shadow-sm border border-zinc-100 flex flex-col justify-between">
+          <div>
+            <p className="text-[10px] font-black text-zinc-400 font-label uppercase tracking-[0.2em] mb-2">Total Committed</p>
+            <p className="text-3xl font-black text-zinc-900 font-headline leading-tight font-headline">₦42,500,000</p>
+          </div>
+          <div className="mt-4 flex items-center text-[10px] text-emerald-600 font-black uppercase tracking-wider bg-emerald-50 px-2.5 py-1.5 rounded-full border border-emerald-100 w-fit">
+            <span className="material-symbols-outlined text-sm font-bold mr-1">trending_up</span>
             +12% vs last sem
           </div>
         </div>
 
-        <div className="bg-surface-container-lowest p-8 rounded-2xl shadow-sm border border-outline-variant/10">
-          <p className="text-[10px] font-black text-neutral-400 font-label uppercase tracking-[0.2em] mb-2">Active Scholars</p>
-          <p className="text-3xl font-black text-on-surface font-headline leading-tight">128</p>
-          <div className="mt-4 h-1.5 w-full bg-surface-container-low rounded-full overflow-hidden p-[1px] border border-outline-variant/5">
+        <div className="bg-white p-8 rounded-[32px] shadow-sm border border-zinc-100 flex flex-col justify-between">
+          <div>
+            <p className="text-[10px] font-black text-zinc-400 font-label uppercase tracking-[0.2em] mb-2">Active Scholars</p>
+            <p className="text-3xl font-black text-zinc-900 font-headline leading-tight font-headline">128</p>
+          </div>
+          <div className="mt-4 h-3 w-full bg-zinc-100 rounded-full overflow-hidden p-1 border border-zinc-200">
             <motion.div 
               initial={{ width: 0 }}
               animate={{ width: '85%' }}
               transition={{ duration: 1.5, ease: "easeOut" }}
-              className="h-full bg-tertiary rounded-full shadow-[0_0_8px_rgba(0,77,65,0.2)]"
+              className="h-full bg-[#0052CC] rounded-full shadow-sm"
             ></motion.div>
           </div>
         </div>
 
-        <div className="bg-surface-container-lowest p-8 rounded-2xl shadow-sm border border-outline-variant/10">
-          <p className="text-[10px] font-black text-neutral-400 font-label uppercase tracking-[0.2em] mb-2">In Queue</p>
-          <p className="text-3xl font-black text-on-surface font-headline leading-tight">₦2,140,000</p>
-          <p className="mt-4 text-[10px] text-neutral-400 font-bold italic tracking-wide">8 transactions pending</p>
+        <div className="bg-white p-8 rounded-[32px] shadow-sm border border-zinc-100 flex flex-col justify-between">
+          <div>
+            <p className="text-[10px] font-black text-zinc-400 font-label uppercase tracking-[0.2em] mb-2">In Queue</p>
+            <p className="text-3xl font-black text-zinc-900 font-headline leading-tight font-headline">₦2,140,000</p>
+          </div>
+          <p className="mt-4 text-[10px] text-zinc-400 font-black uppercase tracking-widest font-label">8 transactions pending</p>
         </div>
 
-        <div className="bg-primary/5 p-8 rounded-2xl border border-primary/10 relative overflow-hidden group">
-          <div className="relative z-10">
-            <p className="text-[10px] font-black text-primary font-label uppercase tracking-[0.2em] mb-2">Wallet Balance</p>
-            <p className="text-3xl font-black text-primary font-headline leading-tight">₦8,920,450</p>
-            <button className="mt-4 text-[10px] font-black text-primary underline underline-offset-4 hover:opacity-70 transition-opacity uppercase tracking-wider">Top up account</button>
+        <div className="bg-[#0052CC] p-6 md:p-8 rounded-[24px] md:rounded-[32px] shadow-xl shadow-blue-600/10 border border-white/10 relative overflow-hidden group">
+          <div className="relative z-10 flex flex-col justify-between h-full gap-6">
+            <div>
+              <p className="text-[10px] font-bold text-white/70 font-label uppercase tracking-[0.2em] mb-1">Wallet Balance</p>
+              <p className="text-2xl md:text-3xl font-bold text-white font-headline leading-tight">₦8,920,450</p>
+            </div>
+            <Button variant="glass" size="sm" className="w-fit text-[10px] uppercase tracking-widest px-6">Top up account</Button>
           </div>
-          <span className="material-symbols-outlined absolute -right-6 -bottom-6 text-9xl text-primary/5 rotate-12 transition-transform group-hover:rotate-0 duration-700" style={{ fontVariationSettings: "'wght' 100" }}>account_balance</span>
+          <span className="material-symbols-outlined absolute -right-6 -top-6 text-7xl md:text-8xl text-white/10 rotate-12 transition-transform group-hover:rotate-0 duration-700" style={{ fontVariationSettings: "'wght' 300" }}>account_balance</span>
         </div>
       </section>
 
       {/* Ledger Table Section */}
-      <section className="bg-surface-container-lowest rounded-3xl shadow-xl shadow-primary/[0.02] overflow-hidden border border-outline-variant/10">
-        <div className="p-6 border-b border-outline-variant/10 flex justify-between items-center bg-surface-bright/50 backdrop-blur-md">
-          <div className="flex gap-2">
-            {['All Time', 'Pending', 'Completed'].map((tab, i) => (
-              <button 
-                key={tab}
-                className={cn(
-                  "px-5 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all font-label",
-                  i === 0 ? "bg-primary text-white shadow-lg shadow-primary/20" : "text-neutral-400 hover:bg-surface-container-low"
-                )}
-              >
-                {tab}
-              </button>
-            ))}
+      <section className="bg-white rounded-[40px] shadow-sm overflow-hidden border border-zinc-100 flex flex-col">
+        <div className="p-6 md:p-8 border-b border-zinc-50 flex flex-col md:flex-row justify-between gap-6 items-center">
+          <div className="w-full md:w-auto overflow-x-auto no-scrollbar -mx-6 px-6 md:mx-0 md:px-0">
+            <div className="flex bg-zinc-100 p-1 rounded-xl md:rounded-2xl w-fit">
+              {['All Time', 'Pending', 'Completed'].map((tab, i) => (
+                <button 
+                  key={tab}
+                  className={cn(
+                    "px-6 md:px-8 py-2 md:py-2.5 rounded-lg md:rounded-xl text-[10px] font-bold uppercase tracking-widest transition-all font-label whitespace-nowrap",
+                    i === 0 ? "bg-white text-[#0052CC] shadow-sm" : "text-zinc-500 hover:text-zinc-800"
+                  )}
+                >
+                  {tab}
+                </button>
+              ))}
+            </div>
           </div>
-          <div className="flex items-center gap-4 text-[11px] font-extrabold text-neutral-400 font-label">
+          <div className="flex items-center gap-4 text-[10px] font-black text-zinc-400 font-label uppercase tracking-widest">
             <span>Showing 1-12 of 156 entries</span>
-            <div className="flex border border-outline-variant/20 rounded-xl overflow-hidden shadow-inner">
-              <button className="p-2 hover:bg-surface-container-low border-r border-outline-variant/20"><span className="material-symbols-outlined text-lg">chevron_left</span></button>
-              <button className="p-2 hover:bg-surface-container-low"><span className="material-symbols-outlined text-lg">chevron_right</span></button>
+            <div className="flex border border-zinc-100 rounded-xl overflow-hidden shadow-sm">
+              <button className="p-2.5 bg-white hover:bg-zinc-50 border-r border-zinc-100 text-zinc-600"><span className="material-symbols-outlined text-xl">chevron_left</span></button>
+              <button className="p-2.5 bg-white hover:bg-zinc-50 text-zinc-600"><span className="material-symbols-outlined text-xl">chevron_right</span></button>
             </div>
           </div>
         </div>
 
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto flex-1">
           <table className="w-full text-left border-collapse">
             <thead>
-              <tr className="bg-surface-container-low/30">
-                <th className="px-8 py-5 text-[10px] font-black text-neutral-400 uppercase tracking-[0.2em] font-label">Date</th>
-                <th className="px-8 py-5 text-[10px] font-black text-neutral-400 uppercase tracking-[0.2em] font-label">Student Name</th>
-                <th className="px-8 py-5 text-[10px] font-black text-neutral-400 uppercase tracking-[0.2em] font-label">Reference ID</th>
-                <th className="px-8 py-5 text-[10px] font-black text-neutral-400 uppercase tracking-[0.2em] font-label">Amount</th>
-                <th className="px-8 py-5 text-[10px] font-black text-neutral-400 uppercase tracking-[0.2em] font-label">Status</th>
-                <th className="px-8 py-5 text-[10px] font-black text-neutral-400 uppercase tracking-[0.2em] font-label text-right">Actions</th>
+              <tr className="border-b border-zinc-50/50">
+                <th className="px-8 py-6 text-[10px] font-black text-zinc-400 uppercase tracking-[0.2em] font-label whitespace-nowrap">Date</th>
+                <th className="px-8 py-6 text-[10px] font-black text-zinc-400 uppercase tracking-[0.2em] font-label whitespace-nowrap">Student Name</th>
+                <th className="px-8 py-6 text-[10px] font-black text-zinc-400 uppercase tracking-[0.2em] font-label whitespace-nowrap">Reference ID</th>
+                <th className="px-8 py-6 text-[10px] font-black text-zinc-400 uppercase tracking-[0.2em] font-label whitespace-nowrap">Amount</th>
+                <th className="px-8 py-6 text-[10px] font-black text-zinc-400 uppercase tracking-[0.2em] font-label whitespace-nowrap">Status</th>
+                <th className="px-8 py-6 text-[10px] font-black text-zinc-400 uppercase tracking-[0.2em] font-label text-right whitespace-nowrap">Actions</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-outline-variant/5">
+            <tbody className="divide-y divide-zinc-50/50">
               {transactions.map((tx, idx) => (
-                <tr key={idx} className="hover:bg-surface-container-low/30 transition-colors group">
-                  <td className="px-8 py-6">
-                    <span className="block text-sm font-black text-on-surface font-headline">{tx.date}</span>
-                    <span className="block text-[10px] text-neutral-400 font-bold mt-1 uppercase tracking-wider">{tx.time}</span>
+                <tr key={idx} className="hover:bg-zinc-50/30 transition-colors group cursor-pointer">
+                  <td className="px-8 py-6 whitespace-nowrap">
+                    <span className="block text-sm font-extrabold text-zinc-900 font-headline leading-tight">{tx.date}</span>
+                    <span className="block text-[10px] text-zinc-400 font-black mt-1 uppercase tracking-widest font-label">{tx.time}</span>
                   </td>
                   <td className="px-8 py-6">
                     <div className="flex items-center gap-4">
-                      <div className={cn("w-10 h-10 rounded-xl flex items-center justify-center text-xs font-black shadow-inner border border-black/5", tx.bgColor)}>
+                      <div className={cn("w-10 h-10 rounded-2xl flex items-center justify-center text-[10px] font-black shadow-sm border border-zinc-100", tx.bgColor)}>
                         {tx.initial}
                       </div>
                       <div>
-                        <span className="block text-sm font-black text-on-surface font-headline leading-none mb-1">{tx.name}</span>
-                        <span className="block text-[10px] text-neutral-400 font-bold uppercase tracking-widest">{tx.dept}</span>
+                        <span className="block text-sm font-extrabold text-zinc-900 font-headline leading-none mb-1">{tx.name}</span>
+                        <span className="block text-[10px] text-zinc-400 font-black uppercase tracking-widest font-label">{tx.dept}</span>
                       </div>
                     </div>
                   </td>
-                  <td className="px-8 py-6 font-mono text-[11px] text-neutral-500 font-bold tracking-tight">{tx.ref}</td>
-                  <td className="px-8 py-6 font-black text-on-surface font-headline">{tx.amount}</td>
+                  <td className="px-8 py-6 font-mono text-[10px] text-zinc-500 font-bold tracking-tight bg-zinc-50/30">{tx.ref}</td>
+                  <td className="px-8 py-6 font-black text-zinc-900 font-headline text-lg leading-none">{tx.amount}</td>
                   <td className="px-8 py-6">
-                    <span className={cn("inline-flex items-center gap-2 px-3 py-1.5 rounded-full font-black text-[9px] uppercase tracking-widest border border-current/10 shadow-sm font-label", tx.statusColor)}>
-                      <span className={cn("w-1.5 h-1.5 rounded-full", tx.dotColor, tx.pulse && "animate-pulse")}></span>
+                    <span className={cn(
+                      "inline-flex items-center gap-2 px-4 py-1.5 rounded-full font-black text-[9px] uppercase tracking-[0.2em] border border-current/10 font-label",
+                      tx.status === 'Completed' ? 'bg-emerald-50 text-emerald-600' : 
+                      tx.status === 'Transferred' ? 'bg-blue-50 text-[#0052CC]' : 'bg-zinc-100 text-zinc-500'
+                    )}>
+                      <span className={cn("w-1.5 h-1.5 rounded-full", tx.status === 'Completed' ? 'bg-emerald-600' : tx.status === 'Transferred' ? 'bg-[#0052CC]' : 'bg-zinc-400', tx.pulse && "animate-pulse")}></span>
                       {tx.status}
                     </span>
                   </td>
                   <td className="px-8 py-6 text-right">
-                    <button className="p-3 bg-surface-container-low text-neutral-400 hover:text-primary hover:bg-primary/5 transition-all rounded-xl border border-transparent hover:border-primary/10">
+                    <button className="p-2.5 bg-zinc-50 text-zinc-400 hover:text-[#0052CC] hover:bg-blue-50 transition-all rounded-xl border border-transparent">
                       <span className="material-symbols-outlined text-xl">visibility</span>
                     </button>
                   </td>
@@ -159,60 +172,59 @@ export function SponsorLedger() {
       </section>
 
       {/* Audit Trail Highlights */}
-      <section className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <section className="grid grid-cols-1 md:grid-cols-3 gap-10">
         <div className="md:col-span-2 space-y-8">
-          <h3 className="text-xl font-black font-headline flex items-center gap-3">
-            <span className="w-8 h-8 rounded-lg bg-secondary-container/10 text-secondary flex items-center justify-center">
-              <span className="material-symbols-outlined text-lg" style={{ fontVariationSettings: "'wght' 700" }}>verified_user</span>
-            </span>
-            Audit Trail Highlights
-          </h3>
-          <div className="space-y-4">
-            <div className="flex gap-6 p-6 rounded-2xl bg-surface-container-lowest shadow-sm border-l-4 border-secondary-container border border-outline-variant/10 group cursor-default">
-              <div className="w-12 h-12 rounded-xl bg-secondary-container/10 flex items-center justify-center text-secondary shrink-0 transition-transform group-hover:scale-110">
+          <div className="flex items-center gap-3">
+             <span className="material-symbols-outlined text-[#0052CC] font-bold">verified_user</span>
+             <h3 className="text-xl font-black font-headline tracking-tight text-zinc-900">Audit Trail Highlights</h3>
+          </div>
+          <div className="grid grid-cols-1 gap-4">
+            <div className="flex gap-8 p-8 rounded-[32px] bg-white shadow-sm border border-zinc-100 group cursor-default hover:border-[#0052CC]/20 transition-all">
+              <div className="w-14 h-14 rounded-2xl bg-zinc-50 flex items-center justify-center text-zinc-400 shrink-0 transition-all group-hover:scale-110 group-hover:text-[#0052CC] border border-zinc-100">
                 <span className="material-symbols-outlined text-2xl" style={{ fontVariationSettings: "'FILL' 1" }}>security</span>
               </div>
-              <div className="space-y-1">
-                <p className="text-sm font-black text-on-surface font-headline">External Audit Completed</p>
-                <p className="text-xs text-on-surface-variant font-body leading-relaxed max-w-lg">
+              <div className="space-y-2 border-l border-zinc-100 pl-8">
+                <p className="text-sm font-extrabold text-zinc-900 font-headline">External Audit Completed</p>
+                <p className="text-xs text-zinc-500 font-body leading-relaxed max-w-lg">
                   Q3 Disbursement reports were verified by Grant Thornton Nigeria with zero discrepancies found. Funds reached all intended scholars.
                 </p>
-                <span className="inline-block mt-3 text-[9px] font-black text-secondary-fixed-dim bg-secondary-container/20 px-3 py-1 rounded-full uppercase tracking-widest font-label border border-secondary/10">
+                <span className="inline-block mt-2 text-[9px] font-black text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full uppercase tracking-widest font-label border border-emerald-100">
                   Verified 2 days ago
                 </span>
               </div>
             </div>
 
-            <div className="flex gap-6 p-6 rounded-2xl bg-surface-container-lowest shadow-sm border-l-4 border-primary border border-outline-variant/10 group cursor-default">
-              <div className="w-12 h-12 rounded-xl bg-primary/5 flex items-center justify-center text-primary shrink-0 transition-transform group-hover:scale-110">
+            <div className="flex gap-8 p-8 rounded-[32px] bg-white shadow-sm border border-zinc-100 group cursor-default hover:border-[#0052CC]/20 transition-all">
+              <div className="w-14 h-14 rounded-2xl bg-zinc-50 flex items-center justify-center text-zinc-400 shrink-0 transition-all group-hover:scale-110 group-hover:text-[#0052CC] border border-zinc-100">
                 <span className="material-symbols-outlined text-2xl" style={{ fontVariationSettings: "'FILL' 1" }}>history_edu</span>
               </div>
-              <div className="space-y-1">
-                <p className="text-sm font-black text-on-surface font-headline">New Pledges Pending</p>
-                <p className="text-xs text-neutral-400 font-body leading-relaxed max-w-lg">
-                  You have ₦1,450,000 in upcoming scholarship pledges that require transfer confirmation by Nov 5th for the upcoming Fall semester.
+              <div className="space-y-2 border-l border-zinc-100 pl-8">
+                <p className="text-sm font-extrabold text-zinc-900 font-headline">New Pledges Pending</p>
+                <p className="text-xs text-zinc-500 font-body leading-relaxed max-w-lg">
+                  You have ₦1,450,000 in upcoming scholarship pledges that require transfer confirmation by Nov 5th for the upcoming semester.
                 </p>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Upgrade Card */}
-        <div className="bg-inverse-surface rounded-[2rem] p-10 text-inverse-on-surface relative overflow-hidden group shadow-2xl">
-          <div className="absolute -right-20 -top-20 w-80 h-80 bg-primary/20 rounded-full blur-[100px] transition-opacity duration-1000 group-hover:opacity-60"></div>
+        {/* Impact Tier Card */}
+        <div className="bg-zinc-900 rounded-[40px] p-10 text-white relative overflow-hidden group shadow-2xl flex flex-col justify-between min-h-[400px]">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-[#0052CC]/20 rounded-full blur-[100px] transition-transform duration-1000 group-hover:scale-110"></div>
           
-          <div className="relative z-10 flex flex-col h-full">
-            <div className="bg-white/10 w-14 h-14 rounded-2xl flex items-center justify-center mb-10 backdrop-blur-md border border-white/10">
-              <span className="material-symbols-outlined text-3xl text-secondary-fixed">workspace_premium</span>
+          <div className="relative z-10">
+            <div className="bg-white/10 w-16 h-16 rounded-[24px] flex items-center justify-center mb-10 backdrop-blur-md border border-white/10 shadow-inner">
+              <span className="material-symbols-outlined text-3xl text-[#D4AF37]">workspace_premium</span>
             </div>
-            <h3 className="text-3xl font-black mb-6 leading-[1.1] font-headline">Scale Your Impact</h3>
-            <p className="text-sm text-neutral-400 mb-auto leading-relaxed font-body">
-              Your funding currently supports 128 scholars. Increasing your commitment by 15% unlocks **Platinum Guardian** status, enabling a full departmental endowment.
+            <h3 className="text-3xl lg:text-4xl font-black mb-6 font-headline tracking-tighter leading-tight">Scale Your Impact</h3>
+            <p className="text-sm text-zinc-400 leading-relaxed font-body max-w-[240px]">
+              Increasing your commitment by 15% unlocks **Platinum Guardian** status, enabling a full departmental endowment.
             </p>
-            <button className="w-full mt-10 py-5 bg-secondary-container text-on-secondary-container rounded-2xl font-black text-sm hover:scale-[1.02] active:scale-95 transition-all font-headline shadow-xl shadow-black/40">
-              Upgrade Scholarship Tier
-            </button>
           </div>
+
+          <Button variant="primary" className="mt-10 py-6">
+            Upgrade Tier
+          </Button>
         </div>
       </section>
     </motion.div>

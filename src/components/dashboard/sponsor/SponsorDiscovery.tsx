@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { cn } from '@/lib/utils'
+import { Button } from '@/components/ui/Button'
 
 const scholars = [
   {
@@ -45,27 +46,25 @@ export function SponsorDiscovery() {
     <motion.div 
       initial={{ opacity: 0, scale: 0.98 }}
       animate={{ opacity: 1, scale: 1 }}
-      className="space-y-12"
+      className="w-full max-w-7xl mx-auto space-y-8 md:space-y-12 pb-20"
     >
       {/* Header Section */}
-      <section className="space-y-6">
+      <section className="space-y-4">
         <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6">
           <div className="space-y-2">
-            <span className="text-primary font-black text-xs tracking-[0.2em] uppercase mb-2 block font-label">Student Matchmaker</span>
-            <h1 className="text-4xl lg:text-5xl font-black tracking-tight text-on-surface font-headline">Discover Future Leaders</h1>
-            <p className="text-on-surface-variant mt-2 max-w-2xl font-body leading-relaxed">
+            <span className="text-[#0052CC] font-bold text-[10px] tracking-[0.2em] uppercase mb-1 block font-label">Student Matchmaker</span>
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-zinc-900 font-headline leading-tight">Discover Future Leaders</h1>
+            <p className="text-zinc-500 mt-2 max-w-2xl font-body text-xs md:text-sm leading-relaxed">
               Browse verified scholars whose academic potential outweighs their financial means. Every contribution builds a bridge to excellence.
             </p>
           </div>
-          <div className="flex gap-3">
-            <button className="flex items-center gap-2 px-6 py-3 rounded-xl border border-outline-variant/30 text-sm font-bold hover:bg-white hover:border-primary/20 transition-all font-headline">
-              <span className="material-symbols-outlined text-lg" style={{ fontVariationSettings: "'wght' 700" }}>filter_list</span>
+          <div className="flex gap-2 w-full md:w-auto mt-4 md:mt-0">
+            <Button variant="outline" iconLeft="filter_list" className="flex-1 md:flex-none">
               Filters
-            </button>
-            <button className="flex items-center gap-2 px-6 py-3 rounded-xl bg-on-background text-surface text-sm font-bold hover:opacity-90 active:scale-95 transition-all font-headline">
-              <span className="material-symbols-outlined text-lg" style={{ fontVariationSettings: "'wght' 700" }}>sort</span>
+            </Button>
+            <Button variant="secondary" iconLeft="sort" className="flex-1 md:flex-none">
               High Need First
-            </button>
+            </Button>
           </div>
         </div>
       </section>
@@ -78,7 +77,7 @@ export function SponsorDiscovery() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: idx * 0.1 }}
-            className="bg-surface-container-lowest rounded-3xl overflow-hidden group hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 border border-outline-variant/10"
+            className="bg-white rounded-[40px] overflow-hidden group hover:shadow-2xl hover:shadow-blue-600/5 transition-all duration-500 border border-zinc-100 flex flex-col"
           >
             <div className="relative h-64 overflow-hidden">
               <Image 
@@ -86,82 +85,86 @@ export function SponsorDiscovery() {
                 alt={scholar.name}
                 width={400}
                 height={256}
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
               />
-              <div className="absolute top-4 left-4 bg-secondary-container/90 backdrop-blur-md px-4 py-1.5 rounded-full flex items-center gap-2 shadow-lg border border-white/20">
-                <span className="material-symbols-outlined text-sm text-on-secondary-container" style={{ fontVariationSettings: "'FILL' 1" }}>verified</span>
-                <span className="text-[10px] font-black uppercase tracking-widest text-on-secondary-container font-label">Verified Scholar</span>
+              <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-4 py-1.5 rounded-full flex items-center gap-2 shadow-sm border border-white/20">
+                <span className="material-symbols-outlined text-sm text-[#0052CC]" style={{ fontVariationSettings: "'FILL' 1" }}>verified</span>
+                <span className="text-[9px] font-black uppercase tracking-widest text-zinc-900 font-label">Verified</span>
               </div>
             </div>
             
-            <div className="p-8">
-              <div className="flex justify-between items-start mb-4">
-                <div className="space-y-1">
-                  <h3 className="text-2xl font-black text-on-surface leading-tight font-headline">{scholar.name}</h3>
-                  <p className="text-sm font-bold text-on-surface-variant font-body">{scholar.school}</p>
+            <div className="p-6 md:p-8 lg:p-10 flex flex-1 flex-col justify-between">
+              <div>
+                <div className="flex justify-between items-start mb-4">
+                  <div className="space-y-1">
+                    <h3 className="text-2xl font-black text-zinc-900 leading-tight font-headline tracking-tight">{scholar.name}</h3>
+                    <p className="text-xs font-bold text-zinc-400 font-label uppercase tracking-widest leading-none">{scholar.school}</p>
+                  </div>
+                  <span className="text-[9px] font-black px-3 py-1 rounded-lg border border-zinc-100 bg-zinc-50 text-zinc-500 uppercase tracking-widest font-label">
+                    {scholar.field}
+                  </span>
                 </div>
-                <span className={cn("text-[10px] font-black px-3 py-1 rounded-lg border border-current/10 uppercase tracking-widest font-label", scholar.fieldColor)}>
-                  {scholar.field}
-                </span>
+                
+                <p className="text-sm text-zinc-500 font-body leading-relaxed mb-8 italic">
+                  "{scholar.description}"
+                </p>
               </div>
               
-              <p className="text-sm text-on-surface-variant font-body leading-relaxed line-clamp-2 mb-8 italic">
-                {scholar.description}
-              </p>
-              
-              <div className="space-y-4">
-                <div className="flex justify-between text-[11px] font-black uppercase tracking-widest font-label">
-                  <span className="text-primary">{scholar.raised} Raised</span>
-                  <span className="text-on-surface-variant opacity-60">Goal: {scholar.goal}</span>
+              <div className="space-y-5">
+                <div className="space-y-2">
+                  <div className="flex justify-between text-[10px] font-black uppercase tracking-widest font-label">
+                    <span className="text-[#0052CC]">{scholar.raised} Raised</span>
+                    <span className="text-zinc-400">Goal: {scholar.goal}</span>
+                  </div>
+                  <div className="h-3 w-full bg-zinc-100 rounded-full overflow-hidden p-1 border border-zinc-200">
+                    <motion.div 
+                      initial={{ width: 0 }}
+                      animate={{ width: `${scholar.progress}%` }}
+                      transition={{ duration: 1.5, ease: "easeOut" }}
+                      className="h-full bg-[#0052CC] rounded-full shadow-sm"
+                    ></motion.div>
+                  </div>
                 </div>
-                <div className="h-2.5 w-full bg-surface-container-high rounded-full overflow-hidden p-0.5 border border-outline-variant/5">
-                  <motion.div 
-                    initial={{ width: 0 }}
-                    animate={{ width: `${scholar.progress}%` }}
-                    transition={{ duration: 1.5, ease: "easeOut" }}
-                    className="h-full bg-primary rounded-full shadow-[0_0_8px_rgba(0,61,155,0.3)]"
-                  ></motion.div>
+                
+                <div className="flex gap-3 pt-4">
+                  <Button className="flex-1">
+                    Fund Scholar
+                  </Button>
+                  <Button variant="outline" className="px-5">
+                    <span className="material-symbols-outlined text-2xl group-hover:scale-110 transition-transform">visibility</span>
+                  </Button>
                 </div>
-              </div>
-              
-              <div className="mt-10 flex gap-3">
-                <button className="flex-1 py-4 bg-primary-container text-on-primary rounded-2xl font-black text-sm shadow-xl shadow-primary/10 hover:brightness-110 active:scale-95 transition-all font-headline text-shadow-sm">
-                  Fund Scholar
-                </button>
-                <button className="px-5 py-4 border border-outline-variant text-on-surface-variant rounded-2xl hover:bg-surface-container-low hover:border-primary/20 transition-all group">
-                  <span className="material-symbols-outlined text-2xl group-hover:scale-110 transition-transform">visibility</span>
-                </button>
               </div>
             </div>
           </motion.div>
         ))}
 
-        {/* Impact Summary Card (Asymmetric Element) */}
-        <div className="lg:col-span-3 bg-inverse-surface rounded-[2.5rem] p-10 lg:p-14 flex flex-col lg:flex-row items-center gap-12 mt-8 overflow-hidden relative group">
-          <div className="absolute right-0 top-0 opacity-5 pointer-events-none transition-transform duration-1000 group-hover:scale-110 group-hover:rotate-6">
-            <span className="material-symbols-outlined text-[400px]" style={{ fontVariationSettings: "'wght' 100" }}>auto_awesome</span>
+        {/* Impact Summary Card */}
+        <div className="col-span-1 md:col-span-2 lg:col-span-3 bg-zinc-900 rounded-[32px] md:rounded-[48px] p-6 md:p-12 lg:p-16 flex flex-col lg:flex-row items-center gap-10 md:gap-14 mt-8 overflow-hidden relative group shadow-2xl">
+          <div className="absolute right-0 top-0 opacity-10 pointer-events-none transition-transform duration-1000 group-hover:scale-110 group-hover:rotate-6">
+            <span className="material-symbols-outlined text-[150px] md:text-[400px] text-white" style={{ fontVariationSettings: "'wght' 100" }}>auto_awesome</span>
           </div>
           
-          <div className="flex-1 z-10 space-y-6">
-            <h2 className="text-3xl lg:text-4xl font-black text-surface leading-[1.1] font-headline">
-              Your collective contribution could bridge the final gap for 12 scholars this month.
+          <div className="flex-1 z-10 space-y-6 md:space-y-8 text-center lg:text-left">
+            <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold text-white leading-tight font-headline tracking-tight md:tracking-tighter">
+              Bridge the final gap for 12 scholars this month.
             </h2>
-            <p className="text-surface-variant text-lg lg:text-xl opacity-70 font-body max-w-2xl leading-relaxed">
+            <p className="text-white/60 text-sm md:text-base lg:text-xl font-body max-w-2xl leading-relaxed">
               Join our "Last Mile" initiative and help students who are over 90% funded cross the finish line.
             </p>
-            <button className="px-10 py-5 bg-secondary-container text-on-secondary-container rounded-2xl font-black text-lg shadow-2xl shadow-black/20 hover:scale-105 active:scale-95 transition-all font-headline">
+            <Button variant="primary" size="lg" className="w-full lg:w-auto">
               Support "Last Mile" Scholars
-            </button>
+            </Button>
           </div>
           
-          <div className="grid grid-cols-2 lg:grid-cols-1 gap-6 w-full lg:w-72 z-10">
-            <div className="bg-white/5 backdrop-blur-xl p-8 rounded-3xl border border-white/10 shadow-2xl">
-              <div className="text-secondary-fixed text-4xl font-black mb-1 font-headline">84%</div>
-              <div className="text-surface-variant text-xs font-black uppercase tracking-[0.2em] opacity-60 font-label">Avg. Completion</div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4 md:gap-6 w-full lg:w-80 z-10">
+            <div className="bg-white/5 backdrop-blur-xl p-6 md:p-8 rounded-[24px] md:rounded-[32px] border border-white/10 shadow-2xl">
+              <div className="text-[#0052CC] text-3xl sm:text-4xl md:text-5xl font-black mb-1 font-headline tracking-tighter">84%</div>
+              <div className="text-white/40 text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em] font-label">Avg. Completion</div>
             </div>
-            <div className="bg-white/5 backdrop-blur-xl p-8 rounded-3xl border border-white/10 shadow-2xl">
-              <div className="text-tertiary-fixed text-4xl font-black mb-1 font-headline">1,240</div>
-              <div className="text-surface-variant text-xs font-black uppercase tracking-[0.2em] opacity-60 font-label">Lives Changed</div>
+            <div className="bg-white/5 backdrop-blur-xl p-6 md:p-8 rounded-[24px] md:rounded-[32px] border border-white/10 shadow-2xl">
+              <div className="text-emerald-500 text-3xl sm:text-4xl md:text-5xl font-black mb-1 font-headline tracking-tighter">1,240</div>
+              <div className="text-white/40 text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em] font-label">Lives Changed</div>
             </div>
           </div>
         </div>

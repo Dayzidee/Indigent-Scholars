@@ -79,7 +79,7 @@ export function TopNav() {
         <div className="flex items-center space-x-4">
           <div className="hidden sm:flex items-center space-x-4">
             <Link href="/login">
-              <button className="font-manrope tracking-tight text-sm font-semibold text-neutral-600 scale-95 duration-150 active:opacity-80">
+              <button id="nav-login-desktop" className="font-manrope tracking-tight text-sm font-semibold text-neutral-600 scale-95 duration-150 active:opacity-80">
                 Log In
               </button>
             </Link>
@@ -126,7 +126,7 @@ export function TopNav() {
               <hr className="border-neutral-100" />
               <div className="flex flex-col space-y-4">
                 <Link href="/login" onClick={() => setIsOpen(false)}>
-                  <button className="w-full text-left font-manrope tracking-tight text-lg font-semibold text-neutral-600">
+                  <button id="nav-login-mobile" className="w-full text-left font-manrope tracking-tight text-lg font-semibold text-neutral-600">
                     Log In
                   </button>
                 </Link>

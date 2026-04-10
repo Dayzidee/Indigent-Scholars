@@ -12,6 +12,11 @@ const navItems = [
     icon: 'dashboard',
   },
   {
+    label: 'Registration',
+    href: '/dashboard/student/registration',
+    icon: 'app_registration',
+  },
+  {
     label: 'My Application',
     href: '/dashboard/student/application',
     icon: 'description',
@@ -57,10 +62,10 @@ export function SideNavBar({ isOpen, onClose }: SideNavBarProps) {
           isOpen ? "translate-x-0" : "-translate-x-full"
         )}
       >
-        <div className="px-6 py-8 flex justify-between items-center">
+        <div className="px-6 py-10 flex justify-between items-center border-b border-zinc-50">
           <div>
-            <h1 className="text-xl font-black text-blue-800 tracking-tight font-headline">Indigent-Sc</h1>
-            <p className="text-xs text-zinc-500 font-medium font-headline">Scholar Portal</p>
+            <h1 className="text-xl font-black text-[#0052CC] tracking-tighter font-headline mb-0.5">INDIGENT-SC</h1>
+            <p className="text-[9px] text-zinc-400 font-extrabold font-headline uppercase tracking-[0.2em] leading-none">Architecture of Hope</p>
           </div>
           <button onClick={onClose} className="md:hidden p-2 hover:bg-zinc-200 rounded-lg transition-colors">
             <span className="material-symbols-outlined text-zinc-600">close</span>

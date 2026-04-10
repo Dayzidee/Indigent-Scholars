@@ -48,6 +48,7 @@ export function TopNavBar({ onMenuClick }: TopNavBarProps) {
       <div className="flex items-center gap-2 md:gap-4 truncate">
         {/* Mobile Menu Toggle */}
         <button 
+          id="mobile-menu-trigger"
           onClick={onMenuClick}
           className="p-2 md:hidden hover:bg-zinc-100 rounded-lg transition-colors shrink-0"
         >

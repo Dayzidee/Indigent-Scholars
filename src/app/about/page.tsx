@@ -1,18 +1,24 @@
-'use client';
-
+import Image from 'next/image';
 import { FadeUpStagger } from '@/components/ui/FadeUpStagger';
 import { SlideIn } from '@/components/ui/SlideIn';
 
+/**
+ * AboutPage - Server-rendered with optimized imagery.
+ * Leveraging Server Components to reduce client-side JS and improve TTI.
+ */
 export default function AboutPage() {
   return (
     <main className="pt-20">
       {/* Hero Section */}
       <section className="relative h-[870px] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img 
-            className="w-full h-full object-cover" 
+          <Image 
+            fill
+            priority
+            className="object-cover" 
             alt="Stately Nigerian university library architecture with grand columns and modern glass features in soft afternoon light" 
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOBu0rpw9PcOj203sMTGMsLO_J98-TllPmp8UmS5r9R_smCYJDNNJUEpIQoTAO2Q00CYzH0m8x4sqe_6t_nxiZWOC0MascGoZGBcIPVmyehRnKIU886fmJ6JMaePC6u9z4mST9yoKBu-Z7dTE1uXpDDBAtPoU8AxWjuR2taO62oebpyiqEO20pPIMsjTvMoAj4kYfCxUCFHD7LLKrm42JrJmt_Wigk-NADZb7ZWJ2aB_Y-bH_fSGiQg7COIvg0mbS5NEJyum6DadPT"
+            sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/40"></div>
         </div>
@@ -117,14 +123,15 @@ export default function AboutPage() {
               <div className="absolute top-0 right-0 w-1/3 h-full bg-primary/20 transform skew-x-12 translate-x-20"></div>
               <div className="flex flex-col md:flex-row gap-16 relative z-10">
                 <div className="w-full md:w-1/3">
-                  <div className="relative">
-                    <div className="absolute -top-4 -left-4 w-24 h-24 border-t-4 border-l-4 border-[#D4AF37]"></div>
-                    <img 
-                      className="w-full aspect-[4/5] object-cover rounded-2xl shadow-2xl" 
-                      alt="Distinguished Nigerian philanthropist in a professional navy suit, warm expression, minimalist studio background with soft cinematic lighting" 
+                  <div className="relative aspect-[4/5]">
+                    <div className="absolute -top-4 -left-4 w-24 h-24 border-t-4 border-l-4 border-[#D4AF37] z-10"></div>
+                    <Image 
+                      fill
+                      className="object-cover rounded-2xl shadow-2xl" 
+                      alt="Distinguished Nigerian philanthropist in a professional navy suit, warm expression, minimalist studio background" 
                       src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQLexQOLcoeTn9-mfJAKYFLFAgbv4i5BBxOVeYZLK8tclHtpkErs26YeOf2m3x9-zmh6taRmkaZzetfamHeaEWYMYQUqud-5VdwpPRbj8Kx2klFPWllwhaqUxm0Tnho8EmJUUCgp7Xhmp96_nlm-lBtZC5lIWqFN7NAHL5D9w-YzEZFagiuD5MkTn6aaFgH6nSftj4WX2HNtwP6ey4pbM864Cw3-rv2dLclCLCJKKeKFeadkVsQUzTCy6AacJxnDy17AVC-0hHY711"
                     />
-                    <div className="absolute -bottom-4 -right-4 w-24 h-24 border-b-4 border-r-4 border-primary"></div>
+                    <div className="absolute -bottom-4 -right-4 w-24 h-24 border-b-4 border-r-4 border-primary z-10"></div>
                   </div>
                 </div>
                 <div className="w-full md:w-2/3 text-white">
@@ -151,8 +158,8 @@ export default function AboutPage() {
         <FadeUpStagger className="max-w-7xl mx-auto px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Team Member 1 */}
           <div className="group cursor-pointer">
-            <div className="relative mb-6 overflow-hidden rounded-xl">
-              <img className="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-110" alt="Professional Nigerian woman executive, corporate headshot, confident smile, clean grey background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmWiQo5uWKiKipkzwht2-L0umKiUNv7_qF8lCyYX6S_PVt51lGTxen_Q83qDuSFDwpZ3B6GhIMah87vlhznufRXRyYuayxmJTL55DmcC44JLvXZ7DC0fz_qP90Giohx-E2LJyqALSOJPY1BoCKH3cTe_CU1WvPuvu0dFyvVCAxhL12yxfu4eTdqJpzZrP6G8ERBRDbU2hnaLrcp0PE94iAIJMc0L-95Me62iz9SS4TPkB7ylJYm3wbzFGvt2USREHhcp0In6wG4xqb"/>
+            <div className="relative mb-6 overflow-hidden rounded-xl aspect-square">
+              <Image fill className="object-cover transition-transform duration-500 group-hover:scale-110" alt="Professional Nigerian woman executive" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmWiQo5uWKiKipkzwht2-L0umKiUNv7_qF8lCyYX6S_PVt51lGTxen_Q83qDuSFDwpZ3B6GhIMah87vlhznufRXRyYuayxmJTL55DmcC44JLvXZ7DC0fz_qP90Giohx-E2LJyqALSOJPY1BoCKH3cTe_CU1WvPuvu0dFyvVCAxhL12yxfu4eTdqJpzZrP6G8ERBRDbU2hnaLrcp0PE94iAIJMc0L-95Me62iz9SS4TPkB7ylJYm3wbzFGvt2USREHhcp0In6wG4xqb"/>
               <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
             </div>
             <h4 className="text-xl font-bold text-on-surface">Amina Bello</h4>
@@ -160,8 +167,8 @@ export default function AboutPage() {
           </div>
           {/* Team Member 2 */}
           <div className="group cursor-pointer">
-            <div className="relative mb-6 overflow-hidden rounded-xl">
-              <img className="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-110" alt="Young male tech executive, glasses, tech-modern headshot, soft industrial office background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBC-AfwltfwKv3ekyBZnATAIKIRIMugAOLwmBn1Ad-t33LBXoYRoKFEszaJ0s5-F3fxV9_wj-ZaqIqDQe2RhoQk3nU-mkszEWFepdy-m4KjXh1jZmV75NcK1ZSTKTgc5Nv1NYkQSYCsr3ygi1RrOCWlBkzZIECklUBQag5EyTpF50s7QDeuJ-BRZMvRq_fVUsuDIOlpOJjVEzJ-0UaO6nq9ZNfGqXqvTRtqkQjfmB3p5cx35GE1f5vRFjv6W6Z_TIm2VrcCcjUe0ePL"/>
+            <div className="relative mb-6 overflow-hidden rounded-xl aspect-square">
+              <Image fill className="object-cover transition-transform duration-500 group-hover:scale-110" alt="Young male tech executive" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBC-AfwltfwKv3ekyBZnATAIKIRIMugAOLwmBn1Ad-t33LBXoYRoKFEszaJ0s5-F3fxV9_wj-ZaqIqDQe2RhoQk3nU-mkszEWFepdy-m4KjXh1jZmV75NcK1ZSTKTgc5Nv1NYkQSYCsr3ygi1RrOCWlBkzZIECklUBQag5EyTpF50s7QDeuJ-BRZMvRq_fVUsuDIOlpOJjVEzJ-0UaO6nq9ZNfGqXqvTRtqkQjfmB3p5cx35GE1f5vRFjv6W6Z_TIm2VrcCcjUe0ePL"/>
               <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
             </div>
             <h4 className="text-xl font-bold text-on-surface">Tunde Adeyemi</h4>
@@ -169,8 +176,8 @@ export default function AboutPage() {
           </div>
           {/* Team Member 3 */}
           <div className="group cursor-pointer">
-            <div className="relative mb-6 overflow-hidden rounded-xl">
-              <img className="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-110" alt="Senior male executive, professional attire, institutional background, warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhq7-6boztXxoF7KJPAPwqaxcnL92Dhwr3yO6GLXnv_ZQbXLMEB3vjmG0LxYh-AZwXeakRrBPsGJPwmrLxs_SCkBugh1PZo3CLQBJfH8c6sEFyl4vXXjJqbn1mIcBtBsKTeqqkemMHgtUqFLYZmJocQUwkavyJUx238Iqb7OG-9buf7GTvpN-Dr9LngJ9Hk3xhtzqPbuY0ndjWg8c4CfhksWgPHenyIJKeUxLgJKO9ATyfCA9nWAXToCeo4y9khBeI4QPtIGxzw6L7"/>
+            <div className="relative mb-6 overflow-hidden rounded-xl aspect-square">
+              <Image fill className="object-cover transition-transform duration-500 group-hover:scale-110" alt="Academic Liaison Director" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhq7-6boztXxoF7KJPAPwqaxcnL92Dhwr3yO6GLXnv_ZQbXLMEB3vjmG0LxYh-AZwXeakRrBPsGJPwmrLxs_SCkBugh1PZo3CLQBJfH8c6sEFyl4vXXjJqbn1mIcBtBsKTeqqkemMHgtUqFLYZmJocQUwkavyJUx238Iqb7OG-9buf7GTvpN-Dr9LngJ9Hk3xhtzqPbuY0ndjWg8c4CfhksWgPHenyIJKeUxLgJKO9ATyfCA9nWAXToCeo4y9khBeI4QPtIGxzw6L7"/>
               <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
             </div>
             <h4 className="text-xl font-bold text-on-surface">Dr. Samuel Ibrahim</h4>
@@ -178,8 +185,8 @@ export default function AboutPage() {
           </div>
           {/* Team Member 4 */}
           <div className="group cursor-pointer">
-            <div className="relative mb-6 overflow-hidden rounded-xl">
-              <img className="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-110" alt="Nigerian woman marketing executive, bright smile, modern professional headshot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0bkmU_97bPKZYriw8aZ9paB3ybzUs_UwF_dRe5J24L4AvZA8kQRJ2Rd20s6Zfi9ClI9pGU5U_bUxgdlv5qFhcDDUY6nsQsNbm1CF6O7I4GySgJrYWtTZvZduIMZwI-v6eoq7SUNhh4i7fOoe8O7L3a1p8AGRCu4RQB2TMwy5_Rxn1gLCtZAI6XAmX-bbFWBl0oBCd-dmKwvRwlRU_vpcixyPonPVVnjir1BZqKq4rLUJV85S3TSy0T3k4uxyp4iQrKfTTQI97IY8s"/>
+            <div className="relative mb-6 overflow-hidden rounded-xl aspect-square">
+              <Image fill className="object-cover transition-transform duration-500 group-hover:scale-110" alt="Head of Impact & PR" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0bkmU_97bPKZYriw8aZ9paB3ybzUs_UwF_dRe5J24L4AvZA8kQRJ2Rd20s6Zfi9ClI9pGU5U_bUxgdlv5qFhcDDUY6nsQsNbm1CF6O7I4GySgJrYWtTZvZduIMZwI-v6eoq7SUNhh4i7fOoe8O7L3a1p8AGRCu4RQB2TMwy5_Rxn1gLCtZAI6XAmX-bbFWBl0oBCd-dmKwvRwlRU_vpcixyPonPVVnjir1BZqKq4rLUJV85S3TSy0T3k4uxyp4iQrKfTTQI97IY8s"/>
               <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
             </div>
             <h4 className="text-xl font-bold text-on-surface">Grace Okon</h4>
@@ -202,4 +209,3 @@ export default function AboutPage() {
     </main>
   );
 }
-

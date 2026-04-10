@@ -70,6 +70,7 @@ export function DashboardHeader({ onMenuClick }: DashboardHeaderProps) {
       <div className="flex flex-col">
         <div className="flex items-center space-x-3">
           <button
+            id="mobile-menu-trigger"
             onClick={onMenuClick}
             className="lg:hidden p-2 -ml-2 text-slate-400 hover:text-white transition-colors"
           >

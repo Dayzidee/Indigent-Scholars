@@ -70,7 +70,7 @@ function LoginContent() {
               />
             </div>
           </div>
-          <button className="w-full py-4 bg-gradient-to-b from-[#0052CC] to-[#003D9B] text-white font-bold rounded-lg shadow-lg shadow-primary/20 hover:scale-[0.98] transition-transform active:scale-95" type="submit">
+          <button id="login-submit-btn" className="w-full py-4 bg-gradient-to-b from-[#0052CC] to-[#003D9B] text-white font-bold rounded-lg shadow-lg shadow-primary/20 hover:scale-[0.98] transition-transform active:scale-95" type="submit">
             Log In
           </button>
         </form>

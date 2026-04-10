@@ -11,7 +11,11 @@ export function RedesignedHero() {
 
       <div className="flex flex-col gap-8 md:gap-10 relative z-10">
         {/* Top Section: Centralized Countdown & Goal */}
-        <div className="space-y-4 text-center max-w-4xl mx-auto p-8 rounded-[3rem] bg-white/5 backdrop-blur-xl border border-white/10">
+        <div className="space-y-4 text-center max-w-4xl mx-auto p-8 lg:p-12 rounded-[3rem] bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl shadow-zinc-200/50">
+          <div className="flex flex-col items-center mb-10 gap-2">
+             <h2 className="text-sm font-black text-[#0052CC] uppercase tracking-[0.4em] mb-2">INDIGENT-SC</h2>
+             <h1 className="text-4xl lg:text-5xl font-headline font-black text-zinc-900 tracking-tighter leading-none">Architecture of Hope</h1>
+          </div>
           <MissionCountdown />
           <motion.p 
             initial={{ opacity: 0, scale: 0.98 }}

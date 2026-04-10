@@ -32,12 +32,12 @@ export function SponsorSettings() {
     <motion.div 
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
-      className="max-w-6xl mx-auto space-y-12"
+      className="w-full max-w-6xl mx-auto space-y-8 md:space-y-12"
     >
       {/* Page Header */}
-      <section className="space-y-2">
-        <h1 className="text-4xl lg:text-5xl font-black tracking-tight text-primary font-headline">Organization Settings</h1>
-        <p className="text-on-surface-variant font-medium font-body max-w-2xl leading-relaxed">
+      <section className="space-y-3">
+        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-primary font-headline">Organization Settings</h1>
+        <p className="text-on-surface-variant font-medium font-body max-w-2xl leading-relaxed text-sm">
           Manage your institution's profile, verification status, and security protocols.
         </p>
       </section>
@@ -45,13 +45,13 @@ export function SponsorSettings() {
       {/* Bento Grid Layout */}
       <div className="grid grid-cols-12 gap-8">
         {/* Section 1: Organization Profile */}
-        <section className="col-span-12 lg:col-span-8 bg-surface-container-lowest rounded-[2rem] p-8 lg:p-10 border border-outline-variant/10 shadow-xl shadow-primary/[0.02]">
-          <div className="flex flex-col sm:flex-row justify-between items-start gap-6 mb-10">
+        <section className="col-span-12 lg:col-span-8 bg-surface-container-lowest rounded-[24px] md:rounded-[2rem] p-6 md:p-8 lg:p-10 border border-outline-variant/10 shadow-xl shadow-primary/[0.02]">
+          <div className="flex flex-col sm:flex-row justify-between items-start gap-6 mb-8 md:mb-10">
             <div>
-              <h2 className="text-2xl font-black font-headline text-on-surface mb-1">Organization Profile</h2>
-              <p className="text-sm text-on-surface-variant font-body font-medium">Update your institutional identity & scholarship focus.</p>
+              <h2 className="text-xl md:text-2xl font-bold font-headline text-on-surface mb-1">Organization Profile</h2>
+              <p className="text-xs md:text-sm text-on-surface-variant font-body font-medium">Update your institutional identity & scholarship focus.</p>
             </div>
-            <button className="px-8 py-3 bg-primary text-on-primary rounded-2xl font-black text-sm shadow-xl shadow-primary/20 hover:brightness-110 active:scale-95 transition-all font-headline">
+            <button className="w-full sm:w-auto px-6 md:px-8 py-3 bg-primary text-on-primary rounded-xl md:rounded-2xl font-bold text-sm shadow-xl shadow-primary/20 hover:brightness-110 active:scale-95 transition-all font-headline">
               Save Changes
             </button>
           </div>
@@ -109,17 +109,17 @@ export function SponsorSettings() {
         </section>
 
         {/* Section 2: Verification Status */}
-        <section className="col-span-12 lg:col-span-4 bg-[#FCF9F8] rounded-[2rem] p-8 lg:p-10 border border-outline-variant/10 relative overflow-hidden shadow-xl shadow-primary/[0.01]">
+        <section className="col-span-12 lg:col-span-4 bg-[#FCF9F8] rounded-[24px] md:rounded-[2rem] p-6 md:p-8 lg:p-10 border border-outline-variant/10 relative overflow-hidden shadow-xl shadow-primary/[0.01]">
           <div className="absolute -top-20 -right-20 w-64 h-64 bg-secondary/5 rounded-full blur-3xl"></div>
-          <h2 className="text-2xl font-black font-headline text-on-surface mb-8">Verification</h2>
+          <h2 className="text-xl md:text-2xl font-bold font-headline text-on-surface mb-6 md:mb-8">Verification</h2>
           
-          <div className="flex items-center gap-6 p-6 rounded-3xl bg-secondary-container/10 border border-secondary/20 mb-10 shadow-inner group">
-            <div className="w-16 h-16 rounded-2xl bg-secondary flex items-center justify-center shadow-xl shadow-secondary/20 transition-transform group-hover:scale-110 duration-500">
-              <span className="material-symbols-outlined text-white text-3xl" style={{ fontVariationSettings: "'FILL' 1" }}>verified</span>
+          <div className="flex items-center gap-4 md:gap-6 p-5 md:p-6 rounded-2xl md:rounded-3xl bg-secondary-container/10 border border-secondary/20 mb-8 md:mb-10 shadow-inner group">
+            <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-secondary flex items-center justify-center shadow-xl shadow-secondary/20 transition-transform group-hover:scale-110 duration-500">
+              <span className="material-symbols-outlined text-white text-2xl md:text-3xl" style={{ fontVariationSettings: "'FILL' 1" }}>verified</span>
             </div>
             <div className="space-y-1">
-              <p className="text-secondary font-black text-xl leading-none font-headline tracking-tight uppercase">Verified</p>
-              <p className="text-[10px] text-secondary font-black uppercase tracking-[0.2em] mt-1 font-label opacity-70">Prestige Partner</p>
+              <p className="text-secondary font-bold text-lg md:text-xl leading-none font-headline tracking-tight uppercase">Verified</p>
+              <p className="text-[10px] text-secondary font-bold uppercase tracking-[0.2em] mt-1 font-label opacity-70">Prestige Partner</p>
             </div>
           </div>
 
@@ -149,12 +149,12 @@ export function SponsorSettings() {
         {/* Section 3: Security & 4: Team Management */}
         <section className="col-span-12 grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Security Card */}
-          <div className="bg-surface-container-lowest rounded-[2rem] p-8 lg:p-10 border border-outline-variant/10 shadow-xl shadow-primary/[0.02]">
-            <div className="flex items-center gap-4 mb-10">
-              <span className="w-10 h-10 rounded-xl bg-primary/5 flex items-center justify-center text-primary">
+          <div className="bg-surface-container-lowest rounded-[2rem] p-6 md:p-10 border border-outline-variant/10 shadow-xl shadow-primary/[0.02]">
+            <div className="flex items-center gap-4 mb-8 md:mb-10">
+              <span className="w-10 h-10 rounded-xl bg-primary/5 flex items-center justify-center text-primary shrink-0">
                 <span className="material-symbols-outlined text-2xl" style={{ fontVariationSettings: "'FILL' 1" }}>security</span>
               </span>
-              <h2 className="text-2xl font-black font-headline">Security Protocols</h2>
+              <h2 className="text-xl md:text-2xl font-bold font-headline">Security Protocols</h2>
             </div>
             
             <div className="space-y-10">
@@ -190,40 +190,40 @@ export function SponsorSettings() {
           </div>
 
           {/* Team Management Card */}
-          <div className="bg-surface-container-lowest rounded-[2rem] p-8 lg:p-10 border border-outline-variant/10 shadow-xl shadow-primary/[0.02]">
-            <div className="flex items-center justify-between mb-10">
+          <div className="bg-surface-container-lowest rounded-[2rem] p-6 md:p-10 border border-outline-variant/10 shadow-xl shadow-primary/[0.02]">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 md:mb-10">
               <div className="flex items-center gap-4">
-                <span className="w-10 h-10 rounded-xl bg-primary/5 flex items-center justify-center text-primary">
+                <span className="w-10 h-10 rounded-xl bg-primary/5 flex items-center justify-center text-primary shrink-0">
                   <span className="material-symbols-outlined text-2xl" style={{ fontVariationSettings: "'FILL' 1" }}>group</span>
                 </span>
-                <h2 className="text-2xl font-black font-headline text-on-surface">Team Hierarchy</h2>
+                <h2 className="text-xl md:text-2xl font-bold font-headline text-on-surface">Team Hierarchy</h2>
               </div>
-              <button className="text-[10px] font-black text-primary flex items-center gap-2 hover:bg-primary/5 px-4 py-2 rounded-xl transition-all uppercase tracking-widest font-label border border-primary/5">
+              <button className="w-full sm:w-auto text-[10px] font-bold text-primary flex items-center justify-center gap-2 hover:bg-primary/5 px-4 py-2.5 rounded-xl transition-all uppercase tracking-widest font-label border border-primary/10">
                 <span className="material-symbols-outlined text-sm">person_add</span>
                 Invite User
               </button>
             </div>
 
-            <div className="space-y-3">
+            <div className="space-y-4">
               {teamMembers.map((member, idx) => (
-                <div key={idx} className="flex items-center justify-between p-5 bg-surface-container-low/30 rounded-3xl hover:bg-surface-container-low/60 transition-all border border-transparent hover:border-outline-variant/10 group">
-                  <div className="flex items-center gap-5">
-                    <div className={cn("w-12 h-12 rounded-2xl flex items-center justify-center font-black text-sm shadow-inner transition-transform group-hover:scale-105 duration-500 overflow-hidden", member.roleColor)}>
+                <div key={idx} className="flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 md:p-5 bg-surface-container-low/30 rounded-2xl md:rounded-3xl hover:bg-surface-container-low/60 transition-all border border-transparent hover:border-outline-variant/10 group gap-4">
+                  <div className="flex items-center gap-4 md:gap-5 w-full sm:w-auto overflow-hidden">
+                    <div className={cn("w-10 h-10 md:w-12 md:h-12 rounded-xl md:rounded-2xl flex items-center justify-center font-bold text-xs md:text-sm shadow-inner transition-transform group-hover:scale-105 duration-500 overflow-hidden shrink-0", member.roleColor)}>
                       {member.image ? (
                         <Image src={member.image} alt={member.name} width={48} height={48} className="w-full h-full object-cover" />
                       ) : member.initial}
                     </div>
-                    <div>
-                      <p className="text-sm font-black text-on-surface font-headline">{member.name}</p>
-                      <p className="text-[10px] text-outline font-bold font-label tracking-wide">{member.email}</p>
+                    <div className="min-w-0 pr-2">
+                      <p className="text-sm font-bold text-on-surface font-headline truncate">{member.name}</p>
+                      <p className="text-[10px] text-outline font-bold font-label tracking-wide truncate">{member.email}</p>
                     </div>
                   </div>
-                  <div className="flex items-center gap-4">
-                    <span className={cn("px-4 py-1.5 text-[9px] font-black rounded-full uppercase tracking-[0.2em] font-label border border-current/10 shadow-sm", member.roleColor)}>
+                  <div className="flex items-center justify-between sm:justify-end gap-4 w-full sm:w-auto pt-2 sm:pt-0 border-t sm:border-t-0 border-outline-variant/5">
+                    <span className={cn("px-4 py-1.5 text-[9px] font-bold rounded-full uppercase tracking-[0.2em] font-label border border-current/10 shadow-sm", member.roleColor)}>
                       {member.role}
                     </span>
-                    <button className="p-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                      <span className="material-symbols-outlined text-outline hover:text-error">more_vert</span>
+                    <button className="p-2 text-zinc-400 hover:text-primary transition-colors">
+                      <span className="material-symbols-outlined text-xl">more_vert</span>
                     </button>
                   </div>
                 </div>

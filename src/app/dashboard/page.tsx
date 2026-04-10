@@ -29,7 +29,7 @@ export default async function DashboardPage() {
 
   // Proper redirection logic
   if (profile.role === 'sponsor') {
-    return redirect('/sponsor');
+    return redirect('/dashboard/sponsor');
   }
 
   if (profile.role === 'student') {

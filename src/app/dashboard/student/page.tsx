@@ -14,17 +14,22 @@ export default async function StudentDashboardPage() {
   }
 
   // 2. Get profile and application status
-  const { data: profile } = await supabase
-    .from('profiles')
-    .select('*')
-    .eq('id', user.id)
-    .single()
+  // 2. Get profile and application status in parallel to reduce waterfalls
+  const [profileResult, applicationResult] = await Promise.all([
+    supabase
+      .from('profiles')
+      .select('*')
+      .eq('id', user.id)
+      .single(),
+    supabase
+      .from('student_applications')
+      .select('*')
+      .eq('student_id', user.id)
+      .single()
+  ]);
 
-  const { data: application } = await supabase
-    .from('student_applications')
-    .select('*')
-    .eq('student_id', user.id)
-    .single()
+  const profile = profileResult.data;
+  const application = applicationResult.data;
 
   // 3. Determine view type
   if (!application) {
