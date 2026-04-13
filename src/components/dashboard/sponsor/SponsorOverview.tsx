@@ -13,7 +13,7 @@ export function SponsorOverview() {
   
   const recentStudents = recentIds
     .map(id => STUDENTS_DATA.find(s => s.id === id))
-    .filter(Boolean)
+    .filter((s): s is typeof STUDENTS_DATA[0] => !!s)
     .slice(0, 4)
 
   return (
@@ -38,7 +38,7 @@ export function SponsorOverview() {
           <Link href="/dashboard/sponsor/fund">
             <Button 
                 iconLeft="search" 
-                className="flex-1 md:flex-none font-black tracking-tight shadow-lg shadow-blue-950/20"
+                className="flex-1 md:flex-none font-black tracking-tight"
             >
                 Discover Scholars
             </Button>
@@ -58,14 +58,14 @@ export function SponsorOverview() {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                {recentStudents.map((student: any, i: number) => (
+                {recentStudents.map((student) => (
                   <Link key={student.id} href={`/students/${student.id}`}>
                     <motion.div 
                       whileHover={{ y: -4 }}
-                      className="bg-zinc-900 p-4 sm:p-6 rounded-3xl border border-zinc-800 shadow-sm hover:shadow-xl hover:border-[#0052CC]/50 transition-all flex items-center gap-4 group"
+                      className="bg-zinc-900 p-4 sm:p-6 rounded-3xl border border-zinc-800 hover:border-[#0052CC]/50 transition-all flex items-center gap-4 group"
                     >
                         <div className="w-12 h-12 rounded-2xl bg-zinc-800 overflow-hidden shrink-0 border border-zinc-800">
-                           <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=400&auto=format&fit=crop&q=60" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt={student.name} />
+                           <Image src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=400&auto=format&fit=crop&q=60" width={100} height={100} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt={student.name || 'Student'} />
                         </div>
                         <div className="min-w-0">
                            <p className="font-headline font-black text-zinc-100 truncate leading-tight group-hover:text-[#0052CC] transition-colors">{student.name}</p>
@@ -81,7 +81,7 @@ export function SponsorOverview() {
       {/* Hero Impact Stats */}
       <section className="grid grid-cols-12 gap-6">
         {/* Primary Stats Card */}
-        <div className="col-span-12 md:col-span-8 bg-zinc-900 rounded-3xl lg:rounded-[32px] p-6 sm:p-10 flex flex-col justify-between relative shadow-sm border border-zinc-800">
+        <div className="col-span-12 md:col-span-8 bg-zinc-900 rounded-3xl lg:rounded-[32px] p-6 sm:p-10 flex flex-col justify-between relative border border-zinc-800">
           <div className="relative z-10 flex flex-col md:flex-row justify-between gap-8 md:gap-12">
             <div className="space-y-2">
               <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400 font-label">Total Amount Funded</label>
@@ -113,12 +113,12 @@ export function SponsorOverview() {
                   key={i} 
                   className={cn(
                     "w-full rounded-t-xl transition-all duration-700 ease-out relative group/bar cursor-pointer",
-                    i === 6 ? "bg-[#0052CC] shadow-[0_4px_12px_rgba(0,82,204,0.2)]" : "bg-zinc-800 hover:bg-zinc-700"
+                    i === 6 ? "bg-[#0052CC]" : "bg-zinc-800 hover:bg-zinc-700"
                   )}
                   style={{ height: `${height}%` }}
                 >
                   {i === 6 && (
-                    <div className="absolute -top-12 left-1/2 -translate-x-1/2 bg-zinc-900 text-white text-[10px] font-black px-3 py-2 rounded-xl whitespace-nowrap shadow-xl">
+                    <div className="absolute -top-12 left-1/2 -translate-x-1/2 bg-zinc-900 text-white text-[10px] font-black px-3 py-2 rounded-xl whitespace-nowrap border border-zinc-800">
                       Peak: Aug 2024
                     </div>
                   )}
@@ -132,7 +132,7 @@ export function SponsorOverview() {
         </div>
 
         {/* Improved Milestone Card (Exact Color Match) */}
-        <div className="col-span-12 md:col-span-4 bg-[#D4AF37] text-white rounded-3xl lg:rounded-[32px] p-6 sm:p-10 relative overflow-hidden flex flex-col justify-between group shadow-xl shadow-[#D4AF37]/20 border border-zinc-800/10">
+        <div className="col-span-12 md:col-span-4 bg-[#D4AF37] text-white rounded-3xl lg:rounded-[32px] p-6 sm:p-10 relative overflow-hidden flex flex-col justify-between group border border-zinc-800/10">
           <div className="absolute bottom-[-10%] right-[-10%] opacity-10">
             <span className="material-symbols-outlined text-[140px] md:text-[200px] font-black">rewarded_ads</span>
           </div>
@@ -157,7 +157,7 @@ export function SponsorOverview() {
                 initial={{ width: 0 }}
                 animate={{ width: '94%' }}
                 transition={{ duration: 1.5, ease: "easeOut" }}
-                className="h-full bg-zinc-900 rounded-full shadow-[0_0_15px_rgba(0,82,204,0.3)]"
+                className="h-full bg-zinc-900 rounded-full"
               ></motion.div>
             </div>
           </div>
@@ -194,7 +194,7 @@ export function SponsorOverview() {
               <motion.div 
                 key={idx}
                 whileHover={{ x: 4 }}
-                className="bg-zinc-900 p-3 sm:p-6 rounded-[24px] flex flex-col sm:flex-row gap-3 sm:gap-8 hover:shadow-lg transition-all border border-zinc-800 group cursor-pointer overflow-hidden"
+                className="bg-zinc-900 p-3 sm:p-6 rounded-[24px] flex flex-col sm:flex-row gap-3 sm:gap-8 transition-all border border-zinc-800 group cursor-pointer overflow-hidden"
               >
                 <div className="w-full sm:w-28 h-40 sm:h-28 flex-shrink-0 rounded-2xl overflow-hidden border border-zinc-800 grayscale hover:grayscale-0 transition-all duration-700 shrink-0">
                   <Image 
@@ -213,7 +213,7 @@ export function SponsorOverview() {
                     <span className="text-[10px] font-bold text-zinc-400 font-label">{scholar.time}</span>
                   </div>
                   <h4 className="font-extrabold font-headline text-base sm:text-lg text-zinc-100 group-hover:text-[#0052CC] transition-colors">{scholar.name}</h4>
-                  <p className="text-[11px] text-zinc-500 font-body leading-relaxed italic">"{scholar.quote}"</p>
+                  <p className="text-[11px] text-zinc-500 font-body leading-relaxed italic">&ldquo;{scholar.quote}&rdquo;</p>
                 </div>
               </motion.div>
             ))}
@@ -221,7 +221,7 @@ export function SponsorOverview() {
         </div>
 
         {/* Recent Funding - Ultra-Robust Alignment */}
-        <div className="col-span-12 md:col-span-5 bg-zinc-900 rounded-3xl lg:rounded-[40px] px-4 py-6 sm:p-10 border border-zinc-800 shadow-sm flex flex-col">
+        <div className="col-span-12 md:col-span-5 bg-zinc-900 rounded-3xl lg:rounded-[40px] px-4 py-6 sm:p-10 border border-zinc-800 flex flex-col">
           <div className="flex justify-between items-center mb-6 md:mb-10">
             <h3 className="text-xl font-black font-headline tracking-tight">Recent Funding</h3>
             <Button variant="ghost" size="sm" className="text-[10px] tracking-widest px-2">View Ledger</Button>
@@ -232,8 +232,8 @@ export function SponsorOverview() {
               { org: 'Book Grant Q3', type: 'Material Stipends', amount: '₦850,000', icon: 'auto_stories', color: 'text-[#A18249] bg-zinc-900 border-zinc-800' },
               { org: 'ABU Zaria Medical', type: 'Semester Fees', amount: '₦2,100,000', icon: 'health_and_safety', color: 'text-[#0052CC] bg-zinc-900 border-zinc-800' }
             ].map((tx, idx) => (
-              <div key={idx} className="bg-zinc-900 p-3 sm:p-5 rounded-[24px] grid grid-cols-[auto_1fr_auto] items-center gap-3 sm:gap-4 shadow-sm border border-zinc-800 hover:border-[#0052CC]/20 hover:shadow-md transition-all group cursor-pointer min-w-0">
-                <div className={cn("w-10 h-10 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center transition-all group-hover:scale-110 shadow-sm border shrink-0", tx.color)}>
+              <div key={idx} className="bg-zinc-900 p-3 sm:p-5 rounded-[24px] grid grid-cols-[auto_1fr_auto] items-center gap-3 sm:gap-4 border border-zinc-800 hover:border-[#0052CC]/20 transition-all group cursor-pointer min-w-0">
+                <div className={cn("w-10 h-10 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center transition-all group-hover:scale-110 border shrink-0", tx.color)}>
                   <span className="material-symbols-outlined text-lg sm:text-2xl" style={{ fontVariationSettings: "'wght' 300" }}>{tx.icon}</span>
                 </div>
                 <div className="min-w-0 flex flex-col justify-center">
@@ -257,7 +257,7 @@ export function SponsorOverview() {
         <motion.button 
             whileHover={{ scale: 1.1, rotate: 90 }}
             whileTap={{ scale: 0.9 }}
-            className="fixed bottom-24 right-4 md:bottom-28 md:right-8 w-14 h-14 md:w-16 md:h-16 bg-[#0052CC] rounded-full shadow-[0_20px_50px_rgba(0,82,204,0.4)] flex items-center justify-center text-white z-50 transition-all font-bold"
+            className="fixed bottom-24 right-4 md:bottom-28 md:right-8 w-14 h-14 md:w-16 md:h-16 bg-[#0052CC] rounded-full flex items-center justify-center text-white z-50 transition-all font-bold"
         >
             <span className="material-symbols-outlined text-3xl">search</span>
         </motion.button>
