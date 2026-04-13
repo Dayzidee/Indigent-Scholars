@@ -33,7 +33,7 @@ export function SponsorDiscovery() {
         <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6">
           <div className="space-y-2">
             <span className="text-[#0052CC] font-bold text-[10px] tracking-[0.2em] uppercase mb-1 block font-label">Student Matchmaker</span>
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-zinc-900 font-headline leading-tight">Discover Future Leaders</h1>
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-zinc-100 font-headline leading-tight">Discover Future Leaders</h1>
             <p className="text-zinc-500 mt-2 max-w-2xl font-body text-xs md:text-sm leading-relaxed">
               Browse verified scholars whose academic potential outweighs their financial means. Every contribution builds a bridge to excellence.
             </p>
@@ -54,7 +54,7 @@ export function SponsorDiscovery() {
         <section className="space-y-6 overflow-hidden">
            <div className="flex items-center gap-3">
               <span className="material-symbols-outlined text-zinc-400">history</span>
-              <h3 className="text-xl font-black font-headline tracking-tight text-zinc-900">Jump Back In</h3>
+              <h3 className="text-xl font-black font-headline tracking-tight text-zinc-100">Jump Back In</h3>
            </div>
            
            <div className="flex gap-4 overflow-x-auto pb-6 -mx-4 px-4 scrollbar-hide">
@@ -62,13 +62,13 @@ export function SponsorDiscovery() {
                 <Link key={student.id} href={`/students/${student.id}`} className="shrink-0 w-64">
                    <motion.div 
                     whileHover={{ y: -4 }}
-                    className="bg-zinc-50/50 p-4 rounded-3xl border border-zinc-100 flex items-center gap-4 group hover:bg-white hover:shadow-xl hover:border-[#0052CC]/10 transition-all"
+                    className="bg-zinc-800/50 p-4 rounded-3xl border border-zinc-800 flex items-center gap-4 group hover:bg-zinc-900 hover:shadow-xl hover:border-[#0052CC]/10 transition-all"
                    >
-                      <div className="w-12 h-12 rounded-2xl bg-zinc-200 overflow-hidden shrink-0 border border-white">
+                      <div className="w-12 h-12 rounded-2xl bg-zinc-700 overflow-hidden shrink-0 border border-zinc-800">
                          <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=400&auto=format&fit=crop&q=60" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt={student.name} />
                       </div>
                       <div className="min-w-0">
-                         <p className="font-headline font-black text-zinc-800 truncate leading-tight group-hover:text-[#0052CC] transition-colors">{student.name}</p>
+                         <p className="font-headline font-black text-zinc-200 truncate leading-tight group-hover:text-[#0052CC] transition-colors">{student.name}</p>
                          <p className="text-[9px] font-medium text-zinc-400 truncate uppercase tracking-wider">{student.university}</p>
                       </div>
                    </motion.div>
@@ -86,7 +86,7 @@ export function SponsorDiscovery() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: idx * 0.1 }}
-            className="bg-white rounded-3xl lg:rounded-[40px] overflow-hidden group hover:shadow-2xl hover:shadow-blue-600/5 transition-all duration-500 border border-zinc-100 flex flex-col"
+            className="bg-zinc-900 rounded-3xl lg:rounded-[40px] overflow-hidden group hover:shadow-2xl hover:shadow-blue-600/5 transition-all duration-500 border border-zinc-800 flex flex-col"
           >
             <div className="relative h-64 overflow-hidden">
               <img 
@@ -94,9 +94,9 @@ export function SponsorDiscovery() {
                 alt={scholar.name}
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
               />
-              <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-4 py-1.5 rounded-full flex items-center gap-2 shadow-sm border border-white/20">
+              <div className="absolute top-4 left-4 bg-zinc-900/90 backdrop-blur-md px-4 py-1.5 rounded-full flex items-center gap-2 shadow-sm border border-zinc-800/20">
                 <span className="material-symbols-outlined text-sm text-[#0052CC]" style={{ fontVariationSettings: "'FILL' 1" }}>verified</span>
-                <span className="text-[9px] font-black uppercase tracking-widest text-zinc-900 font-label">Verified</span>
+                <span className="text-[9px] font-black uppercase tracking-widest text-zinc-100 font-label">Verified</span>
               </div>
             </div>
             
@@ -104,10 +104,10 @@ export function SponsorDiscovery() {
               <div>
                 <div className="flex justify-between items-start mb-4">
                   <div className="space-y-1">
-                    <h3 className="text-2xl font-black text-zinc-900 leading-tight font-headline tracking-tight">{scholar.name}</h3>
+                    <h3 className="text-2xl font-black text-zinc-100 leading-tight font-headline tracking-tight">{scholar.name}</h3>
                     <p className="text-xs font-bold text-zinc-400 font-label uppercase tracking-widest leading-none">{scholar.university}</p>
                   </div>
-                  <span className="text-[9px] font-black px-3 py-1 rounded-lg border border-zinc-100 bg-zinc-50 text-zinc-500 uppercase tracking-widest font-label truncate max-w-[80px]">
+                  <span className="text-[9px] font-black px-3 py-1 rounded-lg border border-zinc-800 bg-zinc-800 text-zinc-500 uppercase tracking-widest font-label truncate max-w-[80px]">
                     {scholar.field}
                   </span>
                 </div>
@@ -123,7 +123,7 @@ export function SponsorDiscovery() {
                     <span className="text-[#0052CC]">₦{scholar.raisedAmount.toLocaleString()} Raised</span>
                     <span className="text-zinc-400">Goal: ₦{scholar.totalGoal.toLocaleString()}</span>
                   </div>
-                  <div className="h-3 w-full bg-zinc-100 rounded-full overflow-hidden p-1 border border-zinc-200">
+                  <div className="h-3 w-full bg-zinc-800 rounded-full overflow-hidden p-1 border border-zinc-700">
                     <motion.div 
                       initial={{ width: 0 }}
                       animate={{ width: `${(scholar.raisedAmount / scholar.totalGoal) * 100}%` }}
@@ -173,11 +173,11 @@ export function SponsorDiscovery() {
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4 md:gap-6 w-full lg:w-80 z-10">
-            <div className="bg-white/5 backdrop-blur-xl p-6 md:p-8 rounded-3xl lg:rounded-[32px] border border-white/10 shadow-2xl">
+            <div className="bg-white/5 backdrop-blur-xl p-6 md:p-8 rounded-3xl lg:rounded-[32px] border border-zinc-800/10 shadow-2xl">
               <div className="text-[#0052CC] text-3xl sm:text-4xl md:text-5xl font-black mb-1 font-headline tracking-tighter">84%</div>
               <div className="text-white/40 text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em] font-label">Avg. Completion</div>
             </div>
-            <div className="bg-white/5 backdrop-blur-xl p-6 md:p-8 rounded-3xl lg:rounded-[32px] border border-white/10 shadow-2xl">
+            <div className="bg-white/5 backdrop-blur-xl p-6 md:p-8 rounded-3xl lg:rounded-[32px] border border-zinc-800/10 shadow-2xl">
               <div className="text-emerald-500 text-3xl sm:text-4xl md:text-5xl font-black mb-1 font-headline tracking-tighter">1,240</div>
               <div className="text-white/40 text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em] font-label">Lives Changed</div>
             </div>

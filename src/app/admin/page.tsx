@@ -74,7 +74,7 @@ export default function AdminDashboard() {
             <div className="p-1 rounded-3xl bg-gradient-to-br from-slate-800 to-slate-900 border border-slate-800 overflow-hidden">
               <div className="bg-slate-950/40 backdrop-blur-xl p-8 flex flex-col items-center justify-center text-center space-y-6 min-h-[300px]">
                 <div className="w-20 h-20 rounded-full bg-slate-900 border border-slate-700 flex items-center justify-center shadow-inner">
-                  <Zap className="w-10 h-10 text-slate-600 animate-pulse" />
+                  <Zap className="w-10 h-10 text-zinc-400 animate-pulse" />
                 </div>
                 <div className="max-w-md">
                   <h4 className="text-lg font-bold text-white mb-2">Platform Heartbeat: Optimal</h4>
@@ -84,7 +84,7 @@ export default function AdminDashboard() {
                 </div>
                 <Link 
                   href="/admin/verification" 
-                  className="px-8 py-3 bg-white text-slate-950 font-black rounded-xl hover:bg-indigo-500 hover:text-white transition-all shadow-xl active:scale-95"
+                  className="px-8 py-3 bg-zinc-900 text-slate-950 font-black rounded-xl hover:bg-indigo-500 hover:text-white transition-all shadow-xl active:scale-95"
                 >
                   Enter Verification Center
                 </Link>
@@ -121,7 +121,7 @@ export default function AdminDashboard() {
                     <Database className="w-4 h-4 text-slate-500" />
                     <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">Platform Config</span>
                   </div>
-                  <ArrowUpRight className="w-4 h-4 text-slate-700 group-hover:text-white transition-colors" />
+                  <ArrowUpRight className="w-4 h-4 text-zinc-300 group-hover:text-white transition-colors" />
                 </div>
               </div>
             </div>

@@ -11,16 +11,15 @@ export function RedesignedHero() {
 
       <div className="flex flex-col gap-8 md:gap-10 relative z-10">
         {/* Top Section: Centralized Countdown & Goal */}
-        <div className="space-y-4 text-center max-w-4xl mx-auto p-8 lg:p-12 rounded-[3rem] bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl shadow-zinc-200/50">
+        <div className="space-y-4 text-center max-w-4xl mx-auto p-8 lg:p-12 rounded-[3rem] bg-white/5 backdrop-blur-xl border border-zinc-800/10 shadow-2xl shadow-black/20">
           <div className="flex flex-col items-center mb-10 gap-2">
-             <h2 className="text-sm font-black text-[#0052CC] uppercase tracking-[0.4em] mb-2">INDIGENT-SC</h2>
           </div>
           <MissionCountdown />
           <motion.p 
             initial={{ opacity: 0, scale: 0.98 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.5 }}
-            className="text-base md:text-lg font-body font-semibold text-on-surface leading-relaxed max-w-2xl mx-auto"
+            className="text-sm md:text-base font-body font-semibold text-on-surface leading-relaxed max-w-2xl mx-auto"
           >
             By <span className="text-secondary font-black font-headline">2050</span>, our goal is to provide funding support for <span className="text-primary font-black font-headline">50,000+</span> students to successfully obtain a university degree.
           </motion.p>

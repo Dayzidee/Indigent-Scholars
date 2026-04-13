@@ -12,7 +12,7 @@ function SponsorRegisterContent() {
   const error = searchParams.get('error');
 
   return (
-    <main className="pt-32 pb-20 px-6 min-h-screen bg-white relative z-[2]">
+    <main className="pt-32 pb-20 px-6 min-h-screen bg-zinc-900 relative z-[2]">
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
         
         {/* Left Side: Testimonial/Info */}
@@ -126,8 +126,8 @@ function SponsorRegisterContent() {
                 <h3 className="text-xs font-black uppercase tracking-[0.2em] text-secondary font-label">Identity Verification</h3>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <DocumentUpload label="National Identity (NIN)" icon="badge" className="bg-white" />
-                <DocumentUpload label="Voter's Card" icon="how_to_reg" className="bg-white" />
+                <DocumentUpload label="National Identity (NIN)" icon="badge" className="bg-zinc-900" />
+                <DocumentUpload label="Voter's Card" icon="how_to_reg" className="bg-zinc-900" />
               </div>
             </div>
             
@@ -157,7 +157,7 @@ function SponsorRegisterContent() {
 
 export default function SponsorRegistrationPage() {
   return (
-    <Suspense fallback={<div className="min-h-screen bg-white animate-pulse" />}>
+    <Suspense fallback={<div className="min-h-screen bg-zinc-900 animate-pulse" />}>
       <SponsorRegisterContent />
     </Suspense>
   );

@@ -102,7 +102,7 @@ export default function AdminVerification() {
                       <h4 className="text-xl font-bold text-white group-hover:text-indigo-400 transition-colors uppercase tracking-tight">{app.profiles.full_name}</h4>
                       <span className="px-2 py-0.5 rounded text-[10px] font-black uppercase tracking-widest bg-slate-950 text-slate-500 border border-slate-800">Student</span>
                     </div>
-                    <div className="flex items-wrap gap-4 text-xs font-bold uppercase tracking-widest text-slate-600">
+                    <div className="flex items-wrap gap-4 text-xs font-bold uppercase tracking-widest text-zinc-400">
                       <span className="flex items-center"><Building className="w-3.5 h-3.5 mr-1.5" />{app.school_info?.university || 'University of Lagos'}</span>
                       <span className="flex items-center"><GraduationCap className="w-3.5 h-3.5 mr-1.5" />Mech. Eng.</span>
                       <span className="flex items-center"><Clock className="w-3.5 h-3.5 mr-1.5" />Applied 2 days ago</span>

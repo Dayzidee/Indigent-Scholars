@@ -37,7 +37,7 @@ export function MetricCard({
       <div className="flex justify-between items-start mb-4">
         <div className={cn(
           "w-10 h-10 rounded-xl flex items-center justify-center",
-          variant === 'default' ? "bg-primary-container/10 text-primary" : "bg-white/20 text-white"
+          variant === 'default' ? "bg-primary-container/10 text-primary" : "bg-zinc-800/20 text-white"
         )}>
           <span className="material-symbols-outlined">{icon}</span>
         </div>
@@ -65,7 +65,7 @@ export function MetricCard({
         <div className="mt-6 flex items-center gap-2">
           <div className={cn(
             "w-full h-1.5 rounded-full overflow-hidden",
-            variant === 'default' ? "bg-zinc-100" : "bg-white/20"
+            variant === 'default' ? "bg-zinc-800" : "bg-zinc-800/20"
           )}>
             <div
               className={cn(

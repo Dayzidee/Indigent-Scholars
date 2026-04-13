@@ -58,16 +58,16 @@ export function SideNavBar({ isOpen, onClose }: SideNavBarProps) {
 
       <aside 
         className={cn(
-          "fixed left-0 top-0 h-full w-64 bg-slate-50 flex flex-col z-[70] border-r border-zinc-100 transition-transform duration-300 md:translate-x-0 overflow-y-auto",
+          "fixed left-0 top-0 h-full w-64 bg-zinc-900 flex flex-col z-[70] border-r border-zinc-800 transition-transform duration-300 md:translate-x-0 overflow-y-auto",
           isOpen ? "translate-x-0" : "-translate-x-full"
         )}
       >
-        <div className="px-6 py-10 flex justify-between items-center border-b border-zinc-50">
+        <div className="px-6 py-10 flex justify-between items-center border-b border-zinc-800">
           <div>
             <h1 className="text-xl font-black text-[#0052CC] tracking-tighter font-headline mb-0.5">INDIGENT-SC</h1>
           </div>
-          <button onClick={onClose} className="md:hidden p-2 hover:bg-zinc-200 rounded-lg transition-colors">
-            <span className="material-symbols-outlined text-zinc-600">close</span>
+          <button onClick={onClose} className="md:hidden p-2 hover:bg-zinc-800 rounded-lg transition-colors">
+            <span className="material-symbols-outlined text-zinc-400">close</span>
           </button>
         </div>
 
@@ -82,8 +82,8 @@ export function SideNavBar({ isOpen, onClose }: SideNavBarProps) {
                 className={cn(
                   "flex items-center gap-3 px-4 py-3 transition-colors rounded-lg",
                   isActive
-                    ? "text-blue-700 font-bold border-r-4 border-blue-700 bg-blue-50/50"
-                    : "text-zinc-500 hover:bg-zinc-100"
+                    ? "text-blue-400 font-bold border-r-4 border-blue-500 bg-blue-950/30"
+                    : "text-zinc-400 hover:bg-zinc-800"
                 )}
               >
                 <span className={cn("material-symbols-outlined", isActive && "fill-current")} data-icon={item.icon}>
@@ -95,7 +95,7 @@ export function SideNavBar({ isOpen, onClose }: SideNavBarProps) {
           })}
         </nav>
 
-        <div className="p-4 border-t border-zinc-100">
+        <div className="p-4 border-t border-zinc-800">
           <Link href="/dashboard/student/application">
             <button className="w-full py-3 px-4 bg-[#003d9b] text-white font-semibold rounded-xl hover:opacity-90 transition-all flex items-center justify-center gap-2 font-headline tracking-tight">
               Apply for Funding
@@ -109,7 +109,7 @@ export function SideNavBar({ isOpen, onClose }: SideNavBarProps) {
             onClick={onClose}
             className={cn(
               "flex items-center gap-3 px-4 py-3 transition-colors rounded-lg mb-2",
-              pathname === '/dashboard/student/help' ? "text-blue-700 bg-blue-50/50 font-bold" : "text-zinc-500 hover:bg-zinc-100"
+              pathname === '/dashboard/student/help' ? "text-blue-400 bg-blue-950/30 font-bold" : "text-zinc-400 hover:bg-zinc-800"
             )}
           >
             <span className="material-symbols-outlined font-headline" data-icon="help_outline">
@@ -133,8 +133,8 @@ export function SideNavBar({ isOpen, onClose }: SideNavBarProps) {
             <span className="font-headline tracking-tight font-semibold">Logout</span>
           </button>
 
-          <div className="flex items-center gap-3 px-4 py-2 bg-white/50 border border-zinc-100 transition-colors rounded-xl group overflow-hidden">
-            <div className="w-10 h-10 rounded-full bg-zinc-200 overflow-hidden border-2 border-white shadow-sm transition-all shrink-0">
+          <div className="flex items-center gap-3 px-4 py-2 bg-zinc-800/50 border border-zinc-700 transition-colors rounded-xl group overflow-hidden">
+            <div className="w-10 h-10 rounded-full bg-zinc-700 overflow-hidden border-2 border-zinc-600 shadow-sm transition-all shrink-0">
               <img
                 alt="Student Profile"
                 className="w-full h-full object-cover"

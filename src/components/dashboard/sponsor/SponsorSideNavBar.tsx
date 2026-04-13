@@ -58,7 +58,7 @@ export function SponsorSideNavBar({ isOpen, onClose }: SponsorSideNavBarProps) {
 
       <aside 
         className={cn(
-          "fixed left-0 top-0 h-screen w-64 bg-white border-r border-zinc-100 z-[70] py-8 px-4 flex flex-col transition-transform duration-300 lg:translate-x-0 overflow-y-auto shadow-sm",
+          "fixed left-0 top-0 h-screen w-64 bg-zinc-900 border-r border-zinc-800 z-[70] py-8 px-4 flex flex-col transition-transform duration-300 lg:translate-x-0 overflow-y-auto shadow-sm",
           isOpen ? "translate-x-0" : "-translate-x-full"
         )}
       >
@@ -68,8 +68,8 @@ export function SponsorSideNavBar({ isOpen, onClose }: SponsorSideNavBarProps) {
             <h1 className="text-xl font-bold tracking-tighter text-[#0052CC]">Indigent-Sc</h1>
             <p className="text-[10px] font-bold text-zinc-400 mt-0.5 uppercase tracking-widest font-label leading-none">Prestige Sponsor</p>
           </div>
-          <button onClick={onClose} className="lg:hidden p-2 hover:bg-zinc-100 rounded-lg transition-colors">
-            <span className="material-symbols-outlined text-zinc-600">close</span>
+          <button onClick={onClose} className="lg:hidden p-2 hover:bg-zinc-800 rounded-lg transition-colors">
+            <span className="material-symbols-outlined text-zinc-400">close</span>
           </button>
         </div>
 
@@ -86,7 +86,7 @@ export function SponsorSideNavBar({ isOpen, onClose }: SponsorSideNavBarProps) {
                   "flex items-center gap-3 px-4 py-3.5 transition-all rounded-lg relative group",
                   isActive 
                     ? "text-[#0052CC] font-bold" 
-                    : "text-zinc-500 hover:text-[#0052CC] hover:bg-zinc-50/50"
+                    : "text-zinc-400 hover:text-[#0052CC] hover:bg-zinc-800/50"
                 )}
               >
                 <span className={cn(
@@ -122,12 +122,12 @@ export function SponsorSideNavBar({ isOpen, onClose }: SponsorSideNavBarProps) {
             onClick={handleSignOut}
             disabled={isPending}
             className={cn(
-              "w-full flex items-center gap-3 px-4 py-3 text-zinc-500 hover:text-red-600 hover:bg-red-50/50 transition-colors rounded-lg group mb-6",
+              "w-full flex items-center gap-3 px-4 py-3 text-zinc-400 hover:text-red-400 hover:bg-red-950/30 transition-colors rounded-lg group mb-6",
               isPending && "opacity-50 cursor-not-allowed"
             )}
           >
             <span className={cn(
-              "material-symbols-outlined text-xl text-zinc-400 group-hover:text-red-600",
+              "material-symbols-outlined text-xl text-zinc-500 group-hover:text-red-400",
               isPending && "animate-spin"
             )}>
               {isPending ? 'refresh' : 'logout'}
@@ -138,12 +138,12 @@ export function SponsorSideNavBar({ isOpen, onClose }: SponsorSideNavBarProps) {
           </button>
 
           {/* Profile Card Overlay (Light Theme Match) */}
-          <div className="flex items-center gap-3 px-3 py-3 bg-zinc-50/80 border border-zinc-100 transition-colors rounded-2xl group overflow-hidden">
+          <div className="flex items-center gap-3 px-3 py-3 bg-zinc-800/80 border border-zinc-700 transition-colors rounded-2xl group overflow-hidden">
             <div className="w-10 h-10 rounded-xl bg-[#0052CC]/5 flex items-center justify-center shrink-0 border border-[#0052CC]/10">
               <span className="material-symbols-outlined text-[#0052CC] text-xl">account_balance</span>
             </div>
             <div className="min-w-0">
-              <p className="text-sm font-bold text-[#111827] truncate font-headline leading-tight">Global Scholars Inc.</p>
+              <p className="text-sm font-bold text-zinc-100 truncate font-headline leading-tight">Global Scholars Inc.</p>
               <p className="text-[10px] text-zinc-400 font-bold uppercase tracking-widest truncate">Platinum Partner</p>
             </div>
           </div>

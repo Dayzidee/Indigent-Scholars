@@ -57,7 +57,7 @@ export default function Home() {
       {/* 3. About Us Section (Restored) */}
       <section
         id="problem"
-        className="bg-white/5 backdrop-blur-2xl relative z-10 py-24 border-y border-white/10 shadow-[0_8px_30px_rgb(0,0,0,0.02)]"
+        className="bg-white/5 backdrop-blur-2xl relative z-10 py-24 border-y border-zinc-800/10 shadow-[0_8px_30px_rgb(0,0,0,0.02)]"
       >
         <div className="max-w-5xl mx-auto px-8 text-center relative z-10">
           <span className="text-primary font-headline font-black text-xs uppercase tracking-[0.2em] mb-4 block">
@@ -143,7 +143,7 @@ export default function Home() {
                initial={{ opacity: 0, x: 20 }}
                whileInView={{ opacity: 1, x: 0 }}
                viewport={{ once: true }}
-               className="bg-white/5 backdrop-blur-xl p-10 rounded-[2.5rem] shadow-xl flex-1 relative overflow-hidden border border-white/10 hover:border-primary/30 transition-all group/card shadow-primary/[0.02]"
+               className="bg-white/5 backdrop-blur-xl p-10 rounded-[2.5rem] shadow-xl flex-1 relative overflow-hidden border border-zinc-800/10 hover:border-primary/30 transition-all group/card shadow-primary/[0.02]"
             >
               <div className="relative z-10 mb-12">
                 <span
@@ -218,7 +218,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="text-center p-10 bg-white/5 backdrop-blur-xl rounded-[2.5rem] shadow-xl shadow-black/[0.02] border border-white/10 transition-all hover:-translate-y-2 duration-500 group"
+                className="text-center p-10 bg-white/5 backdrop-blur-xl rounded-[2.5rem] shadow-xl shadow-black/[0.02] border border-zinc-800/10 transition-all hover:-translate-y-2 duration-500 group"
               >
                 <div className={`w-20 h-20 bg-${step.color}/10 rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-inner group-hover:scale-110 transition-transform duration-500`}>
                   <span className={`material-symbols-outlined text-${step.color} text-4xl`}>
@@ -238,7 +238,7 @@ export default function Home() {
       </section>
 
       {/* 6. Impact Tracker Section (Restored) */}
-      <section className="py-32 relative z-[1] border-y border-white/10">
+      <section className="py-32 relative z-[1] border-y border-zinc-800/10">
         <div className="max-w-7xl mx-auto px-8 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
             <div>
@@ -282,7 +282,7 @@ export default function Home() {
               </div>
             </div>
             <div className="relative">
-              <div className="aspect-square rounded-[3rem] overflow-hidden shadow-2xl relative z-10 border-[12px] border-white/10 backdrop-blur-3xl ring-1 ring-white/10">
+              <div className="aspect-square rounded-[3rem] overflow-hidden shadow-2xl relative z-10 border-[12px] border-zinc-800/10 backdrop-blur-3xl ring-1 ring-zinc-800/10">
                 <img
                   alt="Tracking Dashboard Preview"
                   className="w-full h-full object-cover transition-transform duration-1000 hover:scale-110"
@@ -295,7 +295,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="absolute -top-10 -right-6 p-8 backdrop-blur-2xl bg-white/90 rounded-[2rem] shadow-2xl border border-white z-20 hidden md:block"
+                className="absolute -top-10 -right-6 p-8 backdrop-blur-2xl bg-zinc-900/90 rounded-[2rem] shadow-2xl border border-zinc-800 z-20 hidden md:block"
               >
                 <div className="flex items-center gap-6">
                   <div className="w-14 h-14 rounded-2xl bg-secondary/10 flex items-center justify-center border border-secondary/20 shadow-inner">
@@ -307,7 +307,7 @@ export default function Home() {
                     </span>
                   </div>
                   <div>
-                    <p className="text-[10px] font-black uppercase text-neutral-500 tracking-wider font-label">
+                    <p className="text-[10px] font-black uppercase text-zinc-400 tracking-wider font-label">
                       Certified Impact
                     </p>
                     <p className="text-lg font-headline font-black text-on-surface">
@@ -373,27 +373,27 @@ export default function Home() {
               initial={{ opacity: 0, scale: 0.98 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="space-y-6 bg-white/5 backdrop-blur-2xl p-10 md:p-12 rounded-[3rem] shadow-2xl border border-white/10"
+              className="space-y-6 bg-white/5 backdrop-blur-2xl p-10 md:p-12 rounded-[3rem] shadow-2xl border border-zinc-800/10"
             >
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <input
-                  className="bg-surface-container-low border border-outline-variant/10 rounded-2xl p-5 text-sm font-medium font-body focus:ring-2 focus:ring-primary/20 focus:bg-white transition-all outline-none"
+                  className="bg-surface-container-low border border-outline-variant/10 rounded-2xl p-5 text-sm font-medium font-body focus:ring-2 focus:ring-primary/20 focus:bg-zinc-900 transition-all outline-none"
                   placeholder="First Name"
                   type="text"
                 />
                 <input
-                  className="bg-surface-container-low border border-outline-variant/10 rounded-2xl p-5 text-sm font-medium font-body focus:ring-2 focus:ring-primary/20 focus:bg-white transition-all outline-none"
+                  className="bg-surface-container-low border border-outline-variant/10 rounded-2xl p-5 text-sm font-medium font-body focus:ring-2 focus:ring-primary/20 focus:bg-zinc-900 transition-all outline-none"
                   placeholder="Last Name"
                   type="text"
                 />
               </div>
               <input
-                className="w-full bg-surface-container-low border border-outline-variant/10 rounded-2xl p-5 text-sm font-medium font-body focus:ring-2 focus:ring-primary/20 focus:bg-white transition-all outline-none"
+                className="w-full bg-surface-container-low border border-outline-variant/10 rounded-2xl p-5 text-sm font-medium font-body focus:ring-2 focus:ring-primary/20 focus:bg-zinc-900 transition-all outline-none"
                 placeholder="Email Address"
                 type="email"
               />
               <textarea
-                className="w-full bg-surface-container-low border border-outline-variant/10 rounded-2xl p-5 text-sm font-medium font-body focus:ring-2 focus:ring-primary/20 focus:bg-white transition-all outline-none resize-none"
+                className="w-full bg-surface-container-low border border-outline-variant/10 rounded-2xl p-5 text-sm font-medium font-body focus:ring-2 focus:ring-primary/20 focus:bg-zinc-900 transition-all outline-none resize-none"
                 placeholder="Your Message"
                 rows={4}
               ></textarea>
@@ -425,7 +425,7 @@ export default function Home() {
           {/* Carousel Navigation */}
           <div className="absolute -left-12 top-1/2 -translate-y-1/2 z-20 hidden xl:block">
             <button
-              className="w-14 h-14 rounded-full border border-outline-variant/30 flex items-center justify-center bg-white/90 backdrop-blur-xl shadow-2xl hover:border-secondary hover:text-secondary group/btn transition-all"
+              className="w-14 h-14 rounded-full border border-outline-variant/30 flex items-center justify-center bg-zinc-900/90 backdrop-blur-xl shadow-2xl hover:border-secondary hover:text-secondary group/btn transition-all"
               onClick={scrollLeft}
             >
               <span className="material-symbols-outlined group-hover/btn:-translate-x-1 transition-transform">chevron_left</span>
@@ -433,7 +433,7 @@ export default function Home() {
           </div>
           <div className="absolute -right-12 top-1/2 -translate-y-1/2 z-20 hidden xl:block">
             <button
-              className="w-14 h-14 rounded-full border border-outline-variant/30 flex items-center justify-center bg-white/90 backdrop-blur-xl shadow-2xl hover:border-secondary hover:text-secondary group/btn transition-all"
+              className="w-14 h-14 rounded-full border border-outline-variant/30 flex items-center justify-center bg-zinc-900/90 backdrop-blur-xl shadow-2xl hover:border-secondary hover:text-secondary group/btn transition-all"
               onClick={scrollRight}
             >
               <span className="material-symbols-outlined group-hover/btn:translate-x-1 transition-transform">chevron_right</span>
@@ -448,9 +448,9 @@ export default function Home() {
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
             {/* Slide 1: Comprehensive Data Input */}
-            <div className="min-w-full snap-center bg-white/10 backdrop-blur-2xl rounded-[3rem] border border-white/10 shadow-2xl p-10 md:p-14">
+            <div className="min-w-full snap-center bg-white/10 backdrop-blur-2xl rounded-[3rem] border border-zinc-800/10 shadow-2xl p-10 md:p-14">
               <div className="flex items-center gap-6 mb-10">
-                <div className="w-16 h-16 rounded-[1.5rem] bg-white/5 flex items-center justify-center border border-white/10 shadow-inner">
+                <div className="w-16 h-16 rounded-[1.5rem] bg-white/5 flex items-center justify-center border border-zinc-800/10 shadow-inner">
                   <span className="material-symbols-outlined text-primary text-3xl">
                     edit_note
                   </span>
@@ -469,21 +469,21 @@ export default function Home() {
                   <p className="text-[10px] font-black text-primary uppercase tracking-[0.2em] mb-4">A. Identity</p>
                   <div className="space-y-4">
                     <div className="space-y-2">
-                       <label className="text-[10px] font-black uppercase text-neutral-500 ml-1">Full Legal Name</label>
-                       <input value={formData.fullName} onChange={(e) => setFormData({...formData, fullName: e.target.value})} className="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-xs font-medium focus:border-primary outline-none transition-all" placeholder="As on ID" />
+                       <label className="text-[10px] font-black uppercase text-zinc-400 ml-1">Full Legal Name</label>
+                       <input value={formData.fullName} onChange={(e) => setFormData({...formData, fullName: e.target.value})} className="w-full bg-white/5 border border-zinc-800/10 rounded-xl p-4 text-xs font-medium focus:border-primary outline-none transition-all" placeholder="As on ID" />
                     </div>
                     <div className="space-y-2">
-                       <label className="text-[10px] font-black uppercase text-neutral-500 ml-1">Email Address</label>
-                       <input value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} className="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-xs font-medium focus:border-primary outline-none transition-all" placeholder="name@university.edu" />
+                       <label className="text-[10px] font-black uppercase text-zinc-400 ml-1">Email Address</label>
+                       <input value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} className="w-full bg-white/5 border border-zinc-800/10 rounded-xl p-4 text-xs font-medium focus:border-primary outline-none transition-all" placeholder="name@university.edu" />
                     </div>
                     <div className="grid grid-cols-2 gap-4">
                       <div className="space-y-2">
-                         <label className="text-[10px] font-black uppercase text-neutral-500 ml-1">Phone</label>
-                         <input value={formData.phone} onChange={(e) => setFormData({...formData, phone: e.target.value})} className="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-xs font-medium focus:border-primary outline-none transition-all" placeholder="+234..." />
+                         <label className="text-[10px] font-black uppercase text-zinc-400 ml-1">Phone</label>
+                         <input value={formData.phone} onChange={(e) => setFormData({...formData, phone: e.target.value})} className="w-full bg-white/5 border border-zinc-800/10 rounded-xl p-4 text-xs font-medium focus:border-primary outline-none transition-all" placeholder="+234..." />
                       </div>
                       <div className="space-y-2">
-                         <label className="text-[10px] font-black uppercase text-neutral-500 ml-1">Gender</label>
-                         <select value={formData.gender} onChange={(e) => setFormData({...formData, gender: e.target.value})} className="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-xs font-medium focus:border-primary outline-none transition-all appearance-none cursor-pointer">
+                         <label className="text-[10px] font-black uppercase text-zinc-400 ml-1">Gender</label>
+                         <select value={formData.gender} onChange={(e) => setFormData({...formData, gender: e.target.value})} className="w-full bg-white/5 border border-zinc-800/10 rounded-xl p-4 text-xs font-medium focus:border-primary outline-none transition-all appearance-none cursor-pointer">
                            <option value="" disabled className="bg-zinc-900">Select</option>
                            <option value="male" className="bg-zinc-900">Male</option>
                            <option value="female" className="bg-zinc-900">Female</option>
@@ -492,12 +492,12 @@ export default function Home() {
                     </div>
                     <div className="grid grid-cols-2 gap-4">
                       <div className="space-y-2">
-                         <label className="text-[10px] font-black uppercase text-neutral-500 ml-1">Date of Birth</label>
-                         <input type="date" value={formData.dateOfBirth} onChange={(e) => setFormData({...formData, dateOfBirth: e.target.value})} className="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-xs font-medium focus:border-primary outline-none transition-all" />
+                         <label className="text-[10px] font-black uppercase text-zinc-400 ml-1">Date of Birth</label>
+                         <input type="date" value={formData.dateOfBirth} onChange={(e) => setFormData({...formData, dateOfBirth: e.target.value})} className="w-full bg-white/5 border border-zinc-800/10 rounded-xl p-4 text-xs font-medium focus:border-primary outline-none transition-all" />
                       </div>
                       <div className="space-y-2">
-                         <label className="text-[10px] font-black uppercase text-neutral-500 ml-1">Marital Status</label>
-                         <select value={formData.maritalStatus} onChange={(e) => setFormData({...formData, maritalStatus: e.target.value})} className="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-xs font-medium focus:border-primary outline-none transition-all appearance-none cursor-pointer">
+                         <label className="text-[10px] font-black uppercase text-zinc-400 ml-1">Marital Status</label>
+                         <select value={formData.maritalStatus} onChange={(e) => setFormData({...formData, maritalStatus: e.target.value})} className="w-full bg-white/5 border border-zinc-800/10 rounded-xl p-4 text-xs font-medium focus:border-primary outline-none transition-all appearance-none cursor-pointer">
                            <option value="" disabled className="bg-zinc-900">Select</option>
                            <option value="single" className="bg-zinc-900">Single</option>
                            <option value="married" className="bg-zinc-900">Married</option>
@@ -513,25 +513,25 @@ export default function Home() {
                   <div className="space-y-4">
                     <div className="grid grid-cols-2 gap-4">
                       <div className="space-y-2">
-                         <label className="text-[10px] font-black uppercase text-neutral-500 ml-1">State</label>
-                         <input value={formData.stateOfOrigin} onChange={(e) => setFormData({...formData, stateOfOrigin: e.target.value})} className="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-xs font-medium focus:border-primary outline-none transition-all" placeholder="State" />
+                         <label className="text-[10px] font-black uppercase text-zinc-400 ml-1">State</label>
+                         <input value={formData.stateOfOrigin} onChange={(e) => setFormData({...formData, stateOfOrigin: e.target.value})} className="w-full bg-white/5 border border-zinc-800/10 rounded-xl p-4 text-xs font-medium focus:border-primary outline-none transition-all" placeholder="State" />
                       </div>
                       <div className="space-y-2">
-                         <label className="text-[10px] font-black uppercase text-neutral-500 ml-1">LGA</label>
-                         <input value={formData.lga} onChange={(e) => setFormData({...formData, lga: e.target.value})} className="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-xs font-medium focus:border-primary outline-none transition-all" placeholder="LGA" />
+                         <label className="text-[10px] font-black uppercase text-zinc-400 ml-1">LGA</label>
+                         <input value={formData.lga} onChange={(e) => setFormData({...formData, lga: e.target.value})} className="w-full bg-white/5 border border-zinc-800/10 rounded-xl p-4 text-xs font-medium focus:border-primary outline-none transition-all" placeholder="LGA" />
                       </div>
                     </div>
                     <div className="space-y-2">
-                       <label className="text-[10px] font-black uppercase text-neutral-500 ml-1">University Name</label>
-                       <input value={formData.university} onChange={(e) => setFormData({...formData, university: e.target.value})} className="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-xs font-medium focus:border-primary outline-none transition-all" placeholder="University" />
+                       <label className="text-[10px] font-black uppercase text-zinc-400 ml-1">University Name</label>
+                       <input value={formData.university} onChange={(e) => setFormData({...formData, university: e.target.value})} className="w-full bg-white/5 border border-zinc-800/10 rounded-xl p-4 text-xs font-medium focus:border-primary outline-none transition-all" placeholder="University" />
                     </div>
                     <div className="space-y-2">
-                       <label className="text-[10px] font-black uppercase text-neutral-500 ml-1">Course of Study</label>
-                       <input value={formData.programOfStudy} onChange={(e) => setFormData({...formData, programOfStudy: e.target.value})} className="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-xs font-medium focus:border-primary outline-none transition-all" placeholder="e.g. Computer Science" />
+                       <label className="text-[10px] font-black uppercase text-zinc-400 ml-1">Course of Study</label>
+                       <input value={formData.programOfStudy} onChange={(e) => setFormData({...formData, programOfStudy: e.target.value})} className="w-full bg-white/5 border border-zinc-800/10 rounded-xl p-4 text-xs font-medium focus:border-primary outline-none transition-all" placeholder="e.g. Computer Science" />
                     </div>
                     <div className="space-y-2">
-                       <label className="text-[10px] font-black uppercase text-neutral-500 ml-1">Year of Study</label>
-                       <input value={formData.yearOfStudy} onChange={(e) => setFormData({...formData, yearOfStudy: e.target.value})} className="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-xs font-medium focus:border-primary outline-none transition-all" placeholder="e.g. 3rd Year" />
+                       <label className="text-[10px] font-black uppercase text-zinc-400 ml-1">Year of Study</label>
+                       <input value={formData.yearOfStudy} onChange={(e) => setFormData({...formData, yearOfStudy: e.target.value})} className="w-full bg-white/5 border border-zinc-800/10 rounded-xl p-4 text-xs font-medium focus:border-primary outline-none transition-all" placeholder="e.g. 3rd Year" />
                     </div>
                   </div>
                 </div>
@@ -542,27 +542,27 @@ export default function Home() {
                   <div className="space-y-4">
                     <div className="grid grid-cols-2 gap-4">
                       <div className="space-y-2">
-                         <label className="text-[10px] font-black uppercase text-neutral-500 ml-1">JAMB Reg</label>
-                         <input value={formData.jambRegNumber} onChange={(e) => setFormData({...formData, jambRegNumber: e.target.value})} className="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-xs font-medium focus:border-primary outline-none transition-all" placeholder="JAMB No." />
+                         <label className="text-[10px] font-black uppercase text-zinc-400 ml-1">JAMB Reg</label>
+                         <input value={formData.jambRegNumber} onChange={(e) => setFormData({...formData, jambRegNumber: e.target.value})} className="w-full bg-white/5 border border-zinc-800/10 rounded-xl p-4 text-xs font-medium focus:border-primary outline-none transition-all" placeholder="JAMB No." />
                       </div>
                       <div className="space-y-2">
-                         <label className="text-[10px] font-black uppercase text-neutral-500 ml-1">Matric No.</label>
-                         <input value={formData.matricNumber} onChange={(e) => setFormData({...formData, matricNumber: e.target.value})} className="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-xs font-medium focus:border-primary outline-none transition-all" placeholder="Matric No." />
+                         <label className="text-[10px] font-black uppercase text-zinc-400 ml-1">Matric No.</label>
+                         <input value={formData.matricNumber} onChange={(e) => setFormData({...formData, matricNumber: e.target.value})} className="w-full bg-white/5 border border-zinc-800/10 rounded-xl p-4 text-xs font-medium focus:border-primary outline-none transition-all" placeholder="Matric No." />
                       </div>
                     </div>
                     <div className="grid grid-cols-2 gap-4">
                       <div className="space-y-2">
-                         <label className="text-[10px] font-black uppercase text-neutral-500 ml-1">WAEC PIN</label>
-                         <input value={formData.waecPin} onChange={(e) => setFormData({...formData, waecPin: e.target.value})} className="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-xs font-medium focus:border-primary outline-none transition-all" placeholder="PIN" />
+                         <label className="text-[10px] font-black uppercase text-zinc-400 ml-1">WAEC PIN</label>
+                         <input value={formData.waecPin} onChange={(e) => setFormData({...formData, waecPin: e.target.value})} className="w-full bg-white/5 border border-zinc-800/10 rounded-xl p-4 text-xs font-medium focus:border-primary outline-none transition-all" placeholder="PIN" />
                       </div>
                       <div className="space-y-2">
-                         <label className="text-[10px] font-black uppercase text-neutral-500 ml-1">WAEC Serial</label>
-                         <input value={formData.waecSerial} onChange={(e) => setFormData({...formData, waecSerial: e.target.value})} className="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-xs font-medium focus:border-primary outline-none transition-all" placeholder="Serial" />
+                         <label className="text-[10px] font-black uppercase text-zinc-400 ml-1">WAEC Serial</label>
+                         <input value={formData.waecSerial} onChange={(e) => setFormData({...formData, waecSerial: e.target.value})} className="w-full bg-white/5 border border-zinc-800/10 rounded-xl p-4 text-xs font-medium focus:border-primary outline-none transition-all" placeholder="Serial" />
                       </div>
                     </div>
                     <div className="space-y-2">
-                       <label className="text-[10px] font-black uppercase text-neutral-500 ml-1">Recent CGPA</label>
-                       <input value={formData.lastGpa} onChange={(e) => setFormData({...formData, lastGpa: e.target.value})} className="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-xs font-medium focus:border-primary outline-none transition-all" placeholder="e.g. 4.50 / 5.0" />
+                       <label className="text-[10px] font-black uppercase text-zinc-400 ml-1">Recent CGPA</label>
+                       <input value={formData.lastGpa} onChange={(e) => setFormData({...formData, lastGpa: e.target.value})} className="w-full bg-white/5 border border-zinc-800/10 rounded-xl p-4 text-xs font-medium focus:border-primary outline-none transition-all" placeholder="e.g. 4.50 / 5.0" />
                     </div>
                   </div>
                 </div>
@@ -580,9 +580,9 @@ export default function Home() {
             </div>
 
             {/* Slide 2: Contextual Document Uploads */}
-            <div className="min-w-full snap-center bg-white/10 backdrop-blur-2xl rounded-[3rem] border border-white/10 shadow-2xl p-10 md:p-16">
+            <div className="min-w-full snap-center bg-white/10 backdrop-blur-2xl rounded-[3rem] border border-zinc-800/10 shadow-2xl p-10 md:p-16">
               <div className="flex items-center gap-6 mb-12">
-                <div className="w-16 h-16 rounded-[1.5rem] bg-white/5 flex items-center justify-center border border-white/10 shadow-inner">
+                <div className="w-16 h-16 rounded-[1.5rem] bg-white/5 flex items-center justify-center border border-zinc-800/10 shadow-inner">
                   <span className="material-symbols-outlined text-primary text-3xl">
                     cloud_upload
                   </span>
@@ -601,8 +601,8 @@ export default function Home() {
                   { icon: 'badge', title: 'National Identity (NIN)', key: 'govIdDesc' }
                 ].map(upload => (
                   <div key={upload.title} className="space-y-6">
-                    <div className="border-[3px] border-dashed border-white/10 rounded-[2.5rem] p-10 text-center hover:border-secondary hover:bg-white/5 transition-all cursor-pointer group/upload bg-black/20">
-                      <span className="material-symbols-outlined text-5xl text-neutral-500 group-hover/upload:text-secondary mb-4 transition-colors">
+                    <div className="border-[3px] border-dashed border-zinc-800/10 rounded-[2.5rem] p-10 text-center hover:border-secondary hover:bg-white/5 transition-all cursor-pointer group/upload bg-black/20">
+                      <span className="material-symbols-outlined text-5xl text-zinc-400 group-hover/upload:text-secondary mb-4 transition-colors">
                         {upload.icon}
                       </span>
                       <h4 className="text-sm font-black text-on-surface uppercase tracking-widest mb-2 font-label">
@@ -617,7 +617,7 @@ export default function Home() {
                        <input 
                          value={formData[upload.key as keyof typeof formData]} 
                          onChange={(e) => setFormData({...formData, [upload.key]: e.target.value})}
-                         className="w-full bg-white/5 border border-white/10 rounded-xl p-3 text-[11px] font-medium focus:border-secondary outline-none transition-all" 
+                         className="w-full bg-white/5 border border-zinc-800/10 rounded-xl p-3 text-[11px] font-medium focus:border-secondary outline-none transition-all" 
                          placeholder="e.g. Official letter from UNILAG Registrar" 
                        />
                     </div>
@@ -627,7 +627,7 @@ export default function Home() {
 
               <div className="mt-16 flex justify-between items-center">
                 <button
-                  className="text-neutral-500 font-black text-xs uppercase tracking-widest hover:text-primary transition-colors flex items-center gap-3 font-label"
+                  className="text-zinc-400 font-black text-xs uppercase tracking-widest hover:text-primary transition-colors flex items-center gap-3 font-label"
                   onClick={scrollLeft}
                 >
                   <span className="material-symbols-outlined text-lg">arrow_back</span>
@@ -644,7 +644,7 @@ export default function Home() {
             </div>
 
             {/* Slide 3: The Impact Advertisement */}
-            <div className="min-w-full snap-center bg-zinc-900 overflow-hidden rounded-[3rem] border border-white/10 shadow-2xl relative group">
+            <div className="min-w-full snap-center bg-zinc-900 overflow-hidden rounded-[3rem] border border-zinc-800/10 shadow-2xl relative group">
               <img 
                 src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=2070" 
                 className="absolute inset-0 w-full h-full object-cover opacity-20 grayscale group-hover:scale-110 transition-transform duration-1000"
@@ -681,9 +681,9 @@ export default function Home() {
                       ))}
                    </div>
                    
-                   <div className="flex items-center justify-between pt-8 border-t border-white/10">
+                   <div className="flex items-center justify-between pt-8 border-t border-zinc-800/10">
                       <button
-                        className="text-neutral-500 font-black text-xs uppercase tracking-widest hover:text-white transition-colors flex items-center gap-3 font-label"
+                        className="text-zinc-400 font-black text-xs uppercase tracking-widest hover:text-white transition-colors flex items-center gap-3 font-label"
                         onClick={scrollLeft}
                       >
                         <span className="material-symbols-outlined text-lg">arrow_back</span>

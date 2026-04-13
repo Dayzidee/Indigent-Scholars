@@ -10,7 +10,7 @@ import Link from 'next/link'
 
 export default function VerifiedStudentsPage() {
   return (
-    <div className="min-h-screen bg-slate-50/50">
+    <div className="min-h-screen bg-transparent">
       <div className="max-w-7xl mx-auto px-6 py-20">
         
         {/* Header Section */}
@@ -25,7 +25,7 @@ export default function VerifiedStudentsPage() {
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl md:text-6xl font-headline font-black text-zinc-900 tracking-tight"
+            className="text-5xl md:text-6xl font-headline font-black text-zinc-100 tracking-tight"
           >
             Empower the Next Generation
           </motion.h1>
@@ -52,10 +52,10 @@ export default function VerifiedStudentsPage() {
                 transition={{ delay: index * 0.1 }}
                 className="group"
               >
-                <Card className="h-full bg-white rounded-[40px] border-none shadow-2xl shadow-zinc-200/50 overflow-hidden transition-all duration-500 hover:shadow-blue-900/10 hover:-translate-y-2 flex flex-col p-2">
-                  <div className="bg-zinc-50 rounded-[32px] p-8 flex-1 flex flex-col">
+                <Card className="h-full bg-zinc-900 rounded-[40px] border-none shadow-2xl shadow-zinc-200/50 overflow-hidden transition-all duration-500 hover:shadow-blue-900/10 hover:-translate-y-2 flex flex-col p-2">
+                  <div className="bg-zinc-800 rounded-[32px] p-8 flex-1 flex flex-col">
                     <div className="flex justify-between items-start mb-8">
-                      <div className="w-16 h-16 rounded-[24px] bg-white shadow-xl shadow-zinc-200/50 flex items-center justify-center overflow-hidden">
+                      <div className="w-16 h-16 rounded-[24px] bg-zinc-900 shadow-xl shadow-zinc-200/50 flex items-center justify-center overflow-hidden">
                         <img 
                           src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${student.name}`} 
                           alt={student.name}
@@ -63,21 +63,21 @@ export default function VerifiedStudentsPage() {
                         />
                       </div>
                       <div className="flex flex-col items-end gap-2">
-                        <div className="px-3 py-1 rounded-full bg-emerald-50 text-emerald-600 text-[8px] font-black uppercase tracking-widest border border-emerald-100 italic"> Identity Verified </div>
-                        <div className="px-3 py-1 rounded-full bg-blue-50 text-[#0052CC] text-[8px] font-black uppercase tracking-widest border border-blue-100"> Academic Pro </div>
+                        <div className="px-3 py-1 rounded-full bg-emerald-950/30 text-emerald-600 text-[8px] font-black uppercase tracking-widest border border-emerald-100 italic"> Identity Verified </div>
+                        <div className="px-3 py-1 rounded-full bg-blue-950/30 text-[#0052CC] text-[8px] font-black uppercase tracking-widest border border-blue-100"> Academic Pro </div>
                       </div>
                     </div>
 
                     <div className="mb-8">
-                      <h3 className="text-2xl font-headline font-black text-zinc-900 tracking-tight leading-none mb-2 group-hover:text-[#0052CC] transition-colors">{student.name}</h3>
+                      <h3 className="text-2xl font-headline font-black text-zinc-100 tracking-tight leading-none mb-2 group-hover:text-[#0052CC] transition-colors">{student.name}</h3>
                       <p className="text-[#0052CC] text-[10px] font-black uppercase tracking-widest mb-4">{student.university}</p>
                       <p className="text-zinc-500 text-xs leading-relaxed font-medium line-clamp-2">{student.bio}</p>
                     </div>
 
-                    <div className="mt-auto space-y-4 pt-6 border-t border-zinc-100">
+                    <div className="mt-auto space-y-4 pt-6 border-t border-zinc-800">
                       <div className="flex justify-between items-end">
                         <span className="text-zinc-400 text-[9px] font-black uppercase tracking-widest">Scholar's GPA</span>
-                        <span className="text-lg font-headline font-black text-zinc-800">{student.gpa}</span>
+                        <span className="text-lg font-headline font-black text-zinc-200">{student.gpa}</span>
                       </div>
                       
                       <div className="space-y-2">
@@ -85,7 +85,7 @@ export default function VerifiedStudentsPage() {
                           <span className="text-[#0052CC]">₦{student.raisedAmount.toLocaleString()}</span>
                           <span className="text-zinc-300">Target: ₦{student.totalGoal.toLocaleString()}</span>
                         </div>
-                        <div className="h-2 w-full bg-zinc-100 rounded-full overflow-hidden">
+                        <div className="h-2 w-full bg-zinc-800 rounded-full overflow-hidden">
                           <motion.div 
                             initial={{ width: 0 }}
                             animate={{ width: `${percentage}%` }}

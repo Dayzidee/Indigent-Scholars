@@ -44,7 +44,7 @@ export function ResourcesView() {
           <Card key={idx} className="p-8 border border-outline-variant/10 bg-surface-container-lowest hover:border-primary/30 transition-all cursor-pointer group rounded-2xl relative overflow-hidden">
             <div className={cn(
               "w-12 h-12 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform",
-              cat.color === 'blue' ? "bg-blue-50 text-blue-600" : cat.color === 'green' ? "bg-green-50 text-green-600" : cat.color === 'amber' ? "bg-amber-50 text-amber-600" : "bg-purple-50 text-purple-600"
+              cat.color === 'blue' ? "bg-blue-950/30 text-blue-400" : cat.color === 'green' ? "bg-green-950/30 text-green-400" : cat.color === 'amber' ? "bg-amber-950/30 text-amber-600" : "bg-purple-950/30 text-purple-600"
             )}>
               <span className="material-symbols-outlined">{cat.icon}</span>
             </div>
@@ -82,7 +82,7 @@ export function ResourcesView() {
         <Card className="md:col-span-4 bg-tertiary-container text-white p-8 rounded-3xl border-none shadow-xl relative overflow-hidden flex flex-col scholar-gradient">
            <h3 className="font-headline font-black text-2xl mb-4 z-10">Premium Content</h3>
            <p className="text-white/70 text-sm mb-10 font-body leading-relaxed z-10">Unlock exclusive workshop materials and one-on-one mentorship transcripts from our top-tier scholars.</p>
-           <button className="mt-auto w-full bg-white text-tertiary-fixed py-4 rounded-2xl font-black font-headline shadow-lg hover:shadow-white/20 transition-all">
+           <button className="mt-auto w-full bg-zinc-900 text-tertiary-fixed py-4 rounded-2xl font-black font-headline shadow-lg hover:shadow-white/20 transition-all">
               Unlock All content
            </button>
            <span className="absolute -right-10 -bottom-10 material-symbols-outlined text-8xl text-white/5 rotate-12 z-0 select-none">auto_awesome</span>

@@ -108,7 +108,7 @@ export function Footer() {
           </Link>
         </div>
       </div>
-      <div className="px-12 py-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto">
+      <div className="px-12 py-8 border-t border-zinc-800/10 flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto">
         <p className="font-inter text-xs uppercase tracking-widest text-neutral-400">
           © {new Date().getFullYear()} Indigent-Sc. All rights reserved.
         </p>

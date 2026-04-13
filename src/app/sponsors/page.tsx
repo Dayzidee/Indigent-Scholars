@@ -5,7 +5,7 @@ import { SlideIn } from '@/components/ui/SlideIn';
 
 export default function SponsorsPage() {
   return (
-    <main className="pt-24 bg-white relative z-[2]">
+    <main className="pt-24 bg-zinc-900 relative z-[2]">
       {/* Hero Section */}
       <section className="relative px-8 py-20 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <SlideIn direction="right" className="z-10">
@@ -127,7 +127,7 @@ export default function SponsorsPage() {
         </div>
         <div className="max-w-7xl mx-auto px-8 flex flex-col lg:flex-row items-center gap-16 relative z-10">
           <div className="lg:w-3/5">
-            <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md px-6 py-3 rounded-full mb-8 border border-white/20">
+            <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md px-6 py-3 rounded-full mb-8 border border-zinc-800/20">
               <span className="material-symbols-outlined text-secondary" style={{fontVariationSettings: "'FILL' 1"}}>verified_user</span>
               <span className="font-bold tracking-tight">Official Verification Protocol</span>
             </div>
@@ -168,7 +168,7 @@ export default function SponsorsPage() {
           </div>
           
           <div className="lg:w-2/5">
-            <div className="bg-white/5 p-8 rounded-3xl border border-white/10 backdrop-blur-sm shadow-xl">
+            <div className="bg-white/5 p-8 rounded-3xl border border-zinc-800/10 backdrop-blur-sm shadow-xl">
               <h4 className="text-secondary text-xl font-bold mb-4">The Prestige Circle</h4>
               <p className="text-sm text-zinc-400 mb-6 leading-relaxed">
                 For contributors supporting five or more scholars simultaneously, we offer the Prestige Circle. Members gain access to annual impact summits, direct naming rights for scholarship cohorts, and quarterly private briefings with the executive board.

@@ -168,7 +168,7 @@ export function SponsorSettings() {
                   twoFA ? "bg-primary" : "bg-outline-variant/40"
                 )}>
                   <div className={cn(
-                    "inline-block h-5 w-5 transform rounded-full bg-white transition-transform duration-300 shadow-lg",
+                    "inline-block h-5 w-5 transform rounded-full bg-zinc-900 transition-transform duration-300 shadow-lg",
                     twoFA ? "translate-x-6" : "translate-x-1"
                   )} />
                 </div>
@@ -245,7 +245,7 @@ export function SponsorSettings() {
             </p>
           </div>
           
-          <div className="relative z-10 flex flex-col items-center gap-3 bg-white/5 backdrop-blur-3xl px-8 py-6 sm:px-12 sm:py-10 rounded-3xl lg:rounded-[2.5rem] border border-white/10 shadow-2xl">
+          <div className="relative z-10 flex flex-col items-center gap-3 bg-white/5 backdrop-blur-3xl px-8 py-6 sm:px-12 sm:py-10 rounded-3xl lg:rounded-[2.5rem] border border-zinc-800/10 shadow-2xl">
             <p className="text-secondary-fixed text-6xl font-black tracking-tighter font-headline">142</p>
             <p className="text-[10px] font-black uppercase tracking-[0.3em] opacity-60 font-label whitespace-nowrap">Scholars Enabled</p>
           </div>

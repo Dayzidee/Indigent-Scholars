@@ -44,18 +44,18 @@ export function SponsorTopNavBar({ onMenuClick }: SponsorTopNavBarProps) {
   }, [])
 
   return (
-    <header className="fixed top-0 right-0 z-40 flex items-center justify-between h-16 w-full lg:w-[calc(100%-16rem)] px-4 lg:px-10 bg-white/95 backdrop-blur-md border-b border-zinc-100 shadow-sm">
+    <header className="fixed top-0 right-0 z-40 flex items-center justify-between h-16 w-full lg:w-[calc(100%-16rem)] px-4 lg:px-10 bg-zinc-900/95 backdrop-blur-md border-b border-zinc-800 shadow-sm">
       {/* Mobile Menu Trigger & Title */}
       <div className="flex items-center gap-2 lg:gap-4 truncate min-w-0">
         <button 
           id="mobile-menu-trigger"
           onClick={onMenuClick}
-          className="lg:hidden p-2 -ml-2 hover:bg-zinc-100 rounded-lg transition-colors shrink-0"
+          className="lg:hidden p-2 -ml-2 hover:bg-zinc-800 rounded-lg transition-colors shrink-0"
         >
-          <span className="material-symbols-outlined text-zinc-600">menu</span>
+          <span className="material-symbols-outlined text-zinc-400">menu</span>
         </button>
         <Link href="/dashboard/sponsor" className="text-base font-bold text-[#0052CC] lg:hidden truncate shrink-0">Indigent-Sc</Link>
-        <span className="hidden lg:block font-headline font-bold text-lg text-zinc-900 truncate">{title}</span>
+        <span className="hidden lg:block font-headline font-bold text-lg text-zinc-100 truncate">{title}</span>
       </div>
 
       {/* Search Bar - Clean Pill Style */}
@@ -69,7 +69,7 @@ export function SponsorTopNavBar({ onMenuClick }: SponsorTopNavBarProps) {
             value={searchValue}
             onChange={(e) => setSearchValue(e.target.value)}
             placeholder="Search scholars, transactions..."
-            className="w-full bg-[#F2F2F2] border-transparent rounded-full py-2.5 pl-12 pr-4 text-xs font-medium focus:bg-white focus:ring-2 focus:ring-[#0052CC]/10 focus:border-[#0052CC]/20 transition-all font-body placeholder:text-zinc-400"
+            className="w-full bg-zinc-800 border-transparent rounded-full py-2.5 pl-12 pr-4 text-xs font-medium text-zinc-200 focus:bg-zinc-800 focus:ring-2 focus:ring-[#0052CC]/10 focus:border-[#0052CC]/20 transition-all font-body placeholder:text-zinc-500"
           />
         </div>
       </div>
@@ -90,11 +90,11 @@ export function SponsorTopNavBar({ onMenuClick }: SponsorTopNavBarProps) {
             onClick={() => setIsNotificationsOpen(!isNotificationsOpen)}
             className={cn(
               "p-2 rounded-full transition-all relative",
-              isNotificationsOpen ? "bg-[#0052CC]/10 text-[#0052CC]" : "text-zinc-500 hover:bg-zinc-100"
+              isNotificationsOpen ? "bg-[#0052CC]/10 text-[#0052CC]" : "text-zinc-400 hover:bg-zinc-800"
             )}
           >
             <span className="material-symbols-outlined">notifications</span>
-            <span className="absolute top-2 right-2.5 w-1.5 h-1.5 bg-red-500 rounded-full border-2 border-white"></span>
+            <span className="absolute top-2 right-2.5 w-1.5 h-1.5 bg-red-500 rounded-full border-2 border-zinc-900"></span>
           </button>
 
           <AnimatePresence>
@@ -103,9 +103,9 @@ export function SponsorTopNavBar({ onMenuClick }: SponsorTopNavBarProps) {
                 initial={{ opacity: 0, y: 10, scale: 0.95 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                className="absolute right-[-8px] sm:right-0 mt-3 w-[280px] sm:w-80 bg-white rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.15)] border border-zinc-100 overflow-hidden z-50 origin-top-right"
+                className="absolute right-[-8px] sm:right-0 mt-3 w-[280px] sm:w-80 bg-zinc-900 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.4)] border border-zinc-700 overflow-hidden z-50 origin-top-right"
               >
-                <div className="p-4 border-b border-zinc-100 flex justify-between items-center">
+                <div className="p-4 border-b border-zinc-800 flex justify-between items-center">
                   <span className="font-bold text-sm font-headline">Notifications</span>
                   <span className="text-[10px] font-bold text-[#0052CC] uppercase cursor-pointer">Mark all as read</span>
                 </div>
@@ -114,7 +114,7 @@ export function SponsorTopNavBar({ onMenuClick }: SponsorTopNavBarProps) {
                     { title: 'New Scholar Interest', time: '10m ago', icon: 'person_add' },
                     { title: 'Funding Confirmation', time: '2h ago', icon: 'check_circle' }
                   ].map((n, i) => (
-                    <div key={i} className="flex items-start gap-3 p-3 hover:bg-zinc-50 rounded-xl transition-colors cursor-pointer">
+                    <div key={i} className="flex items-start gap-3 p-3 hover:bg-zinc-800 rounded-xl transition-colors cursor-pointer">
                       <div className="w-8 h-8 rounded-lg bg-[#0052CC]/5 flex items-center justify-center shrink-0 border border-[#0052CC]/10">
                         <span className="material-symbols-outlined text-[#0052CC] text-sm">{n.icon}</span>
                       </div>
@@ -134,9 +134,9 @@ export function SponsorTopNavBar({ onMenuClick }: SponsorTopNavBarProps) {
         <div className="relative" ref={profileRef}>
           <button 
             onClick={() => setIsProfileOpen(!isProfileOpen)}
-            className="flex items-center gap-3 p-1 lg:pl-5 border-l border-zinc-100 ml-2 group"
+            className="flex items-center gap-3 p-1 lg:pl-5 border-l border-zinc-800 ml-2 group"
           >
-            <div className="w-9 h-9 rounded-xl bg-zinc-100 flex items-center justify-center border border-zinc-200 shadow-sm transition-all group-hover:bg-[#0052CC] group-hover:border-[#0052CC] group-hover:text-white overflow-hidden">
+            <div className="w-9 h-9 rounded-xl bg-zinc-800 flex items-center justify-center border border-zinc-700 shadow-sm transition-all group-hover:bg-[#0052CC] group-hover:border-[#0052CC] group-hover:text-white overflow-hidden">
               <span className="material-symbols-outlined text-lg">account_balance</span>
             </div>
             <span className="material-symbols-outlined text-zinc-400 text-sm hidden lg:block group-hover:text-[#0052CC] transition-colors">expand_more</span>
@@ -148,30 +148,30 @@ export function SponsorTopNavBar({ onMenuClick }: SponsorTopNavBarProps) {
                 initial={{ opacity: 0, y: 10, scale: 0.95 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                className="absolute right-0 mt-3 w-64 bg-white rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-zinc-100 overflow-hidden z-50 p-2"
+                className="absolute right-0 mt-3 w-64 bg-zinc-900 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.4)] border border-zinc-700 overflow-hidden z-50 p-2"
               >
-                <div className="p-4 mb-2 bg-zinc-50 rounded-xl">
+                <div className="p-4 mb-2 bg-zinc-800 rounded-xl">
                   <p className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest mb-0.5 leading-none">Organization</p>
-                  <p className="font-bold text-sm font-headline truncate text-zinc-900">Global Scholars Inc.</p>
+                  <p className="font-bold text-sm font-headline truncate text-zinc-100">Global Scholars Inc.</p>
                 </div>
                 
                 <Link 
                   href="/dashboard/sponsor/settings"
                   onClick={() => setIsProfileOpen(false)}
-                  className="flex items-center gap-3 px-4 py-3 hover:bg-zinc-50 rounded-xl transition-colors group"
+                  className="flex items-center gap-3 px-4 py-3 hover:bg-zinc-800 rounded-xl transition-colors group"
                 >
                   <span className="material-symbols-outlined text-zinc-400 group-hover:text-[#0052CC] transition-colors text-lg">settings</span>
-                  <span className="text-sm font-bold font-headline text-zinc-700">Org Settings</span>
+                  <span className="text-sm font-bold font-headline text-zinc-300">Org Settings</span>
                 </Link>
 
-                <div className="h-px bg-zinc-100 my-1 mx-2"></div>
+                <div className="h-px bg-zinc-800 my-1 mx-2"></div>
                 
                 <button 
                   onClick={() => {
                     setIsProfileOpen(false)
                     signOutAction()
                   }}
-                  className="w-full flex items-center gap-3 px-4 py-3 text-red-500 hover:bg-red-50 rounded-xl transition-colors group text-left"
+                  className="w-full flex items-center gap-3 px-4 py-3 text-red-400 hover:bg-red-950/30 rounded-xl transition-colors group text-left"
                 >
                   <span className="material-symbols-outlined text-lg">logout</span>
                   <span className="text-sm font-bold font-headline">Logout</span>

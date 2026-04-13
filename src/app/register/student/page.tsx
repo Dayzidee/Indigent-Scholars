@@ -149,12 +149,12 @@ function StudentRegisterContent() {
 
   if (isSuccess) {
     return (
-      <main className="min-h-screen bg-white flex items-center justify-center p-6">
+      <main className="min-h-screen bg-zinc-900 flex items-center justify-center p-6">
         <div className="max-w-md w-full text-center space-y-6">
-          <div className="w-20 h-20 bg-emerald-50 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-8">
+          <div className="w-20 h-20 bg-emerald-950/30 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-8">
             <span className="material-symbols-outlined text-4xl" style={{ fontVariationSettings: "'FILL' 1" }}>verified</span>
           </div>
-          <h2 className="text-3xl font-headline font-black text-zinc-900 tracking-tight">Account Initialized!</h2>
+          <h2 className="text-3xl font-headline font-black text-zinc-100 tracking-tight">Account Initialized!</h2>
           <p className="text-zinc-500 font-body leading-relaxed">
             Your high-granularity scholar profile has been established on the frontend. In a production environment, you would now verify your email.
           </p>
@@ -169,7 +169,7 @@ function StudentRegisterContent() {
   }
 
   return (
-    <main className="pt-32 pb-20 px-6 min-h-screen bg-white relative z-[2]">
+    <main className="pt-32 pb-20 px-6 min-h-screen bg-zinc-900 relative z-[2]">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
 
         {/* Left Side: Benefit List (Sticky) */}
@@ -186,16 +186,16 @@ function StudentRegisterContent() {
 
           <div className="grid gap-4">
             {[
-              { title: "Global Scholarships", desc: "Access curated financial aid and merit-based grants.", icon: "school", color: "text-blue-600 bg-blue-50" },
+              { title: "Global Scholarships", desc: "Access curated financial aid and merit-based grants.", icon: "school", color: "text-blue-400 bg-blue-50" },
               { title: "Direct Mentorship", desc: "Connect with academic leaders and industry professionals.", icon: "workspace_premium", color: "text-amber-600 bg-amber-50" },
               { title: "Verified Identity", desc: "Securely manage your academic and institutional records.", icon: "verified_user", color: "text-emerald-600 bg-emerald-50" }
             ].map((benefit, i) => (
-              <div key={i} className="group flex gap-6 items-start p-6 rounded-[24px] transition-all duration-300 hover:bg-zinc-50 border border-transparent hover:border-zinc-100">
+              <div key={i} className="group flex gap-6 items-start p-6 rounded-[24px] transition-all duration-300 hover:bg-zinc-800 border border-transparent hover:border-zinc-800">
                 <div className={cn("flex-shrink-0 w-14 h-14 rounded-2xl flex items-center justify-center transition-transform group-hover:scale-110", benefit.color)}>
                   <span className="material-symbols-outlined text-2xl" style={{ fontVariationSettings: "'FILL' 1" }}>{benefit.icon}</span>
                 </div>
                 <div>
-                  <h3 className="font-headline font-black text-lg text-zinc-900 leading-tight mb-1">{benefit.title}</h3>
+                  <h3 className="font-headline font-black text-lg text-zinc-100 leading-tight mb-1">{benefit.title}</h3>
                   <p className="text-sm text-zinc-500 font-body leading-relaxed">{benefit.desc}</p>
                 </div>
               </div>
@@ -204,14 +204,14 @@ function StudentRegisterContent() {
         </div>
 
         {/* Right Side: Registration Form */}
-        <div className="lg:col-span-7 bg-white rounded-[40px] p-8 lg:p-14 shadow-2xl shadow-blue-900/5 border border-zinc-100">
+        <div className="lg:col-span-7 bg-zinc-900 rounded-[40px] p-8 lg:p-14 shadow-2xl shadow-blue-900/5 border border-zinc-800">
           <div className="mb-12">
-            <h2 className="text-3xl font-headline font-black text-zinc-900 tracking-tighter leading-none mb-3">Student Registration</h2>
+            <h2 className="text-3xl font-headline font-black text-zinc-100 tracking-tighter leading-none mb-3">Student Registration</h2>
             <p className="text-zinc-400 text-sm font-body">Complete all sections to establish your high-granularity academic profile.</p>
           </div>
 
           {(errorParam) && (
-            <div className="mb-8 p-5 bg-red-50 text-red-700 rounded-2xl text-[11px] font-black uppercase tracking-widest border border-red-100 flex items-center gap-4">
+            <div className="mb-8 p-5 bg-red-950/30 text-red-400 rounded-2xl text-[11px] font-black uppercase tracking-widest border border-red-100 flex items-center gap-4">
               <span className="material-symbols-outlined text-xl">error</span>
               {errorParam}
             </div>
@@ -309,7 +309,7 @@ function StudentRegisterContent() {
 
               <div className="space-y-6">
                 {formData.education_history.map((edu, index) => (
-                  <div key={index} className="p-6 rounded-3xl bg-zinc-50/50 border border-zinc-100 grid grid-cols-1 md:grid-cols-3 gap-6 relative group">
+                  <div key={index} className="p-6 rounded-3xl bg-zinc-800/50 border border-zinc-800 grid grid-cols-1 md:grid-cols-3 gap-6 relative group">
                     <OutlinedInput label="Institution Name" value={edu.school} onChange={(e) => updateEducation(index, 'school', e.target.value)} placeholder="University/College" icon="school" />
                     <OutlinedInput label="Duration" value={edu.period} onChange={(e) => updateEducation(index, 'period', e.target.value)} placeholder="2018 - 2022" icon="schedule" />
                     <OutlinedInput label="Certificate" value={edu.certificate} onChange={(e) => updateEducation(index, 'certificate', e.target.value)} placeholder="B.Sc / Diploma" icon="history_edu" />
@@ -387,9 +387,9 @@ function StudentRegisterContent() {
             </div>
 
             {/* Bio & Skills Footer */}
-            <div className="space-y-8 pt-8 border-t border-zinc-100">
+            <div className="space-y-8 pt-8 border-t border-zinc-800">
               <div className="flex items-center gap-3">
-                <span className="w-8 h-8 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center text-[10px] font-black">★</span>
+                <span className="w-8 h-8 rounded-full bg-blue-950/30 text-blue-400 flex items-center justify-center text-[10px] font-black">★</span>
                 <h3 className="text-xs font-black uppercase tracking-[0.2em] text-[#0052CC] font-label">Personal Summary</h3>
               </div>
 
@@ -401,7 +401,7 @@ function StudentRegisterContent() {
                     value={formData.brief_bio} 
                     onChange={handleInputChange} 
                     placeholder="Tell us about your academic journey and aspirations..." 
-                    className="w-full min-h-[120px] p-6 rounded-[24px] bg-zinc-50 border-2 border-transparent focus:border-[#0052CC] focus:bg-white transition-all outline-none font-body text-sm resize-none"
+                    className="w-full min-h-[120px] p-6 rounded-[24px] bg-zinc-800 border-2 border-transparent focus:border-[#0052CC] focus:bg-zinc-900 transition-all outline-none font-body text-sm resize-none"
                   />
                 </div>
                 <OutlinedInput label="Core Skills (Comma separated)" name="skills" value={formData.skills} onChange={handleInputChange} placeholder="e.g. Research, Python, Statistics" icon="terminal" />
@@ -410,10 +410,10 @@ function StudentRegisterContent() {
 
 
             {/* Action Area */}
-            <div className="pt-10 border-t border-zinc-100">
+            <div className="pt-10 border-t border-zinc-800">
               <div className="flex items-start gap-4 mb-10 group cursor-pointer">
                 <div className="relative flex items-center">
-                  <input required className="peer appearance-none w-6 h-6 border-2 border-zinc-200 rounded-lg checked:border-[#0052CC] checked:bg-[#0052CC] transition-all cursor-pointer" type="checkbox" />
+                  <input required className="peer appearance-none w-6 h-6 border-2 border-zinc-700 rounded-lg checked:border-[#0052CC] checked:bg-[#0052CC] transition-all cursor-pointer" type="checkbox" />
                   <span className="material-symbols-outlined absolute inset-0 text-white text-lg scale-0 peer-checked:scale-100 transition-transform pointer-events-none flex items-center justify-center font-bold">check</span>
                 </div>
                 <p className="text-[11px] text-zinc-400 font-bold uppercase tracking-widest leading-relaxed">
@@ -425,7 +425,7 @@ function StudentRegisterContent() {
                 Establish Scholar Account
               </Button>
 
-              <div className="mt-10 p-6 rounded-3xl bg-zinc-50 border border-zinc-100 flex flex-col items-center gap-3">
+              <div className="mt-10 p-6 rounded-3xl bg-zinc-800 border border-zinc-800 flex flex-col items-center gap-3">
                  <p className="text-zinc-500 text-xs font-bold uppercase tracking-widest leading-none">Already have a profile?</p>
                  <Link className="text-[#0052CC] font-black font-headline text-lg hover:underline transition-all" href="/login">
                    Log in to Dashboard
@@ -441,7 +441,7 @@ function StudentRegisterContent() {
 
 export default function StudentRegistrationPage() {
   return (
-    <Suspense fallback={<div className="min-h-screen bg-white flex items-center justify-center"><div className="w-12 h-12 border-4 border-zinc-100 border-t-[#0052CC] rounded-full animate-spin" /></div>}>
+    <Suspense fallback={<div className="min-h-screen bg-zinc-900 flex items-center justify-center"><div className="w-12 h-12 border-4 border-zinc-800 border-t-[#0052CC] rounded-full animate-spin" /></div>}>
       <StudentRegisterContent />
     </Suspense>
   );

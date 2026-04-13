@@ -35,9 +35,9 @@ export function SubmittedView() {
     <div className="max-w-7xl mx-auto px-6 py-10 space-y-8 pb-32">
       
       {/* Dynamic Status Header */}
-      <div className="bg-amber-50 border border-amber-100 rounded-[32px] p-6 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-sm">
+      <div className="bg-amber-950/30 border border-amber-100 rounded-[32px] p-6 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-sm">
         <div className="flex items-center gap-5">
-           <div className="w-12 h-12 rounded-2xl bg-white flex items-center justify-center text-amber-600 shadow-sm shrink-0">
+           <div className="w-12 h-12 rounded-2xl bg-zinc-900 flex items-center justify-center text-amber-600 shadow-sm shrink-0">
              <span className="material-symbols-outlined text-2xl animate-pulse" style={{ fontVariationSettings: "'FILL' 1" }}>hourglass_top</span>
            </div>
            <div>
@@ -59,37 +59,37 @@ export function SubmittedView() {
           animate={{ opacity: 1, y: 0 }}
           className="group"
         >
-          <Card className="h-full bg-white rounded-[40px] border-none shadow-2xl shadow-zinc-200/50 p-10 relative overflow-hidden flex flex-col">
+          <Card className="h-full bg-zinc-900 rounded-[40px] border-none shadow-2xl shadow-zinc-200/50 p-10 relative overflow-hidden flex flex-col">
             <div className="relative z-10 flex flex-col h-full">
               <div className="flex justify-between items-start mb-10">
-                <div className="w-14 h-14 rounded-2xl bg-zinc-50 text-zinc-900 flex items-center justify-center shadow-sm">
+                <div className="w-14 h-14 rounded-2xl bg-zinc-800 text-zinc-100 flex items-center justify-center shadow-sm">
                   <span className="material-symbols-outlined text-2xl font-bold">person</span>
                 </div>
-                <div className="px-3 py-1 rounded-full bg-amber-50 text-amber-600 text-[8px] font-black uppercase tracking-widest border border-amber-100 italic">Under Review</div>
+                <div className="px-3 py-1 rounded-full bg-amber-950/30 text-amber-600 text-[8px] font-black uppercase tracking-widest border border-amber-100 italic">Under Review</div>
               </div>
 
               <div className="space-y-4 mb-auto">
                 <div>
-                  <h3 className="text-xl font-headline font-black text-zinc-900 tracking-tight leading-none mb-1">{scholarProfile.name}</h3>
+                  <h3 className="text-xl font-headline font-black text-zinc-100 tracking-tight leading-none mb-1">{scholarProfile.name}</h3>
                   <p className="text-zinc-400 text-[10px] font-black uppercase tracking-widest">{scholarProfile.matric}</p>
                 </div>
-                <div className="pt-4 border-t border-zinc-50 space-y-3">
+                <div className="pt-4 border-t border-zinc-800 space-y-3">
                    <div className="flex items-center justify-between">
                      <span className="text-zinc-400 text-[9px] font-bold uppercase tracking-widest">Institution</span>
-                     <span className="text-xs font-black text-zinc-800">UNILAG</span>
+                     <span className="text-xs font-black text-zinc-200">UNILAG</span>
                    </div>
                    <div className="flex items-center justify-between">
                      <span className="text-zinc-400 text-[9px] font-bold uppercase tracking-widest">Level</span>
-                     <span className="text-xs font-black text-zinc-800">300 Level</span>
+                     <span className="text-xs font-black text-zinc-200">300 Level</span>
                    </div>
                 </div>
               </div>
 
-              <div className="mt-8 pt-6 border-t border-zinc-100">
+              <div className="mt-8 pt-6 border-t border-zinc-800">
                 <Button variant="ghost" size="sm" className="w-full justify-start px-0 text-zinc-500" iconRight="lock">Profile Locked</Button>
               </div>
             </div>
-            <div className="absolute -left-10 -bottom-10 w-40 h-40 bg-zinc-50/50 rounded-full blur-3xl opacity-50" />
+            <div className="absolute -left-10 -bottom-10 w-40 h-40 bg-zinc-800/50 rounded-full blur-3xl opacity-50" />
           </Card>
         </motion.div>
 
@@ -104,7 +104,7 @@ export function SubmittedView() {
             
             <div className="flex-1 space-y-3">
               {documentStatus.slice(0, 3).map((doc, i) => (
-                <div key={i} className="flex items-center justify-between p-4 rounded-2xl bg-white/5 border border-white/5">
+                <div key={i} className="flex items-center justify-between p-4 rounded-2xl bg-white/5 border border-zinc-800/5">
                   <div className="flex items-center gap-3">
                     <span className={cn(
                       "material-symbols-outlined text-base",
@@ -116,7 +116,7 @@ export function SubmittedView() {
               ))}
             </div>
 
-            <div className="mt-8 pt-6 border-t border-white/5">
+            <div className="mt-8 pt-6 border-t border-zinc-800/5">
                 <p className="text-[9px] font-black uppercase tracking-widest text-[#99C2FF] mb-2 italic">Analysis: 85% Complete</p>
                 <div className="w-full h-1 bg-white/10 rounded-full overflow-hidden">
                    <div className="h-full bg-emerald-400 w-[85%]" />
@@ -131,17 +131,17 @@ export function SubmittedView() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
         >
-          <Card className="h-full bg-zinc-50 rounded-[40px] border-none p-10 flex flex-col relative overflow-hidden">
+          <Card className="h-full bg-zinc-800 rounded-[40px] border-none p-10 flex flex-col relative overflow-hidden">
             <div className="flex items-center justify-between mb-8">
-               <h3 className="text-lg font-headline font-black tracking-tight text-zinc-900">Institutional Ads</h3>
+               <h3 className="text-lg font-headline font-black tracking-tight text-zinc-100">Institutional Ads</h3>
                <span className="material-symbols-outlined text-zinc-300">campaign</span>
             </div>
 
             <div className="space-y-4 flex-1">
                {adverts.slice(0, 2).map((ad, i) => (
-                 <div key={i} className="p-5 rounded-[24px] bg-white border border-zinc-100 hover:shadow-lg transition-all cursor-pointer group">
+                 <div key={i} className="p-5 rounded-[24px] bg-zinc-900 border border-zinc-800 hover:shadow-lg transition-all cursor-pointer group">
                     <p className="text-[#0052CC] text-[8px] font-black uppercase tracking-widest mb-1">{ad.tag}</p>
-                    <h4 className="text-xs font-headline font-black text-zinc-800 leading-tight mb-3 group-hover:text-[#0052CC] transition-colors">{ad.title}</h4>
+                    <h4 className="text-xs font-headline font-black text-zinc-200 leading-tight mb-3 group-hover:text-[#0052CC] transition-colors">{ad.title}</h4>
                     <div className="flex items-center gap-2 text-zinc-400 group-hover:text-zinc-500 transition-colors">
                        <span className="material-symbols-outlined text-[12px]">calendar_today</span>
                        <span className="text-[8px] font-bold uppercase tracking-widest">{ad.deadline}</span>

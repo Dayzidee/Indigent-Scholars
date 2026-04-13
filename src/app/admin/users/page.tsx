@@ -95,7 +95,7 @@ export default function AdminUsers() {
                         </div>
                         <div>
                           <p className="text-sm font-bold text-white uppercase tracking-tight group-hover:text-indigo-400 transition-colors">{user.full_name || 'Anonymous User'}</p>
-                          <p className="text-[10px] text-slate-600 font-bold uppercase tracking-widest mt-0.5">UID: {user.id.slice(0, 8)}</p>
+                          <p className="text-[10px] text-zinc-400 font-bold uppercase tracking-widest mt-0.5">UID: {user.id.slice(0, 8)}</p>
                         </div>
                       </div>
                     </td>

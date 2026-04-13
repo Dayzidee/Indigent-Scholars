@@ -18,7 +18,7 @@ export default function StudentMatchesPage() {
       {/* Lock Banner (The Scholarly Architect Asymmetry) */}
       <section className="relative mb-16 max-w-5xl group overflow-hidden rounded-2xl">
         <div className="absolute inset-0 bg-primary opacity-10"></div>
-        <div className="relative bg-white/40 backdrop-blur-md border border-outline-variant/30 p-8 md:p-12 flex flex-col md:flex-row items-center gap-8 shadow-sm">
+        <div className="relative bg-zinc-800/60 backdrop-blur-md border border-outline-variant/30 p-8 md:p-12 flex flex-col md:flex-row items-center gap-8 shadow-sm">
           <div className="bg-primary-container p-6 rounded-2xl rotate-3 shadow-lg group-hover:rotate-0 transition-transform duration-500">
             <span className="material-symbols-outlined text-white text-5xl font-variation-fill">lock</span>
           </div>
@@ -48,12 +48,12 @@ export default function StudentMatchesPage() {
             />
           </div>
           <div className="p-6 filter blur-[12px]">
-            <div className="h-6 w-3/4 bg-zinc-200 mb-3 rounded"></div>
-            <div className="h-4 w-full bg-zinc-100 mb-2 rounded"></div>
-            <div className="h-4 w-5/6 bg-zinc-100 mb-6 rounded"></div>
+            <div className="h-6 w-3/4 bg-zinc-700 mb-3 rounded"></div>
+            <div className="h-4 w-full bg-zinc-800 mb-2 rounded"></div>
+            <div className="h-4 w-5/6 bg-zinc-800 mb-6 rounded"></div>
             <div className="flex gap-2">
-              <div className="h-6 w-16 bg-zinc-200 rounded-full"></div>
-              <div className="h-6 w-20 bg-zinc-200 rounded-full"></div>
+              <div className="h-6 w-16 bg-zinc-700 rounded-full"></div>
+              <div className="h-6 w-20 bg-zinc-700 rounded-full"></div>
             </div>
           </div>
           <div className="absolute inset-0 flex items-center justify-center">
@@ -73,8 +73,8 @@ export default function StudentMatchesPage() {
             />
           </div>
           <div className="relative h-full p-8 flex flex-col justify-end filter blur-[14px]">
-            <div className="h-8 w-1/3 bg-zinc-200 mb-3 rounded"></div>
-            <div className="h-4 w-1/2 bg-zinc-100 rounded"></div>
+            <div className="h-8 w-1/3 bg-zinc-700 mb-3 rounded"></div>
+            <div className="h-4 w-1/2 bg-zinc-800 rounded"></div>
           </div>
           <div className="absolute inset-0 flex items-center justify-center bg-black/5">
             <span className="material-symbols-outlined text-white/40 text-6xl font-variation-thin">verified_user</span>
@@ -93,9 +93,9 @@ export default function StudentMatchesPage() {
             />
           </div>
           <div className="p-6 filter blur-[12px]">
-            <div className="h-6 w-3/4 bg-zinc-200 mb-3 rounded"></div>
-            <div className="h-4 w-full bg-zinc-100 mb-2 rounded"></div>
-            <div className="h-4 w-5/6 bg-zinc-100 mb-6 rounded"></div>
+            <div className="h-6 w-3/4 bg-zinc-700 mb-3 rounded"></div>
+            <div className="h-4 w-full bg-zinc-800 mb-2 rounded"></div>
+            <div className="h-4 w-5/6 bg-zinc-800 mb-6 rounded"></div>
           </div>
           <div className="absolute inset-0 flex items-center justify-center">
             <span className="material-symbols-outlined text-outline-variant/50 text-4xl">visibility_off</span>
@@ -114,9 +114,9 @@ export default function StudentMatchesPage() {
             />
           </div>
           <div className="p-6 filter blur-[12px]">
-            <div className="h-6 w-3/4 bg-zinc-200 mb-3 rounded"></div>
-            <div className="h-4 w-full bg-zinc-100 mb-2 rounded"></div>
-            <div className="h-4 w-5/6 bg-zinc-100 mb-6 rounded"></div>
+            <div className="h-6 w-3/4 bg-zinc-700 mb-3 rounded"></div>
+            <div className="h-4 w-full bg-zinc-800 mb-2 rounded"></div>
+            <div className="h-4 w-5/6 bg-zinc-800 mb-6 rounded"></div>
           </div>
           <div className="absolute inset-0 flex items-center justify-center">
             <span className="material-symbols-outlined text-outline-variant/50 text-4xl">vpn_lock</span>
@@ -135,9 +135,9 @@ export default function StudentMatchesPage() {
             />
           </div>
           <div className="p-6 filter blur-[12px]">
-            <div className="h-6 w-3/4 bg-zinc-200 mb-3 rounded"></div>
-            <div className="h-4 w-full bg-zinc-100 mb-2 rounded"></div>
-            <div className="h-4 w-5/6 bg-zinc-100 mb-6 rounded"></div>
+            <div className="h-6 w-3/4 bg-zinc-700 mb-3 rounded"></div>
+            <div className="h-4 w-full bg-zinc-800 mb-2 rounded"></div>
+            <div className="h-4 w-5/6 bg-zinc-800 mb-6 rounded"></div>
           </div>
           <div className="absolute inset-0 flex items-center justify-center">
             <span className="material-symbols-outlined text-outline-variant/50 text-4xl">security</span>
@@ -158,11 +158,11 @@ export default function StudentMatchesPage() {
                 "AB6AXuAxdz7hdv4IM37Og1uusc-abszCaE0iWopopz1jV-F8AdfnGsObOW8fUXV2ZeMTuelqm3ltfW2zyyUGwS76dnRTG1szGW_w9skuW3sGgtdZRT5eUaHl3Qg7QZ3ZfIVfSolpS8i8o1nygZCUWypMWYsuOjyZJs0Jlno4CChvmw6aN9ngcHDdBfaiY8S_EPYbmBZJ477XOxZBJ9twKkl4Hp-qOLzNkruxI9ral8JHhNk7W7LLH2WVAZZo1khi25dB_nb_1GVHi1NSXn0z",
                 "AB6AXuDJoRwtlGSqCcD9rLz1QaV4Zop4csot2QRKKiw_hYmW6TjqXwdOMhN2CNOhCHDOtjxHD7ZgbR5hmGRdWO8pg7h0fjlViAiOf-76IybMOcTLb046bRzihZwxwfeLF8pisGNdYxd04oeoiz96uLIYDGbQxnHweqxJ5ocvKUUsYsr-gebcU7xIH7X1fAL3ssxFogl0S5eJlyQKd-TiWqGEkOmo69K3MMgSnU88Ww4kvnyku0fpwqLoAX2GeWGbV5UXClTHVypYff11dUVv"
               ].map((id, idx) => (
-                <div key={idx} className="w-10 h-10 rounded-full border-2 border-white relative overflow-hidden">
+                <div key={idx} className="w-10 h-10 rounded-full border-2 border-zinc-800 relative overflow-hidden">
                   <Image alt="Scholar" fill src={`https://lh3.googleusercontent.com/aida-public/${id}`} />
                 </div>
               ))}
-              <div className="w-10 h-10 rounded-full border-2 border-white bg-secondary-fixed text-[10px] font-bold flex items-center justify-center text-on-secondary-fixed">5k+</div>
+              <div className="w-10 h-10 rounded-full border-2 border-zinc-800 bg-secondary-fixed text-[10px] font-bold flex items-center justify-center text-on-secondary-fixed">5k+</div>
             </div>
             <span className="text-sm font-medium text-zinc-500 font-label">Verified scholars active</span>
           </div>
@@ -174,7 +174,7 @@ export default function StudentMatchesPage() {
               <span>Application Progress</span>
               <span>45%</span>
             </div>
-            <div className="h-3 w-full bg-zinc-200 rounded-full overflow-hidden">
+            <div className="h-3 w-full bg-zinc-700 rounded-full overflow-hidden">
               <div className="h-full bg-tertiary-container w-[45%] rounded-full"></div>
             </div>
             <p className="text-xs text-zinc-500 italic font-body">2 steps remaining to unlock matching</p>

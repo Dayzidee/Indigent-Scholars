@@ -41,7 +41,7 @@ export default function AboutPage() {
       </section>
 
       {/* Impact Section */}
-      <section className="py-24 bg-white/80 backdrop-blur-sm relative z-[1]">
+      <section className="py-24 bg-zinc-900/80 backdrop-blur-sm relative z-[1]">
         <div className="max-w-7xl mx-auto px-8">
           <div className="flex flex-col md:flex-row gap-16 items-center">
             <div className="w-full md:w-1/2">
@@ -57,14 +57,14 @@ export default function AboutPage() {
             </div>
             <div className="w-full md:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-6">
               <SlideIn direction="left" delay={0.2}>
-                <div className="bg-white/90 backdrop-blur-sm p-8 rounded-xl shadow-sm border-b-4 border-primary h-full">
+                <div className="bg-zinc-900/90 backdrop-blur-sm p-8 rounded-xl shadow-sm border-b-4 border-primary h-full">
                   <div className="text-5xl font-black text-primary mb-2">50,000</div>
                   <div className="text-sm uppercase tracking-widest font-bold text-on-surface-variant">Scholars Goal</div>
                   <p className="mt-4 text-on-surface-variant text-sm">Empowering the next generation of Nigerian leaders by 2030.</p>
                 </div>
               </SlideIn>
               <SlideIn direction="left" delay={0.4}>
-                <div className="bg-white/90 backdrop-blur-sm p-8 rounded-xl shadow-sm border-b-4 border-[#D4AF37] h-full">
+                <div className="bg-zinc-900/90 backdrop-blur-sm p-8 rounded-xl shadow-sm border-b-4 border-[#D4AF37] h-full">
                   <div className="text-5xl font-black text-[#D4AF37] mb-2">3X</div>
                   <div className="text-sm uppercase tracking-widest font-bold text-on-surface-variant">Income Increase</div>
                   <p className="mt-4 text-on-surface-variant text-sm">Average career earnings growth for our verified graduates.</p>
@@ -76,20 +76,20 @@ export default function AboutPage() {
       </section>
 
       {/* Vision, Mission & Values */}
-      <section className="py-24 bg-white/60 backdrop-blur-sm relative z-[1]">
+      <section className="py-24 bg-zinc-900/80 backdrop-blur-sm relative z-[1]">
         <div className="max-w-7xl mx-auto px-8">
           <FadeUpStagger className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            <div className="bg-white/85 backdrop-blur-sm p-10 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.06)] focus-within:ring-2 ring-primary">
+            <div className="bg-zinc-800/80 backdrop-blur-sm p-10 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.3)] focus-within:ring-2 ring-primary">
               <span className="material-symbols-outlined text-4xl text-primary mb-6" style={{fontVariationSettings: "'FILL' 1"}}>visibility</span>
               <h3 className="text-2xl font-bold mb-4">Vision</h3>
               <p className="text-on-surface-variant leading-relaxed">To unlock the potential of every aspiring young mind in Nigeria, creating a nation where financial barriers no longer dictate the limits of human achievement.</p>
             </div>
-            <div className="bg-white/85 backdrop-blur-sm p-10 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.06)] focus-within:ring-2 ring-primary">
+            <div className="bg-zinc-800/80 backdrop-blur-sm p-10 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.3)] focus-within:ring-2 ring-primary">
               <span className="material-symbols-outlined text-4xl text-primary mb-6" style={{fontVariationSettings: "'FILL' 1"}}>rocket_launch</span>
               <h3 className="text-2xl font-bold mb-4">Mission</h3>
               <p className="text-on-surface-variant leading-relaxed">To expand access to higher education through a comprehensive digital platform that connects verified talent with sponsors through transparent, high-impact grants.</p>
             </div>
-            <div className="bg-white/85 backdrop-blur-sm p-10 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.06)] focus-within:ring-2 ring-primary">
+            <div className="bg-zinc-800/80 backdrop-blur-sm p-10 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.3)] focus-within:ring-2 ring-primary">
               <div className="grid grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <span className="material-symbols-outlined text-primary text-2xl">favorite</span>
@@ -116,7 +116,7 @@ export default function AboutPage() {
       </section>
 
       {/* Founder Section */}
-      <section className="py-24 bg-white/70 backdrop-blur-sm relative z-[1] overflow-hidden">
+      <section className="py-24 bg-zinc-800/70 backdrop-blur-sm relative z-[1] overflow-hidden">
         <div className="max-w-7xl mx-auto px-8">
           <SlideIn direction="up">
             <div className="relative bg-secondary rounded-3xl p-12 md:p-20 overflow-hidden">
@@ -150,7 +150,7 @@ export default function AboutPage() {
       </section>
 
       {/* Leadership Team */}
-      <section className="py-24 bg-white/75 backdrop-blur-sm relative z-[1]">
+      <section className="py-24 bg-zinc-900/80 backdrop-blur-sm relative z-[1]">
         <div className="max-w-7xl mx-auto px-8 text-center mb-16">
           <h2 className="text-4xl font-headline font-bold text-primary mb-4">Leadership & Transparency</h2>
           <p className="text-on-surface-variant max-w-2xl mx-auto">Meet the architects behind the platform, dedicated to scaling educational equity across all 36 states.</p>
@@ -201,8 +201,8 @@ export default function AboutPage() {
           <h2 className="text-4xl md:text-5xl font-headline font-bold mb-8">Ready to sponsor a future?</h2>
           <p className="text-blue-100 text-xl mb-12">Join hundreds of sponsors already making a difference in the lives of brilliant Nigerian scholars.</p>
           <div className="flex flex-wrap justify-center gap-6">
-            <button className="bg-white text-primary px-10 py-4 rounded-xl font-bold text-lg hover:bg-stone-100 transition-all">Become a Sponsor</button>
-            <button className="border-2 border-white/30 text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-white/10 transition-all">View Student Profiles</button>
+            <button className="bg-zinc-900 text-primary px-10 py-4 rounded-xl font-bold text-lg hover:bg-zinc-800 transition-all">Become a Sponsor</button>
+            <button className="border-2 border-zinc-800/30 text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-white/10 transition-all">View Student Profiles</button>
           </div>
         </SlideIn>
       </section>

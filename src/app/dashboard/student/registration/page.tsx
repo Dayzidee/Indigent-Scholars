@@ -127,7 +127,7 @@ export default function RegistrationPage() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50/50 pb-20">
+    <div className="min-h-screen bg-transparent pb-20">
       <div className="max-w-5xl mx-auto px-6 pt-12">
         
         {/* Header Section */}
@@ -136,11 +136,11 @@ export default function RegistrationPage() {
              <div className="flex items-center gap-4 mb-3">
                 <span className={cn(
                   "px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest",
-                   isComplete ? "bg-emerald-50 text-emerald-600" : "bg-[#0052CC]/10 text-[#0052CC]"
+                   isComplete ? "bg-emerald-950/30 text-emerald-600" : "bg-[#0052CC]/10 text-[#0052CC]"
                 )}>
                   {isComplete ? "Verified Profile" : "Verification Flow"}
                 </span>
-                <h1 className="text-4xl font-headline font-black text-zinc-900 tracking-tight">
+                <h1 className="text-4xl font-headline font-black text-zinc-100 tracking-tight">
                   {isComplete ? "Scholar Credentials" : "Institutional Registry"}
                 </h1>
              </div>
@@ -174,7 +174,7 @@ export default function RegistrationPage() {
                     <h3 className="text-xl font-headline font-black tracking-tight mb-1">Your profile is synchronized</h3>
                     <p className="text-white/70 text-sm">Last verified sync: 2 hours ago via UNILAG Registry API</p>
                   </div>
-                  <Button variant="outline" className="text-white border-white/20 hover:bg-white hover:text-zinc-900" onClick={() => window.location.href = '/dashboard'}>Return to Dashboard</Button>
+                  <Button variant="outline" className="text-white border-zinc-800/20 hover:bg-zinc-900 hover:text-zinc-100" onClick={() => window.location.href = '/dashboard'}>Return to Dashboard</Button>
                   <div className="absolute -right-10 -bottom-10 w-40 h-40 bg-white/5 rounded-full blur-3xl" />
                </div>
             </motion.div>
@@ -186,7 +186,7 @@ export default function RegistrationPage() {
               exit={{ opacity: 0 }}
             >
               <div className="flex items-center justify-between relative px-2 mb-20 overflow-x-auto pb-8 md:pb-0 scrollbar-hide">
-                <div className="absolute left-0 top-1/2 -translate-y-1/2 w-full h-[2px] bg-zinc-200 -z-10 rounded-full" />
+                <div className="absolute left-0 top-1/2 -translate-y-1/2 w-full h-[2px] bg-zinc-700 -z-10 rounded-full" />
                 <motion.div 
                    className="absolute left-0 top-1/2 -translate-y-1/2 h-[2px] bg-[#0052CC] -z-10 rounded-full"
                    animate={{ width: `${((currentStep - 1) / (STEPS.length - 1)) * 100}%` }}
@@ -221,7 +221,7 @@ export default function RegistrationPage() {
                 ))}
               </div>
 
-              <Card className="p-8 md:p-14 rounded-[48px] border-none shadow-2xl shadow-blue-900/5 bg-white overflow-hidden relative border border-white/40">
+              <Card className="p-8 md:p-14 rounded-[48px] border-none shadow-2xl shadow-blue-900/5 bg-zinc-900 relative border border-zinc-800/40">
                 <div className="absolute top-0 right-0 w-48 h-48 bg-[#0052CC]/[0.02] rounded-bl-[100px] -z-0 pointer-events-none border-l border-b border-[#0052CC]/5" />
 
                 <div className="relative z-10">
@@ -236,7 +236,7 @@ export default function RegistrationPage() {
                   />
                 </div>
 
-                <div className="mt-16 pt-10 border-t border-zinc-100 flex justify-between items-center relative z-10">
+                <div className="mt-16 pt-10 border-t border-zinc-800 flex justify-between items-center relative z-10">
                   <button 
                     onClick={handlePrev}
                     disabled={currentStep === 1}
@@ -284,14 +284,14 @@ function StepContent({
         <div className="space-y-10 animate-in fade-in slide-in-from-bottom-6 duration-700">
           <div className="flex items-start justify-between">
             <div className="space-y-1">
-              <h3 className="text-3xl font-headline font-black text-zinc-900 tracking-tighter">General Information</h3>
+              <h3 className="text-3xl font-headline font-black text-zinc-100 tracking-tighter">General Information</h3>
               <p className="text-zinc-400 text-sm font-medium">Capture your primary identity and contact credentials.</p>
             </div>
             <span className="text-6xl font-black text-zinc-100/50 -mt-4">01</span>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <OutlinedInput label="Full Legal Name" icon="person" value={formData.full_name} onChange={(e) => handleInputChange('full_name', e.target.value)} />
-            <OutlinedInput label="Email Address" icon="alternate_email" value={formData.email} disabled className="bg-zinc-50 opacity-60" />
+            <OutlinedInput label="Email Address" icon="alternate_email" value={formData.email} disabled className="bg-zinc-800 opacity-60" />
             <OutlinedInput label="Phone Number" icon="call" value={formData.phone} onChange={(e) => handleInputChange('phone', e.target.value)} />
             <SearchableSelect label="Gender" icon="person_4" options={GENDER_OPTIONS} value={formData.gender} onChange={(v) => handleInputChange('gender', v)} />
           </div>
@@ -307,7 +307,7 @@ function StepContent({
         <div className="space-y-10 animate-in fade-in slide-in-from-bottom-6 duration-700">
           <div className="flex items-start justify-between">
             <div className="space-y-1">
-              <h3 className="text-3xl font-headline font-black text-zinc-900 tracking-tighter">Residential Details</h3>
+              <h3 className="text-3xl font-headline font-black text-zinc-100 tracking-tighter">Residential Details</h3>
               <p className="text-zinc-400 text-sm font-medium">Verify your current primary physical address.</p>
             </div>
             <span className="text-6xl font-black text-zinc-100/50 -mt-4">02</span>
@@ -325,7 +325,7 @@ function StepContent({
         <div className="space-y-10 animate-in fade-in slide-in-from-bottom-6 duration-700">
           <div className="flex items-start justify-between">
             <div className="space-y-1">
-              <h3 className="text-3xl font-headline font-black text-zinc-900 tracking-tighter">Origins Information</h3>
+              <h3 className="text-3xl font-headline font-black text-zinc-100 tracking-tighter">Origins Information</h3>
               <p className="text-zinc-400 text-sm font-medium">Critical for regional scholarship eligibility.</p>
             </div>
             <span className="text-6xl font-black text-zinc-100/50 -mt-4">03</span>
@@ -341,7 +341,7 @@ function StepContent({
         <div className="space-y-10 animate-in fade-in slide-in-from-bottom-6 duration-700">
           <div className="flex items-start justify-between">
             <div className="space-y-1">
-              <h3 className="text-3xl font-headline font-black text-zinc-900 tracking-tighter">Institutional Profile</h3>
+              <h3 className="text-3xl font-headline font-black text-zinc-100 tracking-tighter">Institutional Profile</h3>
               <p className="text-zinc-400 text-sm font-medium">Your current academic affiliation and status.</p>
             </div>
             <span className="text-6xl font-black text-zinc-100/50 -mt-4">04</span>
@@ -362,7 +362,7 @@ function StepContent({
         <div className="space-y-10 animate-in fade-in slide-in-from-bottom-6 duration-700">
           <div className="flex items-start justify-between">
             <div className="space-y-1">
-              <h3 className="text-3xl font-headline font-black text-zinc-900 tracking-tighter">Education History</h3>
+              <h3 className="text-3xl font-headline font-black text-zinc-100 tracking-tighter">Education History</h3>
               <p className="text-zinc-400 text-sm font-medium">Trace your academic journey prior to your current program.</p>
             </div>
             <div className="flex flex-col items-end gap-2">
@@ -372,7 +372,7 @@ function StepContent({
           </div>
           <div className="space-y-6">
             {formData.education_history.map((edu: any, index: number) => (
-              <div key={index} className="p-8 rounded-[32px] bg-zinc-50/50 border border-zinc-100 grid grid-cols-1 md:grid-cols-3 gap-6 relative group border-2 border-dashed hover:border-[#0052CC]/10 transition-colors">
+              <div key={index} className="p-8 rounded-[32px] bg-zinc-800/50 border border-zinc-800 grid grid-cols-1 md:grid-cols-3 gap-6 relative group border-2 border-dashed hover:border-[#0052CC]/10 transition-colors">
                 <OutlinedInput label="Institution" value={edu.school} onChange={(e) => updateEducation(index, 'school', e.target.value)} icon="school" />
                 <OutlinedInput label="Period (Years)" value={edu.period} onChange={(e) => updateEducation(index, 'period', e.target.value)} icon="schedule" placeholder="2015-2021" />
                 <OutlinedInput label="Qualification" value={edu.certificate} onChange={(e) => updateEducation(index, 'certificate', e.target.value)} icon="history_edu" />
@@ -386,7 +386,7 @@ function StepContent({
         <div className="space-y-10 animate-in fade-in slide-in-from-bottom-6 duration-700">
           <div className="flex items-start justify-between">
             <div className="space-y-1">
-              <h3 className="text-3xl font-headline font-black text-zinc-900 tracking-tighter">Verification Identifiers</h3>
+              <h3 className="text-3xl font-headline font-black text-zinc-100 tracking-tighter">Verification Identifiers</h3>
               <p className="text-zinc-400 text-sm font-medium">Rigorous academic and performance keys.</p>
             </div>
             <span className="text-6xl font-black text-zinc-100/50 -mt-4">06</span>
@@ -397,7 +397,7 @@ function StepContent({
             <OutlinedInput label="WAEC Scratch PIN" icon="pin" value={formData.waec_pin} onChange={(e) => handleInputChange('waec_pin', e.target.value)} />
             <OutlinedInput label="WAEC Serial No." icon="receipt_long" value={formData.waec_serial} onChange={(e) => handleInputChange('waec_serial', e.target.value)} />
           </div>
-          <div className="pt-6 border-t border-zinc-100 grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="pt-6 border-t border-zinc-800 grid grid-cols-1 md:grid-cols-2 gap-8">
             <OutlinedInput label="Recent GPA / Average" icon="grade" value={formData.last_gpa} onChange={(e) => handleInputChange('last_gpa', e.target.value)} />
             <OutlinedInput label="Next of Kin Phone" icon="contact_emergency" value={formData.emergency_contact_phone} onChange={(e) => handleInputChange('emergency_contact_phone', e.target.value)} />
           </div>
@@ -408,7 +408,7 @@ function StepContent({
         <div className="space-y-10 animate-in fade-in slide-in-from-bottom-6 duration-700">
           <div className="flex items-start justify-between">
             <div className="space-y-1">
-              <h3 className="text-3xl font-headline font-black text-zinc-900 tracking-tighter">Document Vault</h3>
+              <h3 className="text-3xl font-headline font-black text-zinc-100 tracking-tighter">Document Vault</h3>
               <p className="text-zinc-400 text-sm font-medium">Premium encrypted document storage (PDF/JPG/PNG).</p>
             </div>
             <span className="text-6xl font-black text-zinc-100/50 -mt-4">07</span>
@@ -420,7 +420,7 @@ function StepContent({
             <DocumentUpload label="Student ID Card" icon="badge" onUpload={(f) => handleInputChange('student_id_file', f)} />
           </div>
 
-          <div className="space-y-6 pt-6 border-t border-zinc-100">
+          <div className="space-y-6 pt-6 border-t border-zinc-800">
             <div className="flex items-center justify-between">
               <h4 className="text-[10px] font-black uppercase tracking-widest text-zinc-400">Academic Results</h4>
               <Button type="button" variant="outline" size="sm" onClick={addResult} iconLeft="add">Add Result</Button>

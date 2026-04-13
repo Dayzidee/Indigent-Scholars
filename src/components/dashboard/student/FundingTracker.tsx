@@ -57,7 +57,7 @@ export function FundingTracker({
                     initial={{ width: 0 }}
                     animate={{ width: `${percentage}%` }}
                     transition={{ duration: 1.5, ease: "easeOut" }}
-                    className="h-full bg-white rounded-full relative shadow-[0_0_20px_rgba(255,255,255,0.3)]"
+                    className="h-full bg-zinc-900 rounded-full relative shadow-[0_0_20px_rgba(255,255,255,0.3)]"
                   >
                      <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-r from-transparent to-white/50 animate-pulse" />
                   </motion.div>
@@ -77,7 +77,7 @@ export function FundingTracker({
       <div className="space-y-6 pt-4">
          <div className="flex items-center gap-4">
             <h4 className="text-[10px] font-black text-zinc-400 uppercase tracking-[0.3em]">Active Benefactors</h4>
-            <div className="h-[1px] flex-grow bg-zinc-100" />
+            <div className="h-[1px] flex-grow bg-zinc-800" />
          </div>
 
          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -87,20 +87,20 @@ export function FundingTracker({
                 initial={{ opacity: 0, x: -10 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: i * 0.1 }}
-                className="bg-white p-6 rounded-[32px] shadow-lg shadow-zinc-200/50 flex items-center gap-5 border border-zinc-50 hover:border-blue-200 transition-all group"
+                className="bg-zinc-900 p-6 rounded-[32px] shadow-lg shadow-zinc-200/50 flex items-center gap-5 border border-zinc-800 hover:border-blue-200 transition-all group"
               >
-                  <div className="w-12 h-12 rounded-2xl bg-blue-50 text-[#0052CC] flex items-center justify-center font-headline font-black text-xl group-hover:bg-[#0052CC] group-hover:text-white transition-colors">
+                  <div className="w-12 h-12 rounded-2xl bg-blue-950/30 text-[#0052CC] flex items-center justify-center font-headline font-black text-xl group-hover:bg-[#0052CC] group-hover:text-white transition-colors">
                     {spo.name.charAt(0)}
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="font-headline font-black text-zinc-900 truncate leading-tight">{spo.name}</p>
+                    <p className="font-headline font-black text-zinc-100 truncate leading-tight">{spo.name}</p>
                     <p className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest mt-1">
                       Contributed <span className="text-[#0052CC]">₦{spo.amount.toLocaleString()}</span>
                     </p>
                   </div>
               </motion.div>
             )) : (
-              <div className="col-span-full py-12 text-center bg-zinc-50 rounded-[40px] border-2 border-dashed border-zinc-200">
+              <div className="col-span-full py-12 text-center bg-zinc-800 rounded-[40px] border-2 border-dashed border-zinc-700">
                   <span className="material-symbols-outlined text-zinc-300 text-4xl mb-4">diversity_1</span>
                   <p className="text-zinc-400 font-medium">The journey begins. Be the first to spark a change.</p>
               </div>

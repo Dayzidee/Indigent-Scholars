@@ -44,21 +44,21 @@ export function TopNavBar({ onMenuClick }: TopNavBarProps) {
   }, [])
 
   return (
-    <header className="fixed top-0 right-0 w-full md:w-[calc(100%-16rem)] h-[72px] bg-white/80 backdrop-blur-xl flex justify-between items-center px-4 md:px-8 z-50 border-b border-zinc-100 dark:border-zinc-800 transition-all duration-300">
+    <header className="fixed top-0 right-0 w-full md:w-[calc(100%-16rem)] h-[72px] bg-zinc-900/80 backdrop-blur-xl flex justify-between items-center px-4 md:px-8 z-50 border-b border-zinc-800 transition-all duration-300">
       <div className="flex items-center gap-2 md:gap-4 truncate">
         {/* Mobile Menu Toggle */}
         <button 
           id="mobile-menu-trigger"
           onClick={onMenuClick}
-          className="p-2 md:hidden hover:bg-zinc-100 rounded-lg transition-colors shrink-0"
+          className="p-2 md:hidden hover:bg-zinc-800 rounded-lg transition-colors shrink-0"
         >
-          <span className="material-symbols-outlined text-zinc-600">menu</span>
+          <span className="material-symbols-outlined text-zinc-400">menu</span>
         </button>
 
         <Link href="/dashboard/student" className="text-lg md:text-xl font-black bg-gradient-to-b from-[#0052CC] to-[#003D9B] bg-clip-text text-transparent font-headline tracking-tight hover:opacity-80 transition-opacity whitespace-nowrap">
           Indigent-Sc
         </Link>
-        <span className="hidden sm:block h-4 w-px bg-zinc-200"></span>
+        <span className="hidden sm:block h-4 w-px bg-zinc-700"></span>
         <h1 className="hidden sm:block font-headline tracking-tight text-lg md:text-xl font-bold text-on-surface truncate">{title}</h1>
       </div>
       
@@ -68,7 +68,7 @@ export function TopNavBar({ onMenuClick }: TopNavBarProps) {
             href="/dashboard/student" 
             className={cn(
               "font-bold font-headline text-sm tracking-wide transition-colors whitespace-nowrap",
-              pathname === '/dashboard/student' ? "text-[#0052CC]" : "text-zinc-500 hover:text-[#0052CC]"
+              pathname === '/dashboard/student' ? "text-[#0052CC]" : "text-zinc-400 hover:text-[#0052CC]"
             )}
           >
             DASHBOARD
@@ -77,7 +77,7 @@ export function TopNavBar({ onMenuClick }: TopNavBarProps) {
             href="/dashboard/student/resources" 
             className={cn(
               "font-headline text-sm tracking-wide transition-colors font-bold whitespace-nowrap",
-              pathname === '/dashboard/student/resources' ? "text-[#0052CC]" : "text-zinc-500 hover:text-[#0052CC]"
+              pathname === '/dashboard/student/resources' ? "text-[#0052CC]" : "text-zinc-400 hover:text-[#0052CC]"
             )}
           >
             RESOURCES
@@ -93,13 +93,13 @@ export function TopNavBar({ onMenuClick }: TopNavBarProps) {
             }}
             className={cn(
               "relative p-2 rounded-full transition-all focus:outline-none focus:ring-2 focus:ring-primary/20 group",
-              isNotificationsOpen ? "bg-primary/10 text-primary" : "text-zinc-500 hover:bg-zinc-50"
+              isNotificationsOpen ? "bg-primary/10 text-primary" : "text-zinc-400 hover:bg-zinc-800"
             )}
           >
             <span className="material-symbols-outlined text-zinc-500 group-hover:text-primary transition-colors" data-icon="notifications">
               notifications
             </span>
-            <span className="absolute top-2 right-2 w-2 h-2 bg-error rounded-full border-2 border-white animate-pulse"></span>
+            <span className="absolute top-2 right-2 w-2 h-2 bg-error rounded-full border-2 border-zinc-900 animate-pulse"></span>
           </button>
           
           <AnimatePresence>
@@ -110,8 +110,8 @@ export function TopNavBar({ onMenuClick }: TopNavBarProps) {
                 exit={{ opacity: 0, y: 10, scale: 0.95 }}
                 className="absolute right-0 mt-3 w-72 sm:w-80 z-50 overflow-hidden"
               >
-                <Card className="p-4 shadow-2xl border border-zinc-100 overflow-hidden rounded-2xl bg-white">
-                  <div className="flex justify-between items-center mb-4 pb-2 border-b border-zinc-50 font-headline">
+                <Card className="p-4 shadow-2xl border border-zinc-700 overflow-hidden rounded-2xl bg-zinc-900">
+                  <div className="flex justify-between items-center mb-4 pb-2 border-b border-zinc-800 font-headline">
                     <h3 className="font-bold text-sm">Notifications</h3>
                     <button className="text-[10px] font-black text-primary uppercase tracking-widest">Clear all</button>
                   </div>
@@ -120,8 +120,8 @@ export function TopNavBar({ onMenuClick }: TopNavBarProps) {
                       { title: 'New Sponsor Match', desc: 'Global STEM Initiative reviewed your profile.', time: '2h ago', icon: 'handshake', color: 'blue' },
                       { title: 'Document Verified', desc: 'Your transcript was approved.', time: 'Yesterday', icon: 'verified', color: 'green' },
                     ].map((n, i) => (
-                      <div key={i} className="flex gap-3 hover:bg-zinc-50 p-2 rounded-xl transition-colors cursor-pointer group">
-                        <div className={cn("w-10 h-10 rounded-lg flex items-center justify-center shrink-0", n.color === 'blue' ? "bg-blue-50 text-blue-600" : "bg-green-50 text-green-600")}>
+                      <div key={i} className="flex gap-3 hover:bg-zinc-800 p-2 rounded-xl transition-colors cursor-pointer group">
+                        <div className={cn("w-10 h-10 rounded-lg flex items-center justify-center shrink-0", n.color === 'blue' ? "bg-blue-950/30 text-blue-400" : "bg-green-950/30 text-green-400")}>
                           <span className="material-symbols-outlined text-xl">{n.icon}</span>
                         </div>
                         <div className="flex-1 min-w-0">
@@ -144,7 +144,7 @@ export function TopNavBar({ onMenuClick }: TopNavBarProps) {
               setIsProfileOpen(!isProfileOpen)
               setIsNotificationsOpen(false)
             }}
-            className="w-10 h-10 rounded-full overflow-hidden border border-zinc-200 shadow-sm transition-all hover:scale-105 ring-2 ring-transparent hover:ring-primary/10"
+            className="w-10 h-10 rounded-full overflow-hidden border border-zinc-700 shadow-sm transition-all hover:scale-105 ring-2 ring-transparent hover:ring-primary/10"
           >
             <img
               alt="User avatar"
@@ -161,7 +161,7 @@ export function TopNavBar({ onMenuClick }: TopNavBarProps) {
                 exit={{ opacity: 0, y: 10, scale: 0.95 }}
                 className="absolute right-0 mt-3 w-64 z-50"
               >
-                <Card className="p-0 shadow-2xl border border-zinc-100 overflow-hidden rounded-2xl bg-white">
+                <Card className="p-0 shadow-2xl border border-zinc-700 overflow-hidden rounded-2xl bg-zinc-900">
                   <div className="bg-primary scholar-gradient p-6 text-white">
                     <p className="text-xs font-bold opacity-70 uppercase tracking-widest mb-1 font-headline">Signed in as</p>
                     <p className="font-headline font-black text-lg truncate">Amara Okafor</p>
@@ -173,12 +173,12 @@ export function TopNavBar({ onMenuClick }: TopNavBarProps) {
                     {[
                       { label: 'Account Settings', icon: 'settings', href: '/dashboard/student/settings' },
                     ].map((link, i) => (
-                      <Link key={i} href={link.href} className="flex items-center gap-3 px-4 py-3 hover:bg-zinc-50 rounded-xl transition-colors group">
+                      <Link key={i} href={link.href} className="flex items-center gap-3 px-4 py-3 hover:bg-zinc-800 rounded-xl transition-colors group">
                         <span className="material-symbols-outlined text-zinc-400 group-hover:text-primary transition-colors text-xl font-headline tracking-tighter font-bold">{link.icon}</span>
-                        <span className="text-sm font-bold text-zinc-600 group-hover:text-on-surface transition-colors font-headline">{link.label}</span>
+                        <span className="text-sm font-bold text-zinc-300 group-hover:text-on-surface transition-colors font-headline">{link.label}</span>
                       </Link>
                     ))}
-                    <div className="h-px bg-zinc-50 my-1"></div>
+                    <div className="h-px bg-zinc-800 my-1"></div>
                     <button 
                       onClick={async () => {
                         const { createClient } = await import('@/lib/supabase/client')

@@ -58,12 +58,12 @@ export function MissionCountdown() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
-              className="text-5xl md:text-7xl font-black text-on-surface tracking-tighter"
+              className="text-4xl md:text-6xl font-black text-on-surface tracking-tighter"
             >
               {unit.value}
             </motion.span>
           </AnimatePresence>
-          <span className="text-xl md:text-2xl font-black text-on-surface/30 group-hover:text-primary transition-colors duration-500">
+          <span className="text-lg md:text-xl font-black text-on-surface/30 group-hover:text-primary transition-colors duration-500">
             {unit.prefix}
           </span>
         </div>

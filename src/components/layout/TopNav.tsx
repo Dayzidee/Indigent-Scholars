@@ -24,7 +24,7 @@ export function TopNav() {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-neutral-200"
+      className="fixed top-0 left-0 right-0 z-50 bg-zinc-900/80 backdrop-blur-md border-b border-zinc-800"
     >
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         <Link href="/" className="flex items-center space-x-2 group relative">
@@ -68,7 +68,7 @@ export function TopNav() {
               href={item.href}
               className={`font-manrope tracking-tight text-sm font-semibold transition-colors ${(pathname === item.href || (item.href !== '/' && pathname.startsWith(item.href)))
                   ? 'text-primary border-b-2 border-primary'
-                  : 'text-neutral-600 hover:text-primary border-b-2 border-transparent'
+                  : 'text-zinc-400 hover:text-primary border-b-2 border-transparent'
                 }`}
             >
               {item.label}
@@ -79,7 +79,7 @@ export function TopNav() {
         <div className="flex items-center space-x-4">
           <div className="hidden sm:flex items-center space-x-4">
             <Link href="/login">
-              <button id="nav-login-desktop" className="font-manrope tracking-tight text-sm font-semibold text-neutral-600 scale-95 duration-150 active:opacity-80">
+              <button id="nav-login-desktop" className="font-manrope tracking-tight text-sm font-semibold text-zinc-300 scale-95 duration-150 active:opacity-80">
                 Log In
               </button>
             </Link>
@@ -92,7 +92,7 @@ export function TopNav() {
 
           {/* Mobile Menu Toggle */}
           <button
-            className="md:hidden p-2 text-neutral-600"
+            className="md:hidden p-2 text-zinc-300"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -107,7 +107,7 @@ export function TopNav() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-b border-neutral-200 overflow-hidden"
+            className="md:hidden bg-zinc-900 border-b border-zinc-800 overflow-hidden"
           >
             <div className="px-6 py-8 flex flex-col space-y-6">
               {navLinks.map((item) => (
@@ -117,16 +117,16 @@ export function TopNav() {
                   onClick={() => setIsOpen(false)}
                   className={`font-manrope tracking-tight text-lg font-semibold transition-colors ${(pathname === item.href || (item.href !== '/' && pathname.startsWith(item.href)))
                       ? 'text-primary'
-                      : 'text-neutral-600'
+                      : 'text-zinc-400'
                     }`}
                 >
                   {item.label}
                 </Link>
               ))}
-              <hr className="border-neutral-100" />
+              <hr className="border-zinc-800" />
               <div className="flex flex-col space-y-4">
                 <Link href="/login" onClick={() => setIsOpen(false)}>
-                  <button id="nav-login-mobile" className="w-full text-left font-manrope tracking-tight text-lg font-semibold text-neutral-600">
+                  <button id="nav-login-mobile" className="w-full text-left font-manrope tracking-tight text-lg font-semibold text-zinc-300">
                     Log In
                   </button>
                 </Link>

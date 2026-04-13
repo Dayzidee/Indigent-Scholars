@@ -47,7 +47,7 @@ export default function AdminSettings() {
                 <div key={i} className="flex items-center justify-between">
                   <span className="text-sm font-medium text-slate-300">{cfg.label}</span>
                   <div className={`w-12 h-6 rounded-full p-1 cursor-pointer transition-colors ${cfg.enabled ? 'bg-teal-500' : 'bg-slate-800'}`}>
-                    <div className={`w-4 h-4 rounded-full bg-white transition-transform ${cfg.enabled ? 'translate-x-6' : 'translate-x-0'}`}></div>
+                    <div className={`w-4 h-4 rounded-full bg-zinc-900 transition-transform ${cfg.enabled ? 'translate-x-6' : 'translate-x-0'}`}></div>
                   </div>
                 </div>
               ))}

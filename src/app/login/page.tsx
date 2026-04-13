@@ -12,7 +12,7 @@ function LoginContent() {
   const message = searchParams.get('message');
 
   return (
-    <main className="flex-grow flex items-center justify-center px-6 py-24 relative overflow-hidden bg-white z-[2]">
+    <main className="flex-grow flex items-center justify-center px-6 py-24 relative overflow-hidden bg-zinc-900 z-[2]">
       {/* Subtle Background Elements */}
       <div className="absolute top-[-10%] right-[-5%] w-[40%] h-[40%] bg-primary-fixed-dim/20 rounded-full blur-[120px]"></div>
       <div className="absolute bottom-[-10%] left-[-5%] w-[30%] h-[30%] bg-secondary-container/10 rounded-full blur-[100px]"></div>
@@ -126,7 +126,7 @@ function LoginContent() {
 export default function LoginPage() {
   return (
     <Suspense fallback={
-      <main className="flex-grow flex items-center justify-center bg-white px-6 py-24 animate-pulse">
+      <main className="flex-grow flex items-center justify-center bg-zinc-900 px-6 py-24 animate-pulse">
         <div className="w-full max-w-md bg-surface-container-low h-[500px] rounded-xl"></div>
       </main>
     }>

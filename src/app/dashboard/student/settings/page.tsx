@@ -152,7 +152,7 @@ export default function StudentSettingsPage() {
             </div>
             <button className="text-[#0052CC] font-bold text-sm px-4 py-2 hover:bg-[#0052CC]/10 rounded-lg transition-colors font-headline">Enable</button>
           </div>
-          <div className="pt-4 border-t border-zinc-50 flex justify-end items-center gap-4">
+          <div className="pt-4 border-t border-zinc-800 flex justify-end items-center gap-4">
             <button className="text-primary font-bold hover:underline transition-all px-4 py-2 text-sm font-headline">Reset All Sessions</button>
             <button className="bg-primary text-white px-6 py-2.5 rounded-xl font-bold font-headline transition-all hover:shadow-lg active:scale-95">Update Password</button>
           </div>
@@ -172,14 +172,14 @@ export default function StudentSettingsPage() {
               { id: 'matches', title: 'Sponsor Match Recommendations', desc: 'Receive alerts when new scholarship sponsors match your profile.', active: true },
               { id: 'funding', title: 'Funding Disbursement Notices', desc: 'Immediate alerts for payment releases and transaction history.', active: false },
             ].map((item) => (
-              <div key={item.id} className="p-6 flex items-center justify-between hover:bg-zinc-50/50 transition-colors group">
+              <div key={item.id} className="p-6 flex items-center justify-between hover:bg-zinc-800/50 transition-colors group">
                 <div>
                   <p className="font-headline font-bold text-on-surface">{item.title}</p>
                   <p className="text-xs text-on-surface-variant mt-1 font-body">{item.desc}</p>
                 </div>
                 <label className="relative inline-flex items-center cursor-pointer">
                   <input defaultChecked={item.active} className="sr-only peer" type="checkbox" />
-                  <div className="w-11 h-6 bg-zinc-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#0052CC]" />
+                  <div className="w-11 h-6 bg-zinc-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-zinc-800 after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-zinc-900 after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#0052CC]" />
                 </label>
               </div>
             ))}

@@ -62,7 +62,7 @@ export function SponsorEducation() {
         </div>
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
           <div className="space-y-1">
-            <h1 className="text-4xl font-black font-headline tracking-tighter text-zinc-900 leading-none">Education Portfolio</h1>
+            <h1 className="text-4xl font-black font-headline tracking-tighter text-zinc-100 leading-none">Education Portfolio</h1>
             <p className="text-zinc-500 font-body text-sm max-w-lg">Manage your sponsored students, track academic progress, and oversee upcoming disbursements across multiple institutions.</p>
           </div>
           <Button 
@@ -77,16 +77,16 @@ export function SponsorEducation() {
       {/* Metric Cards (IMAGE_2 Alignment) */}
       <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {[
-          { label: 'Total Students Sponsored', value: '142', color: 'text-zinc-900', icon: 'groups' },
+          { label: 'Total Students Sponsored', value: '142', color: 'text-zinc-100', icon: 'groups' },
           { label: 'Active Scholarships', value: '128', color: 'text-[#0052CC]', icon: 'school' },
-          { label: 'Upcoming Payments', value: '₦1.2M', color: 'text-zinc-900', icon: 'payments' }
+          { label: 'Upcoming Payments', value: '₦1.2M', color: 'text-zinc-100', icon: 'payments' }
         ].map((metric, i) => (
-          <div key={i} className="bg-white p-6 sm:p-8 rounded-3xl lg:rounded-[32px] border border-zinc-100 shadow-sm flex items-center justify-between group">
+          <div key={i} className="bg-zinc-900 p-6 sm:p-8 rounded-3xl lg:rounded-[32px] border border-zinc-800 shadow-sm flex items-center justify-between group">
             <div className="space-y-2">
               <p className="text-[10px] font-black uppercase tracking-widest text-zinc-400 font-label">{metric.label}</p>
               <p className={cn("text-3xl font-black font-headline", metric.color)}>{metric.value}</p>
             </div>
-            <div className="w-12 h-12 rounded-2xl bg-zinc-50 flex items-center justify-center border border-zinc-100 group-hover:bg-[#0052CC]/5 group-hover:border-[#0052CC]/10 transition-all">
+            <div className="w-12 h-12 rounded-2xl bg-zinc-800 flex items-center justify-center border border-zinc-800 group-hover:bg-[#0052CC]/5 group-hover:border-[#0052CC]/10 transition-all">
               <span className="material-symbols-outlined text-zinc-400 group-hover:text-[#0052CC] transition-colors">{metric.icon}</span>
             </div>
           </div>
@@ -94,23 +94,23 @@ export function SponsorEducation() {
       </section>
 
       {/* Table Interface (IMAGE_2 Alignment) */}
-      <section className="bg-white rounded-3xl lg:rounded-[32px] border border-zinc-100 shadow-sm overflow-hidden min-h-[500px] flex flex-col">
+      <section className="bg-zinc-900 rounded-3xl lg:rounded-[32px] border border-zinc-800 shadow-sm overflow-hidden min-h-[500px] flex flex-col">
         {/* Table Toolbar */}
-        <div className="p-6 border-b border-zinc-50 flex flex-col md:flex-row justify-between gap-6 items-center">
-          <div className="flex bg-zinc-100 p-1.5 rounded-2xl w-full md:w-auto overflow-x-auto scrollbar-hide">
+        <div className="p-6 border-b border-zinc-800 flex flex-col md:flex-row justify-between gap-6 items-center">
+          <div className="flex bg-zinc-800 p-1.5 rounded-2xl w-full md:w-auto overflow-x-auto scrollbar-hide">
             {['All', 'Active', 'Pending', 'Graduated'].map((f) => (activeFilter === f ? 
-              <button key={f} className="px-6 py-2 bg-white rounded-xl text-xs font-black shadow-sm text-[#0052CC] transition-all whitespace-nowrap">{f}</button> :
-              <button key={f} onClick={() => setActiveFilter(f)} className="px-6 py-2 rounded-xl text-xs font-bold text-zinc-500 hover:text-zinc-800 transition-all whitespace-nowrap">{f}</button>
+              <button key={f} className="px-6 py-2 bg-zinc-900 rounded-xl text-xs font-black shadow-sm text-[#0052CC] transition-all whitespace-nowrap">{f}</button> :
+              <button key={f} onClick={() => setActiveFilter(f)} className="px-6 py-2 rounded-xl text-xs font-bold text-zinc-500 hover:text-zinc-200 transition-all whitespace-nowrap">{f}</button>
             ))}
           </div>
           
           <div className="flex items-center gap-3 w-full md:w-auto">
             <div className="relative flex-1 md:w-64">
               <span className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-zinc-400 text-lg">search</span>
-              <input type="text" placeholder="Search portfolio..." className="w-full bg-zinc-100 border-none rounded-2xl py-2.5 pl-12 pr-4 text-xs font-medium focus:ring-2 focus:ring-[#0052CC]/10 transition-all font-body"/>
+              <input type="text" placeholder="Search portfolio..." className="w-full bg-zinc-800 border-none rounded-2xl py-2.5 pl-12 pr-4 text-xs font-medium focus:ring-2 focus:ring-[#0052CC]/10 transition-all font-body"/>
             </div>
-            <button className="p-2.5 bg-zinc-100 rounded-xl hover:bg-zinc-200 transition-colors">
-              <span className="material-symbols-outlined text-zinc-600 text-xl font-bold">tune</span>
+            <button className="p-2.5 bg-zinc-800 rounded-xl hover:bg-zinc-700 transition-colors">
+              <span className="material-symbols-outlined text-zinc-400 text-xl font-bold">tune</span>
             </button>
           </div>
         </div>
@@ -119,7 +119,7 @@ export function SponsorEducation() {
         <div className="overflow-x-auto flex-1">
           <table className="w-full text-left border-collapse">
             <thead>
-              <tr className="border-b border-zinc-50">
+              <tr className="border-b border-zinc-800">
                 <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-zinc-400 font-label whitespace-nowrap">Scholar Name</th>
                 <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-zinc-400 font-label whitespace-nowrap">Institution</th>
                 <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-zinc-400 font-label whitespace-nowrap">Program</th>
@@ -130,20 +130,20 @@ export function SponsorEducation() {
             </thead>
             <tbody className="divide-y divide-zinc-50/50">
               {scholarsList.map((scholar, idx) => (
-                <tr key={idx} className="group hover:bg-zinc-50/50 transition-colors cursor-pointer">
+                <tr key={idx} className="group hover:bg-zinc-800/50 transition-colors cursor-pointer">
                   <td className="px-8 py-4">
                     <div className="flex items-center gap-4">
-                      <div className="w-10 h-10 rounded-full overflow-hidden border border-zinc-100 shadow-sm shrink-0">
+                      <div className="w-10 h-10 rounded-full overflow-hidden border border-zinc-800 shadow-sm shrink-0">
                         <Image src={scholar.img} alt={scholar.name} width={40} height={40} className="w-full h-full object-cover"/>
                       </div>
                       <div>
-                        <p className="text-sm font-extrabold text-zinc-900 font-headline leading-tight">{scholar.name}</p>
+                        <p className="text-sm font-extrabold text-zinc-100 font-headline leading-tight">{scholar.name}</p>
                         <p className="text-[10px] text-zinc-400 font-black uppercase tracking-widest font-label">Verified</p>
                       </div>
                     </div>
                   </td>
                   <td className="px-8 py-4 whitespace-nowrap">
-                    <p className="text-[11px] font-black text-zinc-600 font-label uppercase tracking-wider">{scholar.school}</p>
+                    <p className="text-[11px] font-black text-zinc-400 font-label uppercase tracking-wider">{scholar.school}</p>
                   </td>
                   <td className="px-8 py-4">
                     <p className="text-sm font-medium text-zinc-500 font-body">{scholar.program}</p>
@@ -151,7 +151,7 @@ export function SponsorEducation() {
                   <td className="px-8 py-4">
                     <span className={cn(
                       "px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest font-label",
-                      scholar.status === 'Active' ? 'bg-emerald-50 text-emerald-600' : 'bg-amber-50 text-amber-600'
+                      scholar.status === 'Active' ? 'bg-emerald-950/30 text-emerald-600' : 'bg-amber-950/30 text-amber-600'
                     )}>
                       {scholar.status}
                     </span>
@@ -160,7 +160,7 @@ export function SponsorEducation() {
                     <p className="text-[11px] font-bold text-zinc-400 font-label">{scholar.lastPaid}</p>
                   </td>
                   <td className="px-8 py-4 text-right">
-                    <button className="p-2 hover:bg-zinc-100 rounded-lg transition-colors group/btn">
+                    <button className="p-2 hover:bg-zinc-800 rounded-lg transition-colors group/btn">
                       <span className="material-symbols-outlined text-zinc-400 group-hover/btn:text-[#0052CC] transition-colors">more_vert</span>
                     </button>
                   </td>
@@ -171,13 +171,13 @@ export function SponsorEducation() {
         </div>
 
         {/* Table Pagination Placeholder */}
-        <div className="p-6 border-t border-zinc-50 flex justify-between items-center text-[10px] font-black uppercase tracking-widest text-zinc-400 font-label">
+        <div className="p-6 border-t border-zinc-800 flex justify-between items-center text-[10px] font-black uppercase tracking-widest text-zinc-400 font-label">
           <span>Showing 4 of 142 scholars</span>
           <div className="flex gap-2">
-            <button className="px-4 py-2 bg-zinc-100 rounded-xl hover:bg-zinc-200 transition-all font-bold text-zinc-600">Previous</button>
+            <button className="px-4 py-2 bg-zinc-800 rounded-xl hover:bg-zinc-700 transition-all font-bold text-zinc-400">Previous</button>
             <button className="px-4 py-2 bg-[#0052CC] text-white rounded-xl shadow-lg shadow-blue-600/10 hover:bg-[#0047b3] transition-all font-bold">1</button>
-            <button className="px-4 py-2 bg-zinc-100 rounded-xl hover:bg-zinc-200 transition-all font-bold text-zinc-600">2</button>
-            <button className="px-4 py-2 bg-zinc-100 rounded-xl hover:bg-zinc-200 transition-all font-bold text-zinc-600">Next</button>
+            <button className="px-4 py-2 bg-zinc-800 rounded-xl hover:bg-zinc-700 transition-all font-bold text-zinc-400">2</button>
+            <button className="px-4 py-2 bg-zinc-800 rounded-xl hover:bg-zinc-700 transition-all font-bold text-zinc-400">Next</button>
           </div>
         </div>
       </section>

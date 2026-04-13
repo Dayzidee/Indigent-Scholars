@@ -40,8 +40,8 @@ export function ApplicationStepper({ steps, className }: ApplicationStepperProps
               className={cn(
                 "w-10 h-10 rounded-full flex items-center justify-center relative z-10 transition-all duration-300 shadow-sm",
                 step.status === 'completed' ? "bg-primary text-white" :
-                step.status === 'current' ? "bg-white border-4 border-primary" :
-                "bg-white border-4 border-surface-container-high text-zinc-300"
+                step.status === 'current' ? "bg-zinc-900 border-4 border-primary" :
+                "bg-zinc-900 border-4 border-surface-container-high text-zinc-300"
               )}
             >
               {step.status === 'completed' ? (

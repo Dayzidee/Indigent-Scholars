@@ -23,7 +23,7 @@ export default function StudentDetailPage({ params }: PageProps) {
   const accessLevel = isLoggedIn ? (userRole as 'sponsor' | 'admin') : 'public'
 
   return (
-    <div className="bg-slate-50 min-h-screen pt-20">
+    <div className="bg-zinc-900 min-h-screen pt-20">
       <ScholarProfileDetail student={student} accessLevel={accessLevel} />
     </div>
   )

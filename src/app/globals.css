@@ -1,7 +1,7 @@
 /* stylelint-disable at-rule-no-unknown */
 @import "tailwindcss";
 
-/* ─── Stitch Design Tokens (Light Theme) ───────────────────── */
+/* ─── Stitch Design Tokens (Dark Theme) ───────────────────── */
 @theme {
   /* Primary — Prestigious Deep Blue */
   --color-primary: #003d9b;
@@ -33,35 +33,35 @@
   --color-tertiary-fixed-dim: #44ddc1;
   --color-on-tertiary-fixed-variant: #005145;
 
-  /* Surfaces & Backgrounds */
-  --color-background: #fcf9f8;
-  --color-on-background: #1c1b1b;
-  --color-surface: #fcf9f8;
-  --color-on-surface: #1c1b1b;
-  --color-surface-variant: #e5e2e1;
-  --color-on-surface-variant: #434654;
-  --color-surface-dim: #dcd9d9;
-  --color-surface-bright: #fcf9f8;
-  --color-surface-container-lowest: #ffffff;
-  --color-surface-container-low: #f6f3f2;
-  --color-surface-container: #f0eded;
-  --color-surface-container-high: #eae7e7;
-  --color-surface-container-highest: #e5e2e1;
+  /* Surfaces & Backgrounds — DARK */
+  --color-background: #0c0c0e;
+  --color-on-background: #e4e2e1;
+  --color-surface: #0c0c0e;
+  --color-on-surface: #e4e2e1;
+  --color-surface-variant: #2a2a2e;
+  --color-on-surface-variant: #b0b3c0;
+  --color-surface-dim: #09090b;
+  --color-surface-bright: #1e1e22;
+  --color-surface-container-lowest: #111114;
+  --color-surface-container-low: #161619;
+  --color-surface-container: #1a1a1e;
+  --color-surface-container-high: #212125;
+  --color-surface-container-highest: #2a2a2e;
 
   /* Outline */
-  --color-outline: #737685;
-  --color-outline-variant: #c3c6d6;
+  --color-outline: #8b8d9c;
+  --color-outline-variant: #3a3d4e;
 
   /* Inverse */
-  --color-inverse-surface: #313030;
-  --color-inverse-on-surface: #f3f0ef;
-  --color-inverse-primary: #b2c5ff;
+  --color-inverse-surface: #e5e2e1;
+  --color-inverse-on-surface: #313030;
+  --color-inverse-primary: #003d9b;
 
   /* Error */
-  --color-error: #ba1a1a;
+  --color-error: #ff6b6b;
   --color-on-error: #ffffff;
-  --color-error-container: #ffdad6;
-  --color-on-error-container: #93000a;
+  --color-error-container: #3d1414;
+  --color-on-error-container: #ffb3b3;
 
   /* Typography */
   --font-headline: "Manrope", system-ui, sans-serif;
@@ -98,12 +98,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .glass-panel {
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(20, 20, 24, 0.8);
   backdrop-filter: blur(20px);
 }
 
 .glass-card {
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(26, 26, 30, 0.7);
   backdrop-filter: blur(24px);
 }
 
@@ -135,7 +135,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #E4E4E7; /* zinc-200 */
+  background: #333338; /* dark zinc */
   border-radius: 20px;
   transition: all 0.3s ease;
 }
@@ -147,7 +147,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #E4E4E7 transparent;
+  scrollbar-color: #333338 transparent;
 }
 
 /* ─── Custom Animations ───────────────────────────────────── */
@@ -157,7 +157,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .shimmer-base {
-  background: linear-gradient(90deg, #F4F4F5 25%, #E4E4E7 50%, #F4F4F5 75%);
+  background: linear-gradient(90deg, #1a1a1e 25%, #2a2a2e 50%, #1a1a1e 75%);
   background-size: 200% 100%;
   animation: shimmer 2s infinite linear;
 }

@@ -22,14 +22,14 @@ export function HelpCenterView() {
       className="max-w-5xl mx-auto px-8 py-10 space-y-12 pb-32"
     >
       <section className="text-center space-y-4">
-        <h2 className="text-4xl font-headline font-black text-zinc-900 tracking-tighter leading-none">How can we help today?</h2>
+        <h2 className="text-4xl font-headline font-black text-zinc-100 tracking-tighter leading-none">How can we help today?</h2>
         <p className="text-zinc-500 max-w-2xl mx-auto font-body text-sm">Find answers to common questions or reach out to our support team for personalized assistance.</p>
         <div className="relative max-w-xl mx-auto mt-10">
           <span className="absolute left-6 top-1/2 -translate-y-1/2 material-symbols-outlined text-zinc-400">search</span>
           <input 
             type="text" 
             placeholder="Search for articles, guides..." 
-            className="w-full pl-14 pr-8 py-5 rounded-[24px] border border-zinc-100 bg-white focus:outline-none focus:ring-4 focus:ring-blue-50 shadow-xl shadow-zinc-200/50 transition-all font-medium text-sm"
+            className="w-full pl-14 pr-8 py-5 rounded-[24px] border border-zinc-800 bg-zinc-900 focus:outline-none focus:ring-4 focus:ring-blue-50 shadow-xl shadow-zinc-200/50 transition-all font-medium text-sm"
           />
         </div>
       </section>
@@ -40,26 +40,26 @@ export function HelpCenterView() {
           { title: 'Verification', icon: 'verified_user', color: 'emerald' },
           { title: 'Payments', icon: 'payments', color: 'amber' },
         ].map((cat, idx) => (
-          <Card key={idx} className="p-8 border border-zinc-100 bg-white hover:border-blue-200 transition-all cursor-pointer group rounded-[32px] shadow-sm hover:shadow-xl hover:shadow-blue-900/5">
+          <Card key={idx} className="p-8 border border-zinc-800 bg-zinc-900 hover:border-blue-200 transition-all cursor-pointer group rounded-[32px] shadow-sm hover:shadow-xl hover:shadow-blue-900/5">
             <div className={cn(
               "w-14 h-14 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform shadow-inner border",
-              cat.color === 'blue' ? "bg-blue-50 text-blue-600 border-blue-100" : cat.color === 'emerald' ? "bg-emerald-50 text-emerald-600 border-emerald-100" : "bg-amber-50 text-amber-600 border-amber-100"
+              cat.color === 'blue' ? "bg-blue-950/30 text-blue-400 border-blue-100" : cat.color === 'emerald' ? "bg-emerald-950/30 text-emerald-600 border-emerald-100" : "bg-amber-950/30 text-amber-600 border-amber-100"
             )}>
               <span className="material-symbols-outlined text-2xl">{cat.icon}</span>
             </div>
-            <h3 className="font-headline font-black text-lg text-zinc-900 mb-2">{cat.title}</h3>
+            <h3 className="font-headline font-black text-lg text-zinc-100 mb-2">{cat.title}</h3>
             <p className="text-xs text-zinc-400 font-medium leading-relaxed">Learn more about {cat.title.toLowerCase()} processes and requirements.</p>
           </Card>
         ))}
       </div>
 
       <section className="space-y-8">
-        <h3 className="font-headline font-black text-2xl text-zinc-900 tracking-tight">Frequently Asked Questions</h3>
+        <h3 className="font-headline font-black text-2xl text-zinc-100 tracking-tight">Frequently Asked Questions</h3>
         <div className="space-y-4">
           {faqs.map((faq, idx) => (
-            <Card key={idx} className="p-8 border border-zinc-50 bg-white hover:bg-zinc-50 transition-all cursor-pointer group rounded-[24px] shadow-sm">
+            <Card key={idx} className="p-8 border border-zinc-800 bg-zinc-900 hover:bg-zinc-800 transition-all cursor-pointer group rounded-[24px] shadow-sm">
               <div className="flex justify-between items-center group-hover:text-[#0052CC] transition-colors">
-                <span className="font-headline font-black text-zinc-900 group-hover:text-[#0052CC] transition-colors">{faq.question}</span>
+                <span className="font-headline font-black text-zinc-100 group-hover:text-[#0052CC] transition-colors">{faq.question}</span>
                 <span className="material-symbols-outlined text-zinc-300 group-hover:text-[#0052CC]">expand_more</span>
               </div>
             </Card>
@@ -74,11 +74,11 @@ export function HelpCenterView() {
           <div className="flex flex-wrap gap-4 pt-4 justify-center lg:justify-start">
             <button 
               onClick={() => setShowTicketForm(true)}
-              className="bg-white text-[#0052CC] px-10 py-4 rounded-2xl font-black font-headline shadow-xl hover:scale-105 transition-all active:scale-95 text-sm uppercase tracking-widest"
+              className="bg-zinc-900 text-[#0052CC] px-10 py-4 rounded-2xl font-black font-headline shadow-xl hover:scale-105 transition-all active:scale-95 text-sm uppercase tracking-widest"
             >
               Raise a Support Ticket
             </button>
-            <button className="bg-white/10 backdrop-blur-md text-white border border-white/20 px-10 py-4 rounded-2xl font-black font-headline hover:bg-white/20 transition-all text-sm uppercase tracking-widest">
+            <button className="bg-white/10 backdrop-blur-md text-white border border-zinc-800/20 px-10 py-4 rounded-2xl font-black font-headline hover:bg-zinc-800/20 transition-all text-sm uppercase tracking-widest">
               Live Chat
             </button>
           </div>
@@ -106,16 +106,16 @@ export function HelpCenterView() {
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              className="relative w-full max-w-2xl bg-white rounded-[48px] shadow-2xl overflow-hidden p-10 lg:p-14"
+              className="relative w-full max-w-2xl bg-zinc-900 rounded-[48px] shadow-2xl overflow-hidden p-10 lg:p-14"
             >
                <div className="flex justify-between items-start mb-10">
                  <div>
-                   <h3 className="text-3xl font-headline font-black text-zinc-900 tracking-tighter leading-none mb-4">Raise Support Ticket</h3>
+                   <h3 className="text-3xl font-headline font-black text-zinc-100 tracking-tighter leading-none mb-4">Raise Support Ticket</h3>
                    <p className="text-zinc-500 text-sm font-medium">Please provide details regarding your inquiry.</p>
                  </div>
                  <button 
                   onClick={() => setShowTicketForm(false)}
-                  className="w-12 h-12 rounded-2xl bg-zinc-50 text-zinc-400 flex items-center justify-center hover:bg-zinc-100 transition-colors"
+                  className="w-12 h-12 rounded-2xl bg-zinc-800 text-zinc-400 flex items-center justify-center hover:bg-zinc-800 transition-colors"
                  >
                    <span className="material-symbols-outlined">close</span>
                  </button>
@@ -125,7 +125,7 @@ export function HelpCenterView() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                        <label className="text-[10px] font-black uppercase tracking-widest text-zinc-400 ml-1">Category</label>
-                       <select className="w-full px-6 py-4 bg-zinc-50 border-none rounded-2xl font-black text-zinc-900 text-sm focus:ring-4 focus:ring-blue-50 transition-all appearance-none cursor-pointer">
+                       <select className="w-full px-6 py-4 bg-zinc-800 border-none rounded-2xl font-black text-zinc-100 text-sm focus:ring-4 focus:ring-blue-50 transition-all appearance-none cursor-pointer">
                           <option>Registration Issue</option>
                           <option>Verification Pipeline</option>
                           <option>Scholarship Matching</option>
@@ -135,7 +135,7 @@ export function HelpCenterView() {
                     </div>
                     <div className="space-y-2">
                        <label className="text-[10px] font-black uppercase tracking-widest text-zinc-400 ml-1">Urgency</label>
-                       <select className="w-full px-6 py-4 bg-zinc-50 border-none rounded-2xl font-black text-zinc-900 text-sm focus:ring-4 focus:ring-blue-50 transition-all appearance-none cursor-pointer">
+                       <select className="w-full px-6 py-4 bg-zinc-800 border-none rounded-2xl font-black text-zinc-100 text-sm focus:ring-4 focus:ring-blue-50 transition-all appearance-none cursor-pointer">
                           <option>Low / Routine</option>
                           <option>Medium / Time Sensitive</option>
                           <option>High / Critical</option>
@@ -148,7 +148,7 @@ export function HelpCenterView() {
                     <input 
                       type="text" 
                       placeholder="Summary of the issue..."
-                      className="w-full px-6 py-4 bg-zinc-50 border-none rounded-2xl font-black text-zinc-900 text-sm focus:ring-4 focus:ring-blue-50 transition-all"
+                      className="w-full px-6 py-4 bg-zinc-800 border-none rounded-2xl font-black text-zinc-100 text-sm focus:ring-4 focus:ring-blue-50 transition-all"
                     />
                   </div>
 
@@ -157,7 +157,7 @@ export function HelpCenterView() {
                     <textarea 
                       rows={4}
                       placeholder="Please elaborate on your concern..."
-                      className="w-full px-6 py-4 bg-zinc-50 border-none rounded-2xl font-medium text-zinc-900 text-sm focus:ring-4 focus:ring-blue-50 transition-all resize-none leading-relaxed"
+                      className="w-full px-6 py-4 bg-zinc-800 border-none rounded-2xl font-medium text-zinc-100 text-sm focus:ring-4 focus:ring-blue-50 transition-all resize-none leading-relaxed"
                     />
                   </div>
 

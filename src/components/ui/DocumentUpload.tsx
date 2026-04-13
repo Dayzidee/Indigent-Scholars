@@ -65,8 +65,8 @@ export function DocumentUpload({
       className={cn(
         "group relative p-6 rounded-[32px] border-2 border-dashed transition-all duration-500 overflow-hidden",
         file ? "border-emerald-500 bg-emerald-50/50" : 
-        isDragActive ? "border-[#0052CC] bg-blue-50/50 scale-[1.02]" : 
-        "border-zinc-100 bg-zinc-50/50 hover:border-zinc-200 hover:bg-zinc-100/50",
+        isDragActive ? "border-[#0052CC] bg-blue-950/30 scale-[1.02]" : 
+        "border-zinc-800 bg-zinc-800/50 hover:border-zinc-700 hover:bg-zinc-800/50",
         className
       )}
       onDragOver={onDragOver}
@@ -86,7 +86,7 @@ export function DocumentUpload({
           "w-14 h-14 rounded-2xl flex items-center justify-center mb-4 transition-all duration-500",
           file ? "bg-emerald-500 text-white scale-110 rotate-3 shadow-lg shadow-emerald-200" : 
           isDragActive ? "bg-[#0052CC] text-white animate-bounce" : 
-          "bg-white text-zinc-400 group-hover:scale-110 shadow-sm"
+          "bg-zinc-900 text-zinc-400 group-hover:scale-110 shadow-sm"
         )}>
           <span className="material-symbols-outlined text-2xl" style={{ fontVariationSettings: file ? "'FILL' 1" : undefined }}>
             {file ? 'check_circle' : isUploading ? 'sync' : icon}
@@ -96,7 +96,7 @@ export function DocumentUpload({
         <div className="space-y-1">
           <h4 className={cn(
             "text-xs font-black uppercase tracking-[0.1em] font-label transition-colors",
-            file ? "text-emerald-700" : "text-zinc-900"
+            file ? "text-emerald-700" : "text-zinc-100"
           )}>
             {file ? file.name : label}
           </h4>
@@ -134,8 +134,8 @@ export function DocumentUpload({
 
       {/* Uploading shimmer overlay */}
       {isUploading && (
-        <div className="absolute inset-0 bg-white/40 flex items-center justify-center backdrop-blur-[1px]">
-          <div className="w-1/2 h-1 bg-zinc-100 rounded-full overflow-hidden">
+        <div className="absolute inset-0 bg-zinc-900/60 flex items-center justify-center backdrop-blur-[1px]">
+          <div className="w-1/2 h-1 bg-zinc-800 rounded-full overflow-hidden">
             <motion.div 
               initial={{ x: '-100%' }}
               animate={{ x: '100%' }}

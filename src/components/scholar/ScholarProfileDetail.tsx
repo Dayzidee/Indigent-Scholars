@@ -33,7 +33,7 @@ export function ScholarProfileDetail({ student, accessLevel }: ScholarProfileDet
   }
 
   return (
-    <div className="min-h-screen bg-slate-50/50 pb-32">
+    <div className="min-h-screen bg-transparent pb-32">
 
       <div className="max-w-7xl mx-auto px-6 py-12">
         
@@ -44,7 +44,7 @@ export function ScholarProfileDetail({ student, accessLevel }: ScholarProfileDet
             animate={{ opacity: 1, x: 0 }}
             className="lg:col-span-5 relative"
           >
-          <div className="aspect-[4/5] rounded-3xl lg:rounded-[40px] overflow-hidden shadow-2xl relative z-10 border-4 lg:border-8 border-white">
+          <div className="aspect-[4/5] rounded-3xl lg:rounded-[40px] overflow-hidden shadow-2xl relative z-10 border-4 lg:border-8 border-zinc-800">
               <img 
                 className={cn("w-full h-full object-cover", isTeaser && "blur-md grayscale opacity-50")}
                 src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${student.name}`} 
@@ -74,7 +74,7 @@ export function ScholarProfileDetail({ student, accessLevel }: ScholarProfileDet
               <span className="text-zinc-400 font-headline font-black text-[10px] tracking-[0.2em] uppercase">ID: {student.matric.split('/').pop()?.toUpperCase() || 'ED-2024-8921'}</span>
             </div>
             
-            <h1 className="font-headline text-4xl sm:text-5xl md:text-7xl font-black text-zinc-900 mb-6 tracking-tight leading-[0.9]">
+            <h1 className="font-headline text-4xl sm:text-5xl md:text-7xl font-black text-zinc-100 mb-6 tracking-tight leading-[0.9]">
               {student.name}
             </h1>
             
@@ -82,10 +82,10 @@ export function ScholarProfileDetail({ student, accessLevel }: ScholarProfileDet
               {student.bio}
             </p>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-8 border-t border-zinc-200 pt-10">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-8 border-t border-zinc-700 pt-10">
               <div>
                 <p className="text-zinc-400 text-[10px] font-black uppercase tracking-widest mb-2">Institution</p>
-                <p className="font-headline font-black text-lg text-zinc-800">{student.university}</p>
+                <p className="font-headline font-black text-lg text-zinc-200">{student.university}</p>
               </div>
               <div>
                 <p className="text-zinc-400 text-[10px] font-black uppercase tracking-widest mb-2">Funding Goal</p>
@@ -106,13 +106,13 @@ export function ScholarProfileDetail({ student, accessLevel }: ScholarProfileDet
             {/* The Story */}
             <section>
               <div className="flex items-center gap-4 mb-8">
-                <h2 className="font-headline text-3xl font-black text-zinc-900 tracking-tight">The Narrative</h2>
-                <div className="h-[2px] flex-grow bg-zinc-100" />
+                <h2 className="font-headline text-3xl font-black text-zinc-100 tracking-tight">The Narrative</h2>
+                <div className="h-[2px] flex-grow bg-zinc-800" />
               </div>
               
-              <div className={cn("prose prose-lg text-zinc-600 leading-relaxed font-medium space-y-6 relative", isTeaser && "max-h-[200px] overflow-hidden")}>
+              <div className={cn("prose prose-lg text-zinc-400 leading-relaxed font-medium space-y-6 relative", isTeaser && "max-h-[200px] overflow-hidden")}>
                 <p>{student.story}</p>
-                <blockquote className="border-l-8 border-[#0052CC] pl-8 py-6 italic text-zinc-900 font-headline text-2xl font-black tracking-tight bg-blue-50/50 rounded-r-3xl">
+                <blockquote className="border-l-8 border-[#0052CC] pl-8 py-6 italic text-zinc-100 font-headline text-2xl font-black tracking-tight bg-blue-950/30 rounded-r-3xl">
                   "Education is the engine of national progress, and my goal is to be a key piston in that engine."
                 </blockquote>
                 {isTeaser && (
@@ -126,33 +126,33 @@ export function ScholarProfileDetail({ student, accessLevel }: ScholarProfileDet
             {/* Academic Bento */}
             <section>
               <div className="flex items-center gap-4 mb-8">
-                <h2 className="font-headline text-3xl font-black text-zinc-900 tracking-tight">Academic Merit</h2>
-                <div className="h-[2px] flex-grow bg-zinc-100" />
+                <h2 className="font-headline text-3xl font-black text-zinc-100 tracking-tight">Academic Merit</h2>
+                <div className="h-[2px] flex-grow bg-zinc-800" />
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <Card className="p-6 sm:p-10 rounded-3xl lg:rounded-[40px] border-none bg-white shadow-xl shadow-zinc-200/50 flex flex-col group hover:shadow-blue-900/5 transition-all">
-                  <div className="w-14 h-14 rounded-2xl bg-blue-50 text-[#0052CC] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <Card className="p-6 sm:p-10 rounded-3xl lg:rounded-[40px] border-none bg-zinc-900 shadow-xl shadow-zinc-200/50 flex flex-col group hover:shadow-blue-900/5 transition-all">
+                  <div className="w-14 h-14 rounded-2xl bg-blue-950/30 text-[#0052CC] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                     <span className="material-symbols-outlined text-3xl">school</span>
                   </div>
-                  <h3 className="font-headline font-black text-xl text-zinc-900 mb-2">Degree Program</h3>
+                  <h3 className="font-headline font-black text-xl text-zinc-100 mb-2">Degree Program</h3>
                   <p className="text-zinc-500 font-medium mb-4">{student.field}</p>
-                  <div className="mt-auto pt-4 border-t border-zinc-50">
+                  <div className="mt-auto pt-4 border-t border-zinc-800">
                     <p className="text-[10px] font-black text-zinc-400 uppercase tracking-widest mb-1">Current Standing</p>
                     <p className="text-2xl font-headline font-black text-[#0052CC]">GPA {student.gpa} / 5.00</p>
                   </div>
                 </Card>
 
-                <Card className="p-6 sm:p-10 rounded-3xl lg:rounded-[40px] border-none bg-white shadow-xl shadow-zinc-200/50 flex flex-col group hover:shadow-amber-900/5 transition-all">
-                  <div className="w-14 h-14 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <Card className="p-6 sm:p-10 rounded-3xl lg:rounded-[40px] border-none bg-zinc-900 shadow-xl shadow-zinc-200/50 flex flex-col group hover:shadow-amber-900/5 transition-all">
+                  <div className="w-14 h-14 rounded-2xl bg-amber-950/30 text-amber-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                     <span className="material-symbols-outlined text-3xl">emoji_events</span>
                   </div>
-                  <h3 className="font-headline font-black text-xl text-zinc-900 mb-4">Scholastic Honors</h3>
+                  <h3 className="font-headline font-black text-xl text-zinc-100 mb-4">Scholastic Honors</h3>
                   <ul className="space-y-3">
                     {student.honors.map((honor, i) => (
                       <li key={i} className="flex items-center gap-3">
                         <span className="w-2 h-2 rounded-full bg-amber-400 shrink-0" />
-                        <span className="text-sm font-bold text-zinc-700">{honor.title} ({honor.date})</span>
+                        <span className="text-sm font-bold text-zinc-300">{honor.title} ({honor.date})</span>
                       </li>
                     ))}
                   </ul>
@@ -166,7 +166,7 @@ export function ScholarProfileDetail({ student, accessLevel }: ScholarProfileDet
                         {student.bio} After graduation, {student.name.split(' ')[0]} plans to contribute to the Nigerian tech and engineering landscape, focusing on solving critical infrastructure challenges.
                       </p>
                     </div>
-                    <div className="w-32 h-32 rounded-[32px] bg-white/5 flex items-center justify-center shrink-0 border border-white/10 group-hover:rotate-12 transition-transform duration-500">
+                    <div className="w-32 h-32 rounded-[32px] bg-white/5 flex items-center justify-center shrink-0 border border-zinc-800/10 group-hover:rotate-12 transition-transform duration-500">
                       <span className="material-symbols-outlined text-6xl text-blue-400 opacity-50">architecture</span>
                     </div>
                   </div>
@@ -180,25 +180,25 @@ export function ScholarProfileDetail({ student, accessLevel }: ScholarProfileDet
               <section className="space-y-12">
                 <div>
                   <div className="flex items-center gap-4 mb-8">
-                    <h2 className="font-headline text-2xl font-black text-zinc-900 tracking-tight">Trust & Transparency</h2>
-                    <div className="h-[2px] flex-grow bg-zinc-100" />
+                    <h2 className="font-headline text-2xl font-black text-zinc-100 tracking-tight">Trust & Transparency</h2>
+                    <div className="h-[2px] flex-grow bg-zinc-800" />
                   </div>
                   
-                  <Card className="bg-white rounded-3xl lg:rounded-[40px] border-none shadow-xl shadow-zinc-200/50 overflow-hidden">
+                  <Card className="bg-zinc-900 rounded-3xl lg:rounded-[40px] border-none shadow-xl shadow-zinc-200/50 overflow-hidden">
                      <div className="divide-y divide-zinc-50">
                         {[
                           { label: "Academic transcripts (Official)", key: 'transcript' },
                           { label: "Government Issued identity (NIN)", key: 'nin' },
                           { label: "University Enrollment Letter", key: 'admission' }
                         ].map((doc, i) => (
-                          <div key={i} className="p-8 flex items-center justify-between hover:bg-zinc-50/50 transition-colors">
+                          <div key={i} className="p-8 flex items-center justify-between hover:bg-zinc-800/50 transition-colors">
                              <div className="flex items-center gap-4">
-                                <div className="w-10 h-10 rounded-xl bg-blue-50 text-[#0052CC] flex items-center justify-center">
+                                <div className="w-10 h-10 rounded-xl bg-blue-950/30 text-[#0052CC] flex items-center justify-center">
                                    <span className="material-symbols-outlined text-xl">verified_user</span>
                                 </div>
-                                <span className="font-bold text-zinc-800">{doc.label}</span>
+                                <span className="font-bold text-zinc-200">{doc.label}</span>
                              </div>
-                             <span className="text-[10px] font-black text-emerald-600 bg-emerald-50 px-4 py-1.5 rounded-full uppercase tracking-widest border border-emerald-100">VERIFIED</span>
+                             <span className="text-[10px] font-black text-emerald-600 bg-emerald-950/30 px-4 py-1.5 rounded-full uppercase tracking-widest border border-emerald-100">VERIFIED</span>
                           </div>
                         ))}
                      </div>
@@ -208,11 +208,11 @@ export function ScholarProfileDetail({ student, accessLevel }: ScholarProfileDet
                 {/* Full Data Dump Explorer */}
                 <div>
                    <div className="flex items-center gap-4 mb-8">
-                      <h2 className="font-headline text-2xl font-black text-zinc-900 tracking-tight">Full Verified Dossier</h2>
-                      <div className="h-[2px] flex-grow bg-zinc-100" />
+                      <h2 className="font-headline text-2xl font-black text-zinc-100 tracking-tight">Full Verified Dossier</h2>
+                      <div className="h-[2px] flex-grow bg-zinc-800" />
                    </div>
 
-                   <Card className="bg-zinc-50 rounded-3xl lg:rounded-[40px] border-none p-6 sm:p-10 grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 sm:gap-y-8">
+                   <Card className="bg-zinc-800 rounded-3xl lg:rounded-[40px] border-none p-6 sm:p-10 grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 sm:gap-y-8">
                       {[
                         { label: "Full Name", value: student.name },
                         { label: "Matriculation Number", value: student.matric },
@@ -227,21 +227,21 @@ export function ScholarProfileDetail({ student, accessLevel }: ScholarProfileDet
                       ].map((item, i) => (
                         <div key={i} className="space-y-1">
                           <p className="text-[9px] font-black text-zinc-400 uppercase tracking-widest">{item.label}</p>
-                          <p className="font-headline font-black text-zinc-900 tracking-tight">{item.value}</p>
+                          <p className="font-headline font-black text-zinc-100 tracking-tight">{item.value}</p>
                         </div>
                       ))}
                       
                       {student.verifiedDocs && student.verifiedDocs.length > 0 && (
-                        <div className="md:col-span-2 pt-8 border-t border-zinc-200 mt-4">
+                        <div className="md:col-span-2 pt-8 border-t border-zinc-700 mt-4">
                            <p className="text-[9px] font-black text-zinc-400 uppercase tracking-widest mb-6">Archive Attachments</p>
                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                               {student.verifiedDocs.map((doc, i) => (
-                                <a key={i} href={doc.url} className="flex items-center gap-4 p-4 bg-white rounded-2xl border border-zinc-100 hover:border-blue-400 transition-colors group">
-                                   <div className="w-10 h-10 rounded-xl bg-red-50 text-red-500 flex items-center justify-center group-hover:bg-red-500 group-hover:text-white transition-colors">
+                                <a key={i} href={doc.url} className="flex items-center gap-4 p-4 bg-zinc-900 rounded-2xl border border-zinc-800 hover:border-blue-400 transition-colors group">
+                                   <div className="w-10 h-10 rounded-xl bg-red-950/30 text-red-500 flex items-center justify-center group-hover:bg-red-950/300 group-hover:text-white transition-colors">
                                       <span className="material-symbols-outlined text-xl">picture_as_pdf</span>
                                    </div>
                                    <div className="min-w-0">
-                                      <p className="text-xs font-black text-zinc-900 truncate">{doc.type}</p>
+                                      <p className="text-xs font-black text-zinc-100 truncate">{doc.type}</p>
                                       <p className="text-[9px] font-bold text-zinc-400 truncate">{doc.name}</p>
                                    </div>
                                 </a>
@@ -263,7 +263,7 @@ export function ScholarProfileDetail({ student, accessLevel }: ScholarProfileDet
                   </p>
                   <div className="flex flex-wrap gap-4">
                      {["Impact Proofed", "Zero Fee Transfer", "Direct Reporting"].map((tag, i) => (
-                       <div key={i} className="flex items-center gap-2 px-5 py-2.5 bg-white/10 rounded-full text-xs font-black uppercase tracking-widest border border-white/10 group-hover:bg-white/20 transition-all">
+                       <div key={i} className="flex items-center gap-2 px-5 py-2.5 bg-white/10 rounded-full text-xs font-black uppercase tracking-widest border border-zinc-800/10 group-hover:bg-zinc-800/20 transition-all">
                           <span className="material-symbols-outlined text-sm text-blue-300" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</span> {tag}
                        </div>
                      ))}
@@ -278,15 +278,15 @@ export function ScholarProfileDetail({ student, accessLevel }: ScholarProfileDet
           <aside className="lg:col-span-4 space-y-8">
             <div className="sticky top-32 space-y-8">
               {/* Funding Widget Placeholder */}
-              <Card className="p-6 sm:p-10 rounded-3xl lg:rounded-[40px] border-none bg-white shadow-2xl shadow-blue-900/10 relative overflow-hidden">
-                <h3 className="font-headline font-black text-xl text-zinc-900 mb-8 tracking-tight">Contribution Status</h3>
+              <Card className="p-6 sm:p-10 rounded-3xl lg:rounded-[40px] border-none bg-zinc-900 shadow-2xl shadow-blue-900/10 relative overflow-hidden">
+                <h3 className="font-headline font-black text-xl text-zinc-100 mb-8 tracking-tight">Contribution Status</h3>
                 
                 <div className="mb-10">
                   <div className="flex justify-between items-end mb-4">
                     <span className="text-4xl font-headline font-black text-[#0052CC] tracking-tighter">₦{student.raisedAmount.toLocaleString()}</span>
                     <span className="text-[10px] font-black text-zinc-400 uppercase tracking-widest">{Math.round(percentage)}% Raised</span>
                   </div>
-                  <div className="w-full h-4 bg-zinc-100 rounded-full overflow-hidden p-1">
+                  <div className="w-full h-4 bg-zinc-800 rounded-full overflow-hidden p-1">
                     <motion.div 
                       initial={{ width: 0 }}
                       animate={{ width: `${percentage}%` }}
@@ -312,16 +312,16 @@ export function ScholarProfileDetail({ student, accessLevel }: ScholarProfileDet
                   </Button>
                 </div>
 
-                <div className="mt-10 pt-8 border-t border-zinc-100">
+                <div className="mt-10 pt-8 border-t border-zinc-800">
                    <h4 className="text-[10px] font-black text-zinc-400 uppercase tracking-[0.2em] mb-6">Recent Backers</h4>
                    <div className="space-y-6">
                       {student.sponsors.map((spo, i) => (
                         <div key={i} className="flex items-center gap-4">
-                           <div className="w-10 h-10 rounded-xl bg-zinc-100 flex items-center justify-center text-xs font-black text-zinc-600">
+                           <div className="w-10 h-10 rounded-xl bg-zinc-800 flex items-center justify-center text-xs font-black text-zinc-400">
                              {spo.name.charAt(0)}
                            </div>
                            <div className="flex-1 min-w-0">
-                              <p className="text-sm font-black text-zinc-900 truncate">{spo.name}</p>
+                              <p className="text-sm font-black text-zinc-100 truncate">{spo.name}</p>
                               <p className="text-[10px] font-bold text-[#0052CC] uppercase tracking-widest">Sponsored ₦{spo.amount.toLocaleString()}</p>
                            </div>
                         </div>
@@ -333,7 +333,7 @@ export function ScholarProfileDetail({ student, accessLevel }: ScholarProfileDet
 
               {/* Prestige Info Card */}
               <Card className="p-8 rounded-[32px] border-none bg-amber-600 text-white shadow-xl shadow-amber-900/10">
-                 <div className="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center mb-6">
+                 <div className="w-12 h-12 rounded-2xl bg-zinc-800/20 flex items-center justify-center mb-6">
                     <span className="material-symbols-outlined text-2xl" style={{ fontVariationSettings: "'FILL' 1" }}>workspace_premium</span>
                  </div>
                  <h3 className="font-headline font-black text-xl mb-3 tracking-tight">Prestigous Backer</h3>

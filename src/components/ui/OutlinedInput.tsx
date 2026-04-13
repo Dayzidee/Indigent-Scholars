@@ -41,9 +41,9 @@ export function OutlinedInput({
       <div 
         className={cn(
           "relative flex items-center min-h-[56px] rounded-xl border-2 transition-all duration-200",
-          isFocused ? "border-[#0052CC] ring-4 ring-blue-600/5 bg-white shadow-sm" : "border-zinc-200 bg-zinc-50/30",
-          error ? "border-red-500 bg-red-50/30" : "group-hover:border-zinc-300",
-          hasValue && !isFocused && "bg-white border-zinc-200"
+          isFocused ? "border-[#0052CC] ring-4 ring-blue-600/5 bg-zinc-900 shadow-sm" : "border-zinc-700 bg-zinc-800/30",
+          error ? "border-red-500 bg-red-950/30" : "group-hover:border-zinc-600",
+          hasValue && !isFocused && "bg-zinc-900 border-zinc-700"
         )}
       >
         {/* Icon */}
@@ -63,7 +63,7 @@ export function OutlinedInput({
           onFocus={handleFocus}
           onBlur={handleBlur}
           className={cn(
-            "flex-1 w-full bg-transparent px-4 py-4 text-sm font-medium text-zinc-900 focus:outline-none",
+            "flex-1 w-full bg-transparent px-4 py-4 text-sm font-medium text-zinc-100 focus:outline-none",
             icon && "pl-2"
           )}
           placeholder={ (!isFocused && !hasValue) ? "" : props.placeholder }
@@ -82,7 +82,7 @@ export function OutlinedInput({
           className={cn(
             "absolute left-4 pointer-events-none font-bold uppercase tracking-wider text-[10px] select-none",
             icon && !isFocused && !hasValue && "left-12",
-            (isFocused || hasValue) && "bg-white px-2 py-0.5 rounded-sm z-10"
+            (isFocused || hasValue) && "bg-zinc-900 px-2 py-0.5 rounded-sm z-10"
           )}
         >
           {label}

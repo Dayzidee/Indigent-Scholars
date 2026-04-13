@@ -78,3 +78,4 @@ scripts/
 # Playwright
 /playwright-report/
 /test-results/
+.agents/
