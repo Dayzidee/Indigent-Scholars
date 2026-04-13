@@ -186,10 +186,10 @@ export function TopNavBar({ onMenuClick }: TopNavBarProps) {
                         await supabase.auth.signOut()
                         window.location.href = '/'
                       }}
-                      className="w-full flex items-center gap-3 px-4 py-3 text-error hover:bg-error/5 rounded-xl transition-colors group font-headline"
+                      className="w-full flex items-center gap-3 px-4 py-3 text-error hover:bg-error/5 rounded-xl transition-all group font-headline"
                     >
-                      <span className="material-symbols-outlined text-xl transition-colors text-error font-headline tracking-tighter font-bold">logout</span>
-                      <span className="text-sm font-bold">Logout</span>
+                      <span className="material-symbols-outlined text-xl transition-transform group-hover:translate-x-1 text-error font-headline tracking-tighter font-bold">logout</span>
+                      <span className="text-sm font-bold transition-transform group-hover:translate-x-1">Logout</span>
                     </button>
                   </div>
                 </Card>

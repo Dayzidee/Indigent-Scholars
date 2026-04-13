@@ -125,12 +125,12 @@ export function SideNavBar({ isOpen, onClose }: SideNavBarProps) {
               await supabase.auth.signOut()
               window.location.href = '/'
             }}
-            className="w-full flex items-center gap-3 px-4 py-3 text-error hover:bg-error/5 transition-colors rounded-lg mb-4 cursor-pointer font-headline"
+            className="w-full flex items-center gap-3 px-4 py-3 text-error hover:bg-error/5 transition-all rounded-lg mb-4 cursor-pointer font-headline group"
           >
-            <span className="material-symbols-outlined" data-icon="logout">
+            <span className="material-symbols-outlined transition-transform group-hover:translate-x-1" data-icon="logout">
               logout
             </span>
-            <span className="font-headline tracking-tight font-semibold">Logout</span>
+            <span className="font-headline tracking-tight font-semibold transition-transform group-hover:translate-x-1">Logout</span>
           </button>
 
           <div className="flex items-center gap-3 px-4 py-2 bg-zinc-800/50 border border-zinc-700 transition-colors rounded-xl group overflow-hidden">
