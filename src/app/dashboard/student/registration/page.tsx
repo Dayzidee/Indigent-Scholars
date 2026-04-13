@@ -128,7 +128,7 @@ export default function RegistrationPage() {
 
   return (
     <div className="min-h-screen bg-transparent pb-20">
-      <div className="max-w-5xl mx-auto px-6 pt-12">
+      <div className="max-w-7xl mx-auto px-6 pt-12">
         
         {/* Header Section */}
         <div className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-8">
@@ -185,13 +185,8 @@ export default function RegistrationPage() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
             >
-              <div className="flex items-center justify-between relative px-2 mb-20 overflow-x-auto pb-8 md:pb-0 scrollbar-hide">
-                <div className="absolute left-0 top-1/2 -translate-y-1/2 w-full h-[2px] bg-zinc-700 -z-10 rounded-full" />
-                <motion.div 
-                   className="absolute left-0 top-1/2 -translate-y-1/2 h-[2px] bg-[#0052CC] -z-10 rounded-full"
-                   animate={{ width: `${((currentStep - 1) / (STEPS.length - 1)) * 100}%` }}
-                   transition={{ type: 'spring', stiffness: 50, damping: 20 }}
-                />
+              <div className="flex flex-wrap items-center justify-between gap-y-12 gap-x-2 md:gap-x-4 relative px-2 mb-24 w-full">
+                {/* Removed absolute progress lines that dont work with wrapping */}
                 
                 {STEPS.map((step) => (
                   <div key={step.id} className="relative group shrink-0 mx-2">
@@ -204,7 +199,7 @@ export default function RegistrationPage() {
                       }}
                       className={cn(
                         "w-10 h-10 rounded-xl border-2 flex items-center justify-center shadow-sm relative z-10 transition-all duration-500",
-                        currentStep >= step.id ? "text-white shadow-blue-200 shadow-lg" : "text-zinc-400"
+                        currentStep >= step.id ? "text-white shadow-blue-900/40 shadow-lg" : "text-zinc-400"
                       )}
                     >
                       <span className="material-symbols-outlined text-[18px]">{step.icon}</span>
@@ -221,10 +216,11 @@ export default function RegistrationPage() {
                 ))}
               </div>
 
-              <Card className="p-8 md:p-14 rounded-[48px] border-none shadow-2xl shadow-blue-900/5 bg-zinc-900 relative border border-zinc-800/40">
+              <Card className="p-8 md:p-14 rounded-[48px] border-none shadow-2xl shadow-zinc-950/50 bg-zinc-900 relative border border-zinc-800/40">
                 <div className="absolute top-0 right-0 w-48 h-48 bg-[#0052CC]/[0.02] rounded-bl-[100px] -z-0 pointer-events-none border-l border-b border-[#0052CC]/5" />
 
-                <div className="relative z-50">
+                <div className="relative z-10">
+
                   <StepContent 
                     step={currentStep} 
                     formData={formData} 

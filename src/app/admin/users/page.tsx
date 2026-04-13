@@ -3,18 +3,7 @@
 import { useEffect, useState } from 'react';
 import { DashboardLayout } from '@/components/layout/DashboardLayout';
 import { getAllProfiles } from '@/lib/actions/admin';
-import { 
-  Users, 
-  Search, 
-  Filter, 
-  MoreVertical, 
-  Mail, 
-  Shield, 
-  GraduationCap, 
-  Building,
-  ChevronRight,
-  UserCheck
-} from 'lucide-react';
+
 
 export default function AdminUsers() {
   const [profiles, setProfiles] = useState<any[]>([]);
@@ -49,13 +38,15 @@ export default function AdminUsers() {
           <div>
             <h2 className="text-3xl font-bold text-white mb-2">Platform Registry</h2>
             <p className="text-slate-500 font-medium tracking-wide flex items-center">
-              <UserCheck className="w-4 h-4 mr-2 text-indigo-400" />
+              <span className="material-symbols-outlined text-[18px] mr-2 text-indigo-400">person_check</span>
               Manage and monitor all platform participants.
             </p>
+
           </div>
           <div className="flex gap-4">
             <div className="relative">
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
+              <span className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-[18px] text-slate-500">search</span>
+
               <input 
                 type="text" 
                 placeholder="Search name, email, or ID..." 
@@ -63,7 +54,8 @@ export default function AdminUsers() {
               />
             </div>
             <button className="px-4 py-3 bg-slate-900 border border-slate-800 rounded-xl text-slate-400 hover:text-white transition-colors">
-              <Filter className="w-4 h-4" />
+              <span className="material-symbols-outlined text-[18px]">filter_list</span>
+
             </button>
           </div>
         </header>
@@ -89,10 +81,11 @@ export default function AdminUsers() {
                     <td className="px-8 py-6">
                       <div className="flex items-center space-x-4">
                         <div className="w-12 h-12 rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-500 shadow-inner group-hover:border-indigo-500/50 transition-colors">
-                          {user.role === 'student' ? <GraduationCap className="w-5 h-5" /> : 
-                           user.role === 'sponsor' ? <Building className="w-5 h-5" /> : 
-                           <Shield className="w-5 h-5" />}
+                          {user.role === 'student' ? <span className="material-symbols-outlined text-[20px]">school</span> : 
+                           user.role === 'sponsor' ? <span className="material-symbols-outlined text-[20px]">corporate_fare</span> : 
+                           <span className="material-symbols-outlined text-[20px]">shield</span>}
                         </div>
+
                         <div>
                           <p className="text-sm font-bold text-white uppercase tracking-tight group-hover:text-indigo-400 transition-colors">{user.full_name || 'Anonymous User'}</p>
                           <p className="text-[10px] text-zinc-400 font-bold uppercase tracking-widest mt-0.5">UID: {user.id.slice(0, 8)}</p>
@@ -104,7 +97,8 @@ export default function AdminUsers() {
                     </td>
                     <td className="px-8 py-6">
                       <div className="flex flex-col space-y-1">
-                        <span className="text-xs font-medium text-slate-400 flex items-center"><Mail className="w-3 h-3 mr-1.5 opacity-50" />{user.email}</span>
+                        <span className="text-xs font-medium text-slate-400 flex items-center"><span className="material-symbols-outlined text-[14px] mr-1.5 opacity-50">mail</span>{user.email}</span>
+
                       </div>
                     </td>
                     <td className="px-8 py-6">
@@ -112,7 +106,8 @@ export default function AdminUsers() {
                     </td>
                     <td className="px-8 py-6 text-right">
                       <button className="p-2 rounded-lg bg-slate-800/50 hover:bg-slate-700 text-slate-400 hover:text-white transition-all shadow-lg group/more">
-                        <ChevronRight className="w-4 h-4 group-hover/more:translate-x-0.5 transition-transform" />
+                        <span className="material-symbols-outlined text-[18px] group-hover/more:translate-x-0.5 transition-transform">chevron_right</span>
+
                       </button>
                     </td>
                   </tr>

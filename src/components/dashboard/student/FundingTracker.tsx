@@ -57,9 +57,9 @@ export function FundingTracker({
                     initial={{ width: 0 }}
                     animate={{ width: `${percentage}%` }}
                     transition={{ duration: 1.5, ease: "easeOut" }}
-                    className="h-full bg-zinc-900 rounded-full relative shadow-[0_0_20px_rgba(255,255,255,0.3)]"
+                    className="h-full bg-zinc-900 rounded-full relative shadow-[0_0_20px_rgba(0,0,0,0.5)]"
                   >
-                     <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-r from-transparent to-white/50 animate-pulse" />
+                     <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-r from-transparent to-[#0052CC]/40 animate-pulse" />
                   </motion.div>
                </div>
                <div className="flex justify-between items-center text-[10px] font-black text-white/40 uppercase tracking-[0.3em]">
@@ -87,7 +87,7 @@ export function FundingTracker({
                 initial={{ opacity: 0, x: -10 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: i * 0.1 }}
-                className="bg-zinc-900 p-6 rounded-[32px] shadow-lg shadow-zinc-200/50 flex items-center gap-5 border border-zinc-800 hover:border-blue-200 transition-all group"
+                className="bg-zinc-950 p-6 rounded-[32px] shadow-2xl shadow-black/80 flex items-center gap-5 border border-zinc-800 hover:border-[#0052CC]/40 transition-all duration-300 group"
               >
                   <div className="w-12 h-12 rounded-2xl bg-blue-950/30 text-[#0052CC] flex items-center justify-center font-headline font-black text-xl group-hover:bg-[#0052CC] group-hover:text-white transition-colors">
                     {spo.name.charAt(0)}

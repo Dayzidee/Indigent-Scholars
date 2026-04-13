@@ -42,30 +42,33 @@ export function MissionCountdown() {
   )
 
   const units = [
-    { label: 'days', value: timeLeft.days, prefix: 'd' },
-    { label: 'hours', value: timeLeft.hours, prefix: 'h' },
-    { label: 'minutes', value: timeLeft.minutes, prefix: 'm' },
-    { label: 'seconds', value: timeLeft.seconds, prefix: 's' }
+    { label: 'days', value: timeLeft.days },
+    { label: 'hours', value: timeLeft.hours },
+    { label: 'minutes', value: timeLeft.minutes },
+    { label: 'seconds', value: timeLeft.seconds }
   ]
 
   return (
-    <div className="flex flex-wrap items-baseline justify-center gap-x-4 md:gap-x-10 gap-y-2 font-headline">
+    <div className="w-full grid grid-cols-4 items-baseline font-headline px-0">
       {units.map((unit, i) => (
-        <div key={unit.label} className="flex items-baseline gap-1 group">
-          <AnimatePresence mode="popLayout">
-            <motion.span
-              key={unit.value}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              className="text-4xl md:text-6xl font-black text-on-surface tracking-tighter"
-            >
-              {unit.value}
-            </motion.span>
-          </AnimatePresence>
-          <span className="text-lg md:text-xl font-black text-on-surface/30 group-hover:text-primary transition-colors duration-500">
-            {unit.prefix}
-          </span>
+        <div key={unit.label} className="flex flex-col items-center justify-center">
+          <div className="flex items-baseline gap-1 md:gap-2">
+            <AnimatePresence mode="popLayout">
+              <motion.span
+                key={unit.value}
+                initial={{ opacity: 0, scale: 0.98 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 1.02 }}
+                className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-black text-white tracking-tighter"
+              >
+                {unit.label === 'days' ? unit.value : (unit.value < 10 ? `0${unit.value}` : unit.value)}
+              </motion.span>
+            </AnimatePresence>
+            
+            <span className="text-[10px] md:text-xs font-black uppercase tracking-widest text-[#0052CC] mb-1 md:mb-3 opacity-90">
+              {unit.label.charAt(0)}
+            </span>
+          </div>
         </div>
       ))}
     </div>

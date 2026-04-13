@@ -128,7 +128,7 @@ export function SponsorDiscovery() {
                       initial={{ width: 0 }}
                       animate={{ width: `${(scholar.raisedAmount / scholar.totalGoal) * 100}%` }}
                       transition={{ duration: 1.5, ease: "easeOut" }}
-                      className="h-full bg-[#0052CC] rounded-full shadow-sm"
+                      className="h-full bg-[#0052CC] rounded-full shadow-lg shadow-blue-500/20"
                     ></motion.div>
                   </div>
                 </div>
@@ -136,7 +136,7 @@ export function SponsorDiscovery() {
                 <div className="flex gap-3 pt-4">
                   <Link href={`/students/${scholar.id}/sponsor`} className="flex-1">
                     <Button 
-                      className="w-full font-black tracking-tight shadow-lg shadow-blue-500/10"
+                      className="w-full font-black tracking-tight shadow-xl shadow-blue-900/40"
                     >
                       Fund Scholar
                     </Button>

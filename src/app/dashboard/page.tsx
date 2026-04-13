@@ -5,7 +5,7 @@ import { redirect } from 'next/navigation';
  * Entry point for /dashboard
  * Redirects the user to their specific dashboard based on their role.
  */
-export default async function DashboardPage() {
+export default async function DashboardRedirect() {
   const supabase = await createClient();
 
   const { data: { user } } = await supabase.auth.getUser();

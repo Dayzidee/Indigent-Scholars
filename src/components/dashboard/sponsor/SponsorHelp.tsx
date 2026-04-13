@@ -42,7 +42,7 @@ export function SponsorHelp() {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search for articles, guides..."
-            className="w-full bg-zinc-900 border border-zinc-700 rounded-2xl lg:rounded-[32px] py-4 md:py-6 pl-14 md:pl-16 pr-6 md:pr-8 text-sm md:text-lg font-medium shadow-xl shadow-zinc-200/50 focus:border-[#0052CC]/30 focus:ring-4 focus:ring-[#0052CC]/5 transition-all font-body outline-none"
+            className="w-full bg-zinc-900 border border-zinc-700 rounded-2xl lg:rounded-[32px] py-4 md:py-6 pl-14 md:pl-16 pr-6 md:pr-8 text-sm md:text-lg font-medium shadow-2xl shadow-black/50 focus:border-[#0052CC]/30 focus:ring-4 focus:ring-[#0052CC]/5 transition-all font-body outline-none"
           />
         </div>
       </section>
@@ -78,7 +78,7 @@ export function SponsorHelp() {
       </section>
 
       {/* Contact Banner */}
-      <section className="bg-[#0052CC] rounded-3xl lg:rounded-[48px] p-8 md:p-16 text-center space-y-8 shadow-2xl shadow-blue-600/20 relative overflow-hidden group">
+      <section className="bg-[#0052CC] rounded-3xl lg:rounded-[48px] p-8 md:p-16 text-center space-y-8 shadow-xl shadow-blue-950/40 relative overflow-hidden group">
         <div className="absolute top-0 right-0 opacity-10 pointer-events-none transform translate-x-1/4 -translate-y-1/4 group-hover:scale-110 transition-transform duration-1000">
           <span className="material-symbols-outlined text-[300px] text-white">support_agent</span>
         </div>

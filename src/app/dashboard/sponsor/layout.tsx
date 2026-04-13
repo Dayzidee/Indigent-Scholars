@@ -16,7 +16,7 @@ export default function SponsorLayout({ children }: SponsorLayoutProps) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
 
   return (
-    <div className="min-h-screen bg-[#F8F9FA] font-body antialiased selection:bg-primary/10 overflow-x-hidden flex max-w-full">
+    <div className="min-h-screen bg-background font-body antialiased selection:bg-primary/10 overflow-x-hidden flex max-w-full">
       <SponsorSideNavBar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
       
       <div className="flex-1 lg:ml-64 transition-all duration-300 min-h-screen flex flex-col relative min-w-0 max-w-full overflow-x-hidden">

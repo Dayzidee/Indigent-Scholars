@@ -1,7 +1,7 @@
 'use client'
 
-import { Bell, Search, User, ChevronDown, Menu } from 'lucide-react'
 import { motion } from 'framer-motion'
+
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { createBrowserClient } from '@supabase/ssr'
@@ -66,7 +66,8 @@ export function DashboardHeader({ onMenuClick }: DashboardHeaderProps) {
   }
 
   return (
-    <header className="h-20 border-b border-slate-800 bg-slate-900/50 backdrop-blur-md px-4 sm:px-8 flex items-center justify-between sticky top-0 z-30">
+    <header className="h-20 border-b border-slate-800 bg-slate-900/80 backdrop-blur-md px-4 sm:px-8 flex items-center justify-between sticky top-0 z-40">
+
       <div className="flex flex-col">
         <div className="flex items-center space-x-3">
           <button
@@ -74,7 +75,8 @@ export function DashboardHeader({ onMenuClick }: DashboardHeaderProps) {
             onClick={onMenuClick}
             className="lg:hidden p-2 -ml-2 text-slate-400 hover:text-white transition-colors"
           >
-            <Menu className="w-6 h-6" />
+            <span className="material-symbols-outlined text-[24px]">menu</span>
+
           </button>
           <h1 className="text-xl font-bold text-white tracking-tight">
             {getPageTitle()}
@@ -113,7 +115,8 @@ export function DashboardHeader({ onMenuClick }: DashboardHeaderProps) {
       <div className="flex items-center space-x-6">
         {/* Search Placeholder */}
         <div className="hidden md:flex items-center bg-slate-800/50 border border-slate-700/50 rounded-full px-4 py-1.5 focus-within:border-teal-500/50 transition-all">
-          <Search className="w-4 h-4 text-slate-500" />
+          <span className="material-symbols-outlined text-[18px] text-slate-500">search</span>
+
           <input
             type="text"
             placeholder="Search platform..."
@@ -124,7 +127,8 @@ export function DashboardHeader({ onMenuClick }: DashboardHeaderProps) {
         {/* Action Icons */}
         <div className="flex items-center space-x-3 border-r border-slate-800 pr-6">
           <button className="relative p-2 text-slate-400 hover:text-white transition-colors">
-            <Bell className="w-5 h-5" />
+            <span className="material-symbols-outlined text-[22px]">notifications</span>
+
             <span className="absolute top-2 right-2 w-2 h-2 bg-teal-500 rounded-full border-2 border-slate-900"></span>
           </button>
         </div>
@@ -132,13 +136,15 @@ export function DashboardHeader({ onMenuClick }: DashboardHeaderProps) {
         {/* User Profile */}
         <div className="flex items-center space-x-3 group cursor-pointer">
           <div className="w-10 h-10 rounded-full bg-gradient-to-br from-teal-500/20 to-indigo-500/20 border border-slate-700 flex items-center justify-center group-hover:border-teal-500/50 transition-all">
-            <User className="w-5 h-5 text-teal-400" />
+            <span className="material-symbols-outlined text-[24px] text-teal-400">person</span>
+
           </div>
           <div className="hidden lg:block text-left">
             <p className="text-sm font-semibold text-white leading-none capitalize">{userName}</p>
             <p className="text-xs text-slate-500 mt-1 capitalize">{role}</p>
           </div>
-          <ChevronDown className="w-4 h-4 text-slate-500 group-hover:text-white transition-colors" />
+          <span className="material-symbols-outlined text-[18px] text-slate-500 group-hover:text-white transition-colors">expand_more</span>
+
         </div>
       </div>
     </header>

@@ -15,7 +15,7 @@ interface ProfileSectionProps {
 
 function Section({ title, subtitle, icon, children, colorClass }: ProfileSectionProps) {
   return (
-    <Card className="bg-zinc-900 rounded-[40px] border-none shadow-2xl shadow-zinc-200/50 p-8 flex flex-col h-full overflow-hidden relative group">
+    <Card className="bg-zinc-900 rounded-[40px] border-none shadow-2xl shadow-zinc-950/40 p-8 flex flex-col h-full overflow-hidden relative group">
       <div className="relative z-10">
         <div className="flex items-center gap-4 mb-8">
            <div className={cn("w-12 h-12 rounded-2xl flex items-center justify-center shadow-sm transition-transform group-hover:scale-110", colorClass || "bg-blue-950/30 text-blue-400")}>
@@ -63,7 +63,7 @@ export function CategorizedProfile() {
       <Section title="Education" subtitle="Institutional Timeline" icon="school" colorClass="bg-emerald-950/30 text-emerald-600">
         <div className="space-y-6 relative ml-2">
            {/* Timeline line */}
-           <div className="absolute left-[7px] top-2 bottom-2 w-px bg-emerald-100" />
+           <div className="absolute left-[7px] top-2 bottom-2 w-px bg-emerald-950/20" />
            
            {[
              { year: "2021 - Present", school: "University of Lagos", degree: "B.Sc Chemical Engineering" },
@@ -81,13 +81,13 @@ export function CategorizedProfile() {
       </Section>
 
       {/* 3. Test Scores */}
-      <Section title="Test Scores" subtitle="Academic Performance" icon="assessment" colorClass="bg-amber-950/30 text-amber-600">
+       <Section title="Test Scores" subtitle="Academic Performance" icon="assessment" colorClass="bg-amber-950/30 text-amber-600">
         <div className="space-y-4">
            {/* CGPA Card */}
-           <div className="bg-amber-100/30 p-4 rounded-2xl border border-amber-100 flex items-center justify-between">
+           <div className="bg-amber-950/20 p-4 rounded-2xl border border-amber-950/50 flex items-center justify-between">
               <div>
                 <p className="text-[9px] font-black text-amber-700 uppercase tracking-widest mb-1">Current CGPA</p>
-                <p className="text-2xl font-headline font-black text-amber-900 leading-none">4.72 / 5.0</p>
+                <p className="text-2xl font-headline font-black text-amber-600 leading-none">4.72 / 5.0</p>
               </div>
               <div className="w-10 h-10 rounded-xl bg-zinc-900 flex items-center justify-center text-amber-600 shadow-sm">
                  <span className="material-symbols-outlined text-xl">trending_up</span>

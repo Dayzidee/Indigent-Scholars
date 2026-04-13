@@ -174,7 +174,7 @@ export function SponsorSettings() {
                 </div>
               </div>
 
-              <div className="h-[1px] bg-outline-variant/10 shadow-[0_0.5px_0_rgba(255,255,255,0.8)]" />
+              <div className="h-[1px] bg-outline-variant/10" />
 
               <div className="space-y-6">
                 <p className="font-black text-sm font-headline">Credential Authority</p>

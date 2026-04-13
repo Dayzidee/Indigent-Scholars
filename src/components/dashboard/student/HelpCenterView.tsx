@@ -29,7 +29,7 @@ export function HelpCenterView() {
           <input 
             type="text" 
             placeholder="Search for articles, guides..." 
-            className="w-full pl-14 pr-8 py-5 rounded-[24px] border border-zinc-800 bg-zinc-900 focus:outline-none focus:ring-4 focus:ring-blue-50 shadow-xl shadow-zinc-200/50 transition-all font-medium text-sm"
+            className="w-full pl-14 pr-8 py-5 rounded-[24px] border border-zinc-800 bg-zinc-900 focus:outline-none focus:ring-4 focus:ring-zinc-800 shadow-xl shadow-zinc-950/40 transition-all font-medium text-sm text-zinc-100"
           />
         </div>
       </section>

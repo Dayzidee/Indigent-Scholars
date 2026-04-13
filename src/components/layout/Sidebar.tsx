@@ -6,23 +6,14 @@ import { usePathname } from 'next/navigation'
 import { createBrowserClient } from '@supabase/ssr'
 import { useEffect, useState, useTransition } from 'react'
 import { cn } from '@/lib/utils'
-import {
-  LayoutDashboard,
-  FileText,
-  Users,
-  Settings,
-  LogOut,
-  Wallet,
-  ShieldCheck,
-  UserCircle,
-  X
-} from 'lucide-react'
+
 
 // Define the shape of our navigation items
 type NavItem = {
   name: string
   href: string
-  icon: React.ComponentType<{ className?: string }>
+  icon: string
+
 }
 
 interface SidebarProps {
@@ -64,25 +55,26 @@ export function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
     switch (role) {
       case 'student':
         return [
-          { name: 'Dashboard', href: '/dashboard/student', icon: LayoutDashboard },
-          { name: 'My Application', href: '/dashboard/student/application', icon: FileText },
-          { name: 'Sponsor Matches', href: '/dashboard/student/matches', icon: Users },
-          { name: 'Profile', href: '/dashboard/student/settings', icon: UserCircle },
+          { name: 'Dashboard', href: '/dashboard/student', icon: 'dashboard' },
+          { name: 'My Application', href: '/dashboard/student/application', icon: 'article' },
+          { name: 'Sponsor Matches', href: '/dashboard/student/matches', icon: 'group' },
+          { name: 'Profile', href: '/dashboard/student/settings', icon: 'account_circle' },
         ]
       case 'sponsor':
         return [
-          { name: 'Overview', href: '/sponsor', icon: LayoutDashboard },
-          { name: 'Discover Students', href: '/sponsor/discover', icon: Users },
-          { name: 'Funding Ledger', href: '/sponsor/ledger', icon: Wallet },
-          { name: 'Org Settings', href: '/sponsor/settings', icon: Settings },
+          { name: 'Overview', href: '/sponsor', icon: 'dashboard' },
+          { name: 'Discover Students', href: '/sponsor/discover', icon: 'group' },
+          { name: 'Funding Ledger', href: '/sponsor/ledger', icon: 'account_balance_wallet' },
+          { name: 'Org Settings', href: '/sponsor/settings', icon: 'settings' },
         ]
       case 'admin':
         return [
-          { name: 'Global Overview', href: '/admin', icon: LayoutDashboard },
-          { name: 'Verification Center', href: '/admin/verification', icon: ShieldCheck },
-          { name: 'User CRM', href: '/admin/users', icon: Users },
-          { name: 'Platform Settings', href: '/admin/settings', icon: Settings },
+          { name: 'Global Overview', href: '/admin', icon: 'dashboard' },
+          { name: 'Verification Center', href: '/admin/verification', icon: 'verified_user' },
+          { name: 'User CRM', href: '/admin/users', icon: 'group' },
+          { name: 'Platform Settings', href: '/admin/settings', icon: 'settings' },
         ]
+
       default:
         return []
     }
@@ -138,7 +130,8 @@ export function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
             onClick={() => setIsOpen(false)}
             className="lg:hidden p-1 text-slate-400 hover:text-white"
           >
-            <X className="w-5 h-5" />
+            <span className="material-symbols-outlined text-[20px]">close</span>
+
           </button>
         </div>
 
@@ -146,21 +139,23 @@ export function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
         <nav className="flex-1 px-4 space-y-2 overflow-y-auto">
           {navItems.map((item) => {
             const isActive = pathname === item.href || pathname?.startsWith(`${item.href}/`)
-            const Icon = item.icon
-
             return (
               <Link
                 key={item.name}
                 href={item.href}
-                onClick={() => {
-                  if (window.innerWidth < 1024) setIsOpen(false)
-                }}
-                className={`flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors ${isActive
-                    ? 'bg-indigo-500/10 text-indigo-400'
-                    : 'text-slate-400 hover:text-slate-200 hover:bg-white/5'
-                  }`}
+                className={cn(
+                  "flex items-center space-x-3 px-4 py-3 rounded-xl transition-all duration-300 group",
+                  isActive 
+                    ? "bg-indigo-600/10 text-indigo-400 border border-indigo-500/20 shadow-lg shadow-indigo-950/20" 
+                    : "text-slate-400 hover:text-white hover:bg-slate-800/50"
+                )}
               >
-                <Icon className="w-5 h-5" />
+                <span className={cn(
+                  "material-symbols-outlined text-[20px] transition-transform duration-300",
+                  isActive ? "scale-110" : "group-hover:scale-110"
+                )}>
+                  {item.icon}
+                </span>
                 <span className="font-medium">{item.name}</span>
               </Link>
             )
@@ -180,7 +175,8 @@ export function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
             {isPending ? (
               <span className="material-symbols-outlined w-5 h-5 text-red-400 animate-spin">refresh</span>
             ) : (
-              <LogOut className="w-5 h-5" />
+              <span className="material-symbols-outlined text-[20px]">logout</span>
+
             )}
             <span className="font-medium">
               {isPending ? 'Signing Out...' : 'Sign Out'}

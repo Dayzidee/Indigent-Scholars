@@ -38,7 +38,7 @@ export function SponsorOverview() {
           <Link href="/dashboard/sponsor/fund">
             <Button 
                 iconLeft="search" 
-                className="flex-1 md:flex-none font-black tracking-tight shadow-xl shadow-blue-500/20"
+                className="flex-1 md:flex-none font-black tracking-tight shadow-lg shadow-blue-950/20"
             >
                 Discover Scholars
             </Button>
@@ -62,7 +62,7 @@ export function SponsorOverview() {
                   <Link key={student.id} href={`/students/${student.id}`}>
                     <motion.div 
                       whileHover={{ y: -4 }}
-                      className="bg-zinc-900 p-4 sm:p-6 rounded-3xl border border-zinc-800 shadow-sm hover:shadow-xl hover:border-blue-100 transition-all flex items-center gap-4 group"
+                      className="bg-zinc-900 p-4 sm:p-6 rounded-3xl border border-zinc-800 shadow-sm hover:shadow-xl hover:border-[#0052CC]/50 transition-all flex items-center gap-4 group"
                     >
                         <div className="w-12 h-12 rounded-2xl bg-zinc-800 overflow-hidden shrink-0 border border-zinc-800">
                            <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=400&auto=format&fit=crop&q=60" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt={student.name} />
@@ -157,7 +157,7 @@ export function SponsorOverview() {
                 initial={{ width: 0 }}
                 animate={{ width: '94%' }}
                 transition={{ duration: 1.5, ease: "easeOut" }}
-                className="h-full bg-zinc-900 rounded-full shadow-[0_0_15px_rgba(255,255,255,0.6)]"
+                className="h-full bg-zinc-900 rounded-full shadow-[0_0_15px_rgba(0,82,204,0.3)]"
               ></motion.div>
             </div>
           </div>
@@ -221,7 +221,7 @@ export function SponsorOverview() {
         </div>
 
         {/* Recent Funding - Ultra-Robust Alignment */}
-        <div className="col-span-12 md:col-span-5 bg-zinc-800/50 rounded-3xl lg:rounded-[40px] px-4 py-6 sm:p-10 border border-zinc-800 shadow-sm flex flex-col">
+        <div className="col-span-12 md:col-span-5 bg-zinc-900 rounded-3xl lg:rounded-[40px] px-4 py-6 sm:p-10 border border-zinc-800 shadow-sm flex flex-col">
           <div className="flex justify-between items-center mb-6 md:mb-10">
             <h3 className="text-xl font-black font-headline tracking-tight">Recent Funding</h3>
             <Button variant="ghost" size="sm" className="text-[10px] tracking-widest px-2">View Ledger</Button>

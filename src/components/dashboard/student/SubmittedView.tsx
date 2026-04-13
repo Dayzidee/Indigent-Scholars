@@ -35,17 +35,17 @@ export function SubmittedView() {
     <div className="max-w-7xl mx-auto px-6 py-10 space-y-8 pb-32">
       
       {/* Dynamic Status Header */}
-      <div className="bg-amber-950/30 border border-amber-100 rounded-[32px] p-6 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-sm">
+      <div className="bg-amber-950/20 border border-amber-950/40 rounded-[32px] p-6 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-sm shadow-zinc-950/10">
         <div className="flex items-center gap-5">
            <div className="w-12 h-12 rounded-2xl bg-zinc-900 flex items-center justify-center text-amber-600 shadow-sm shrink-0">
              <span className="material-symbols-outlined text-2xl animate-pulse" style={{ fontVariationSettings: "'FILL' 1" }}>hourglass_top</span>
            </div>
            <div>
-             <h3 className="font-headline font-black text-amber-900 leading-none mb-1">Application Under Review</h3>
-             <p className="text-amber-800/60 text-xs font-bold uppercase tracking-wider">Estimated completion: 3-5 business days</p>
+             <h3 className="font-headline font-black text-amber-600 leading-none mb-1">Application Under Review</h3>
+             <p className="text-amber-800/40 text-xs font-bold uppercase tracking-wider">Estimated completion: 3-5 business days</p>
            </div>
         </div>
-        <button className="text-amber-600 font-black text-[10px] uppercase tracking-[0.2em] border-2 border-amber-200 px-6 py-2.5 rounded-xl hover:bg-amber-100 transition-colors">
+        <button className="text-amber-600 font-black text-[10px] uppercase tracking-[0.2em] border-2 border-amber-950/50 px-6 py-2.5 rounded-xl hover:bg-amber-950/20 transition-colors">
           View Receipt
         </button>
       </div>
@@ -59,13 +59,13 @@ export function SubmittedView() {
           animate={{ opacity: 1, y: 0 }}
           className="group"
         >
-          <Card className="h-full bg-zinc-900 rounded-[40px] border-none shadow-2xl shadow-zinc-200/50 p-10 relative overflow-hidden flex flex-col">
+          <Card className="h-full bg-zinc-900 rounded-[40px] border-none shadow-2xl shadow-zinc-950/40 p-10 relative overflow-hidden flex flex-col">
             <div className="relative z-10 flex flex-col h-full">
               <div className="flex justify-between items-start mb-10">
                 <div className="w-14 h-14 rounded-2xl bg-zinc-800 text-zinc-100 flex items-center justify-center shadow-sm">
                   <span className="material-symbols-outlined text-2xl font-bold">person</span>
                 </div>
-                <div className="px-3 py-1 rounded-full bg-amber-950/30 text-amber-600 text-[8px] font-black uppercase tracking-widest border border-amber-100 italic">Under Review</div>
+                <div className="px-3 py-1 rounded-full bg-amber-950/30 text-amber-600 text-[8px] font-black uppercase tracking-widest border border-amber-950/40 italic">Under Review</div>
               </div>
 
               <div className="space-y-4 mb-auto">

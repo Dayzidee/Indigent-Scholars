@@ -33,13 +33,13 @@ export function VerifiedView() {
           animate={{ opacity: 1, y: 0 }}
           className="group"
         >
-          <Card className="h-full bg-zinc-900 rounded-[40px] border-none shadow-2xl shadow-zinc-200/50 p-10 relative overflow-hidden flex flex-col">
+          <Card className="h-full bg-zinc-900 rounded-[40px] border-none shadow-2xl shadow-zinc-950/40 p-10 relative overflow-hidden flex flex-col">
             <div className="relative z-10 flex flex-col h-full">
               <div className="flex justify-between items-start mb-10">
                 <div className="w-14 h-14 rounded-2xl bg-blue-950/30 text-[#0052CC] flex items-center justify-center shadow-sm">
                   <span className="material-symbols-outlined text-2xl font-bold">person</span>
                 </div>
-                <div className="px-3 py-1 rounded-full bg-emerald-950/30 text-emerald-600 text-[8px] font-black uppercase tracking-widest border border-emerald-100 italic">Verified</div>
+                <div className="px-3 py-1 rounded-full bg-emerald-950/30 text-emerald-600 text-[8px] font-black uppercase tracking-widest border border-emerald-950/40 italic">Verified</div>
               </div>
 
               <div className="space-y-4 mb-auto">

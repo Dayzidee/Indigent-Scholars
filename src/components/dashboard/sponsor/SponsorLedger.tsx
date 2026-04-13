@@ -23,14 +23,14 @@ interface Transaction {
 }
 
 const transactions: Transaction[] = [
-  { date: 'Oct 24, 2023', time: '09:42 AM', name: 'Adebayo Olumide', initial: 'AO', bgColor: 'bg-blue-100 text-blue-400', ref: 'SCH-772910-NG', amount: '₦450,000', status: 'Completed', statusColor: 'bg-tertiary-fixed-dim/20 text-tertiary', dotColor: 'bg-tertiary', dept: 'Engineering • Year 2', type: 'Scholarship' },
-  { date: 'Oct 22, 2023', time: '02:15 PM', name: 'Chisom Nwosu', initial: 'CN', bgColor: 'bg-amber-100 text-amber-700', ref: 'SCH-883012-NG', amount: '₦1,200,000', status: 'Transferred', statusColor: 'bg-primary-fixed/30 text-primary', dotColor: 'bg-primary', pulse: true, dept: 'Medicine • Year 1', type: 'Scholarship' },
+  { date: 'Oct 24, 2023', time: '09:42 AM', name: 'Adebayo Olumide', initial: 'AO', bgColor: 'bg-blue-950/30 text-[#0052CC]', ref: 'SCH-772910-NG', amount: '₦450,000', status: 'Completed', statusColor: 'bg-tertiary-fixed-dim/20 text-tertiary', dotColor: 'bg-tertiary', dept: 'Engineering • Year 2', type: 'Scholarship' },
+  { date: 'Oct 22, 2023', time: '02:15 PM', name: 'Chisom Nwosu', initial: 'CN', bgColor: 'bg-amber-950/30 text-amber-500', ref: 'SCH-883012-NG', amount: '₦1,200,000', status: 'Transferred', statusColor: 'bg-primary-fixed/30 text-primary', dotColor: 'bg-primary', pulse: true, dept: 'Medicine • Year 1', type: 'Scholarship' },
   { date: 'Oct 20, 2023', time: '11:05 AM', name: 'Ibrahim Ezekiel', initial: 'IE', bgColor: 'bg-zinc-800 text-zinc-400', ref: 'SCH-112233-NG', amount: '₦320,000', status: 'Pledged', statusColor: 'bg-surface-container-highest text-zinc-400', dotColor: 'bg-neutral-400', dept: 'Computer Science • Year 3', type: 'Scholarship' },
 ]
 
 const deposits: Transaction[] = [
-  { date: 'Oct 26, 2023', time: '10:00 AM', name: 'Wallet Top-up', initial: 'WT', bgColor: 'bg-emerald-100 text-emerald-700', ref: 'DEP-123456-NG', amount: '₦5,000,000', status: 'Completed', statusColor: 'bg-emerald-950/30 text-emerald-600', dotColor: 'bg-emerald-600', dept: 'Via Bank Transfer', type: 'Deposit' },
-  { date: 'Oct 18, 2023', time: '03:30 PM', name: 'Card Deposit', initial: 'CD', bgColor: 'bg-emerald-100 text-emerald-700', ref: 'DEP-789012-NG', amount: '₦2,500,000', status: 'Completed', statusColor: 'bg-emerald-950/30 text-emerald-600', dotColor: 'bg-emerald-600', dept: 'Via Paystack', type: 'Deposit' },
+  { date: 'Oct 26, 2023', time: '10:00 AM', name: 'Wallet Top-up', initial: 'WT', bgColor: 'bg-emerald-950/30 text-emerald-500', ref: 'DEP-123456-NG', amount: '₦5,000,000', status: 'Completed', statusColor: 'bg-emerald-950/30 text-emerald-600', dotColor: 'bg-emerald-600', dept: 'Via Bank Transfer', type: 'Deposit' },
+  { date: 'Oct 18, 2023', time: '03:30 PM', name: 'Card Deposit', initial: 'CD', bgColor: 'bg-emerald-950/30 text-emerald-500', ref: 'DEP-789012-NG', amount: '₦2,500,000', status: 'Completed', statusColor: 'bg-emerald-950/30 text-emerald-600', dotColor: 'bg-emerald-600', dept: 'Via Paystack', type: 'Deposit' },
 ]
 
 export function SponsorLedger() {
@@ -84,7 +84,7 @@ export function SponsorLedger() {
             <p className="text-[10px] font-black text-zinc-400 font-label uppercase tracking-[0.2em] mb-2">Total Committed</p>
             <p className="text-3xl font-black text-zinc-100 font-headline leading-tight font-headline">₦42,500,000</p>
           </div>
-          <div className="mt-4 flex items-center text-[10px] text-emerald-600 font-black uppercase tracking-wider bg-emerald-950/30 px-2.5 py-1.5 rounded-full border border-emerald-100 w-fit">
+          <div className="mt-4 flex items-center text-[10px] text-emerald-500 font-black uppercase tracking-wider bg-emerald-950/30 px-3 py-1.5 rounded-full border border-emerald-900/20 w-fit">
             <span className="material-symbols-outlined text-sm font-bold mr-1">trending_up</span>
             +12% vs last sem
           </div>
@@ -113,7 +113,7 @@ export function SponsorLedger() {
           <p className="mt-4 text-[10px] text-zinc-400 font-black uppercase tracking-widest font-label">8 transactions pending</p>
         </div>
 
-        <div className="bg-[#0052CC] p-6 md:p-8 rounded-[24px] md:rounded-[32px] shadow-xl shadow-blue-600/10 border border-zinc-800/10 relative overflow-hidden group">
+        <div className="bg-[#0052CC] p-6 md:p-8 rounded-[24px] md:rounded-[32px] shadow-lg shadow-blue-950/40 border border-zinc-800/10 relative overflow-hidden group">
           <div className="relative z-10 flex flex-col justify-between h-full gap-6">
             <div>
               <p className="text-[10px] font-bold text-white/70 font-label uppercase tracking-[0.2em] mb-1">Wallet Balance</p>
@@ -177,7 +177,7 @@ export function SponsorLedger() {
                 <th className="px-8 py-6 text-[10px] font-black text-zinc-400 uppercase tracking-[0.2em] font-label text-right whitespace-nowrap">Actions</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-zinc-50/50">
+            <tbody className="divide-y divide-zinc-800/50">
               {displayData.map((tx, idx) => (
                 <tr key={idx} className="hover:bg-zinc-800/30 transition-colors group cursor-pointer">
                   <td className="px-6 sm:px-8 py-6 whitespace-nowrap">
@@ -236,7 +236,7 @@ export function SponsorLedger() {
                 <p className="text-xs text-zinc-500 font-body leading-relaxed max-w-lg">
                   Q3 Disbursement reports were verified by Grant Thornton Nigeria with zero discrepancies found. Funds reached all intended scholars.
                 </p>
-                <span className="inline-block mt-2 text-[9px] font-black text-emerald-600 bg-emerald-950/30 px-3 py-1 rounded-full uppercase tracking-widest font-label border border-emerald-100">
+                <span className="inline-block mt-2 text-[9px] font-black text-emerald-500 bg-emerald-950/20 px-4 py-1.5 rounded-full uppercase tracking-widest font-label border border-emerald-900/30">
                   Verified 2 days ago
                 </span>
               </div>
@@ -261,7 +261,7 @@ export function SponsorLedger() {
           <div className="absolute top-0 right-0 w-64 h-64 bg-[#0052CC]/20 rounded-full blur-[100px] transition-transform duration-1000 group-hover:scale-110"></div>
           
           <div className="relative z-10">
-            <div className="bg-white/10 w-16 h-16 rounded-[24px] flex items-center justify-center mb-10 backdrop-blur-md border border-zinc-800/10 shadow-inner">
+            <div className="bg-zinc-800/50 w-16 h-16 rounded-[24px] flex items-center justify-center mb-10 backdrop-blur-md border border-zinc-800/10 shadow-inner">
               <span className="material-symbols-outlined text-3xl text-[#D4AF37]">workspace_premium</span>
             </div>
             <h3 className="text-3xl lg:text-4xl font-black mb-6 font-headline tracking-tighter leading-tight">Scale Your Impact</h3>

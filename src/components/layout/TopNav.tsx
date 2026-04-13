@@ -3,8 +3,8 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
+
 
 export function TopNav() {
   const pathname = usePathname();
@@ -95,7 +95,8 @@ export function TopNav() {
             className="md:hidden p-2 text-zinc-300"
             onClick={() => setIsOpen(!isOpen)}
           >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isOpen ? <span className="material-symbols-outlined text-[24px]">close</span> : <span className="material-symbols-outlined text-[24px]">menu</span>}
+
           </button>
         </div>
       </div>

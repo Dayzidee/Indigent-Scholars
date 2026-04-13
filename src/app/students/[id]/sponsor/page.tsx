@@ -89,20 +89,20 @@ export default function SponsorshipPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#FDFDFF] pb-32">
+    <div className="min-h-screen bg-background pb-32">
       {/* Header / Top Info */}
-      <div className="bg-zinc-900 border-b border-zinc-800 py-6 px-10 flex items-center justify-between sticky top-0 z-50 shadow-sm backdrop-blur-md bg-zinc-900/80">
+      <div className="bg-zinc-950/80 border-b border-zinc-800/50 py-6 px-10 flex items-center justify-between sticky top-0 z-50 shadow-lg backdrop-blur-xl">
          <div className="flex items-center gap-6">
-            <button onClick={() => router.back()} className="w-10 h-10 rounded-full border border-zinc-800 flex items-center justify-center hover:bg-zinc-800 transition-colors">
+            <button onClick={() => router.back()} className="w-10 h-10 rounded-full border border-zinc-800 flex items-center justify-center hover:bg-zinc-800 transition-all duration-300">
                <span className="material-symbols-outlined text-zinc-400">arrow_back</span>
             </button>
             <div>
-               <p className="text-[9px] font-black text-zinc-400 uppercase tracking-widest mb-0.5">Scholar Funding</p>
-               <h1 className="text-xl font-headline font-black text-zinc-100 tracking-tight leading-none italic">{student.name}</h1>
+               <p className="text-[9px] font-black text-[#0052CC] uppercase tracking-[0.3em] mb-1">Scholar Mission</p>
+               <h1 className="text-xl font-headline font-black text-white tracking-tight leading-none italic">{student.name}</h1>
             </div>
          </div>
          <Link href={`/students/${student.id}`}>
-            <Button variant="ghost" className="text-[#0052CC]" iconRight="open_in_new">View Full Profile</Button>
+            <Button variant="ghost" className="text-[#0052CC] hover:bg-[#0052CC]/10" iconRight="open_in_new">Access Intel</Button>
          </Link>
       </div>
 
@@ -122,9 +122,9 @@ export default function SponsorshipPage() {
                     <p className="text-zinc-400 font-medium">{student.university} • {student.level}</p>
                   </div>
                   <p className="text-zinc-400 leading-relaxed font-medium line-clamp-3">"{student.bio}"</p>
-                  <div className="flex flex-wrap gap-3">
-                    <div className="px-5 py-2.5 rounded-2xl bg-blue-950/30 text-[#0052CC] text-[10px] font-black uppercase tracking-widest border border-blue-100">GPA: {student.gpa}</div>
-                    <div className="px-5 py-2.5 rounded-2xl bg-emerald-950/30 text-emerald-600 text-[10px] font-black uppercase tracking-widest border border-emerald-110">NIN Verified</div>
+                  <div className="flex flex-wrap gap-4">
+                    <div className="px-6 py-3 rounded-2xl bg-[#0052CC]/5 text-[#0052CC] text-[10px] font-black uppercase tracking-[0.2em] border border-[#0052CC]/10 backdrop-blur-sm">GPA: {student.gpa}</div>
+                    <div className="px-6 py-3 rounded-2xl bg-emerald-950/10 text-emerald-500 text-[10px] font-black uppercase tracking-[0.2em] border border-emerald-900/20 backdrop-blur-sm">NIN Verified</div>
                   </div>
                </div>
             </div>
@@ -142,7 +142,7 @@ export default function SponsorshipPage() {
 
         {/* RIGHT COLUMN: Donation Control */}
         <div className="lg:col-span-5 sticky top-32">
-            <Card className="bg-zinc-900 rounded-[48px] border-none shadow-2xl shadow-zinc-200/60 p-12 space-y-10 relative overflow-hidden">
+            <Card className="bg-zinc-900/50 rounded-[48px] border border-zinc-800/20 shadow-2xl shadow-black/80 p-12 space-y-10 relative overflow-hidden backdrop-blur-md">
                <div className="relative z-10">
                   <div>
                     <h3 className="text-2xl font-headline font-black text-zinc-100 tracking-tight mb-2">Support this Goal</h3>
