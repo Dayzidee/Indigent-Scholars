@@ -224,7 +224,7 @@ export default function RegistrationPage() {
               <Card className="p-8 md:p-14 rounded-[48px] border-none shadow-2xl shadow-blue-900/5 bg-zinc-900 relative border border-zinc-800/40">
                 <div className="absolute top-0 right-0 w-48 h-48 bg-[#0052CC]/[0.02] rounded-bl-[100px] -z-0 pointer-events-none border-l border-b border-[#0052CC]/5" />
 
-                <div className="relative z-10">
+                <div className="relative z-50">
                   <StepContent 
                     step={currentStep} 
                     formData={formData} 
