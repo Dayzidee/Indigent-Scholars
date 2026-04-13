@@ -82,7 +82,7 @@ export function ResourcesView() {
         <Card className="md:col-span-4 bg-tertiary-container text-white p-8 rounded-3xl border-none shadow-xl relative overflow-hidden flex flex-col scholar-gradient">
            <h3 className="font-headline font-black text-2xl mb-4 z-10">Premium Content</h3>
            <p className="text-white/70 text-sm mb-10 font-body leading-relaxed z-10">Unlock exclusive workshop materials and one-on-one mentorship transcripts from our top-tier scholars.</p>
-           <button className="mt-auto w-full bg-zinc-900 text-tertiary-fixed py-4 rounded-2xl font-black font-headline shadow-lg hover:shadow-white/20 transition-all">
+           <button className="mt-auto w-full bg-zinc-900 text-tertiary-fixed py-4 rounded-2xl font-black font-headline border border-tertiary-fixed/30 shadow-none hover:bg-zinc-800 transition-all">
               Unlock All content
            </button>
            <span className="absolute -right-10 -bottom-10 material-symbols-outlined text-8xl text-white/5 rotate-12 z-0 select-none">auto_awesome</span>

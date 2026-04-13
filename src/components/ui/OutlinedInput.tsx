@@ -41,7 +41,7 @@ export function OutlinedInput({
       <div 
         className={cn(
           "relative flex items-center min-h-[56px] rounded-xl border-2 transition-all duration-200",
-          isFocused ? "border-[#0052CC] ring-4 ring-blue-600/5 bg-zinc-900 shadow-sm" : "border-zinc-700 bg-zinc-800/30",
+          isFocused ? "border-[#0052CC] ring-4 ring-blue-600/5 bg-zinc-900" : "border-zinc-700 bg-zinc-800/30",
           error ? "border-red-500 bg-red-950/30" : "group-hover:border-zinc-600",
           hasValue && !isFocused && "bg-zinc-900 border-zinc-700"
         )}

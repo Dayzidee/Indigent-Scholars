@@ -1,0 +1,155 @@
+
+> indigent-scholars@0.1.0 lint
+> eslint
+
+
+/home/sanniinuoluwadunsimi/Documents/Sanni Workspace/Indigent-Scholars/src/app/admin/page.tsx
+  10:38  error    Unexpected any. Specify a different type      @typescript-eslint/no-explicit-any
+  11:10  warning  'loading' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/home/sanniinuoluwadunsimi/Documents/Sanni Workspace/Indigent-Scholars/src/app/admin/users/page.tsx
+   9:44  error    Unexpected any. Specify a different type      @typescript-eslint/no-explicit-any
+  10:10  warning  'loading' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/home/sanniinuoluwadunsimi/Documents/Sanni Workspace/Indigent-Scholars/src/app/admin/verification/page.tsx
+  11:50  error    Unexpected any. Specify a different type      @typescript-eslint/no-explicit-any
+  12:10  warning  'loading' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  38:54  error    Unexpected any. Specify a different type      @typescript-eslint/no-explicit-any
+
+/home/sanniinuoluwadunsimi/Documents/Sanni Workspace/Indigent-Scholars/src/app/dashboard/student/apply-funding/page.tsx
+    4:18   warning  'AnimatePresence' is defined but never used                      @typescript-eslint/no-unused-vars
+  120:24   error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  120:393  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+/home/sanniinuoluwadunsimi/Documents/Sanni Workspace/Indigent-Scholars/src/app/dashboard/student/matches/page.tsx
+  5:10  warning  'Card' is defined but never used  @typescript-eslint/no-unused-vars
+  6:10  warning  'cn' is defined but never used    @typescript-eslint/no-unused-vars
+
+/home/sanniinuoluwadunsimi/Documents/Sanni Workspace/Indigent-Scholars/src/app/dashboard/student/page.tsx
+  31:9  warning  'profile' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/home/sanniinuoluwadunsimi/Documents/Sanni Workspace/Indigent-Scholars/src/app/dashboard/student/registration/page.tsx
+  135:52  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  318:45  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+/home/sanniinuoluwadunsimi/Documents/Sanni Workspace/Indigent-Scholars/src/app/dashboard/student/settings/page.tsx
+  5:10  warning  'Card' is defined but never used  @typescript-eslint/no-unused-vars
+  6:10  warning  'cn' is defined but never used    @typescript-eslint/no-unused-vars
+
+/home/sanniinuoluwadunsimi/Documents/Sanni Workspace/Indigent-Scholars/src/app/layout.tsx
+  42:9  warning  Custom fonts not added in `pages/_document.js` will only load for a single page. This is discouraged. See: https://nextjs.org/docs/messages/no-page-custom-font  @next/next/no-page-custom-font
+
+/home/sanniinuoluwadunsimi/Documents/Sanni Workspace/Indigent-Scholars/src/app/login/page.tsx
+  105:11  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+/home/sanniinuoluwadunsimi/Documents/Sanni Workspace/Indigent-Scholars/src/app/page.tsx
+  118:13  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  286:17  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  648:15  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+/home/sanniinuoluwadunsimi/Documents/Sanni Workspace/Indigent-Scholars/src/app/password-reset/page.tsx
+  55:13  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  60:13  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+/home/sanniinuoluwadunsimi/Documents/Sanni Workspace/Indigent-Scholars/src/app/register/sponsor/page.tsx
+  26:117  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  34:45   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  34:64   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  34:137  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+/home/sanniinuoluwadunsimi/Documents/Sanni Workspace/Indigent-Scholars/src/app/sponsors/page.tsx
+  42:17  error  'Image' is not defined  react/jsx-no-undef
+
+/home/sanniinuoluwadunsimi/Documents/Sanni Workspace/Indigent-Scholars/src/app/students/[id]/sponsor/page.tsx
+    5:18   warning  'AnimatePresence' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  @typescript-eslint/no-unused-vars
+   23:7    error    Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+/home/sanniinuoluwadunsimi/Documents/Sanni Workspace/Indigent-Scholars/src/app/students/[id]/sponsor/page.tsx:23:7
+  21 |     const found = STUDENTS_DATA.find(s => s.id === id)
+  22 |     if (found) {
+> 23 |       setStudent(found)
+     |       ^^^^^^^^^^ Avoid calling setState() directly within an effect
+  24 |     }
+  25 |   }, [id])
+  26 |  react-hooks/set-state-in-effect
+   55:213  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              react/no-unescaped-entities
+  117:19   warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      @next/next/no-img-element
+  124:89   error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              react/no-unescaped-entities
+  124:103  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              react/no-unescaped-entities
+  225:25   error    Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     @typescript-eslint/no-explicit-any
+
+/home/sanniinuoluwadunsimi/Documents/Sanni Workspace/Indigent-Scholars/src/app/students/page.tsx
+  59:25  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+/home/sanniinuoluwadunsimi/Documents/Sanni Workspace/Indigent-Scholars/src/components/dashboard/sponsor/SponsorDiscovery.tsx
+    1:30  warning  'StudentProfile' is defined but never used                                                                                                                                                                                                                                               @typescript-eslint/no-unused-vars
+    8:9   warning  'router' is assigned a value but never used                                                                                                                                                                                                                                              @typescript-eslint/no-unused-vars
+   17:6   error    'motion' is not defined                                                                                                                                                                                                                                                                  react/jsx-no-undef
+   34:14  error    'Button' is not defined                                                                                                                                                                                                                                                                  react/jsx-no-undef
+   37:14  error    'Button' is not defined                                                                                                                                                                                                                                                                  react/jsx-no-undef
+   53:45  error    Unexpected any. Specify a different type                                                                                                                                                                                                                                                 @typescript-eslint/no-explicit-any
+   55:21  error    'motion' is not defined                                                                                                                                                                                                                                                                  react/jsx-no-undef
+   60:26  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+   76:12  error    'motion' is not defined                                                                                                                                                                                                                                                                  react/jsx-no-undef
+   84:16  error    'Image' is not defined                                                                                                                                                                                                                                                                   react/jsx-no-undef
+  121:22  error    'motion' is not defined                                                                                                                                                                                                                                                                  react/jsx-no-undef
+  132:22  error    'Button' is not defined                                                                                                                                                                                                                                                                  react/jsx-no-undef
+  138:20  error    'Button' is not defined                                                                                                                                                                                                                                                                  react/jsx-no-undef
+  162:24  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`                                                                                                                                                                                                                          react/no-unescaped-entities
+  162:34  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`                                                                                                                                                                                                                          react/no-unescaped-entities
+  164:14  error    'Button' is not defined                                                                                                                                                                                                                                                                  react/jsx-no-undef
+  165:23  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`                                                                                                                                                                                                                          react/no-unescaped-entities
+  165:33  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`                                                                                                                                                                                                                          react/no-unescaped-entities
+
+/home/sanniinuoluwadunsimi/Documents/Sanni Workspace/Indigent-Scholars/src/components/dashboard/sponsor/SponsorEducation.tsx
+  8:10  warning  'usePathname' is defined but never used  @typescript-eslint/no-unused-vars
+
+/home/sanniinuoluwadunsimi/Documents/Sanni Workspace/Indigent-Scholars/src/components/dashboard/sponsor/SponsorHelp.tsx
+   6:10  warning  'cn' is defined but never used                                   @typescript-eslint/no-unused-vars
+  52:31  warning  'idx' is defined but never used                                  @typescript-eslint/no-unused-vars
+  89:98  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+/home/sanniinuoluwadunsimi/Documents/Sanni Workspace/Indigent-Scholars/src/components/dashboard/sponsor/SponsorSideNavBar.tsx
+  21:10  warning  'STUDENTS_DATA' is defined but never used       @typescript-eslint/no-unused-vars
+  31:11  warning  'recentIds' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/home/sanniinuoluwadunsimi/Documents/Sanni Workspace/Indigent-Scholars/src/components/dashboard/student/SideNavBar.tsx
+  151:15  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+/home/sanniinuoluwadunsimi/Documents/Sanni Workspace/Indigent-Scholars/src/components/dashboard/student/TopNavBar.tsx
+  149:13  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+/home/sanniinuoluwadunsimi/Documents/Sanni Workspace/Indigent-Scholars/src/components/home/MissionCountdown.tsx
+  53:25  warning  'i' is defined but never used  @typescript-eslint/no-unused-vars
+
+/home/sanniinuoluwadunsimi/Documents/Sanni Workspace/Indigent-Scholars/src/components/scholar/ScholarProfileDetail.tsx
+  29:9   warning  'handleSponsorSuccess' is assigned a value but never used                                                                                                                                                                                                                                @typescript-eslint/no-unused-vars
+  47:15  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+/home/sanniinuoluwadunsimi/Documents/Sanni Workspace/Indigent-Scholars/src/components/ui/GlobeSection.tsx
+  49:9  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+/home/sanniinuoluwadunsimi/Documents/Sanni Workspace/Indigent-Scholars/src/components/ui/GoldenAfricaGlobe.tsx
+  22:9  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+/home/sanniinuoluwadunsimi/Documents/Sanni Workspace/Indigent-Scholars/src/hooks/useRecentlyViewed.ts
+  1:20  warning  'useEffect' is defined but never used  @typescript-eslint/no-unused-vars
+
+/home/sanniinuoluwadunsimi/Documents/Sanni Workspace/Indigent-Scholars/src/lib/supabase/middleware.ts
+  18:48  warning  'options' is defined but never used  @typescript-eslint/no-unused-vars
+
+/home/sanniinuoluwadunsimi/Documents/Sanni Workspace/Indigent-Scholars/tests/auth.spec.ts
+  23:83  warning  'context' is defined but never used  @typescript-eslint/no-unused-vars
+
+/home/sanniinuoluwadunsimi/Documents/Sanni Workspace/Indigent-Scholars/tests/frontend-health.spec.ts
+   4:7   warning  'STUDENT_AUTH' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  10:42  warning  'path' is defined but never used                   @typescript-eslint/no-unused-vars
+
+✖ 73 problems (34 errors, 39 warnings)
+

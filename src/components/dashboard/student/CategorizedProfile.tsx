@@ -2,7 +2,6 @@
 
 import React from 'react'
 import { Card } from '@/components/ui/card'
-import { motion } from 'framer-motion'
 import { cn } from '@/lib/utils'
 
 interface ProfileSectionProps {
@@ -15,10 +14,10 @@ interface ProfileSectionProps {
 
 function Section({ title, subtitle, icon, children, colorClass }: ProfileSectionProps) {
   return (
-    <Card className="bg-zinc-900 rounded-[40px] border-none shadow-2xl shadow-zinc-950/40 p-8 flex flex-col h-full overflow-hidden relative group">
+    <Card className="bg-zinc-900 rounded-[40px] border border-zinc-800 p-8 flex flex-col h-full overflow-hidden relative group">
       <div className="relative z-10">
         <div className="flex items-center gap-4 mb-8">
-           <div className={cn("w-12 h-12 rounded-2xl flex items-center justify-center shadow-sm transition-transform group-hover:scale-110", colorClass || "bg-blue-950/30 text-blue-400")}>
+           <div className={cn("w-12 h-12 rounded-2xl flex items-center justify-center transition-transform group-hover:scale-110", colorClass || "bg-blue-950/30 text-blue-400")}>
              <span className="material-symbols-outlined text-2xl">{icon}</span>
            </div>
            <div>
@@ -71,7 +70,7 @@ export function CategorizedProfile() {
              { year: "2009 - 2015", school: "Grace Primary School", degree: "Primary Leaving Cert" }
            ].map((edu, i) => (
              <div key={i} className="relative pl-6">
-               <div className="absolute left-0 top-1.5 w-3.5 h-3.5 rounded-full bg-emerald-500 border-4 border-emerald-50 shadow-sm" />
+               <div className="absolute left-0 top-1.5 w-3.5 h-3.5 rounded-full bg-emerald-500 border-4 border-emerald-50" />
                <p className="text-[10px] font-black text-emerald-600 uppercase tracking-widest leading-none mb-1">{edu.year}</p>
                <p className="text-sm font-headline font-black text-zinc-200">{edu.school}</p>
                <p className="text-[11px] text-zinc-500 font-medium">{edu.degree}</p>
@@ -89,7 +88,7 @@ export function CategorizedProfile() {
                 <p className="text-[9px] font-black text-amber-700 uppercase tracking-widest mb-1">Current CGPA</p>
                 <p className="text-2xl font-headline font-black text-amber-600 leading-none">4.72 / 5.0</p>
               </div>
-              <div className="w-10 h-10 rounded-xl bg-zinc-900 flex items-center justify-center text-amber-600 shadow-sm">
+              <div className="w-10 h-10 rounded-xl bg-zinc-900 flex items-center justify-center text-amber-600">
                  <span className="material-symbols-outlined text-xl">trending_up</span>
               </div>
            </div>

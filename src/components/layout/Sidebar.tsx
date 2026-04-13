@@ -43,7 +43,7 @@ export function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
           .single()
 
         if (data?.role) {
-          setRole(data.role as any)
+          setRole(data.role as 'student' | 'sponsor' | 'admin')
         }
       }
     }

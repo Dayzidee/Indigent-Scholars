@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/Button'
 import { cn } from '@/lib/utils'
@@ -27,7 +27,7 @@ export default function ApplyForFundingPage() {
           animate={{ opacity: 1, scale: 1 }}
           className="max-w-md w-full"
         >
-          <Card className="p-12 rounded-[40px] border-none shadow-2xl bg-zinc-900 text-center">
+          <Card className="p-12 rounded-[40px] border border-zinc-800/20 bg-zinc-900 text-center shadow-none">
              <div className="w-20 h-20 bg-emerald-950/30 text-emerald-500 rounded-3xl flex items-center justify-center mx-auto mb-8">
                 <span className="material-symbols-outlined text-4xl animate-bounce">check_circle</span>
              </div>
@@ -79,7 +79,7 @@ export default function ApplyForFundingPage() {
                  { label: "Funding Type", value: "Indigent Aid Grant", icon: "account_balance_wallet", color: "text-purple-600 bg-purple-50" },
                  { label: "Priority Level", value: "High (Scholarship)", icon: "priority_high", color: "text-amber-600 bg-amber-50" }
                ].map((item, i) => (
-                 <Card key={i} className="p-6 rounded-[32px] border-none bg-zinc-900 shadow-xl shadow-zinc-200/40 flex items-center gap-5">
+                 <Card key={i} className="p-6 rounded-[32px] border border-zinc-800/10 bg-zinc-900 shadow-none flex items-center gap-5">
                    <div className={cn("w-12 h-12 rounded-2xl flex items-center justify-center shrink-0", item.color)}>
                      <span className="material-symbols-outlined text-2xl">{item.icon}</span>
                    </div>
@@ -101,7 +101,7 @@ export default function ApplyForFundingPage() {
           {/* Module 3: Application Story & Narrative */}
           <section className="space-y-6">
             <h3 className="text-xl font-headline font-black text-zinc-100 ml-2">Scholarship Narrative</h3>
-            <Card className="p-10 lg:p-14 rounded-[40px] border-none bg-zinc-900 shadow-2xl shadow-blue-900/5 relative overflow-hidden">
+            <Card className="p-10 lg:p-14 rounded-[40px] border border-[#0052CC]/10 bg-zinc-900 shadow-none relative overflow-hidden">
                <div className="relative z-10">
                  <div className="flex items-center justify-between mb-10">
                     <div className="flex items-center gap-4">
@@ -117,7 +117,7 @@ export default function ApplyForFundingPage() {
                  </div>
                  <div className="bg-zinc-800/50 rounded-[32px] p-8 lg:p-10 border border-zinc-800">
                     <p className="text-zinc-400 leading-relaxed font-medium">
-                       "I am a highly motivated Chemical Engineering student at the University of Lagos. Despite the financial hurdles, I have maintained a 4.72 CGPA. This scholarship will ensure I finish my final year and contribute to sustainable energy solutions in Nigeria. My goal is to bridge the gap between rural energy access and industrial efficiency using bio-chemical processes..."
+                       &quot;I am a highly motivated Chemical Engineering student at the University of Lagos. Despite the financial hurdles, I have maintained a 4.72 CGPA. This scholarship will ensure I finish my final year and contribute to sustainable energy solutions in Nigeria. My goal is to bridge the gap between rural energy access and industrial efficiency using bio-chemical processes...&quot;
                     </p>
                  </div>
                </div>
@@ -140,7 +140,7 @@ export default function ApplyForFundingPage() {
                 <Button 
                   variant="primary" 
                   size="lg" 
-                  className="min-w-[240px] shadow-2xl shadow-blue-500/30"
+                  className="min-w-[240px] border border-blue-500/20 shadow-none"
                   onClick={handleFinalSubmit}
                   disabled={isSubmitting}
                 >

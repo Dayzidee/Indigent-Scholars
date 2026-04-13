@@ -35,16 +35,19 @@ const deposits: Transaction[] = [
 
 export function SponsorLedger() {
   const searchParams = useSearchParams()
-  const [activeTab, setActiveTab] = useState('Scholarships')
+  const [manualTab, setManualTab] = useState<string | null>(null)
+  const activeTab = manualTab || (searchParams?.get('action') === 'topup' ? 'Deposits' : 'Scholarships')
   
   useEffect(() => {
     if (searchParams?.get('action') === 'topup') {
-      setActiveTab('Deposits')
-      // Optional: scroll to the card section
       const walletCard = document.getElementById('wallet-balance-card')
-      if (walletCard) walletCard.scrollIntoView({ behavior: 'smooth' })
+      if (walletCard) {
+        walletCard.scrollIntoView({ behavior: 'smooth' })
+      }
     }
   }, [searchParams])
+
+  const setActiveTab = (tab: string) => setManualTab(tab)
 
   const displayData = activeTab === 'Deposits' ? deposits : transactions
 
@@ -79,7 +82,7 @@ export function SponsorLedger() {
 
       {/* Ledger Stats */}
       <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div className="bg-zinc-900 p-6 sm:p-8 rounded-3xl lg:rounded-[32px] shadow-sm border border-zinc-800 flex flex-col justify-between">
+        <div className="bg-zinc-900 p-6 sm:p-8 rounded-3xl lg:rounded-[32px] border border-zinc-800 flex flex-col justify-between">
           <div>
             <p className="text-[10px] font-black text-zinc-400 font-label uppercase tracking-[0.2em] mb-2">Total Committed</p>
             <p className="text-3xl font-black text-zinc-100 font-headline leading-tight font-headline">₦42,500,000</p>
@@ -90,7 +93,7 @@ export function SponsorLedger() {
           </div>
         </div>
 
-        <div className="bg-zinc-900 p-6 sm:p-8 rounded-3xl lg:rounded-[32px] shadow-sm border border-zinc-800 flex flex-col justify-between">
+        <div className="bg-zinc-900 p-6 sm:p-8 rounded-3xl lg:rounded-[32px] border border-zinc-800 flex flex-col justify-between">
           <div>
             <p className="text-[10px] font-black text-zinc-400 font-label uppercase tracking-[0.2em] mb-2">Active Scholars</p>
             <p className="text-3xl font-black text-zinc-100 font-headline leading-tight font-headline">128</p>
@@ -100,12 +103,12 @@ export function SponsorLedger() {
               initial={{ width: 0 }}
               animate={{ width: '85%' }}
               transition={{ duration: 1.5, ease: "easeOut" }}
-              className="h-full bg-[#0052CC] rounded-full shadow-sm"
+              className="h-full bg-[#0052CC] rounded-full"
             ></motion.div>
           </div>
         </div>
 
-        <div className="bg-zinc-900 p-6 sm:p-8 rounded-3xl lg:rounded-[32px] shadow-sm border border-zinc-800 flex flex-col justify-between">
+        <div className="bg-zinc-900 p-6 sm:p-8 rounded-3xl lg:rounded-[32px] border border-zinc-800 flex flex-col justify-between">
           <div>
             <p className="text-[10px] font-black text-zinc-400 font-label uppercase tracking-[0.2em] mb-2">In Queue</p>
             <p className="text-3xl font-black text-zinc-100 font-headline leading-tight font-headline">₦2,140,000</p>
@@ -124,7 +127,7 @@ export function SponsorLedger() {
               <Button 
                 variant="glass" 
                 size="sm" 
-                className={cn("text-[10px] uppercase tracking-widest px-4 bg-white/10", activeTab === 'Deposits' && "bg-zinc-900 text-[#0052CC] shadow-inner")}
+                className={cn("text-[10px] uppercase tracking-widest px-4 bg-white/10", activeTab === 'Deposits' && "bg-zinc-900 text-[#0052CC] border border-blue-500/30")}
                 onClick={() => setActiveTab('Deposits')}
               >
                 Recent Deposits
@@ -136,7 +139,7 @@ export function SponsorLedger() {
       </section>
 
       {/* Ledger Table Section */}
-      <section className="bg-zinc-900 rounded-3xl lg:rounded-[40px] shadow-sm overflow-hidden border border-zinc-800 flex flex-col">
+      <section className="bg-zinc-900 rounded-3xl lg:rounded-[40px] overflow-hidden border border-zinc-800 flex flex-col">
         <div className="p-5 sm:p-8 border-b border-zinc-800 flex flex-col md:flex-row justify-between gap-6 items-center">
           <div className="w-full md:w-auto overflow-x-auto no-scrollbar -mx-6 px-6 md:mx-0 md:px-0">
             <div className="flex bg-zinc-800 p-1 rounded-xl md:rounded-2xl w-fit">
@@ -146,7 +149,7 @@ export function SponsorLedger() {
                   onClick={() => setActiveTab(tab)}
                   className={cn(
                     "px-6 md:px-8 py-2 md:py-2.5 rounded-lg md:rounded-xl text-[10px] font-bold uppercase tracking-widest transition-all font-label whitespace-nowrap",
-                    activeTab === tab ? "bg-zinc-900 text-[#0052CC] shadow-sm" : "text-zinc-500 hover:text-zinc-200"
+                    activeTab === tab ? "bg-zinc-900 text-[#0052CC] border border-zinc-700" : "text-zinc-500 hover:text-zinc-200"
                   )}
                 >
                   {tab}
@@ -156,7 +159,7 @@ export function SponsorLedger() {
           </div>
           <div className="flex items-center gap-4 text-[10px] font-black text-zinc-400 font-label uppercase tracking-widest">
             <span>Showing 1-12 of 156 entries</span>
-            <div className="flex border border-zinc-800 rounded-xl overflow-hidden shadow-sm">
+            <div className="flex border border-zinc-800 rounded-xl overflow-hidden">
               <button className="p-2.5 bg-zinc-900 hover:bg-zinc-800 border-r border-zinc-800 text-zinc-400"><span className="material-symbols-outlined text-xl">chevron_left</span></button>
               <button className="p-2.5 bg-zinc-900 hover:bg-zinc-800 text-zinc-400"><span className="material-symbols-outlined text-xl">chevron_right</span></button>
             </div>
@@ -186,7 +189,7 @@ export function SponsorLedger() {
                   </td>
                   <td className="px-8 py-6">
                     <div className="flex items-center gap-4">
-                      <div className={cn("w-10 h-10 rounded-2xl flex items-center justify-center text-[10px] font-black shadow-sm border border-zinc-800", tx.bgColor)}>
+                      <div className={cn("w-10 h-10 rounded-2xl flex items-center justify-center text-[10px] font-black border border-zinc-800", tx.bgColor)}>
                         {tx.initial}
                       </div>
                       <div>
@@ -227,7 +230,7 @@ export function SponsorLedger() {
              <h3 className="text-xl font-black font-headline tracking-tight text-zinc-100">Audit Trail Highlights</h3>
           </div>
           <div className="grid grid-cols-1 gap-4">
-            <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 p-6 sm:p-8 rounded-3xl lg:rounded-[32px] bg-zinc-900 shadow-sm border border-zinc-800 group cursor-default hover:border-[#0052CC]/20 transition-all">
+            <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 p-6 sm:p-8 rounded-3xl lg:rounded-[32px] bg-zinc-900 border border-zinc-800 group cursor-default hover:border-[#0052CC]/20 transition-all">
               <div className="w-14 h-14 rounded-2xl bg-zinc-800 flex items-center justify-center text-zinc-400 shrink-0 transition-all group-hover:scale-110 group-hover:text-[#0052CC] border border-zinc-800">
                 <span className="material-symbols-outlined text-2xl" style={{ fontVariationSettings: "'FILL' 1" }}>security</span>
               </div>
@@ -242,7 +245,7 @@ export function SponsorLedger() {
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 p-6 sm:p-8 rounded-3xl lg:rounded-[32px] bg-zinc-900 shadow-sm border border-zinc-800 group cursor-default hover:border-[#0052CC]/20 transition-all">
+            <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 p-6 sm:p-8 rounded-3xl lg:rounded-[32px] bg-zinc-900 border border-zinc-800 group cursor-default hover:border-[#0052CC]/20 transition-all">
               <div className="w-14 h-14 rounded-2xl bg-zinc-800 flex items-center justify-center text-zinc-400 shrink-0 transition-all group-hover:scale-110 group-hover:text-[#0052CC] border border-zinc-800">
                 <span className="material-symbols-outlined text-2xl" style={{ fontVariationSettings: "'FILL' 1" }}>history_edu</span>
               </div>
@@ -257,7 +260,7 @@ export function SponsorLedger() {
         </div>
 
         {/* Impact Tier Card */}
-        <div className="bg-zinc-900 rounded-3xl lg:rounded-[40px] p-6 sm:p-10 text-white relative overflow-hidden group shadow-2xl flex flex-col justify-between min-h-[350px] sm:min-h-[400px]">
+        <div className="bg-zinc-900 rounded-3xl lg:rounded-[40px] p-6 sm:p-10 text-white relative overflow-hidden group border border-zinc-800 flex flex-col justify-between min-h-[350px] sm:min-h-[400px]">
           <div className="absolute top-0 right-0 w-64 h-64 bg-[#0052CC]/20 rounded-full blur-[100px] transition-transform duration-1000 group-hover:scale-110"></div>
           
           <div className="relative z-10">

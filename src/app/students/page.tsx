@@ -52,10 +52,10 @@ export default function VerifiedStudentsPage() {
                 transition={{ delay: index * 0.1 }}
                 className="group"
               >
-                <Card className="h-full bg-zinc-900 rounded-[40px] border-none shadow-2xl shadow-zinc-200/50 overflow-hidden transition-all duration-500 hover:shadow-blue-900/10 hover:-translate-y-2 flex flex-col p-2">
+                <Card className="h-full bg-zinc-900 rounded-[40px] border border-zinc-800/10 shadow-none overflow-hidden transition-all duration-500 hover:border-[#0052CC]/40 hover:-translate-y-2 flex flex-col p-2">
                   <div className="bg-zinc-800 rounded-[32px] p-8 flex-1 flex flex-col">
                     <div className="flex justify-between items-start mb-8">
-                      <div className="w-16 h-16 rounded-[24px] bg-zinc-900 shadow-xl shadow-zinc-200/50 flex items-center justify-center overflow-hidden">
+                      <div className="w-16 h-16 rounded-[24px] bg-zinc-900 border border-zinc-800/20 flex items-center justify-center overflow-hidden">
                         <img 
                           src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${student.name}`} 
                           alt={student.name}
@@ -76,7 +76,7 @@ export default function VerifiedStudentsPage() {
 
                     <div className="mt-auto space-y-4 pt-6 border-t border-zinc-800">
                       <div className="flex justify-between items-end">
-                        <span className="text-zinc-400 text-[9px] font-black uppercase tracking-widest">Scholar's GPA</span>
+                        <span className="text-zinc-400 text-[9px] font-black uppercase tracking-widest">Scholar&apos;s GPA</span>
                         <span className="text-lg font-headline font-black text-zinc-200">{student.gpa}</span>
                       </div>
                       
@@ -98,7 +98,7 @@ export default function VerifiedStudentsPage() {
 
                   <div className="p-4">
                     <Link href={`/students/${student.id}`} className="block">
-                      <Button variant="primary" className="w-full rounded-[24px] py-6 shadow-xl shadow-blue-900/10 group-hover:scale-[1.02] transition-transform" iconRight="arrow_forward"> View Full Profile </Button>
+                      <Button variant="primary" className="w-full rounded-[24px] py-6 border border-blue-500/20 shadow-none group-hover:scale-[1.02] transition-transform" iconRight="arrow_forward"> View Full Profile </Button>
                     </Link>
                   </div>
                 </Card>

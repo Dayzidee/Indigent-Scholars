@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { Button } from '@/components/ui/Button'
-import { cn } from '@/lib/utils'
 
 const categories = [
   { id: 'account', icon: 'manage_accounts', title: 'Organization & Account', description: 'Manage team access, profile security, and preferences.' },
@@ -47,13 +46,12 @@ export function SponsorHelp() {
         </div>
       </section>
 
-      {/* Category Grid */}
       <section className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-        {categories.map((cat, idx) => (
+        {categories.map((cat) => (
           <motion.div 
             key={cat.id}
             whileHover={{ y: -5 }}
-            className="bg-zinc-900 p-6 md:p-8 rounded-3xl lg:rounded-[40px] border border-zinc-800 shadow-sm hover:shadow-xl hover:shadow-[#0052CC]/5 transition-all group cursor-pointer"
+            className="bg-zinc-900 p-6 md:p-8 rounded-3xl lg:rounded-[40px] border border-zinc-800 transition-all group cursor-pointer"
           >
             <div className="w-12 h-12 md:w-16 md:h-16 rounded-2xl lg:rounded-[24px] bg-[#0052CC]/5 flex items-center justify-center mb-4 md:mb-6 group-hover:bg-[#0052CC] group-hover:text-white transition-all">
               <span className="material-symbols-outlined text-2xl md:text-3xl">{cat.icon}</span>
@@ -86,7 +84,7 @@ export function SponsorHelp() {
         <div className="relative z-10 space-y-4">
           <h2 className="text-3xl md:text-4xl font-black text-white font-headline tracking-tighter">Still need a helping hand?</h2>
           <p className="text-white/70 max-w-xl mx-auto font-body text-lg">
-            Our specialized support team is available 24/7 to help you maximize your organization's impact.
+            Our specialized support team is available 24/7 to help you maximize your organization&apos;s impact.
           </p>
         </div>
         

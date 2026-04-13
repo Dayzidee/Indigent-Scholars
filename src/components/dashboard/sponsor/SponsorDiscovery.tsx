@@ -1,25 +1,18 @@
-'use client'
-
-import { motion } from 'framer-motion'
-import Image from 'next/image'
-import { cn } from '@/lib/utils'
-import { Button } from '@/components/ui/Button'
-
-import { STUDENTS_DATA, StudentProfile } from '@/lib/constants/mock-data'
+import { STUDENTS_DATA } from '@/lib/constants/mock-data'
 import { useRecentlyViewed } from '@/hooks/useRecentlyViewed'
-import { AnimatePresence } from 'framer-motion'
 import React from 'react'
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
+import { motion } from 'framer-motion'
+import { Button } from '@/components/ui/Button'
+import Image from 'next/image'
 
 export function SponsorDiscovery() {
-  const router = useRouter()
   const { recentIds } = useRecentlyViewed()
   
   const recentStudents = recentIds
     .map(id => STUDENTS_DATA.find(s => s.id === id))
     .filter(Boolean)
-    .slice(0, 5)
+    .slice(0, 5) as typeof STUDENTS_DATA
 
   return (
     <motion.div 
@@ -58,14 +51,19 @@ export function SponsorDiscovery() {
            </div>
            
            <div className="flex gap-4 overflow-x-auto pb-6 -mx-4 px-4 scrollbar-hide">
-              {recentStudents.map((student: any) => (
+              {recentStudents.map((student) => (
                 <Link key={student.id} href={`/students/${student.id}`} className="shrink-0 w-64">
                    <motion.div 
                     whileHover={{ y: -4 }}
                     className="bg-zinc-800/50 p-4 rounded-3xl border border-zinc-800 flex items-center gap-4 group hover:bg-zinc-900 hover:shadow-xl hover:border-[#0052CC]/10 transition-all"
                    >
-                      <div className="w-12 h-12 rounded-2xl bg-zinc-700 overflow-hidden shrink-0 border border-zinc-800">
-                         <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=400&auto=format&fit=crop&q=60" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt={student.name} />
+                      <div className="w-12 h-12 rounded-2xl bg-zinc-700 overflow-hidden shrink-0 border border-zinc-800 relative">
+                         <Image 
+                          src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=400&auto=format&fit=crop&q=60" 
+                          fill
+                          className="object-cover group-hover:scale-110 transition-transform duration-500" 
+                          alt={student.name} 
+                        />
                       </div>
                       <div className="min-w-0">
                          <p className="font-headline font-black text-zinc-200 truncate leading-tight group-hover:text-[#0052CC] transition-colors">{student.name}</p>
@@ -89,12 +87,14 @@ export function SponsorDiscovery() {
             className="bg-zinc-900 rounded-3xl lg:rounded-[40px] overflow-hidden group hover:shadow-2xl hover:shadow-blue-600/5 transition-all duration-500 border border-zinc-800 flex flex-col"
           >
             <div className="relative h-64 overflow-hidden">
-              <img 
+              <Image 
                 src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${scholar.name}`}
                 alt={scholar.name}
+                width={400}
+                height={400}
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
               />
-              <div className="absolute top-4 left-4 bg-zinc-900/90 backdrop-blur-md px-4 py-1.5 rounded-full flex items-center gap-2 shadow-sm border border-zinc-800/20">
+              <div className="absolute top-4 left-4 bg-zinc-900/90 backdrop-blur-md px-4 py-1.5 rounded-full flex items-center gap-2 border border-zinc-800/20">
                 <span className="material-symbols-outlined text-sm text-[#0052CC]" style={{ fontVariationSettings: "'FILL' 1" }}>verified</span>
                 <span className="text-[9px] font-black uppercase tracking-widest text-zinc-100 font-label">Verified</span>
               </div>
@@ -113,7 +113,7 @@ export function SponsorDiscovery() {
                 </div>
                 
                 <p className="text-sm text-zinc-500 font-body leading-relaxed mb-8 italic line-clamp-2">
-                  "{scholar.bio}"
+                  &ldquo;{scholar.bio}&rdquo;
                 </p>
               </div>
               
@@ -165,10 +165,10 @@ export function SponsorDiscovery() {
               Bridge the final gap for 12 scholars this month.
             </h2>
             <p className="text-white/60 text-sm md:text-base lg:text-xl font-body max-w-2xl leading-relaxed">
-              Join our "Last Mile" initiative and help students who are over 90% funded cross the finish line.
+              Join our &quot;Last Mile&quot; initiative and help students who are over 90% funded cross the finish line.
             </p>
             <Button variant="primary" size="lg" className="w-full lg:w-auto">
-              Support "Last Mile" Scholars
+              Support &quot;Last Mile&quot; Scholars
             </Button>
           </div>
           

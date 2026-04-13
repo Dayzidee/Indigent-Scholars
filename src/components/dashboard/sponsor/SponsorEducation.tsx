@@ -81,7 +81,7 @@ export function SponsorEducation() {
           { label: 'Active Scholarships', value: '128', color: 'text-[#0052CC]', icon: 'school' },
           { label: 'Upcoming Payments', value: '₦1.2M', color: 'text-zinc-100', icon: 'payments' }
         ].map((metric, i) => (
-          <div key={i} className="bg-zinc-900 p-6 sm:p-8 rounded-3xl lg:rounded-[32px] border border-zinc-800 shadow-sm flex items-center justify-between group">
+          <div key={i} className="bg-zinc-900 p-6 sm:p-8 rounded-3xl lg:rounded-[32px] border border-zinc-800 flex items-center justify-between group">
             <div className="space-y-2">
               <p className="text-[10px] font-black uppercase tracking-widest text-zinc-400 font-label">{metric.label}</p>
               <p className={cn("text-3xl font-black font-headline", metric.color)}>{metric.value}</p>
@@ -94,12 +94,12 @@ export function SponsorEducation() {
       </section>
 
       {/* Table Interface (IMAGE_2 Alignment) */}
-      <section className="bg-zinc-900 rounded-3xl lg:rounded-[32px] border border-zinc-800 shadow-sm overflow-hidden min-h-[500px] flex flex-col">
+      <section className="bg-zinc-900 rounded-3xl lg:rounded-[32px] border border-zinc-800 overflow-hidden min-h-[500px] flex flex-col">
         {/* Table Toolbar */}
         <div className="p-6 border-b border-zinc-800 flex flex-col md:flex-row justify-between gap-6 items-center">
           <div className="flex bg-zinc-800 p-1.5 rounded-2xl w-full md:w-auto overflow-x-auto scrollbar-hide">
             {['All', 'Active', 'Pending', 'Graduated'].map((f) => (activeFilter === f ? 
-              <button key={f} className="px-6 py-2 bg-zinc-900 rounded-xl text-xs font-black shadow-sm text-[#0052CC] transition-all whitespace-nowrap">{f}</button> :
+              <button key={f} className="px-6 py-2 bg-zinc-900 rounded-xl text-xs font-black text-[#0052CC] border border-zinc-800 transition-all whitespace-nowrap">{f}</button> :
               <button key={f} onClick={() => setActiveFilter(f)} className="px-6 py-2 rounded-xl text-xs font-bold text-zinc-500 hover:text-zinc-200 transition-all whitespace-nowrap">{f}</button>
             ))}
           </div>
@@ -133,7 +133,7 @@ export function SponsorEducation() {
                 <tr key={idx} className="group hover:bg-zinc-800/50 transition-colors cursor-pointer">
                   <td className="px-8 py-4">
                     <div className="flex items-center gap-4">
-                      <div className="w-10 h-10 rounded-full overflow-hidden border border-zinc-800 shadow-sm shrink-0">
+                      <div className="w-10 h-10 rounded-full overflow-hidden border border-zinc-800 shrink-0">
                         <Image src={scholar.img} alt={scholar.name} width={40} height={40} className="w-full h-full object-cover"/>
                       </div>
                       <div>

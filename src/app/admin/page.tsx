@@ -5,10 +5,14 @@ import { DashboardLayout } from '@/components/layout/DashboardLayout';
 import { getGlobalStats } from '@/lib/actions/admin';
 import Link from 'next/link';
 
+interface DashboardStats {
+  totalFunds: number;
+  studentsFunded: number;
+  pendingVerifications: number;
+}
 
 export default function AdminDashboard() {
-  const [stats, setStats] = useState<any>(null);
-  const [loading, setLoading] = useState(true);
+  const [stats, setStats] = useState<DashboardStats | null>(null);
 
   useEffect(() => {
     async function loadStats() {
@@ -18,7 +22,6 @@ export default function AdminDashboard() {
       } catch (e) {
         console.error(e);
       }
-      setLoading(false);
     }
     loadStats();
   }, []);

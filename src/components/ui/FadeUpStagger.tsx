@@ -4,16 +4,6 @@ import React, { ReactNode } from 'react'
 import { motion, type Variants } from 'framer-motion'
 
 // ─── Animation variants ─────────────────────────────────────
-const containerVariants: Variants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.08,
-      delayChildren: 0.1,
-    },
-  },
-}
-
 const itemVariants: Variants = {
   hidden: {
     y: 40,

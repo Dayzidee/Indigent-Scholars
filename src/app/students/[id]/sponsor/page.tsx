@@ -1,28 +1,22 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { useParams, useRouter } from 'next/navigation'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/Button'
 import { STUDENTS_DATA, StudentProfile } from '@/lib/constants/mock-data'
 import { FundingTracker } from '@/components/dashboard/student/FundingTracker'
+import { cn } from '@/lib/utils'
 import Link from 'next/link'
 
 export default function SponsorshipPage() {
   const { id } = useParams()
   const router = useRouter()
-  const [student, setStudent] = useState<StudentProfile | null>(null)
+  const student = STUDENTS_DATA.find(s => s.id === id) || null
   const [amount, setAmount] = useState<string>('')
   const [isProcessing, setIsProcessing] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
-
-  useEffect(() => {
-    const found = STUDENTS_DATA.find(s => s.id === id)
-    if (found) {
-      setStudent(found)
-    }
-  }, [id])
 
   if (!student) return <div className="p-20 text-center font-headline font-black text-zinc-300 uppercase tracking-[0.5em]">Gathering Scholar Records...</div>
 
@@ -52,7 +46,7 @@ export default function SponsorshipPage() {
                 <span className="material-symbols-outlined text-5xl">check_circle</span>
               </div>
               <h2 className="text-3xl font-headline font-black text-zinc-100 tracking-tight mb-2">Impact Confirmed</h2>
-              <p className="text-zinc-500 mb-10 leading-relaxed font-medium">You have successfully committed <span className="text-[#0052CC] font-black">₦{Number(amount).toLocaleString()}</span> to {student.name}'s education. A formal receipt has been sent to your ledger.</p>
+              <p className="text-zinc-500 mb-10 leading-relaxed font-medium">You have successfully committed <span className="text-[#0052CC] font-black">₦{Number(amount).toLocaleString()}</span> to {student.name}&apos;s education. A formal receipt has been sent to your ledger.</p>
               
               <div className="space-y-4">
                 <Button 
@@ -121,7 +115,7 @@ export default function SponsorshipPage() {
                     <h2 className="text-4xl font-headline font-black text-zinc-100 tracking-tight">{student.name}</h2>
                     <p className="text-zinc-400 font-medium">{student.university} • {student.level}</p>
                   </div>
-                  <p className="text-zinc-400 leading-relaxed font-medium line-clamp-3">"{student.bio}"</p>
+                  <p className="text-zinc-400 leading-relaxed font-medium line-clamp-3">&quot;{student.bio}&quot;</p>
                   <div className="flex flex-wrap gap-4">
                     <div className="px-6 py-3 rounded-2xl bg-[#0052CC]/5 text-[#0052CC] text-[10px] font-black uppercase tracking-[0.2em] border border-[#0052CC]/10 backdrop-blur-sm">GPA: {student.gpa}</div>
                     <div className="px-6 py-3 rounded-2xl bg-emerald-950/10 text-emerald-500 text-[10px] font-black uppercase tracking-[0.2em] border border-emerald-900/20 backdrop-blur-sm">NIN Verified</div>
@@ -220,8 +214,4 @@ export default function SponsorshipPage() {
       </div>
     </div>
   )
-}
-
-function cn(...classes: any[]) {
-  return classes.filter(Boolean).join(' ')
 }

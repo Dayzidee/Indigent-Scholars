@@ -5,9 +5,15 @@ import { DashboardLayout } from '@/components/layout/DashboardLayout';
 import { getAllProfiles } from '@/lib/actions/admin';
 
 
+interface UserProfile {
+  id: string;
+  role: string;
+  full_name: string | null;
+  email: string | null;
+}
+
 export default function AdminUsers() {
-  const [profiles, setProfiles] = useState<any[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [profiles, setProfiles] = useState<UserProfile[]>([]);
 
   useEffect(() => {
     async function loadProfiles() {
@@ -17,7 +23,6 @@ export default function AdminUsers() {
       } catch (e) {
         console.error(e);
       }
-      setLoading(false);
     }
     loadProfiles();
   }, []);

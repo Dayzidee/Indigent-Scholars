@@ -26,11 +26,55 @@ const GENDER_OPTIONS = ["Male", "Female", "Other", "Prefer not to say"];
 const LEVEL_OPTIONS = ["100 Level", "200 Level", "300 Level", "400 Level", "500 Level", "600 Level", "Finalist", "Spill Over"];
 const ACADEMIC_LEVELS = ["WASCE/GCE", "OND/HND", "Bachelor's Degree", "Master's Degree", "PhD"];
 
+interface EducationHistory {
+  school: string;
+  period: string;
+  certificate: string;
+}
+
+interface ResultFile {
+  label: string;
+  file: File | null;
+}
+
+interface StudentFormData {
+  full_name: string;
+  email: string;
+  phone: string;
+  gender: string;
+  date_of_birth: string;
+  marital_status: string;
+  nationality: string;
+  residential_street: string;
+  residential_city: string;
+  residential_state: string;
+  residential_zip: string;
+  state_origin: string;
+  lga_origin: string;
+  university: string;
+  field_of_study: string;
+  program_of_study: string;
+  level: string;
+  year: string;
+  education_history: EducationHistory[];
+  jamb_reg_number: string;
+  matric_number: string;
+  waec_pin: string;
+  waec_serial: string;
+  last_level_completed: string;
+  last_gpa: string;
+  emergency_contact_name: string;
+  emergency_contact_phone: string;
+  nin_file: File | null;
+  voters_card_file: File | null;
+  student_id_file: File | null;
+  results_files: ResultFile[];
+}
+
 export default function RegistrationPage() {
   const [currentStep, setCurrentStep] = useState(1)
   const [isComplete, setIsComplete] = useState(false)
-  const [formData, setFormData] = useState({
-    // ... same as before
+  const [formData, setFormData] = useState<StudentFormData>({
     full_name: '',
     email: 'inuoluwadunsimis@gmail.com', // Pre-filled placeholder
     phone: '',
@@ -72,11 +116,11 @@ export default function RegistrationPage() {
     emergency_contact_phone: '',
 
     // 07: Document Vault
-    nin_file: null as File | null,
-    voters_card_file: null as File | null,
-    student_id_file: null as File | null,
+    nin_file: null,
+    voters_card_file: null,
+    student_id_file: null,
     results_files: [
-      { label: '100L Semester 1', file: null as File | null }
+      { label: '100L Semester 1', file: null }
     ]
   })
 
@@ -88,7 +132,7 @@ export default function RegistrationPage() {
     if (currentStep > 1) setCurrentStep(currentStep - 1)
   }
 
-  const handleInputChange = (field: string, value: any) => {
+  const handleInputChange = (field: string, value: string | File | null | EducationHistory[] | ResultFile[]) => {
     setFormData(prev => {
       const newData = { ...prev, [field]: value };
       if (field === 'state_origin') newData.lga_origin = '';
@@ -268,7 +312,15 @@ function StepContent({
   updateEducation,
   addResult,
   updateResult
-}: any) {
+}: {
+  step: number;
+  formData: StudentFormData;
+  handleInputChange: (field: string, value: string | File | null | EducationHistory[] | ResultFile[]) => void;
+  addEducation: () => void;
+  updateEducation: (index: number, field: string, value: string) => void;
+  addResult: () => void;
+  updateResult: (index: number, file: File) => void;
+}) {
   const lgaOptions = useMemo(() => {
     if (!formData.state_origin) return [];
     return LGAS_BY_STATE[formData.state_origin] || [];
@@ -367,7 +419,7 @@ function StepContent({
             </div>
           </div>
           <div className="space-y-6">
-            {formData.education_history.map((edu: any, index: number) => (
+            {formData.education_history.map((edu, index) => (
               <div key={index} className="p-8 rounded-[32px] bg-zinc-800/50 border border-zinc-800 grid grid-cols-1 md:grid-cols-3 gap-6 relative group border-2 border-dashed hover:border-[#0052CC]/10 transition-colors">
                 <OutlinedInput label="Institution" value={edu.school} onChange={(e) => updateEducation(index, 'school', e.target.value)} icon="school" />
                 <OutlinedInput label="Period (Years)" value={edu.period} onChange={(e) => updateEducation(index, 'period', e.target.value)} icon="schedule" placeholder="2015-2021" />
@@ -423,7 +475,7 @@ function StepContent({
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {formData.results_files.map((result: any, idx: number) => (
+              {formData.results_files.map((result, idx) => (
                 <DocumentUpload 
                   key={idx}
                   label={result.label} 

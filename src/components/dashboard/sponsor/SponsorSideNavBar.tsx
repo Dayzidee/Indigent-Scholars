@@ -30,11 +30,6 @@ export function SponsorSideNavBar({ isOpen, onClose }: SponsorSideNavBarProps) {
   const [isPending, startTransition] = useTransition()
   const { recentIds } = useRecentlyViewed()
   
-  const recentStudents = recentIds
-    .map(id => STUDENTS_DATA.find(s => s.id === id))
-    .filter(Boolean)
-    .slice(0, 3)
-
   const handleSignOut = () => {
     startTransition(async () => {
       await signOutAction()

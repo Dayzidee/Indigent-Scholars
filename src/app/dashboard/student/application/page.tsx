@@ -53,7 +53,7 @@ export default function StudentApplicationPage() {
           
           {/* SECTION 1: SCHOLARSHIP STORY FORM */}
           <section>
-            <Card className="bg-zinc-900 rounded-[40px] border-none shadow-2xl shadow-blue-900/5 p-10 lg:p-14">
+            <Card className="bg-zinc-900 rounded-[40px] border border-[#0052CC]/10 shadow-none p-10 lg:p-14">
                <div className="flex items-center gap-4 mb-10">
                   <div className="w-12 h-12 rounded-2xl bg-blue-950/30 text-[#0052CC] flex items-center justify-center">
                     <span className="material-symbols-outlined text-2xl">history_edu</span>
@@ -128,7 +128,7 @@ export default function StudentApplicationPage() {
                <div className="h-px flex-1 bg-zinc-700" />
             </div>
 
-            <Card className="bg-zinc-900 rounded-[40px] border-none shadow-2xl shadow-zinc-200/50 overflow-hidden">
+            <Card className="bg-zinc-900 rounded-[40px] border border-zinc-800/10 shadow-none overflow-hidden">
                {/* Messaging Toolbar */}
                <div className="bg-zinc-800 border-b border-zinc-800 px-8 py-5 flex items-center justify-between">
                   <div className="flex gap-4">
@@ -183,7 +183,7 @@ export default function StudentApplicationPage() {
                       placeholder="Type a quick reply to administration..."
                       className="flex-1 bg-transparent text-sm font-medium text-zinc-300 outline-none"
                      />
-                     <Button variant="primary" size="sm" iconRight="send" className="rounded-full shadow-lg shadow-blue-500/20">Send</Button>
+                     <Button variant="primary" size="sm" iconRight="send" className="rounded-full border border-blue-500/20 shadow-none">Send</Button>
                   </div>
                </div>
             </Card>

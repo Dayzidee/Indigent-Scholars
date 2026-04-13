@@ -3,7 +3,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Card } from '@/components/ui/card'
-import { cn } from '@/lib/utils'
 
 const MOCK_DONORS = [
   { name: "Dr. Samuel Okoro", amount: "$250", date: "2h ago", avatar: "SO" },

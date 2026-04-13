@@ -2,7 +2,6 @@
 
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
-import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState, useRef, useEffect } from 'react'
 import { signOutAction } from '@/lib/actions/auth'
@@ -44,7 +43,7 @@ export function SponsorTopNavBar({ onMenuClick }: SponsorTopNavBarProps) {
   }, [])
 
   return (
-    <header className="fixed top-0 right-0 z-40 flex items-center justify-between h-16 w-full lg:w-[calc(100%-16rem)] px-4 lg:px-10 bg-zinc-900/95 backdrop-blur-md border-b border-zinc-800 shadow-sm">
+    <header className="fixed top-0 right-0 z-40 flex items-center justify-between h-16 w-full lg:w-[calc(100%-16rem)] px-4 lg:px-10 bg-zinc-900/95 backdrop-blur-md border-b border-zinc-800">
       {/* Mobile Menu Trigger & Title */}
       <div className="flex items-center gap-2 lg:gap-4 truncate min-w-0">
         <button 
@@ -136,7 +135,7 @@ export function SponsorTopNavBar({ onMenuClick }: SponsorTopNavBarProps) {
             onClick={() => setIsProfileOpen(!isProfileOpen)}
             className="flex items-center gap-3 p-1 lg:pl-5 border-l border-zinc-800 ml-2 group"
           >
-            <div className="w-9 h-9 rounded-xl bg-zinc-800 flex items-center justify-center border border-zinc-700 shadow-sm transition-all group-hover:bg-[#0052CC] group-hover:border-[#0052CC] group-hover:text-white overflow-hidden">
+            <div className="w-9 h-9 rounded-xl bg-zinc-800 flex items-center justify-center border border-zinc-700 transition-all group-hover:bg-[#0052CC] group-hover:border-[#0052CC] group-hover:text-white overflow-hidden">
               <span className="material-symbols-outlined text-lg">account_balance</span>
             </div>
             <span className="material-symbols-outlined text-zinc-400 text-sm hidden lg:block group-hover:text-[#0052CC] transition-colors">expand_more</span>

@@ -7,9 +7,20 @@ import { verifyApplication } from '@/lib/actions/admin';
 import { toast } from 'sonner';
 
 
+interface PendingApplication {
+  id: string;
+  status: string;
+  school_info?: {
+    university?: string;
+  };
+  profiles: {
+    full_name: string;
+    email: string;
+  };
+}
+
 export default function AdminVerification() {
-  const [pendingApps, setPendingApps] = useState<any[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [pendingApps, setPendingApps] = useState<PendingApplication[]>([]);
 
   const supabase = createBrowserClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -29,13 +40,12 @@ export default function AdminVerification() {
         `)
         .eq('status', 'pending');
       
-      setPendingApps(data || []);
-      setLoading(false);
+      setPendingApps((data as unknown as PendingApplication[]) || []);
     }
     loadPending();
   }, [supabase]);
 
-  const handleAction = async (appId: string, status: any) => {
+  const handleAction = async (appId: string, status: 'verified' | 'rejected' | 'requested_changes') => {
     try {
       await verifyApplication(appId, status, 'Approved via Admin Panel');
       toast.success(`Application ${status} successfully`);

@@ -6,7 +6,6 @@ import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/Button'
 import { cn } from '@/lib/utils'
 import { StudentProfile } from '@/lib/constants/mock-data'
-import { AnimatePresence } from 'framer-motion'
 import { useRecentlyViewed } from '@/hooks/useRecentlyViewed'
 import Link from 'next/link'
 
@@ -25,7 +24,7 @@ export function ScholarProfileDetail({ student, accessLevel }: ScholarProfileDet
     if (student.id) {
       addView(student.id)
     }
-  }, [student.id])
+  }, [student.id, addView])
 
   const handleSponsorSuccess = (amount: number) => {
     console.log(`Successfully sponsored ${amount}`)
@@ -44,7 +43,7 @@ export function ScholarProfileDetail({ student, accessLevel }: ScholarProfileDet
             animate={{ opacity: 1, x: 0 }}
             className="lg:col-span-5 relative"
           >
-          <div className="aspect-[4/5] rounded-3xl lg:rounded-[40px] overflow-hidden shadow-2xl relative z-10 border-4 lg:border-8 border-zinc-800">
+          <div className="aspect-[4/5] rounded-3xl lg:rounded-[40px] overflow-hidden relative z-10 border border-zinc-800/10 hover:border-blue-500/20 transition-colors">
               <img 
                 className={cn("w-full h-full object-cover", isTeaser && "blur-md grayscale opacity-50")}
                 src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${student.name}`} 
@@ -113,11 +112,11 @@ export function ScholarProfileDetail({ student, accessLevel }: ScholarProfileDet
               <div className={cn("prose prose-lg text-zinc-400 leading-relaxed font-medium space-y-6 relative", isTeaser && "max-h-[200px] overflow-hidden")}>
                 <p>{student.story}</p>
                 <blockquote className="border-l-8 border-[#0052CC] pl-8 py-6 italic text-zinc-100 font-headline text-2xl font-black tracking-tight bg-blue-950/30 rounded-r-3xl">
-                  "Education is the engine of national progress, and my goal is to be a key piston in that engine."
+                  &ldquo;Education is the engine of national progress, and my goal is to be a key piston in that engine.&rdquo;
                 </blockquote>
                 {isTeaser && (
                   <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-slate-50 to-transparent flex items-end justify-center pb-4">
-                     <Button variant="ghost" className="text-[#0052CC] font-black">LOGIN TO READ MORE</Button>
+                     <Button variant="ghost" className="text-[#0052CC] font-black uppercase">LOGIN TO READ MORE</Button>
                   </div>
                 )}
               </div>
@@ -131,7 +130,7 @@ export function ScholarProfileDetail({ student, accessLevel }: ScholarProfileDet
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <Card className="p-6 sm:p-10 rounded-3xl lg:rounded-[40px] border-none bg-zinc-900 shadow-xl shadow-zinc-200/50 flex flex-col group hover:shadow-blue-900/5 transition-all">
+                <Card className="p-6 sm:p-10 rounded-3xl lg:rounded-[40px] border border-zinc-800/10 bg-zinc-900 shadow-none flex flex-col group hover:border-[#0052CC]/30 transition-all">
                   <div className="w-14 h-14 rounded-2xl bg-blue-950/30 text-[#0052CC] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                     <span className="material-symbols-outlined text-3xl">school</span>
                   </div>
@@ -143,7 +142,7 @@ export function ScholarProfileDetail({ student, accessLevel }: ScholarProfileDet
                   </div>
                 </Card>
 
-                <Card className="p-6 sm:p-10 rounded-3xl lg:rounded-[40px] border-none bg-zinc-900 shadow-xl shadow-zinc-200/50 flex flex-col group hover:shadow-amber-900/5 transition-all">
+                <Card className="p-6 sm:p-10 rounded-3xl lg:rounded-[40px] border border-zinc-800/10 bg-zinc-900 shadow-none flex flex-col group hover:border-amber-500/30 transition-all">
                   <div className="w-14 h-14 rounded-2xl bg-amber-950/30 text-amber-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                     <span className="material-symbols-outlined text-3xl">emoji_events</span>
                   </div>
@@ -158,7 +157,7 @@ export function ScholarProfileDetail({ student, accessLevel }: ScholarProfileDet
                   </ul>
                 </Card>
 
-                <Card className="md:col-span-2 p-6 sm:p-10 rounded-3xl lg:rounded-[40px] border-none bg-zinc-900 text-white relative overflow-hidden group">
+                <Card className="md:col-span-2 p-6 sm:p-10 rounded-3xl lg:rounded-[40px] border border-zinc-800/10 bg-zinc-900 text-white relative overflow-hidden group">
                   <div className="relative z-10 flex flex-col md:flex-row items-center gap-6 lg:gap-10">
                     <div className="flex-1">
                       <h3 className="font-headline font-black text-2xl text-blue-400 mb-4">Future Aspirations</h3>
@@ -184,7 +183,7 @@ export function ScholarProfileDetail({ student, accessLevel }: ScholarProfileDet
                     <div className="h-[2px] flex-grow bg-zinc-800" />
                   </div>
                   
-                  <Card className="bg-zinc-900 rounded-3xl lg:rounded-[40px] border-none shadow-xl shadow-zinc-200/50 overflow-hidden">
+                  <Card className="bg-zinc-900 rounded-3xl lg:rounded-[40px] border border-zinc-800/10 shadow-none overflow-hidden">
                      <div className="divide-y divide-zinc-50">
                         {[
                           { label: "Academic transcripts (Official)", key: 'transcript' },
@@ -278,7 +277,7 @@ export function ScholarProfileDetail({ student, accessLevel }: ScholarProfileDet
           <aside className="lg:col-span-4 space-y-8">
             <div className="sticky top-32 space-y-8">
               {/* Funding Widget Placeholder */}
-              <Card className="p-6 sm:p-10 rounded-3xl lg:rounded-[40px] border-none bg-zinc-900 shadow-2xl shadow-blue-900/10 relative overflow-hidden">
+              <Card className="p-6 sm:p-10 rounded-3xl lg:rounded-[40px] border border-[#0052CC]/10 bg-zinc-900 shadow-none relative overflow-hidden">
                 <h3 className="font-headline font-black text-xl text-zinc-100 mb-8 tracking-tight">Contribution Status</h3>
                 
                 <div className="mb-10">
@@ -302,7 +301,7 @@ export function ScholarProfileDetail({ student, accessLevel }: ScholarProfileDet
                     <Button 
                       variant="primary" 
                       size="lg" 
-                      className="w-full py-8 text-lg font-black tracking-tight shadow-xl shadow-blue-500/30"
+                      className="w-full py-8 text-lg font-black tracking-tight"
                     >
                       Sponsor This Scholar
                     </Button>
@@ -332,7 +331,7 @@ export function ScholarProfileDetail({ student, accessLevel }: ScholarProfileDet
               </Card>
 
               {/* Prestige Info Card */}
-              <Card className="p-8 rounded-[32px] border-none bg-amber-600 text-white shadow-xl shadow-amber-900/10">
+              <Card className="p-8 rounded-[32px] border border-amber-500/20 bg-amber-600/10 text-white shadow-none">
                  <div className="w-12 h-12 rounded-2xl bg-zinc-800/20 flex items-center justify-center mb-6">
                     <span className="material-symbols-outlined text-2xl" style={{ fontVariationSettings: "'FILL' 1" }}>workspace_premium</span>
                  </div>

@@ -38,7 +38,7 @@ export function SponsorSettings() {
       <section className="space-y-3">
         <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-primary font-headline">Organization Settings</h1>
         <p className="text-on-surface-variant font-medium font-body max-w-2xl leading-relaxed text-sm">
-          Manage your institution's profile, verification status, and security protocols.
+          Manage your institution&apos;s profile, verification status, and security protocols.
         </p>
       </section>
 
@@ -241,7 +241,7 @@ export function SponsorSettings() {
           <div className="relative z-10 max-w-2xl space-y-6">
             <h3 className="text-3xl lg:text-4xl font-black tracking-tight leading-[1.1] font-headline">Architecture of Change</h3>
             <p className="text-lg lg:text-xl opacity-70 leading-relaxed font-body font-medium italic">
-              "As an organization, you are not just funding education; you are designing the future leadership of Nigeria. Your institutional settings ensure that every naira is tracked with the precision it deserves."
+              &ldquo;As an organization, you are not just funding education; you are designing the future leadership of Nigeria. Your institutional settings ensure that every naira is tracked with the precision it deserves.&rdquo;
             </p>
           </div>
           

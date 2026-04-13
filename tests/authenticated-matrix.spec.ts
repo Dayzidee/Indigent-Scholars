@@ -31,7 +31,8 @@ test.describe('Authenticated Dashboard Audit - Sponsor Portfolio', () => {
 
     for (const link of links) {
       // If mobile, we may need to open the sidebar
-      if (page.viewportSize()?.width! < 1024) {
+      const viewport = page.viewportSize();
+      if (viewport && viewport.width < 1024) {
         const trigger = page.locator('#mobile-menu-trigger');
         if (await trigger.isVisible()) {
           await trigger.click();
@@ -53,7 +54,8 @@ test.describe('Authenticated Dashboard Audit - Sponsor Portfolio', () => {
     await page.goto('/dashboard/sponsor');
     
     // If mobile, open sidebar first
-    if (page.viewportSize()?.width! < 1024) {
+    const viewport = page.viewportSize();
+    if (viewport && viewport.width < 1024) {
       const trigger = page.locator('#mobile-menu-trigger');
       if (await trigger.isVisible()) {
         await trigger.click();
@@ -85,7 +87,8 @@ test.describe('Authenticated Dashboard Audit - Student Portfolio', () => {
     ];
 
     for (const link of links) {
-      if (page.viewportSize()?.width! < 1024) {
+      const viewport = page.viewportSize();
+      if (viewport && viewport.width < 1024) {
         const trigger = page.locator('#mobile-menu-trigger');
         if (await trigger.isVisible()) {
           await trigger.click();

@@ -4,7 +4,7 @@ import { createClient } from '@/lib/supabase/server'
 import { revalidatePath } from 'next/cache'
 
 export async function submitApplication(formData: {
-  school_info: any
+  school_info: Record<string, unknown>
   funding_needs: number
   document_urls: string[]
 }) {

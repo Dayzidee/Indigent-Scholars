@@ -23,7 +23,7 @@ function SponsorRegisterContent() {
               Invest in <br/><span className="text-on-surface">Human Capital.</span>
             </h1>
             <p className="text-on-surface-variant text-lg leading-relaxed max-w-md">
-              Your contribution goes directly toward tuition, research materials, and institutional fees for Nigeria's brightest minds.
+              Your contribution goes directly toward tuition, research materials, and institutional fees for Nigeria&apos;s brightest minds.
             </p>
           </div>
 
@@ -31,7 +31,7 @@ function SponsorRegisterContent() {
             <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/10 rounded-full -mr-16 -mt-16 blur-2xl group-hover:bg-secondary/20 transition-colors"></div>
             <span className="material-symbols-outlined text-secondary text-4xl mb-6 block">format_quote</span>
             <p className="text-white/90 text-lg font-medium leading-relaxed relative z-10 italic">
-              &quot;Sponsoring a scholar isn't just charity; it's a strategic investment in the future leaders who will build our nation's industries.&quot;
+              &quot;Sponsoring a scholar isn&apos;t just charity; it&apos;s a strategic investment in the future leaders who will build our nation&apos;s industries.&quot;
             </p>
             <div className="mt-8 flex items-center gap-4 relative z-10">
               <div className="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center">

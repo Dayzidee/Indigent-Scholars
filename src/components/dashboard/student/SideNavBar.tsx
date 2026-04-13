@@ -4,6 +4,8 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { cn } from '@/lib/utils'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useTransition } from 'react'
+import { signOutAction } from '@/lib/actions/auth'
 
 const navItems = [
   {
@@ -40,6 +42,13 @@ interface SideNavBarProps {
 
 export function SideNavBar({ isOpen, onClose }: SideNavBarProps) {
   const pathname = usePathname()
+  const [isPending, startTransition] = useTransition()
+
+  const handleSignOut = () => {
+    startTransition(async () => {
+      await signOutAction()
+    })
+  }
 
   return (
     <>
@@ -119,22 +128,26 @@ export function SideNavBar({ isOpen, onClose }: SideNavBarProps) {
           </Link>
           
           <button
-            onClick={async () => {
-              const { createClient } = await import('@/lib/supabase/client')
-              const supabase = createClient()
-              await supabase.auth.signOut()
-              window.location.href = '/'
-            }}
-            className="w-full flex items-center gap-3 px-4 py-3 text-error hover:bg-error/5 transition-all rounded-lg mb-4 cursor-pointer font-headline group"
+            onClick={handleSignOut}
+            disabled={isPending}
+            className={cn(
+              "w-full flex items-center gap-3 px-4 py-3 text-red-400 hover:bg-red-950/20 transition-all rounded-lg mb-4 cursor-pointer font-headline group",
+              isPending && "opacity-50 cursor-not-allowed"
+            )}
           >
-            <span className="material-symbols-outlined transition-transform group-hover:translate-x-1" data-icon="logout">
-              logout
+            <span className={cn(
+              "material-symbols-outlined transition-transform group-hover:translate-x-1",
+              isPending && "animate-spin"
+            )} data-icon={isPending ? 'refresh' : 'logout'}>
+              {isPending ? 'refresh' : 'logout'}
             </span>
-            <span className="font-headline tracking-tight font-semibold transition-transform group-hover:translate-x-1">Logout</span>
+            <span className="font-headline tracking-tight font-semibold transition-transform group-hover:translate-x-1">
+              {isPending ? 'Signing Out...' : 'Logout'}
+            </span>
           </button>
 
           <div className="flex items-center gap-3 px-4 py-2 bg-zinc-800/50 border border-zinc-700 transition-colors rounded-xl group overflow-hidden">
-            <div className="w-10 h-10 rounded-full bg-zinc-700 overflow-hidden border-2 border-zinc-600 shadow-sm transition-all shrink-0">
+            <div className="w-10 h-10 rounded-full bg-zinc-700 overflow-hidden border-2 border-zinc-600 transition-all shrink-0">
               <img
                 alt="Student Profile"
                 className="w-full h-full object-cover"

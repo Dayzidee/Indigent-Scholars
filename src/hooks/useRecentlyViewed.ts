@@ -1,36 +1,36 @@
-'use client'
-
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 
 const RECENTLY_VIEWED_KEY = 'indigent_scholars_recent_views'
 const MAX_RECENT = 6
 
 export function useRecentlyViewed() {
-  const [recentIds, setRecentIds] = useState<string[]>([])
-
-  // Load from localStorage on mount
-  useEffect(() => {
-    const stored = localStorage.getItem(RECENTLY_VIEWED_KEY)
-    if (stored) {
-      try {
-        setRecentIds(JSON.parse(stored))
-      } catch (e) {
-        console.error('Failed to parse recently viewed', e)
+  const [recentIds, setRecentIds] = useState<string[]>(() => {
+    if (typeof window !== 'undefined') {
+      const stored = localStorage.getItem(RECENTLY_VIEWED_KEY)
+      if (stored) {
+        try {
+          const parsed = JSON.parse(stored)
+          if (Array.isArray(parsed)) return parsed
+        } catch (e) {
+          console.error('Failed to parse recently viewed', e)
+        }
       }
     }
-  }, [])
+    return []
+  })
 
-  const addView = (id: string) => {
+  const addView = useCallback((id: string) => {
     setRecentIds((prev) => {
-      // Remove if exists, then add to front
       const filtered = prev.filter((i) => i !== id)
       const updated = [id, ...filtered].slice(0, MAX_RECENT)
       
-      // Persist
-      localStorage.setItem(RECENTLY_VIEWED_KEY, JSON.stringify(updated))
+      // Persist to localStorage
+      if (typeof window !== 'undefined') {
+        localStorage.setItem(RECENTLY_VIEWED_KEY, JSON.stringify(updated))
+      }
       return updated
     })
-  }
+  }, [])
 
   return { recentIds, addView }
 }
