@@ -42,33 +42,31 @@ export function MissionCountdown() {
   )
 
   const units = [
-    { label: 'days', value: timeLeft.days },
-    { label: 'hours', value: timeLeft.hours },
-    { label: 'minutes', value: timeLeft.minutes },
-    { label: 'seconds', value: timeLeft.seconds }
+    { label: 'Days', value: timeLeft.days },
+    { label: 'Hours', value: timeLeft.hours },
+    { label: 'Minutes', value: timeLeft.minutes },
+    { label: 'Seconds', value: timeLeft.seconds }
   ]
 
   return (
-    <div className="w-full grid grid-cols-4 items-baseline font-headline px-0">
-      {units.map((unit, i) => (
-        <div key={unit.label} className="flex flex-col items-center justify-center">
-          <div className="flex items-baseline gap-1 md:gap-2">
-            <AnimatePresence mode="popLayout">
-              <motion.span
-                key={unit.value}
-                initial={{ opacity: 0, scale: 0.98 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 1.02 }}
-                className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-black text-white tracking-tighter"
-              >
-                {unit.label === 'days' ? unit.value : (unit.value < 10 ? `0${unit.value}` : unit.value)}
-              </motion.span>
-            </AnimatePresence>
-            
-            <span className="text-[10px] md:text-xs font-black uppercase tracking-widest text-[#0052CC] mb-1 md:mb-3 opacity-90">
-              {unit.label.charAt(0)}
-            </span>
-          </div>
+    <div className="flex flex-wrap items-center justify-center gap-x-4 sm:gap-x-8 md:gap-x-12 lg:gap-x-16 gap-y-4 font-headline">
+      {units.map((unit) => (
+        <div key={unit.label} className="flex flex-col items-center">
+          <AnimatePresence mode="popLayout">
+            <motion.span
+              key={unit.value}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-black text-white tracking-tighter"
+            >
+              {unit.label === 'Days' ? unit.value : (unit.value < 10 ? `0${unit.value}` : unit.value)}
+            </motion.span>
+          </AnimatePresence>
+          
+          <span className="text-[11px] md:text-sm font-bold tracking-widest text-[#0052CC] opacity-90 mt-[-8px] md:mt-[-15px]">
+            {unit.label}
+          </span>
         </div>
       ))}
     </div>

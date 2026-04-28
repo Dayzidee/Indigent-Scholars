@@ -1,9 +1,12 @@
+'use client'
+
 import { motion } from 'framer-motion'
 import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/Button'
 import { FinancialCarousel } from './FinancialCarousel'
 import { CategorizedProfile } from './CategorizedProfile'
 import { FundingTracker } from './FundingTracker'
+import { VerifiedHero } from './VerifiedHero'
 import { STUDENTS_DATA } from '@/lib/constants/mock-data'
 
 export function VerifiedView() {
@@ -23,6 +26,9 @@ export function VerifiedView() {
   return (
     <div className="max-w-7xl mx-auto px-6 py-10 space-y-12 pb-32">
       
+      {/* 0. HERO SECTION (NEW) */}
+      <VerifiedHero student={STUDENTS_DATA[0]} />
+
       {/* 1. PRIMARY CONTAINERS (SUMMARY TIER) */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
         

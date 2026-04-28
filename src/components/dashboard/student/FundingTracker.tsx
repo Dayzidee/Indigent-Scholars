@@ -12,6 +12,7 @@ interface FundingTrackerProps {
   nextMilestone: number
   sponsors?: { name: string; amount: number; logo?: string }[]
   className?: string
+  compact?: boolean
 }
 
 export function FundingTracker({
@@ -20,7 +21,8 @@ export function FundingTracker({
   phase = "Phase 1: Registration Entry",
   nextMilestone = 500000,
   sponsors = [],
-  className
+  className,
+  compact = false
 }: FundingTrackerProps) {
   const percentage = (receivedAmount / totalAmount) * 100
 
@@ -28,11 +30,18 @@ export function FundingTracker({
     <motion.div 
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
-      className={cn("w-full space-y-8", className)}
+      className={cn("w-full", compact ? "space-y-4" : "space-y-8", className)}
     >
-      <Card className="bg-gradient-to-br from-[#0052CC] to-[#0747A6] rounded-[40px] border-none p-10 lg:p-14 text-white relative overflow-hidden shadow-2xl shadow-blue-900/20">
+      <Card className={cn(
+        "bg-gradient-to-br from-[#0052CC] to-[#0747A6] rounded-[40px] border-none text-white relative overflow-hidden shadow-2xl shadow-blue-900/20",
+        compact ? "p-8 md:p-10" : "p-10 lg:p-14"
+      )}>
          <div className="relative z-10">
-            <div className="flex flex-col md:flex-row justify-between items-end gap-8 mb-12">
+            <div className={cn(
+              "flex flex-col justify-between items-start md:items-end gap-6",
+              compact ? "mb-8" : "mb-12",
+              !compact && "md:flex-row"
+            )}>
                <div>
                  <div className="flex items-center gap-3 mb-4">
                    <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
@@ -40,19 +49,19 @@ export function FundingTracker({
                    </div>
                    <p className="text-white/60 text-[10px] font-black uppercase tracking-[0.2em]">Funding Tracker</p>
                  </div>
-                 <h3 className="text-4xl font-headline font-black tracking-tight leading-none">Indigent Aid Funding</h3>
+                 <h3 className={cn("font-headline font-black tracking-tight leading-none", compact ? "text-2xl md:text-3xl" : "text-4xl")}>Indigent Aid Funding</h3>
                </div>
-               <div className="text-right">
+               <div className={compact ? "text-left md:text-right" : "text-right"}>
                  <p className="text-white/50 text-[10px] font-black uppercase tracking-widest mb-1">Total Received</p>
-                 <p className="text-4xl font-headline font-black leading-none tracking-tighter">
+                 <p className={cn("font-headline font-black leading-none tracking-tighter", compact ? "text-3xl" : "text-4xl")}>
                    ₦{receivedAmount.toLocaleString()} 
-                   <span className="text-lg text-white/40 tracking-normal font-medium ml-2">/ ₦{totalAmount.toLocaleString()}</span>
+                   <span className={cn("text-white/40 tracking-normal font-medium ml-2", compact ? "text-sm" : "text-lg")}>/ ₦{totalAmount.toLocaleString()}</span>
                  </p>
                </div>
             </div>
 
-            <div className="space-y-6">
-               <div className="w-full h-4 bg-white/10 rounded-full overflow-hidden p-1">
+            <div className={compact ? "space-y-4" : "space-y-6"}>
+               <div className={cn("w-full bg-white/10 rounded-full overflow-hidden p-1", compact ? "h-3" : "h-4")}>
                   <motion.div 
                     initial={{ width: 0 }}
                     animate={{ width: `${percentage}%` }}
@@ -74,35 +83,47 @@ export function FundingTracker({
       </Card>
 
       {/* Sponsors Section */}
-      <div className="space-y-6 pt-4">
+      <div className={cn("space-y-6", compact ? "pt-2" : "pt-4")}>
          <div className="flex items-center gap-4">
             <h4 className="text-[10px] font-black text-zinc-400 uppercase tracking-[0.3em]">Active Benefactors</h4>
             <div className="h-[1px] flex-grow bg-zinc-800" />
          </div>
 
-         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+         <div className={cn(
+           "grid gap-6",
+           compact ? "grid-cols-1 md:grid-cols-2" : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+         )}>
             {sponsors.length > 0 ? sponsors.map((spo, i) => (
               <motion.div 
                 key={i}
                 initial={{ opacity: 0, x: -10 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: i * 0.1 }}
-                className="bg-zinc-950 p-6 rounded-[32px] shadow-2xl shadow-black/80 flex items-center gap-5 border border-zinc-800 hover:border-[#0052CC]/40 transition-all duration-300 group"
+                className={cn(
+                  "bg-zinc-950 rounded-[32px] shadow-2xl shadow-black/80 flex items-center gap-5 border border-zinc-800 hover:border-[#0052CC]/40 transition-all duration-300 group",
+                  compact ? "p-4" : "p-6"
+                )}
               >
-                  <div className="w-12 h-12 rounded-2xl bg-blue-950/30 text-[#0052CC] flex items-center justify-center font-headline font-black text-xl group-hover:bg-[#0052CC] group-hover:text-white transition-colors">
+                  <div className={cn(
+                    "rounded-2xl bg-blue-950/30 text-[#0052CC] flex items-center justify-center font-headline font-black group-hover:bg-[#0052CC] group-hover:text-white transition-colors shrink-0",
+                    compact ? "w-10 h-10 text-lg" : "w-12 h-12 text-xl"
+                  )}>
                     {spo.name.charAt(0)}
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="font-headline font-black text-zinc-100 truncate leading-tight">{spo.name}</p>
+                    <p className={cn("font-headline font-black text-zinc-100 truncate leading-tight", compact ? "text-sm" : "text-base")}>{spo.name}</p>
                     <p className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest mt-1">
                       Contributed <span className="text-[#0052CC]">₦{spo.amount.toLocaleString()}</span>
                     </p>
                   </div>
               </motion.div>
             )) : (
-              <div className="col-span-full py-12 text-center bg-zinc-800 rounded-[40px] border-2 border-dashed border-zinc-700">
-                  <span className="material-symbols-outlined text-zinc-300 text-4xl mb-4">diversity_1</span>
-                  <p className="text-zinc-400 font-medium">The journey begins. Be the first to spark a change.</p>
+              <div className={cn(
+                "col-span-full text-center bg-zinc-800 rounded-[40px] border-2 border-dashed border-zinc-700",
+                compact ? "py-8" : "py-12"
+              )}>
+                  <span className={cn("material-symbols-outlined text-zinc-300 mb-4", compact ? "text-3xl" : "text-4xl")}>diversity_1</span>
+                  <p className={cn("text-zinc-400 font-medium", compact ? "text-xs" : "text-sm")}>The journey begins. Be the first to spark a change.</p>
               </div>
             )}
          </div>

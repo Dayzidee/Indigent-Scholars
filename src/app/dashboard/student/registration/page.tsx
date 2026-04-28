@@ -188,7 +188,7 @@ export default function RegistrationPage() {
                   {isComplete ? "Scholar Credentials" : "Institutional Registry"}
                 </h1>
              </div>
-             <p className="text-zinc-500 text-sm font-medium max-w-xl leading-relaxed">
+             <p className="text-zinc-400 text-sm font-medium max-w-xl leading-relaxed">
                {isComplete 
                  ? "Review your synchronized academic profile. These credentials will be used for all scholarship match-making." 
                  : "Complete the 7 pillars of your scholar profile to unlock full funding opportunities and academic verification."}

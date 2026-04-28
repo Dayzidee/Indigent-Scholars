@@ -32,7 +32,7 @@ export default function ApplyForFundingPage() {
                 <span className="material-symbols-outlined text-4xl animate-bounce">check_circle</span>
              </div>
              <h2 className="text-3xl font-headline font-black text-zinc-100 mb-4 tracking-tight">Application Submitted!</h2>
-             <p className="text-zinc-500 font-medium leading-relaxed mb-10">
+             <p className="text-zinc-400 font-medium leading-relaxed mb-10">
                 Your request for Indigent Aid Funding has been successfully queued. Our committee will review your narrative and verified documents within 3-5 business days.
              </p>
              <Button variant="primary" size="lg" className="w-full" onClick={() => window.location.href = '/dashboard/student'}>
@@ -55,7 +55,7 @@ export default function ApplyForFundingPage() {
               <span className="px-3 py-1 rounded-full bg-emerald-950/30 text-emerald-600 text-[8px] font-black uppercase tracking-widest border border-emerald-100">Verification Active</span>
               <h1 className="text-4xl font-headline font-black text-zinc-100 tracking-tight">Final Funding Review</h1>
             </div>
-            <p className="text-zinc-500 font-medium">Please review all your provided information before final submission.</p>
+            <p className="text-zinc-400 font-medium">Please review all your provided information before final submission.</p>
           </div>
           <div className="px-6 py-4 rounded-[28px] bg-zinc-900 border-2 border-emerald-100 shadow-sm flex items-center gap-4">
              <div className="w-10 h-10 rounded-xl bg-emerald-500 text-white flex items-center justify-center">

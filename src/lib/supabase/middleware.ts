@@ -31,15 +31,39 @@ export async function updateSession(request: NextRequest) {
   // supabase.auth.getUser(). A simple mistake could make it very hard to debug
   // issues with users being randomly logged out.
 
-  const {
-    data: { user },
-  } = await supabase.auth.getUser()
-
   const isAuthRoute = request.nextUrl.pathname.startsWith('/login') || request.nextUrl.pathname.startsWith('/register')
   const isDashboardRoute = 
     request.nextUrl.pathname === '/dashboard' ||
     request.nextUrl.pathname.startsWith('/dashboard/') || 
     request.nextUrl.pathname.startsWith('/admin')
+
+  // Performance Optimization 1: Skip middleware logic for completely public routes
+  // (Home page and About page don't need session handling at all)
+  const isPublicPage = request.nextUrl.pathname === '/' || request.nextUrl.pathname === '/about'
+  if (isPublicPage) {
+    return supabaseResponse
+  }
+
+  // Performance Optimization 2: Only check Auth if we are on a protected route 
+  // OR if the user seems to have an active session (has cookies).
+  // This prevents anonymous load tests from hitting the Auth server on /login and /register.
+  const hasAuthCookies = request.cookies.getAll().some(c => c.name.includes('sb-'))
+  
+  // Performance Optimization 2: Redirect early if on protected route but no cookies
+  if (isDashboardRoute && !hasAuthCookies) {
+    const url = request.nextUrl.clone()
+    url.pathname = '/login'
+    return NextResponse.redirect(url)
+  }
+
+  // Performance Optimization 3: Skip auth check for other routes if no cookies
+  if (!isDashboardRoute && !hasAuthCookies) {
+    return supabaseResponse
+  }
+
+  const {
+    data: { user },
+  } = await supabase.auth.getUser()
 
   // 1. Not logged in and trying to access a protected route
   if (!user && isDashboardRoute) {
@@ -90,4 +114,5 @@ export async function updateSession(request: NextRequest) {
   }
 
   return supabaseResponse
+
 }

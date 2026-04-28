@@ -4,7 +4,11 @@ import "./globals.css";
 import { ModalProvider } from "@/components/providers/ModalProvider";
 import { NavigationWrapper } from "@/components/layout/NavigationWrapper";
 
-// ─── Design system fonts ─────────────────────────────────────
+// ─── Design system fonts (Temporarily disabled for build stability) ──
+const plusJakarta = { variable: "--font-plus-jakarta" };
+const outfit = { variable: "--font-outfit" };
+
+/*
 const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",
   subsets: ["latin"],
@@ -17,6 +21,7 @@ const outfit = Outfit({
   display: "swap",
   weight: ["400", "500", "600", "700", "800"],
 });
+*/
 
 // ─── Metadata ────────────────────────────────────────────────
 export const metadata: Metadata = {

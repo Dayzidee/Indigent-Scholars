@@ -16,7 +16,7 @@ export default function PasswordResetPage() {
         <div className="bg-surface-container-lowest rounded-xl p-8 md:p-12 shadow-none transition-transform duration-500 hover:scale-[1.01]">
           <div className="mb-10 text-center md:text-left">
             <div className="inline-flex items-center justify-center w-16 h-16 bg-surface-container-low rounded-xl mb-6">
-              <span className="material-symbols-outlined text-primary text-3xl">lock_reset</span>
+              <span className="material-symbols-outlined text-primary-fixed-dim text-3xl">lock_reset</span>
             </div>
             <h1 className="font-headline text-3xl md:text-4xl font-extrabold tracking-tight text-on-surface mb-3">Forgot password?</h1>
             <p className="text-on-surface-variant leading-relaxed font-body">No worries, we&apos;ll send you reset instructions. Please enter the email associated with your scholarship account.</p>
@@ -42,7 +42,7 @@ export default function PasswordResetPage() {
           </form>
           
           <div className="mt-8 pt-8 border-t border-surface-container-high/50 flex justify-center">
-            <Link className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all duration-300 group" href="/login">
+            <Link className="inline-flex items-center gap-2 text-primary-fixed-dim font-semibold hover:gap-3 transition-all duration-300 group" href="/login">
               <span className="material-symbols-outlined text-sm font-bold group-hover:-translate-x-1 transition-transform">arrow_back</span>
               Back to Log In
             </Link>
@@ -64,7 +64,7 @@ export default function PasswordResetPage() {
             />
           </div>
           <p className="text-xs text-on-surface-variant font-medium">
-            Joined by <span className="text-primary font-bold">12,000+</span> scholars across Nigeria.
+            Joined by <span className="text-primary-fixed-dim font-bold">12,000+</span> scholars across Nigeria.
           </p>
         </div>
       </div>

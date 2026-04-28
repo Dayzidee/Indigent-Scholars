@@ -155,7 +155,7 @@ function StudentRegisterContent() {
             <span className="material-symbols-outlined text-4xl" style={{ fontVariationSettings: "'FILL' 1" }}>verified</span>
           </div>
           <h2 className="text-3xl font-headline font-black text-zinc-100 tracking-tight">Account Initialized!</h2>
-          <p className="text-zinc-500 font-body leading-relaxed">
+          <p className="text-zinc-400 font-body leading-relaxed">
             Your high-granularity scholar profile has been established on the frontend. In a production environment, you would now verify your email.
           </p>
           <div className="pt-8">
@@ -176,10 +176,10 @@ function StudentRegisterContent() {
         <div className="lg:col-span-5 space-y-12 text-on-surface lg:sticky lg:top-32">
           <div className="space-y-4">
             <span className="text-[#0052CC] font-bold tracking-[0.2em] text-[10px] uppercase font-label">Institutional Excellence</span>
-            <h1 className="text-5xl font-headline font-black text-primary leading-[0.95] tracking-tighter">
+            <h1 className="text-5xl font-headline font-black text-primary-fixed-dim leading-[0.95] tracking-tighter">
               Empowering the <br /><span className="text-zinc-400">Nigerian Scholar.</span>
             </h1>
-            <p className="text-zinc-500 text-lg leading-relaxed max-w-md font-body">
+            <p className="text-zinc-400 text-lg leading-relaxed max-w-md font-body">
               Join a prestigious network dedicated to bridging the gap between talent and opportunity.
             </p>
           </div>
@@ -196,7 +196,7 @@ function StudentRegisterContent() {
                 </div>
                 <div>
                   <h3 className="font-headline font-black text-lg text-zinc-100 leading-tight mb-1">{benefit.title}</h3>
-                  <p className="text-sm text-zinc-500 font-body leading-relaxed">{benefit.desc}</p>
+                  <p className="text-sm text-zinc-400 font-body leading-relaxed">{benefit.desc}</p>
                 </div>
               </div>
             ))}
@@ -426,7 +426,7 @@ function StudentRegisterContent() {
               </Button>
 
               <div className="mt-10 p-6 rounded-3xl bg-zinc-800 border border-zinc-800 flex flex-col items-center gap-3">
-                 <p className="text-zinc-500 text-xs font-bold uppercase tracking-widest leading-none">Already have a profile?</p>
+                 <p className="text-zinc-400 text-xs font-bold uppercase tracking-widest leading-none">Already have a profile?</p>
                  <Link className="text-[#0052CC] font-black font-headline text-lg hover:underline transition-all" href="/login">
                    Log in to Dashboard
                  </Link>

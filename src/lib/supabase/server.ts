@@ -1,44 +1,14 @@
 import { createServerClient, type CookieOptions } from '@supabase/ssr'
 import { cookies } from 'next/headers'
+import { cache } from 'react'
 
-export async function createClient() {
+export const createClient = cache(async () => {
   const cookieStore = await cookies()
 
-  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
-  const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
-
-  if (!supabaseUrl || !supabaseKey) {
-    console.error('MISSING SUPABASE CREDENTIALS in process.env')
-  } else {
-    console.log('CLIENT CREATION ATTEMPT:', supabaseUrl)
-  }
-
   return createServerClient(
-    supabaseUrl!,
-    supabaseKey!,
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
     {
-      global: {
-        fetch: async (url, options) => {
-          const controller = new AbortController();
-          const timeoutId = setTimeout(() => controller.abort(), 30000); // 30s timeout
-          
-          try {
-            console.log(`[Supabase Fetch] Attempting: ${url}`);
-            const start = Date.now();
-            const response = await fetch(url, {
-              ...options,
-              signal: controller.signal,
-            });
-            console.log(`[Supabase Fetch] Success: ${url} (${Date.now() - start}ms)`);
-            return response;
-          } catch (error) {
-            console.error(`[Supabase Fetch] FAILED: ${url}`, (error as Error).message);
-            throw error;
-          } finally {
-            clearTimeout(timeoutId);
-          }
-        },
-      },
       cookies: {
         get(name: string) {
           return cookieStore.get(name)?.value
@@ -48,8 +18,6 @@ export async function createClient() {
             cookieStore.set({ name, value, ...options })
           } catch {
             // The `set` method was called from a Server Component.
-            // This can be ignored if you have middleware refreshing
-            // user sessions.
           }
         },
         remove(name: string, options: CookieOptions) {
@@ -57,11 +25,19 @@ export async function createClient() {
             cookieStore.set({ name, value: '', ...options })
           } catch {
             // The `delete` method was called from a Server Component.
-            // This can be ignored if you have middleware refreshing
-            // user sessions.
           }
         },
       },
     }
   )
-}
+})
+
+/**
+ * Deduplicated auth check. Use this instead of supabase.auth.getUser()
+ * in server components to avoid redundant network calls.
+ */
+export const getUser = cache(async () => {
+  const supabase = await createClient()
+  return await supabase.auth.getUser()
+})
+

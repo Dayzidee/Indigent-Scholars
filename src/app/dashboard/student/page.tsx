@@ -1,17 +1,17 @@
-import { createClient } from '@/lib/supabase/server'
+import { createClient, getUser } from '@/lib/supabase/server'
 import { redirect } from 'next/navigation'
 import { IncompleteView } from '@/components/dashboard/student/IncompleteView'
 import { SubmittedView } from '@/components/dashboard/student/SubmittedView'
 import { VerifiedView } from '@/components/dashboard/student/VerifiedView'
 
 export default async function StudentDashboardPage() {
-  const supabase = await createClient()
-
   // 1. Get current user session
-  const { data: { user }, error: authError } = await supabase.auth.getUser()
+  const { data: { user }, error: authError } = await getUser()
   if (authError || !user) {
     redirect('/login')
   }
+
+  const supabase = await createClient()
 
   // 2. Get profile and application status
   // 2. Get profile and application status in parallel to reduce waterfalls

@@ -116,7 +116,7 @@ export default function AboutPage() {
                 ))}
               </div>
               <h3 className="text-2xl font-headline font-black text-zinc-100 mb-2">Our Core Values</h3>
-              <p className="text-[10px] text-zinc-500 uppercase tracking-[0.3em] font-black">The pillars of our impact</p>
+              <p className="text-[10px] text-zinc-400 uppercase tracking-[0.3em] font-black">The pillars of our impact</p>
               <div className="absolute -right-10 -bottom-10 w-40 h-40 bg-[#0052CC]/5 rounded-full blur-3xl group-hover:bg-[#0052CC]/10 transition-all" />
             </Card>
           </div>
@@ -154,7 +154,7 @@ export default function AboutPage() {
                        <div className="w-12 h-12 rounded-full bg-zinc-800" />
                        <div>
                          <p className="font-headline font-black text-white text-lg">Chinedu Okoro</p>
-                         <p className="text-[10px] text-zinc-500 font-black uppercase tracking-widest">Executive Chairman</p>
+                         <p className="text-[10px] text-zinc-400 font-black uppercase tracking-widest">Executive Chairman</p>
                        </div>
                     </div>
                   </div>
@@ -169,7 +169,7 @@ export default function AboutPage() {
       <section className="py-32">
         <div className="max-w-7xl mx-auto px-8 text-center mb-24">
           <h2 className="text-5xl font-headline font-black text-zinc-100 mb-6 tracking-tight">Leadership & Transparency</h2>
-          <p className="text-zinc-500 max-w-2xl mx-auto font-medium text-lg">Meet the architects dedicated to scaling educational equity across all 36 states.</p>
+          <p className="text-zinc-400 max-w-2xl mx-auto font-medium text-lg">Meet the architects dedicated to scaling educational equity across all 36 states.</p>
         </div>
         <FadeUpStagger className="max-w-7xl mx-auto px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
           {[

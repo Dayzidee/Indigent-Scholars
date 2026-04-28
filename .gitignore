@@ -79,3 +79,4 @@ scripts/
 /playwright-report/
 /test-results/
 .agents/
+/tests/

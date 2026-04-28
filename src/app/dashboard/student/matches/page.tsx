@@ -10,8 +10,8 @@ export default function StudentMatchesPage() {
     <div className="min-h-screen p-6 md:p-12 relative max-w-[1400px] mx-auto">
       {/* Header Section */}
       <header className="mb-10 max-w-5xl">
-        <span className="text-secondary font-bold text-xs uppercase tracking-widest mb-2 block font-label">Verified Content Only</span>
-        <h2 className="text-4xl md:text-5xl font-headline font-extrabold text-primary mb-4 tracking-tight">Sponsor Matches</h2>
+        <span className="text-secondary-fixed-dim font-bold text-xs uppercase tracking-widest mb-2 block font-label">Verified Content Only</span>
+        <h2 className="text-4xl md:text-5xl font-headline font-extrabold text-primary-fixed-dim mb-4 tracking-tight">Sponsor Matches</h2>
         <p className="text-on-surface-variant text-lg leading-relaxed max-w-2xl font-body">Connect with foundations, private donors, and corporate bodies dedicated to supporting academic excellence across Nigeria.</p>
       </header>
 
@@ -23,7 +23,7 @@ export default function StudentMatchesPage() {
             <span className="material-symbols-outlined text-white text-5xl font-variation-fill">lock</span>
           </div>
           <div className="flex-1 text-center md:text-left">
-            <h3 className="text-2xl font-headline font-bold text-primary mb-3">Verification Required</h3>
+            <h3 className="text-2xl font-headline font-bold text-primary-fixed-dim mb-3">Verification Required</h3>
             <p className="text-on-surface-variant mb-6 text-lg font-body">Complete your application to unlock direct matching with potential sponsors. Our verification process ensures institutional trust and high-impact placement.</p>
             <Link href="/dashboard/student/application">
               <button className="bg-[#D4AF37] text-white px-8 py-3 rounded-lg font-bold shadow-md hover:scale-[1.02] active:scale-95 transition-all font-headline">
@@ -149,7 +149,7 @@ export default function StudentMatchesPage() {
       <div className="mt-24 bg-surface-container-low rounded-3xl p-8 md:p-12 border border-outline-variant/20 flex flex-col md:flex-row items-center gap-12 overflow-hidden relative">
         <div className="absolute -right-12 -top-12 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
         <div className="flex-1 relative z-10">
-          <h4 className="text-2xl font-headline font-bold text-primary mb-4">Why Sponsor Matching?</h4>
+          <h4 className="text-2xl font-headline font-bold text-primary-fixed-dim mb-4">Why Sponsor Matching?</h4>
           <p className="text-on-surface-variant leading-relaxed mb-6 font-body">Our algorithms analyze your academic profile and socioeconomic background to pair you with sponsors who share your vision for the future. Over 5,000 Nigerian students have already been connected through this system.</p>
           <div className="flex items-center gap-4">
             <div className="flex -space-x-3">
@@ -164,20 +164,20 @@ export default function StudentMatchesPage() {
               ))}
               <div className="w-10 h-10 rounded-full border-2 border-zinc-800 bg-secondary-fixed text-[10px] font-bold flex items-center justify-center text-on-secondary-fixed">5k+</div>
             </div>
-            <span className="text-sm font-medium text-zinc-500 font-label">Verified scholars active</span>
+            <span className="text-sm font-medium text-zinc-400 font-label">Verified scholars active</span>
           </div>
         </div>
         <div className="w-full md:w-1/3 relative z-10">
           {/* Impact Tracker */}
           <div className="space-y-4">
-            <div className="flex justify-between text-sm font-semibold text-primary font-label">
+            <div className="flex justify-between text-sm font-semibold text-primary-fixed-dim font-label">
               <span>Application Progress</span>
               <span>45%</span>
             </div>
             <div className="h-3 w-full bg-zinc-700 rounded-full overflow-hidden">
               <div className="h-full bg-tertiary-container w-[45%] rounded-full"></div>
             </div>
-            <p className="text-xs text-zinc-500 italic font-body">2 steps remaining to unlock matching</p>
+            <p className="text-xs text-zinc-400 italic font-body">2 steps remaining to unlock matching</p>
           </div>
         </div>
       </div>

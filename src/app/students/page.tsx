@@ -33,7 +33,7 @@ export default function VerifiedStudentsPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-zinc-500 text-lg max-w-2xl mx-auto font-medium"
+            className="text-zinc-400 text-lg max-w-2xl mx-auto font-medium"
           >
             Connect with high-performing students who have undergone rigorous identity and academic verification. Your support can change a life.
           </motion.p>
@@ -71,7 +71,7 @@ export default function VerifiedStudentsPage() {
                     <div className="mb-8">
                       <h3 className="text-2xl font-headline font-black text-zinc-100 tracking-tight leading-none mb-2 group-hover:text-[#0052CC] transition-colors">{student.name}</h3>
                       <p className="text-[#0052CC] text-[10px] font-black uppercase tracking-widest mb-4">{student.university}</p>
-                      <p className="text-zinc-500 text-xs leading-relaxed font-medium line-clamp-2">{student.bio}</p>
+                      <p className="text-zinc-400 text-xs leading-relaxed font-medium line-clamp-2">{student.bio}</p>
                     </div>
 
                     <div className="mt-auto space-y-4 pt-6 border-t border-zinc-800">

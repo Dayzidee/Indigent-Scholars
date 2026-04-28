@@ -8,7 +8,7 @@ export default function ChooseYourPathPage() {
       <div className="max-w-5xl w-full">
         {/* Header Section */}
         <div className="text-center mb-16 space-y-4">
-          <h1 className="text-4xl md:text-5xl font-headline font-extrabold tracking-tight text-primary">
+          <h1 className="text-4xl md:text-5xl font-headline font-extrabold tracking-tight text-primary-fixed-dim">
             Your Journey Begins Here
           </h1>
           <p className="text-on-surface-variant max-w-lg mx-auto text-lg">
@@ -32,15 +32,15 @@ export default function ChooseYourPathPage() {
               </p>
               <ul className="space-y-3 mb-10">
                 <li className="flex items-center gap-3 text-sm font-medium text-on-surface">
-                  <span className="material-symbols-outlined text-secondary text-xl" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</span>
+                  <span className="material-symbols-outlined text-secondary-fixed-dim text-xl" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</span>
                   Fully Funded Tuition Support
                 </li>
                 <li className="flex items-center gap-3 text-sm font-medium text-on-surface">
-                  <span className="material-symbols-outlined text-secondary text-xl" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</span>
+                  <span className="material-symbols-outlined text-secondary-fixed-dim text-xl" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</span>
                   One-on-One Career Mentorship
                 </li>
                 <li className="flex items-center gap-3 text-sm font-medium text-on-surface">
-                  <span className="material-symbols-outlined text-secondary text-xl" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</span>
+                  <span className="material-symbols-outlined text-secondary-fixed-dim text-xl" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</span>
                   National Peer Network
                 </li>
               </ul>
@@ -65,20 +65,20 @@ export default function ChooseYourPathPage() {
               </p>
               <ul className="space-y-3 mb-10">
                 <li className="flex items-center gap-3 text-sm font-medium text-on-surface">
-                  <span className="material-symbols-outlined text-secondary text-xl" style={{ fontVariationSettings: "'FILL' 1" }}>verified</span>
+                  <span className="material-symbols-outlined text-secondary-fixed-dim text-xl" style={{ fontVariationSettings: "'FILL' 1" }}>verified</span>
                   Verified Scholar Matching
                 </li>
-                <li className="flex items-center gap-3 text-sm font-medium text-surface">
-                  <span className="material-symbols-outlined text-secondary text-xl" style={{ fontVariationSettings: "'FILL' 1" }}>verified</span>
+                <li className="flex items-center gap-3 text-sm font-medium text-on-surface">
+                  <span className="material-symbols-outlined text-secondary-fixed-dim text-xl" style={{ fontVariationSettings: "'FILL' 1" }}>verified</span>
                   Transparent Impact Reporting
                 </li>
-                <li className="flex items-center gap-3 text-sm font-medium text-surface">
-                  <span className="material-symbols-outlined text-secondary text-xl" style={{ fontVariationSettings: "'FILL' 1" }}>verified</span>
+                <li className="flex items-center gap-3 text-sm font-medium text-on-surface">
+                  <span className="material-symbols-outlined text-secondary-fixed-dim text-xl" style={{ fontVariationSettings: "'FILL' 1" }}>verified</span>
                   Tax Deductible Contributions
                 </li>
               </ul>
             </div>
-            <button className="w-full py-4 px-6 bg-zinc-900 text-secondary font-headline font-extrabold rounded-xl hover:bg-secondary-container hover:text-secondary hover:shadow-xl transition-all transform active:scale-95 duration-300 flex items-center justify-center gap-2 group-hover:-translate-y-1">
+            <button className="w-full py-4 px-6 bg-zinc-900 text-secondary-fixed-dim font-headline font-extrabold rounded-xl hover:bg-secondary-container hover:text-secondary-fixed-dim hover:shadow-xl transition-all transform active:scale-95 duration-300 flex items-center justify-center gap-2 group-hover:-translate-y-1">
               Select &amp; Continue
               <span className="material-symbols-outlined">arrow_forward</span>
             </button>
@@ -87,7 +87,7 @@ export default function ChooseYourPathPage() {
 
         {/* Footer Text Hint */}
         <p className="mt-12 text-center text-on-surface-variant font-label text-sm">
-          Already have an account? <Link href="/login" className="text-primary font-bold hover:underline">Log in here</Link>
+          Already have an account? <Link href="/login" className="text-primary-fixed-dim font-bold hover:underline">Log in here</Link>
         </p>
       </div>
     </main>

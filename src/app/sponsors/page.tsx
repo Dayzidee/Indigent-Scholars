@@ -78,7 +78,7 @@ export default function SponsorsPage() {
                   <span className="material-symbols-outlined text-3xl" style={{fontVariationSettings: "'FILL' 1"}}>{stat.icon}</span>
                 </div>
                 <div className="text-5xl font-headline font-black text-zinc-100 mb-2 tracking-tighter">{stat.value}</div>
-                <div className="text-[10px] uppercase tracking-[0.3em] font-black text-zinc-500">{stat.label}</div>
+                <div className="text-[10px] uppercase tracking-[0.3em] font-black text-zinc-400">{stat.label}</div>
               </Card>
             ))}
           </FadeUpStagger>
@@ -89,7 +89,7 @@ export default function SponsorsPage() {
       <section className="py-32 max-w-7xl mx-auto px-8">
         <div className="text-center mb-24">
           <h2 className="text-5xl font-headline font-black text-zinc-100 mb-6 tracking-tight">Direct Impact Pathway</h2>
-          <p className="text-zinc-500 max-w-2xl mx-auto font-medium text-lg">A transparent, verified connection designed for clarity and absolute trust.</p>
+          <p className="text-zinc-400 max-w-2xl mx-auto font-medium text-lg">A transparent, verified connection designed for clarity and absolute trust.</p>
         </div>
         <FadeUpStagger className="grid grid-cols-1 md:grid-cols-4 gap-12 relative">
           {[
@@ -101,7 +101,7 @@ export default function SponsorsPage() {
             <div key={i} className="flex flex-col items-center text-center group">
               <div className="w-24 h-24 rounded-[32px] bg-zinc-900 border border-zinc-800 text-[#0052CC] flex items-center justify-center mb-10 group-hover:bg-[#0052CC] group-hover:text-white group-hover:-translate-y-2 transition-all duration-500 relative">
                 <span className="material-symbols-outlined text-4xl">{item.icon}</span>
-                <span className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-zinc-950 border border-zinc-800 text-[10px] font-black flex items-center justify-center text-zinc-500">{item.step}</span>
+                <span className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-zinc-950 border border-zinc-800 text-[10px] font-black flex items-center justify-center text-zinc-400">{item.step}</span>
               </div>
               <h3 className="font-headline font-black text-xl mb-4 text-zinc-100">{item.title}</h3>
               <p className="text-zinc-400 text-sm font-medium leading-relaxed max-w-[200px]">{item.desc}</p>
@@ -133,7 +133,7 @@ export default function SponsorsPage() {
                   <span className="material-symbols-outlined text-[#0052CC] font-bold">check_circle</span>
                   <div>
                     <h4 className="font-headline font-black text-zinc-200 mb-1">{c.title}</h4>
-                    <p className="text-sm text-zinc-500 font-medium">{c.desc}</p>
+                    <p className="text-sm text-zinc-400 font-medium">{c.desc}</p>
                   </div>
                 </div>
               ))}
@@ -162,7 +162,7 @@ export default function SponsorsPage() {
         <div className="max-w-7xl mx-auto relative rounded-[64px] bg-zinc-900 border border-zinc-800 p-24 text-center overflow-hidden group">
           <SlideIn direction="up">
             <h2 className="text-6xl font-headline font-black text-zinc-100 mb-8 tracking-tighter leading-none">Invest in <br/><span className="text-[#0052CC]">Potential.</span></h2>
-            <p className="text-zinc-500 text-xl mb-12 max-w-2xl mx-auto font-medium">Select your scholar today and begin the journey of transforming a life through excellence.</p>
+            <p className="text-zinc-400 text-xl mb-12 max-w-2xl mx-auto font-medium">Select your scholar today and begin the journey of transforming a life through excellence.</p>
             <div className="flex flex-wrap justify-center gap-8 relative z-10">
               <Button variant="primary" size="lg" className="px-12 rounded-[24px]">Browse Scholar Profiles</Button>
               <Button variant="secondary" size="lg" className="px-12 rounded-[24px] bg-zinc-800 text-white hover:bg-zinc-700">Contact Partnership Team</Button>

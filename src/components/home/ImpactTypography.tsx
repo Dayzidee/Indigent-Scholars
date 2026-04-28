@@ -11,7 +11,7 @@ export function ImpactTypography() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-6xl font-black font-headline text-primary leading-[1.1] tracking-tight"
+            className="text-4xl md:text-6xl font-black font-headline text-white leading-[1.1] tracking-tight"
           >
             Talent is evenly distributed. <br />
             Opportunities are not.
@@ -24,7 +24,7 @@ export function ImpactTypography() {
              whileInView={{ opacity: 1, y: 0 }}
              viewport={{ once: true }}
              transition={{ delay: 0.2 }}
-             className="text-xl md:text-2xl font-body font-medium text-primary/80 leading-relaxed italic"
+             className="text-xl md:text-2xl font-body font-medium text-white/80 leading-relaxed italic"
           >
             There are millions of incredibly knowledgeable people that are eager to do more with their lives. Africa would benefit from realizing the potential energy of these ambitious people who lack the resources.
           </motion.p>
@@ -34,13 +34,13 @@ export function ImpactTypography() {
              whileInView={{ opacity: 1, y: 0 }}
              viewport={{ once: true }}
              transition={{ delay: 0.4 }}
-             className="p-8 rounded-[2rem] bg-primary/5 border border-primary/10 relative overflow-hidden group shadow-sm"
+             className="p-8 rounded-[2rem] bg-white/5 border border-white/10 relative overflow-hidden group shadow-sm"
           >
             <div className="absolute -right-10 -bottom-10 opacity-5 group-hover:opacity-10 transition-opacity">
-              <span className="material-symbols-outlined text-[10rem] text-primary" style={{ fontVariationSettings: "'wght' 100" }}>campaign</span>
+              <span className="material-symbols-outlined text-[10rem] text-white" style={{ fontVariationSettings: "'wght' 100" }}>campaign</span>
             </div>
-            <p className="text-lg md:text-xl font-body font-bold text-primary leading-relaxed relative z-10">
-              The major barrier is <span className="underline underline-offset-8 decoration-2 decoration-secondary/40">Financial Access</span>. Dreams come with a price tag and if you lack the money needed to access the right opportunity, you will eventually kill the dream.
+            <p className="text-lg md:text-xl font-body font-bold text-white leading-relaxed relative z-10">
+              The major barrier is <span className="underline underline-offset-8 decoration-2 decoration-white/40">Financial Access</span>. Dreams come with a price tag and if you lack the money needed to access the right opportunity, you will eventually kill the dream.
             </p>
           </motion.div>
         </div>

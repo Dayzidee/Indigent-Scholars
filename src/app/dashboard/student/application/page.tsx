@@ -46,7 +46,7 @@ export default function StudentApplicationPage() {
         {/* Header */}
         <div className="mb-12">
           <h1 className="text-4xl font-headline font-black text-zinc-100 tracking-tight mb-2">My Application</h1>
-          <p className="text-zinc-500 font-medium">Manage your scholarship narrative and internal communications.</p>
+          <p className="text-zinc-400 font-medium">Manage your scholarship narrative and internal communications.</p>
         </div>
 
         <div className="space-y-12">

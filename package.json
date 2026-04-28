@@ -6,7 +6,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test": "playwright test --project='Desktop Chromium'",
+    "test:perf": "playwright test --project='Performance Suite'",
+    "test:all": "playwright test",
+    "test:report": "playwright show-report",
+    "test:load": "artillery run tests/perf/backend-load.yml",
+    "test:load:report": "artillery run --output report.json tests/perf/backend-load.yml && artillery report report.json"
   },
   "dependencies": {
     "@react-three/drei": "^10.7.7",
@@ -26,11 +32,13 @@
     "three": "^0.183.2"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.11.2",
     "@playwright/test": "^1.59.1",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "artillery": "^2.0.31",
     "eslint": "^9",
     "eslint-config-next": "16.2.2",
     "supabase": "^2.84.10",

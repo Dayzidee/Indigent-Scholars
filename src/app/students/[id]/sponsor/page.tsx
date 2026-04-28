@@ -7,6 +7,7 @@ import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/Button'
 import { STUDENTS_DATA, StudentProfile } from '@/lib/constants/mock-data'
 import { FundingTracker } from '@/components/dashboard/student/FundingTracker'
+import { FinalFundingReview } from '@/components/dashboard/sponsor/FinalFundingReview'
 import { cn } from '@/lib/utils'
 import Link from 'next/link'
 
@@ -46,7 +47,7 @@ export default function SponsorshipPage() {
                 <span className="material-symbols-outlined text-5xl">check_circle</span>
               </div>
               <h2 className="text-3xl font-headline font-black text-zinc-100 tracking-tight mb-2">Impact Confirmed</h2>
-              <p className="text-zinc-500 mb-10 leading-relaxed font-medium">You have successfully committed <span className="text-[#0052CC] font-black">₦{Number(amount).toLocaleString()}</span> to {student.name}&apos;s education. A formal receipt has been sent to your ledger.</p>
+              <p className="text-zinc-400 mb-10 leading-relaxed font-medium">You have successfully committed <span className="text-[#0052CC] font-black">₦{Number(amount).toLocaleString()}</span> to {student.name}&apos;s education. A formal receipt has been sent to your ledger.</p>
               
               <div className="space-y-4">
                 <Button 
@@ -100,7 +101,7 @@ export default function SponsorshipPage() {
          </Link>
       </div>
 
-      <div className="max-w-7xl mx-auto px-10 py-16 grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+      <div className="max-w-7xl mx-auto px-10 py-12 grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
         
         {/* LEFT COLUMN: Student Brief & Tracker */}
         <div className="lg:col-span-7 space-y-12">
@@ -123,19 +124,20 @@ export default function SponsorshipPage() {
                </div>
             </div>
 
-            <div className="pt-10">
-               <FundingTracker 
-                  receivedAmount={student.raisedAmount} 
-                  totalAmount={student.totalGoal}
-                  phase="Active Funding"
-                  nextMilestone={student.totalGoal}
-                  className="bg-zinc-800/50 p-8 rounded-[48px]"
-               />
+                <FinalFundingReview student={student} compact={true} />
             </div>
-        </div>
 
         {/* RIGHT COLUMN: Donation Control */}
-        <div className="lg:col-span-5 sticky top-32">
+        <div className="lg:col-span-5 sticky top-32 space-y-8">
+            <FundingTracker 
+                receivedAmount={student.raisedAmount} 
+                totalAmount={student.totalGoal}
+                phase="Indigent Aid Funding"
+                nextMilestone={student.totalGoal}
+                className="bg-[#0052CC] rounded-[48px] shadow-2xl shadow-blue-500/20"
+                compact={true}
+            />
+
             <Card className="bg-zinc-900/50 rounded-[48px] border border-zinc-800/20 shadow-2xl shadow-black/80 p-12 space-y-10 relative overflow-hidden backdrop-blur-md">
                <div className="relative z-10">
                   <div>
@@ -178,7 +180,7 @@ export default function SponsorshipPage() {
                   <div className="flex gap-3 pt-6">
                      <button 
                       onClick={() => setAmount(student.totalGoal.toString())}
-                      className="flex-1 bg-zinc-900 border border-zinc-700 rounded-2xl py-3 text-[10px] font-black uppercase tracking-widest text-zinc-500 hover:bg-zinc-800 transition-all"
+                      className="flex-1 bg-zinc-900 border border-zinc-700 rounded-2xl py-3 text-[10px] font-black uppercase tracking-widest text-zinc-400 hover:bg-zinc-800 transition-all"
                      >
                         Full Goal
                      </button>

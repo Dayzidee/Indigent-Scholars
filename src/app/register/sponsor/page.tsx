@@ -18,8 +18,8 @@ function SponsorRegisterContent() {
         {/* Left Side: Testimonial/Info */}
         <div className="lg:col-span-5 space-y-12">
           <div className="space-y-4">
-            <span className="text-primary font-bold tracking-widest text-xs uppercase">Impact & Philanthropy</span>
-            <h1 className="text-5xl font-headline font-extrabold text-secondary leading-tight tracking-tighter">
+            <span className="text-primary-fixed-dim font-bold tracking-widest text-xs uppercase">Impact & Philanthropy</span>
+            <h1 className="text-5xl font-headline font-extrabold text-secondary-fixed-dim leading-tight tracking-tighter">
               Invest in <br/><span className="text-on-surface">Human Capital.</span>
             </h1>
             <p className="text-on-surface-variant text-lg leading-relaxed max-w-md">
@@ -29,13 +29,13 @@ function SponsorRegisterContent() {
 
           <div className="bg-[#002B6B] p-8 rounded-2xl shadow-2xl relative overflow-hidden group">
             <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/10 rounded-full -mr-16 -mt-16 blur-2xl group-hover:bg-secondary/20 transition-colors"></div>
-            <span className="material-symbols-outlined text-secondary text-4xl mb-6 block">format_quote</span>
+            <span className="material-symbols-outlined text-secondary-fixed-dim text-4xl mb-6 block">format_quote</span>
             <p className="text-white/90 text-lg font-medium leading-relaxed relative z-10 italic">
               &quot;Sponsoring a scholar isn&apos;t just charity; it&apos;s a strategic investment in the future leaders who will build our nation&apos;s industries.&quot;
             </p>
             <div className="mt-8 flex items-center gap-4 relative z-10">
               <div className="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center">
-                <span className="material-symbols-outlined text-secondary">verified_user</span>
+                <span className="material-symbols-outlined text-secondary-fixed-dim">verified_user</span>
               </div>
               <div>
                 <p className="text-white font-bold">Dr. Adewale K.</p>
@@ -123,7 +123,7 @@ function SponsorRegisterContent() {
             <div className="pt-6 border-t border-outline-variant/10">
               <div className="flex items-center gap-3 mb-6">
                 <span className="w-8 h-8 rounded-full bg-secondary text-on-secondary flex items-center justify-center text-[10px] font-black">AI</span>
-                <h3 className="text-xs font-black uppercase tracking-[0.2em] text-secondary font-label">Identity Verification</h3>
+                <h3 className="text-xs font-black uppercase tracking-[0.2em] text-secondary-fixed-dim font-label">Identity Verification</h3>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <DocumentUpload label="National Identity (NIN)" icon="badge" className="bg-zinc-900" />
@@ -133,9 +133,9 @@ function SponsorRegisterContent() {
             
             <div className="pt-4">
               <div className="flex items-start gap-3 mb-8">
-                <input required className="mt-1 rounded text-secondary focus:ring-secondary border-outline-variant" type="checkbox"/>
+                <input required className="mt-1 rounded text-secondary-fixed-dim focus:ring-secondary border-outline-variant" type="checkbox"/>
                 <p className="text-xs text-on-surface-variant leading-relaxed">
-                  I agree to the <Link className="text-secondary font-bold hover:underline" href="#">Sponsorship Charter</Link> and verify that all funds are provided in compliance with anti-money laundering regulations.
+                  I agree to the <Link className="text-secondary-fixed-dim font-bold hover:underline" href="#">Sponsorship Charter</Link> and verify that all funds are provided in compliance with anti-money laundering regulations.
                 </p>
               </div>
               <AuthSubmitButton 
@@ -146,7 +146,7 @@ function SponsorRegisterContent() {
             </div>
             
             <p className="text-center text-sm text-on-surface-variant mt-6">
-              Already a partner? <Link className="text-secondary font-bold hover:underline" href="/login">Log in here</Link>
+              Already a partner? <Link className="text-secondary-fixed-dim font-bold hover:underline" href="/login">Log in here</Link>
             </p>
           </form>
         </div>

@@ -1,4 +1,4 @@
-import { createClient } from '@/lib/supabase/server';
+import { createClient, getUser } from '@/lib/supabase/server';
 import { redirect } from 'next/navigation';
 
 /**
@@ -6,13 +6,13 @@ import { redirect } from 'next/navigation';
  * Redirects the user to their specific dashboard based on their role.
  */
 export default async function DashboardRedirect() {
-  const supabase = await createClient();
-
-  const { data: { user } } = await supabase.auth.getUser();
+  const { data: { user } } = await getUser();
 
   if (!user) {
     return redirect('/login');
   }
+
+  const supabase = await createClient();
 
   // Fetch profile to determine role
   const { data: profile } = await supabase

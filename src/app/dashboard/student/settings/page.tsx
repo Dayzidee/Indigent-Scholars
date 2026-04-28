@@ -146,14 +146,14 @@ export default function StudentSettingsPage() {
             <div className="flex items-center gap-3">
               <span className="material-symbols-outlined text-[#0052CC]">verified_user</span>
               <div className="text-sm">
-                <p className="font-bold text-primary font-headline">Two-Factor Authentication</p>
-                <p className="text-zinc-500 font-body">Currently disabled. Enable for better security.</p>
+                <p className="font-bold text-primary-fixed-dim font-headline">Two-Factor Authentication</p>
+                <p className="text-zinc-400 font-body">Currently disabled. Enable for better security.</p>
               </div>
             </div>
             <button className="text-[#0052CC] font-bold text-sm px-4 py-2 hover:bg-[#0052CC]/10 rounded-lg transition-colors font-headline">Enable</button>
           </div>
           <div className="pt-4 border-t border-zinc-800 flex justify-end items-center gap-4">
-            <button className="text-primary font-bold hover:underline transition-all px-4 py-2 text-sm font-headline">Reset All Sessions</button>
+            <button className="text-primary-fixed-dim font-bold hover:underline transition-all px-4 py-2 text-sm font-headline">Reset All Sessions</button>
             <button className="bg-primary text-white px-6 py-2.5 rounded-xl font-bold font-headline transition-all hover:shadow-lg active:scale-95">Update Password</button>
           </div>
         </div>
@@ -196,7 +196,7 @@ export default function StudentSettingsPage() {
         <div className="lg:col-span-8 bg-error-container/10 border-2 border-dashed border-error/20 rounded-xl p-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="text-sm">
             <p className="font-bold text-on-background font-headline">Deactivate Account</p>
-            <p className="text-zinc-500 font-body">Your profile will be hidden and applications paused.</p>
+            <p className="text-zinc-400 font-body">Your profile will be hidden and applications paused.</p>
           </div>
           <button className="bg-error text-white px-6 py-2.5 rounded-xl font-bold hover:shadow-lg transition-all active:scale-95 font-headline">Deactivate Now</button>
         </div>

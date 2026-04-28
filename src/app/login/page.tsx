@@ -22,7 +22,7 @@ function LoginContent() {
         {/* Logo/Header Area */}
         <div className="mb-10 text-center">
           <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-container/10 rounded-xl mb-6">
-            <span className="material-symbols-outlined text-primary text-3xl">account_balance</span>
+            <span className="material-symbols-outlined text-primary-fixed-dim text-3xl">account_balance</span>
           </div>
           <h1 className="text-3xl font-extrabold font-headline tracking-tight text-on-surface mb-2">Welcome Back</h1>
           <p className="text-sm text-on-surface-variant">Continue your journey of scholarly excellence.</p>
@@ -58,7 +58,7 @@ function LoginContent() {
           <div>
             <div className="flex justify-between items-center mb-2">
               <label className="block text-sm font-semibold font-headline text-on-surface" htmlFor="password">Password</label>
-              <Link className="text-xs font-bold text-primary hover:underline transition-all" href="/password-reset">Forgot password?</Link>
+              <Link className="text-xs font-bold text-primary-fixed-dim hover:underline transition-all" href="/password-reset">Forgot password?</Link>
             </div>
             <div className="relative">
               <input 
@@ -89,11 +89,11 @@ function LoginContent() {
         {/* Sign Up Options */}
         <div className="grid grid-cols-2 gap-4">
           <Link href="/register/student" className="flex flex-col items-center justify-center p-4 rounded-lg bg-surface-container-low hover:bg-surface-container-high transition-colors group">
-            <span className="material-symbols-outlined text-primary mb-2">school</span>
+            <span className="material-symbols-outlined text-primary-fixed-dim mb-2">school</span>
             <span className="text-xs font-bold font-headline text-on-surface">Join as Student</span>
           </Link>
           <Link href="/register/sponsor" className="flex flex-col items-center justify-center p-4 rounded-lg bg-surface-container-low hover:bg-surface-container-high transition-colors group">
-            <span className="material-symbols-outlined text-secondary mb-2">volunteer_activism</span>
+            <span className="material-symbols-outlined text-secondary-fixed-dim mb-2">volunteer_activism</span>
             <span className="text-xs font-bold font-headline text-on-surface">Join as Sponsor</span>
           </Link>
         </div>
@@ -107,7 +107,7 @@ function LoginContent() {
             alt="Portrait of a young smiling Nigerian university student" 
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7M8nZNvWU6XT3bztPiunpC_qTk-iZoEd3dltz2qfXCtUjJFV8XcA_qLYUq2K3-9Tqq0LNKM7fMpIQ54ZVPM9lgGYh9jlsMl5zDAC7MIICXHw6zKEfpXSbqgD8Yb3DU7oNZP65s5wR0DnsHKmSNJGKCLO4uqTxLvzGdU30eSFZNc9uYpl0qGTPQp7TDf0ReYPP132WSco-vW7sqdXxj-5Ig6w_Z1K44O26mFZ_OmWchAzw51IVIcTMl01rxUXI0bEG85rya4zw8kPC"
           />
-          <p className="font-headline font-bold text-primary italic text-sm">&quot;This platform changed my trajectory from uncertainty to academic excellence.&quot;</p>
+          <p className="font-headline font-bold text-primary-fixed-dim italic text-sm">&quot;This platform changed my trajectory from uncertainty to academic excellence.&quot;</p>
           <div className="mt-4 flex items-center gap-3">
             <div className="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center">
               <span className="material-symbols-outlined text-sm text-on-secondary-container" style={{ fontVariationSettings: "'FILL' 1" }}>workspace_premium</span>
