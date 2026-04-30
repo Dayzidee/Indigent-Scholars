@@ -86,7 +86,7 @@ export function SubmittedView() {
               </div>
 
               <div className="mt-8 pt-6 border-t border-zinc-800">
-                <Button variant="ghost" size="sm" className="w-full justify-start px-0 text-zinc-500" iconRight="lock">Profile Locked</Button>
+                <Button variant="ghost" size="sm" className="w-full justify-start px-0 text-zinc-400" iconRight="lock">Profile Locked</Button>
               </div>
             </div>
             <div className="absolute -left-10 -bottom-10 w-40 h-40 bg-zinc-800/50 rounded-full blur-3xl opacity-50" />
@@ -142,7 +142,7 @@ export function SubmittedView() {
                  <div key={i} className="p-5 rounded-[24px] bg-zinc-900 border border-zinc-800 hover:shadow-lg transition-all cursor-pointer group">
                     <p className="text-[#0052CC] text-[8px] font-black uppercase tracking-widest mb-1">{ad.tag}</p>
                     <h4 className="text-xs font-headline font-black text-zinc-200 leading-tight mb-3 group-hover:text-[#0052CC] transition-colors">{ad.title}</h4>
-                    <div className="flex items-center gap-2 text-zinc-400 group-hover:text-zinc-500 transition-colors">
+                    <div className="flex items-center gap-2 text-zinc-400 group-hover:text-zinc-400 transition-colors">
                        <span className="material-symbols-outlined text-[12px]">calendar_today</span>
                        <span className="text-[8px] font-bold uppercase tracking-widest">{ad.deadline}</span>
                     </div>

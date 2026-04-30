@@ -63,7 +63,7 @@ export function SponsorEducation() {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
           <div className="space-y-1">
             <h1 className="text-4xl font-black font-headline tracking-tighter text-zinc-100 leading-none">Education Portfolio</h1>
-            <p className="text-zinc-500 font-body text-sm max-w-lg">Manage your sponsored students, track academic progress, and oversee upcoming disbursements across multiple institutions.</p>
+            <p className="text-zinc-400 font-body text-sm max-w-lg">Manage your sponsored students, track academic progress, and oversee upcoming disbursements across multiple institutions.</p>
           </div>
           <Button 
             iconLeft="add"
@@ -100,7 +100,7 @@ export function SponsorEducation() {
           <div className="flex bg-zinc-800 p-1.5 rounded-2xl w-full md:w-auto overflow-x-auto scrollbar-hide">
             {['All', 'Active', 'Pending', 'Graduated'].map((f) => (activeFilter === f ? 
               <button key={f} className="px-6 py-2 bg-zinc-900 rounded-xl text-xs font-black text-[#0052CC] border border-zinc-800 transition-all whitespace-nowrap">{f}</button> :
-              <button key={f} onClick={() => setActiveFilter(f)} className="px-6 py-2 rounded-xl text-xs font-bold text-zinc-500 hover:text-zinc-200 transition-all whitespace-nowrap">{f}</button>
+              <button key={f} onClick={() => setActiveFilter(f)} className="px-6 py-2 rounded-xl text-xs font-bold text-zinc-400 hover:text-zinc-200 transition-all whitespace-nowrap">{f}</button>
             ))}
           </div>
           
@@ -146,7 +146,7 @@ export function SponsorEducation() {
                     <p className="text-[11px] font-black text-zinc-400 font-label uppercase tracking-wider">{scholar.school}</p>
                   </td>
                   <td className="px-8 py-4">
-                    <p className="text-sm font-medium text-zinc-500 font-body">{scholar.program}</p>
+                    <p className="text-sm font-medium text-zinc-400 font-body">{scholar.program}</p>
                   </td>
                   <td className="px-8 py-4">
                     <span className={cn(
@@ -175,7 +175,7 @@ export function SponsorEducation() {
           <span>Showing 4 of 142 scholars</span>
           <div className="flex gap-2">
             <button className="px-4 py-2 bg-zinc-800 rounded-xl hover:bg-zinc-700 transition-all font-bold text-zinc-400">Previous</button>
-            <button className="px-4 py-2 bg-[#0052CC] text-white rounded-xl shadow-lg shadow-blue-600/10 hover:bg-[#0047b3] transition-all font-bold">1</button>
+            <button className="px-4 py-2 bg-[#0052CC] text-white rounded-xl shadow-lg shadow-blue-600/10 hover:bg-[#2563eb] transition-all font-bold">1</button>
             <button className="px-4 py-2 bg-zinc-800 rounded-xl hover:bg-zinc-700 transition-all font-bold text-zinc-400">2</button>
             <button className="px-4 py-2 bg-zinc-800 rounded-xl hover:bg-zinc-700 transition-all font-bold text-zinc-400">Next</button>
           </div>

@@ -1,7 +1,5 @@
 'use client';
 
-import { DashboardLayout } from '@/components/layout/DashboardLayout';
-
 import { toast } from 'sonner';
 
 export default function AdminSettings() {
@@ -10,8 +8,7 @@ export default function AdminSettings() {
   };
 
   return (
-    <DashboardLayout>
-      <div className="max-w-4xl mx-auto space-y-10">
+    <div className="max-w-4xl mx-auto space-y-10">
         <header>
           <h2 className="text-3xl font-bold text-white mb-2">Platform Governance</h2>
           <p className="text-slate-500 font-medium tracking-wide flex items-center">
@@ -119,6 +116,5 @@ export default function AdminSettings() {
 
         </div>
       </div>
-    </DashboardLayout>
   );
 }

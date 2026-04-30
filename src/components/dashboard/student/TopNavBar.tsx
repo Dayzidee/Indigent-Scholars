@@ -55,7 +55,7 @@ export function TopNavBar({ onMenuClick }: TopNavBarProps) {
           <span className="material-symbols-outlined text-zinc-400">menu</span>
         </button>
 
-        <Link href="/dashboard/student" className="text-lg md:text-xl font-black bg-gradient-to-b from-[#0052CC] to-[#003D9B] bg-clip-text text-transparent font-headline tracking-tight hover:opacity-80 transition-opacity whitespace-nowrap">
+        <Link href="/dashboard/student" className="text-lg md:text-xl font-black bg-gradient-to-b from-[#0052CC] to-[#1d4ed8] bg-clip-text text-transparent font-headline tracking-tight hover:opacity-80 transition-opacity whitespace-nowrap">
           Indigent-Sc
         </Link>
         <span className="hidden sm:block h-4 w-px bg-zinc-700"></span>
@@ -96,7 +96,7 @@ export function TopNavBar({ onMenuClick }: TopNavBarProps) {
               isNotificationsOpen ? "bg-primary/10 text-primary" : "text-zinc-400 hover:bg-zinc-800"
             )}
           >
-            <span className="material-symbols-outlined text-zinc-500 group-hover:text-primary transition-colors" data-icon="notifications">
+            <span className="material-symbols-outlined text-zinc-400 group-hover:text-primary transition-colors" data-icon="notifications">
               notifications
             </span>
             <span className="absolute top-2 right-2 w-2 h-2 bg-error rounded-full border-2 border-zinc-900 animate-pulse"></span>
@@ -126,7 +126,7 @@ export function TopNavBar({ onMenuClick }: TopNavBarProps) {
                         </div>
                         <div className="flex-1 min-w-0">
                            <p className="text-xs font-bold text-on-surface group-hover:text-primary transition-colors truncate font-headline">{n.title}</p>
-                           <p className="text-[10px] text-zinc-500 line-clamp-1 font-headline">{n.desc}</p>
+                           <p className="text-[10px] text-zinc-400 line-clamp-1 font-headline">{n.desc}</p>
                         </div>
                       </div>
                     ))}

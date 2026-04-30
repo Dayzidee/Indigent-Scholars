@@ -19,8 +19,8 @@ export function RedesignedHero() {
             transition={{ delay: 0.5 }}
             className="w-full overflow-hidden"
           >
-            <p className="text-sm md:text-base font-body font-bold text-zinc-300 whitespace-nowrap tracking-tight">
-              By <span className="text-[#0052CC] font-black font-headline px-1">2050</span>, our goal is to provide funding support for <span className="text-secondary-fixed font-black font-headline px-1">50,000+</span> students to successfully obtain a university degree.
+            <p className="text-sm md:text-base font-body font-bold text-white whitespace-nowrap tracking-tight">
+              By <span className="text-white font-black font-headline px-1">2050</span>, our goal is to provide funding support for <span className="text-white font-black font-headline px-1">50,000+</span> students to successfully obtain a university degree.
             </p>
           </motion.div>
         </div>

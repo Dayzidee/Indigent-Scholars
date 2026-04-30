@@ -1,0 +1,50 @@
+
+Running 9 tests using 1 worker
+
+
+♿ Accessibility — Landing Page
+   Critical: 0
+   Serious:  1
+   Moderate: 0
+   Minor:    0
+
+  Failing violations:
+
+  ❌ [SERIOUS] color-contrast: Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds
+     Help: https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=playwright
+     Node: <span class="text-[#0052CC]">Impact</span>
+     Node: <span class="text-[#0052CC] group-hover:translate-x-2 transition-transform">Apply Now</span>
+  ✘  1 [Performance Suite] › tests/perf/05-accessibility.spec.ts:35:9 › Accessibility Audit (WCAG 2.1 AA) › A11y: Landing Page — zero critical/serious violations (8.8s)
+  -  2 [Performance Suite] › tests/perf/05-accessibility.spec.ts:35:9 › Accessibility Audit (WCAG 2.1 AA) › A11y: About — zero critical/serious violations
+  -  3 [Performance Suite] › tests/perf/05-accessibility.spec.ts:35:9 › Accessibility Audit (WCAG 2.1 AA) › A11y: Login — zero critical/serious violations
+  -  4 [Performance Suite] › tests/perf/05-accessibility.spec.ts:35:9 › Accessibility Audit (WCAG 2.1 AA) › A11y: Register — zero critical/serious violations
+  -  5 [Performance Suite] › tests/perf/05-accessibility.spec.ts:35:9 › Accessibility Audit (WCAG 2.1 AA) › A11y: Student Register — zero critical/serious violations
+  -  6 [Performance Suite] › tests/perf/05-accessibility.spec.ts:79:7 › Accessibility Audit (WCAG 2.1 AA) › A11y: All images have alt attributes
+  -  7 [Performance Suite] › tests/perf/05-accessibility.spec.ts:97:7 › Accessibility Audit (WCAG 2.1 AA) › A11y: All form inputs have associated labels (Login page)
+  -  8 [Performance Suite] › tests/perf/05-accessibility.spec.ts:127:7 › Accessibility Audit (WCAG 2.1 AA) › A11y: Keyboard tab navigation visits interactive elements
+  -  9 [Performance Suite] › tests/perf/05-accessibility.spec.ts:152:7 › Accessibility Audit (WCAG 2.1 AA) › A11y: Landmark regions are present on landing page
+
+
+  1) [Performance Suite] › tests/perf/05-accessibility.spec.ts:35:9 › Accessibility Audit (WCAG 2.1 AA) › A11y: Landing Page — zero critical/serious violations 
+
+    Error: 1 SERIOUS a11y violations on "Landing Page". See report above.
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m0[39m
+    Received: [31m1[39m
+
+      73 |         serious.length,
+      74 |         `${serious.length} SERIOUS a11y violations on "${name}". See report above.`
+    > 75 |       ).toBe(0);
+         |         ^
+      76 |     });
+      77 |   }
+      78 |
+        at /home/sanniinuoluwadunsimi/Documents/Sanni Workspace/Indigent-Scholars/tests/perf/05-accessibility.spec.ts:75:9
+
+    Error Context: test-results/perf-05-accessibility-Acce-0413a-critical-serious-violations-Performance-Suite/error-context.md
+
+  1 failed
+    [Performance Suite] › tests/perf/05-accessibility.spec.ts:35:9 › Accessibility Audit (WCAG 2.1 AA) › A11y: Landing Page — zero critical/serious violations 
+  8 did not run

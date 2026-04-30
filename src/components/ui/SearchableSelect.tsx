@@ -92,7 +92,7 @@ export function SearchableSelect({
             y: (isOpen || hasValue) ? -24 : 0,
             x: (isOpen || hasValue) ? (icon ? -32 : 0) : 0,
             scale: (isOpen || hasValue) ? 0.85 : 1,
-            color: error ? "#ef4444" : (isOpen ? "#0052CC" : "#71717a")
+            color: error ? "#ef4444" : (isOpen ? "#0052CC" : "#a1a1aa")
           }}
           transition={{ type: "spring", stiffness: 300, damping: 30 }}
           className={cn(

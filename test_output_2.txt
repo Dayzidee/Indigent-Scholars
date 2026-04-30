@@ -1,0 +1,50 @@
+
+Running 9 tests using 1 worker
+
+
+♿ Accessibility — Landing Page
+   Critical: 0
+   Serious:  0
+   Moderate: 0
+   Minor:    0
+  ✓  1 [Performance Suite] › tests/perf/05-accessibility.spec.ts:35:9 › Accessibility Audit (WCAG 2.1 AA) › A11y: Landing Page — zero critical/serious violations (11.4s)
+
+♿ Accessibility — About
+   Critical: 0
+   Serious:  0
+   Moderate: 0
+   Minor:    0
+  ✓  2 [Performance Suite] › tests/perf/05-accessibility.spec.ts:35:9 › Accessibility Audit (WCAG 2.1 AA) › A11y: About — zero critical/serious violations (6.4s)
+  ✘  3 [Performance Suite] › tests/perf/05-accessibility.spec.ts:35:9 › Accessibility Audit (WCAG 2.1 AA) › A11y: Login — zero critical/serious violations (2.0m)
+  -  4 [Performance Suite] › tests/perf/05-accessibility.spec.ts:35:9 › Accessibility Audit (WCAG 2.1 AA) › A11y: Register — zero critical/serious violations
+  -  5 [Performance Suite] › tests/perf/05-accessibility.spec.ts:35:9 › Accessibility Audit (WCAG 2.1 AA) › A11y: Student Register — zero critical/serious violations
+  -  6 [Performance Suite] › tests/perf/05-accessibility.spec.ts:79:7 › Accessibility Audit (WCAG 2.1 AA) › A11y: All images have alt attributes
+  -  7 [Performance Suite] › tests/perf/05-accessibility.spec.ts:97:7 › Accessibility Audit (WCAG 2.1 AA) › A11y: All form inputs have associated labels (Login page)
+  -  8 [Performance Suite] › tests/perf/05-accessibility.spec.ts:127:7 › Accessibility Audit (WCAG 2.1 AA) › A11y: Keyboard tab navigation visits interactive elements
+  -  9 [Performance Suite] › tests/perf/05-accessibility.spec.ts:152:7 › Accessibility Audit (WCAG 2.1 AA) › A11y: Landmark regions are present on landing page
+
+
+  1) [Performance Suite] › tests/perf/05-accessibility.spec.ts:35:9 › Accessibility Audit (WCAG 2.1 AA) › A11y: Login — zero critical/serious violations 
+
+    [31mTest timeout of 120000ms exceeded.[39m
+
+    Error: page.goto: Test timeout of 120000ms exceeded.
+    Call log:
+    [2m  - navigating to "http://127.0.0.1:3000/login", waiting until "networkidle"[22m
+
+
+      34 |   for (const { name, path } of PUBLIC_PAGES) {
+      35 |     test(`A11y: ${name} — zero critical/serious violations`, async ({ page }) => {
+    > 36 |       await page.goto(path, { waitUntil: 'networkidle' });
+         |                  ^
+      37 |
+      38 |       const results = await new AxeBuilder({ page })
+      39 |         .withTags(['wcag2a', 'wcag2aa', 'wcag21aa'])
+        at /home/sanniinuoluwadunsimi/Documents/Sanni Workspace/Indigent-Scholars/tests/perf/05-accessibility.spec.ts:36:18
+
+    Error Context: test-results/perf-05-accessibility-Acce-716cb-critical-serious-violations-Performance-Suite/error-context.md
+
+  1 failed
+    [Performance Suite] › tests/perf/05-accessibility.spec.ts:35:9 › Accessibility Audit (WCAG 2.1 AA) › A11y: Login — zero critical/serious violations 
+  6 did not run
+  2 passed (2.4m)

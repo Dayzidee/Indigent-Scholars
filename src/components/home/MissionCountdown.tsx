@@ -64,7 +64,7 @@ export function MissionCountdown() {
             </motion.span>
           </AnimatePresence>
           
-          <span className="text-[11px] md:text-sm font-bold tracking-widest text-[#0052CC] opacity-90 mt-[-8px] md:mt-[-15px]">
+          <span className="text-[11px] md:text-sm font-bold tracking-widest text-primary-fixed-dim mt-[-8px] md:mt-[-15px]">
             {unit.label}
           </span>
         </div>

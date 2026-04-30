@@ -23,14 +23,14 @@ interface Transaction {
 }
 
 const transactions: Transaction[] = [
-  { date: 'Oct 24, 2023', time: '09:42 AM', name: 'Adebayo Olumide', initial: 'AO', bgColor: 'bg-blue-950/30 text-[#0052CC]', ref: 'SCH-772910-NG', amount: '₦450,000', status: 'Completed', statusColor: 'bg-tertiary-fixed-dim/20 text-tertiary', dotColor: 'bg-tertiary', dept: 'Engineering • Year 2', type: 'Scholarship' },
-  { date: 'Oct 22, 2023', time: '02:15 PM', name: 'Chisom Nwosu', initial: 'CN', bgColor: 'bg-amber-950/30 text-amber-500', ref: 'SCH-883012-NG', amount: '₦1,200,000', status: 'Transferred', statusColor: 'bg-primary-fixed/30 text-primary', dotColor: 'bg-primary', pulse: true, dept: 'Medicine • Year 1', type: 'Scholarship' },
-  { date: 'Oct 20, 2023', time: '11:05 AM', name: 'Ibrahim Ezekiel', initial: 'IE', bgColor: 'bg-zinc-800 text-zinc-400', ref: 'SCH-112233-NG', amount: '₦320,000', status: 'Pledged', statusColor: 'bg-surface-container-highest text-zinc-400', dotColor: 'bg-neutral-400', dept: 'Computer Science • Year 3', type: 'Scholarship' },
+  { date: 'Oct 24, 2023', time: '09:42 AM', name: 'Adebayo Olumide', initial: 'AO', bgColor: 'bg-blue-950/30 text-[#0052CC]', ref: 'SCH-772910-NG', amount: '₦2,450,000', status: 'Completed', statusColor: 'bg-tertiary-fixed-dim/20 text-tertiary', dotColor: 'bg-tertiary', dept: 'Engineering • Year 2', type: 'Scholarship' },
+  { date: 'Oct 22, 2023', time: '02:15 PM', name: 'Chisom Nwosu', initial: 'CN', bgColor: 'bg-amber-950/30 text-amber-500', ref: 'SCH-883012-NG', amount: '₦3,200,000', status: 'Transferred', statusColor: 'bg-primary-fixed/30 text-primary', dotColor: 'bg-primary', pulse: true, dept: 'Medicine • Year 1', type: 'Scholarship' },
+  { date: 'Oct 20, 2023', time: '11:05 AM', name: 'Ibrahim Ezekiel', initial: 'IE', bgColor: 'bg-zinc-800 text-zinc-400', ref: 'SCH-112233-NG', amount: '₦2,320,000', status: 'Pledged', statusColor: 'bg-surface-container-highest text-zinc-400', dotColor: 'bg-neutral-400', dept: 'Computer Science • Year 3', type: 'Scholarship' },
 ]
 
 const deposits: Transaction[] = [
-  { date: 'Oct 26, 2023', time: '10:00 AM', name: 'Wallet Top-up', initial: 'WT', bgColor: 'bg-emerald-950/30 text-emerald-500', ref: 'DEP-123456-NG', amount: '₦5,000,000', status: 'Completed', statusColor: 'bg-emerald-950/30 text-emerald-600', dotColor: 'bg-emerald-600', dept: 'Via Bank Transfer', type: 'Deposit' },
-  { date: 'Oct 18, 2023', time: '03:30 PM', name: 'Card Deposit', initial: 'CD', bgColor: 'bg-emerald-950/30 text-emerald-500', ref: 'DEP-789012-NG', amount: '₦2,500,000', status: 'Completed', statusColor: 'bg-emerald-950/30 text-emerald-600', dotColor: 'bg-emerald-600', dept: 'Via Paystack', type: 'Deposit' },
+  { date: 'Oct 26, 2023', time: '10:00 AM', name: 'Wallet Top-up', initial: 'WT', bgColor: 'bg-emerald-950/30 text-emerald-500', ref: 'DEP-123456-NG', amount: '₦10,000,000', status: 'Completed', statusColor: 'bg-emerald-950/30 text-emerald-600', dotColor: 'bg-emerald-600', dept: 'Via Bank Transfer', type: 'Deposit' },
+  { date: 'Oct 18, 2023', time: '03:30 PM', name: 'Card Deposit', initial: 'CD', bgColor: 'bg-emerald-950/30 text-emerald-500', ref: 'DEP-789012-NG', amount: '₦5,500,000', status: 'Completed', statusColor: 'bg-emerald-950/30 text-emerald-600', dotColor: 'bg-emerald-600', dept: 'Via Paystack', type: 'Deposit' },
 ]
 
 export function SponsorLedger() {
@@ -66,7 +66,7 @@ export function SponsorLedger() {
             <span className="text-zinc-400">Transaction History</span>
           </nav>
           <h1 className="text-4xl font-black font-headline tracking-tighter text-zinc-100 leading-none">Funding Ledger</h1>
-          <p className="text-zinc-500 font-body text-sm max-w-xl">
+          <p className="text-zinc-400 font-body text-sm max-w-xl">
             Real-time audit log of scholarship disbursements and commitments across all institutions.
           </p>
         </div>
@@ -85,7 +85,7 @@ export function SponsorLedger() {
         <div className="bg-zinc-900 p-6 sm:p-8 rounded-3xl lg:rounded-[32px] border border-zinc-800 flex flex-col justify-between">
           <div>
             <p className="text-[10px] font-black text-zinc-400 font-label uppercase tracking-[0.2em] mb-2">Total Committed</p>
-            <p className="text-3xl font-black text-zinc-100 font-headline leading-tight font-headline">₦42,500,000</p>
+            <p className="text-3xl font-black text-zinc-100 font-headline leading-tight font-headline">₦112,500,000</p>
           </div>
           <div className="mt-4 flex items-center text-[10px] text-emerald-500 font-black uppercase tracking-wider bg-emerald-950/30 px-3 py-1.5 rounded-full border border-emerald-900/20 w-fit">
             <span className="material-symbols-outlined text-sm font-bold mr-1">trending_up</span>
@@ -149,7 +149,7 @@ export function SponsorLedger() {
                   onClick={() => setActiveTab(tab)}
                   className={cn(
                     "px-6 md:px-8 py-2 md:py-2.5 rounded-lg md:rounded-xl text-[10px] font-bold uppercase tracking-widest transition-all font-label whitespace-nowrap",
-                    activeTab === tab ? "bg-zinc-900 text-[#0052CC] border border-zinc-700" : "text-zinc-500 hover:text-zinc-200"
+                    activeTab === tab ? "bg-zinc-900 text-[#0052CC] border border-zinc-700" : "text-zinc-400 hover:text-zinc-200"
                   )}
                 >
                   {tab}
@@ -198,13 +198,13 @@ export function SponsorLedger() {
                       </div>
                     </div>
                   </td>
-                  <td className="px-8 py-6 font-mono text-[10px] text-zinc-500 font-bold tracking-tight bg-zinc-800/30">{tx.ref}</td>
+                  <td className="px-8 py-6 font-mono text-[10px] text-zinc-400 font-bold tracking-tight bg-zinc-800/30">{tx.ref}</td>
                   <td className="px-8 py-6 font-black text-zinc-100 font-headline text-lg leading-none">{tx.amount}</td>
                   <td className="px-8 py-6">
                     <span className={cn(
                       "inline-flex items-center gap-2 px-4 py-1.5 rounded-full font-black text-[9px] uppercase tracking-[0.2em] border border-current/10 font-label",
                       tx.status === 'Completed' ? 'bg-emerald-950/30 text-emerald-600' : 
-                      tx.status === 'Transferred' ? 'bg-blue-950/30 text-[#0052CC]' : 'bg-zinc-800 text-zinc-500'
+                      tx.status === 'Transferred' ? 'bg-blue-950/30 text-[#0052CC]' : 'bg-zinc-800 text-zinc-400'
                     )}>
                       <span className={cn("w-1.5 h-1.5 rounded-full", tx.status === 'Completed' ? 'bg-emerald-600' : tx.status === 'Transferred' ? 'bg-[#0052CC]' : 'bg-zinc-400', tx.pulse && "animate-pulse")}></span>
                       {tx.status}
@@ -236,7 +236,7 @@ export function SponsorLedger() {
               </div>
               <div className="space-y-2 sm:border-l border-zinc-800 sm:pl-8">
                 <p className="text-sm font-extrabold text-zinc-100 font-headline">External Audit Completed</p>
-                <p className="text-xs text-zinc-500 font-body leading-relaxed max-w-lg">
+                <p className="text-xs text-zinc-400 font-body leading-relaxed max-w-lg">
                   Q3 Disbursement reports were verified by Grant Thornton Nigeria with zero discrepancies found. Funds reached all intended scholars.
                 </p>
                 <span className="inline-block mt-2 text-[9px] font-black text-emerald-500 bg-emerald-950/20 px-4 py-1.5 rounded-full uppercase tracking-widest font-label border border-emerald-900/30">
@@ -251,7 +251,7 @@ export function SponsorLedger() {
               </div>
               <div className="space-y-2 sm:border-l border-zinc-800 sm:pl-8">
                 <p className="text-sm font-extrabold text-zinc-100 font-headline">New Pledges Pending</p>
-                <p className="text-xs text-zinc-500 font-body leading-relaxed max-w-lg">
+                <p className="text-xs text-zinc-400 font-body leading-relaxed max-w-lg">
                   You have ₦1,450,000 in upcoming scholarship pledges that require transfer confirmation by Nov 5th for the upcoming semester.
                 </p>
               </div>

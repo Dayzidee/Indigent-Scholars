@@ -113,7 +113,7 @@ export default function AdminOverviewPage() {
             <Calendar className="w-4 h-4 opacity-70" />
             Last 30 Days
           </button>
-          <button className="bg-[#0052CC] text-white px-5 py-2.5 rounded-xl text-sm font-bold flex items-center gap-2 hover:bg-[#0047b3] transition-all shadow-lg shadow-blue-900/20">
+          <button className="bg-[#0052CC] text-white px-5 py-2.5 rounded-xl text-sm font-bold flex items-center gap-2 hover:bg-[#2563eb] transition-all shadow-lg shadow-blue-900/20">
             <Download className="w-4 h-4" />
             Export Report
           </button>

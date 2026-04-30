@@ -146,7 +146,7 @@ function SponsorRegisterContent() {
             </div>
             
             <p className="text-center text-sm text-on-surface-variant mt-6">
-              Already a partner? <Link className="text-secondary-fixed-dim font-bold hover:underline" href="/login">Log in here</Link>
+              Already a partner? <Link className="text-secondary-fixed-dim font-bold hover:underline" href="/login">Sign in here</Link>
             </p>
           </form>
         </div>

@@ -23,7 +23,7 @@ export function HelpCenterView() {
     >
       <section className="text-center space-y-4">
         <h2 className="text-4xl font-headline font-black text-zinc-100 tracking-tighter leading-none">How can we help today?</h2>
-        <p className="text-zinc-500 max-w-2xl mx-auto font-body text-sm">Find answers to common questions or reach out to our support team for personalized assistance.</p>
+        <p className="text-zinc-400 max-w-2xl mx-auto font-body text-sm">Find answers to common questions or reach out to our support team for personalized assistance.</p>
         <div className="relative max-w-xl mx-auto mt-10">
           <span className="absolute left-6 top-1/2 -translate-y-1/2 material-symbols-outlined text-zinc-400">search</span>
           <input 
@@ -111,7 +111,7 @@ export function HelpCenterView() {
                <div className="flex justify-between items-start mb-10">
                  <div>
                    <h3 className="text-3xl font-headline font-black text-zinc-100 tracking-tighter leading-none mb-4">Raise Support Ticket</h3>
-                   <p className="text-zinc-500 text-sm font-medium">Please provide details regarding your inquiry.</p>
+                   <p className="text-zinc-400 text-sm font-medium">Please provide details regarding your inquiry.</p>
                  </div>
                  <button 
                   onClick={() => setShowTicketForm(false)}

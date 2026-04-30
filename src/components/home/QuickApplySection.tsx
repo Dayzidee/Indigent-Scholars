@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useRef } from 'react';
+import Image from 'next/image';
 
 export function QuickApplySection() {
   const carouselRef = useRef<HTMLDivElement>(null);
@@ -280,10 +281,12 @@ export function QuickApplySection() {
 
           {/* Slide 3: Future Starts Now */}
           <div className="min-w-full snap-center bg-zinc-900 overflow-hidden rounded-[3rem] border border-zinc-800/10 shadow-2xl relative group">
-            <img 
+            <Image 
               src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=2070" 
               className="absolute inset-0 w-full h-full object-cover opacity-20 grayscale group-hover:scale-110 transition-transform duration-1000"
               alt="Advancement"
+              fill
+              sizes="(max-width: 1024px) 100vw, 80vw"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/40 to-transparent"></div>
             

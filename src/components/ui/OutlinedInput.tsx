@@ -76,7 +76,7 @@ export function OutlinedInput({
             y: (isFocused || hasValue) ? -24 : 0,
             x: (isFocused || hasValue) ? (icon ? -32 : 0) : 0,
             scale: (isFocused || hasValue) ? 0.85 : 1,
-            color: error ? "#ef4444" : (isFocused ? "#0052CC" : "#71717a")
+            color: error ? "#ef4444" : (isFocused ? "#0052CC" : "#a1a1aa")
           }}
           transition={{ type: "spring", stiffness: 300, damping: 30 }}
           className={cn(

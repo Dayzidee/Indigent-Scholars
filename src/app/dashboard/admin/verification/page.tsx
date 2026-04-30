@@ -160,7 +160,7 @@ export default function VerificationCenterPage() {
                   initial={{ rotateX: 20, y: 50, opacity: 0 }}
                   animate={{ rotateX: 0, y: 0, opacity: 1 }}
                   transition={{ duration: 0.8, ease: 'easeOut' }}
-                  className="w-[500px] aspect-[1.586/1] bg-gradient-to-br from-[#0052CC] via-[#0047b3] to-blue-900 rounded-2xl p-8 text-white shadow-[0_35px_60px_-15px_rgba(0,0,0,0.5)] border border-white/20 relative overflow-hidden"
+                  className="w-[500px] aspect-[1.586/1] bg-gradient-to-br from-[#0052CC] via-[#2563eb] to-blue-900 rounded-2xl p-8 text-white shadow-[0_35px_60px_-15px_rgba(0,0,0,0.5)] border border-white/20 relative overflow-hidden"
                 >
                   {/* Decorative circles */}
                   <div className="absolute -right-20 -top-20 w-80 h-80 bg-white/10 rounded-full blur-3xl" />

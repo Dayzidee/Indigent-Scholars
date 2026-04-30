@@ -39,7 +39,7 @@ export function FinalFundingReview({ student, compact = false }: FinalFundingRev
                  <span className={cn("material-symbols-outlined", compact ? "text-xl" : "text-2xl")}>{item.icon}</span>
                </div>
                <div>
-                 <p className="text-zinc-500 text-[9px] font-black uppercase tracking-widest mb-1">{item.label}</p>
+                 <p className="text-zinc-400 text-[9px] font-black uppercase tracking-widest mb-1">{item.label}</p>
                  <p className={cn("font-headline font-black text-zinc-100 tracking-tight", compact ? "text-xs" : "text-sm")}>{item.value}</p>
                </div>
              </Card>
@@ -70,7 +70,7 @@ export function FinalFundingReview({ student, compact = false }: FinalFundingRev
                       <span className={cn("material-symbols-outlined", compact ? "text-xl" : "text-2xl")}>history_edu</span>
                    </div>
                    <div>
-                      <p className="text-zinc-500 text-[9px] font-black uppercase tracking-widest mb-1">Requested Amount</p>
+                      <p className="text-zinc-400 text-[9px] font-black uppercase tracking-widest mb-1">Requested Amount</p>
                       <p className={cn("font-headline font-black text-zinc-100 tracking-tight", compact ? "text-xl" : "text-2xl")}>₦{student.totalGoal.toLocaleString()}</p>
                    </div>
                 </div>

@@ -31,19 +31,7 @@ export default async function StudentDashboardPage() {
   const profile = profileResult.data;
   const application = applicationResult.data;
 
-  // 3. Determine view type
-  if (!application) {
-    return <IncompleteView />
-  }
-
-  if (application.status === 'pending') {
-    return <SubmittedView />
-  }
-
-  if (application.status === 'verified') {
-    return <VerifiedView />
-  }
-
-  // Default to incomplete for now if rejected or unknown
-  return <IncompleteView />
+  // For the demo/streamlined experience, we default to the VerifiedView
+  return <VerifiedView />
 }
+

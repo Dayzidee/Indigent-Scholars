@@ -36,7 +36,7 @@ export default function PasswordResetPage() {
                 />
               </div>
             </div>
-            <button className="w-full py-4 px-6 bg-gradient-to-b from-[#0052cc] to-[#003d9b] text-white font-headline font-bold rounded-xl shadow-lg shadow-primary/20 hover:opacity-90 active:scale-95 transition-all duration-300" type="submit">
+            <button className="w-full py-4 px-6 bg-gradient-to-b from-[#0052CC] to-[#1d4ed8] text-white font-headline font-bold rounded-xl shadow-lg shadow-primary/20 hover:opacity-90 active:scale-95 transition-all duration-300" type="submit">
               Send Reset Link
             </button>
           </form>
@@ -44,7 +44,7 @@ export default function PasswordResetPage() {
           <div className="mt-8 pt-8 border-t border-surface-container-high/50 flex justify-center">
             <Link className="inline-flex items-center gap-2 text-primary-fixed-dim font-semibold hover:gap-3 transition-all duration-300 group" href="/login">
               <span className="material-symbols-outlined text-sm font-bold group-hover:-translate-x-1 transition-transform">arrow_back</span>
-              Back to Log In
+              Back to Sign In
             </Link>
           </div>
         </div>

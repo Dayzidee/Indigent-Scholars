@@ -98,7 +98,7 @@ export function DashboardSidebar({
             <h1 className="text-xl font-black tracking-tighter text-primary font-headline">
               {brandLabel}
             </h1>
-            <p className="text-[10px] font-bold text-zinc-500 mt-0.5 uppercase tracking-widest font-label leading-none">
+            <p className="text-[10px] font-bold text-zinc-400 mt-0.5 uppercase tracking-widest font-label leading-none">
               {portalLabel}
             </p>
           </div>
@@ -168,6 +168,7 @@ export function DashboardSidebar({
             </button>
           </Link>
 
+
           {/* Sign Out */}
           <button
             onClick={handleSignOut}
@@ -178,7 +179,7 @@ export function DashboardSidebar({
             )}
           >
             <span className={cn(
-              "material-symbols-outlined text-xl text-zinc-500 group-hover:text-red-400",
+              "material-symbols-outlined text-xl text-zinc-400 group-hover:text-red-400",
               isPending && "animate-spin"
             )}>
               {isPending ? 'refresh' : 'logout'}

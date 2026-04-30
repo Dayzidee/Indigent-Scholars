@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from 'react';
 import { createBrowserClient } from '@supabase/ssr';
-import { DashboardLayout } from '@/components/layout/DashboardLayout';
 import { verifyApplication } from '@/lib/actions/admin';
 import { toast } from 'sonner';
 
@@ -57,8 +56,7 @@ export default function AdminVerification() {
   };
 
   return (
-    <DashboardLayout>
-      <div className="space-y-10">
+    <div className="space-y-10">
         <header className="flex flex-col md:flex-row md:items-center justify-between gap-8">
           <div>
             <h2 className="text-3xl font-bold text-white mb-2">Verification Center</h2>
@@ -138,8 +136,7 @@ export default function AdminVerification() {
               </div>
             ))
           )}
-        </div>
       </div>
-    </DashboardLayout>
+    </div>
   );
 }

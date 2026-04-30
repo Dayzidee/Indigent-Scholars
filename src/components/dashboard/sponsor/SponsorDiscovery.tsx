@@ -8,6 +8,11 @@ import Image from 'next/image'
 
 export function SponsorDiscovery() {
   const { recentIds } = useRecentlyViewed()
+  const [mounted, setMounted] = React.useState(false)
+
+  React.useEffect(() => {
+    setMounted(true)
+  }, [])
   
   const recentStudents = recentIds
     .map(id => STUDENTS_DATA.find(s => s.id === id))
@@ -27,7 +32,7 @@ export function SponsorDiscovery() {
           <div className="space-y-2">
             <span className="text-[#0052CC] font-bold text-[10px] tracking-[0.2em] uppercase mb-1 block font-label">Student Matchmaker</span>
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-zinc-100 font-headline leading-tight">Discover Future Leaders</h1>
-            <p className="text-zinc-500 mt-2 max-w-2xl font-body text-xs md:text-sm leading-relaxed">
+            <p className="text-zinc-400 mt-2 max-w-2xl font-body text-xs md:text-sm leading-relaxed">
               Browse verified scholars whose academic potential outweighs their financial means. Every contribution builds a bridge to excellence.
             </p>
           </div>
@@ -43,7 +48,7 @@ export function SponsorDiscovery() {
       </section>
 
       {/* Recently Viewed Horizontal List */}
-      {recentStudents.length > 0 && (
+      {mounted && recentStudents.length > 0 && (
         <section className="space-y-6 overflow-hidden">
            <div className="flex items-center gap-3">
               <span className="material-symbols-outlined text-zinc-400">history</span>
@@ -107,29 +112,21 @@ export function SponsorDiscovery() {
                     <h3 className="text-2xl font-black text-zinc-100 leading-tight font-headline tracking-tight">{scholar.name}</h3>
                     <p className="text-xs font-bold text-zinc-400 font-label uppercase tracking-widest leading-none">{scholar.university}</p>
                   </div>
-                  <span className="text-[9px] font-black px-3 py-1 rounded-lg border border-zinc-800 bg-zinc-800 text-zinc-500 uppercase tracking-widest font-label truncate max-w-[80px]">
+                  <span className="text-[9px] font-black px-3 py-1 rounded-lg border border-zinc-800 bg-zinc-800 text-zinc-400 uppercase tracking-widest font-label truncate max-w-[80px]">
                     {scholar.field}
                   </span>
                 </div>
                 
-                <p className="text-sm text-zinc-500 font-body leading-relaxed mb-8 italic line-clamp-2">
+                <p className="text-sm text-zinc-400 font-body leading-relaxed mb-8 italic line-clamp-2">
                   &ldquo;{scholar.bio}&rdquo;
                 </p>
               </div>
               
               <div className="space-y-5">
                 <div className="space-y-2">
-                  <div className="flex justify-between text-[10px] font-black uppercase tracking-widest font-label">
-                    <span className="text-[#0052CC]">₦{scholar.raisedAmount.toLocaleString()} Raised</span>
-                    <span className="text-zinc-400">Goal: ₦{scholar.totalGoal.toLocaleString()}</span>
-                  </div>
-                  <div className="h-3 w-full bg-zinc-800 rounded-full overflow-hidden p-1 border border-zinc-700">
-                    <motion.div 
-                      initial={{ width: 0 }}
-                      animate={{ width: `${(scholar.raisedAmount / scholar.totalGoal) * 100}%` }}
-                      transition={{ duration: 1.5, ease: "easeOut" }}
-                      className="h-full bg-[#0052CC] rounded-full shadow-lg shadow-blue-500/20"
-                    ></motion.div>
+                  <div className="flex justify-between items-center bg-zinc-800/30 p-3 rounded-2xl border border-zinc-800/50">
+                    <span className="text-[10px] font-black uppercase tracking-widest font-label text-zinc-400">Funding Required</span>
+                    <span className="text-lg font-black font-headline text-primary-fixed-dim">₦{scholar.totalGoal.toLocaleString()}</span>
                   </div>
                 </div>
                 
@@ -162,13 +159,13 @@ export function SponsorDiscovery() {
           
           <div className="flex-1 z-10 space-y-6 md:space-y-8 text-center lg:text-left">
             <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold text-white leading-tight font-headline tracking-tight md:tracking-tighter">
-              Bridge the final gap for 12 scholars this month.
+              Become a Sole Benefactor today.
             </h2>
             <p className="text-white/60 text-sm md:text-base lg:text-xl font-body max-w-2xl leading-relaxed">
-              Join our &quot;Last Mile&quot; initiative and help students who are over 90% funded cross the finish line.
+              Take complete responsibility for a scholar's education. Your bulk contribution ensures uninterrupted academic excellence.
             </p>
             <Button variant="primary" size="lg" className="w-full lg:w-auto">
-              Support &quot;Last Mile&quot; Scholars
+              Discover Unsponsored Scholars
             </Button>
           </div>
           

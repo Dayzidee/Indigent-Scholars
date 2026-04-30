@@ -5,6 +5,7 @@ import { signInAction } from '@/lib/actions/auth';
 import { useSearchParams } from 'next/navigation';
 import { Suspense } from 'react';
 import { AuthSubmitButton } from '@/components/auth/AuthSubmitButton';
+import Image from 'next/image';
 
 function LoginContent() {
   const searchParams = useSearchParams();
@@ -73,9 +74,9 @@ function LoginContent() {
           </div>
           <AuthSubmitButton 
             id="login-submit-btn" 
-            label="Log In" 
+            label="Sign In" 
             loadingLabel="Signing In..." 
-            className="bg-gradient-to-b from-[#0052CC] to-[#003D9B] text-white font-bold rounded-lg shadow-lg shadow-primary/20 hover:scale-[0.98] active:scale-95"
+            className="bg-gradient-to-b from-[#0052CC] to-[#1d4ed8] text-white font-bold rounded-lg shadow-lg shadow-primary/20 hover:scale-[0.98] active:scale-95"
           />
         </form>
         
@@ -102,10 +103,12 @@ function LoginContent() {
       {/* Decorative Image/Card */}
       <div className="hidden lg:block absolute right-12 top-1/2 -translate-y-1/2 w-80">
         <div className="bg-surface-container-lowest p-6 rounded-xl shadow-xl transform rotate-3 border border-outline-variant/10">
-          <img 
+          <Image 
             className="w-full h-48 object-cover rounded-lg mb-4" 
             alt="Portrait of a young smiling Nigerian university student" 
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7M8nZNvWU6XT3bztPiunpC_qTk-iZoEd3dltz2qfXCtUjJFV8XcA_qLYUq2K3-9Tqq0LNKM7fMpIQ54ZVPM9lgGYh9jlsMl5zDAC7MIICXHw6zKEfpXSbqgD8Yb3DU7oNZP65s5wR0DnsHKmSNJGKCLO4uqTxLvzGdU30eSFZNc9uYpl0qGTPQp7TDf0ReYPP132WSco-vW7sqdXxj-5Ig6w_Z1K44O26mFZ_OmWchAzw51IVIcTMl01rxUXI0bEG85rya4zw8kPC"
+            width={400}
+            height={300}
           />
           <p className="font-headline font-bold text-primary-fixed-dim italic text-sm">&quot;This platform changed my trajectory from uncertainty to academic excellence.&quot;</p>
           <div className="mt-4 flex items-center gap-3">

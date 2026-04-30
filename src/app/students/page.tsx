@@ -42,8 +42,6 @@ export default function VerifiedStudentsPage() {
         {/* Student Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {STUDENTS_DATA.map((student, index) => {
-            const percentage = (student.raisedAmount / student.totalGoal) * 100
-            
             return (
               <motion.div
                 key={student.id}
@@ -80,17 +78,10 @@ export default function VerifiedStudentsPage() {
                         <span className="text-lg font-headline font-black text-zinc-200">{student.gpa}</span>
                       </div>
                       
-                      <div className="space-y-2">
-                        <div className="flex justify-between items-center text-[10px] font-black uppercase tracking-widest">
-                          <span className="text-[#0052CC]">₦{student.raisedAmount.toLocaleString()}</span>
-                          <span className="text-zinc-300">Target: ₦{student.totalGoal.toLocaleString()}</span>
-                        </div>
-                        <div className="h-2 w-full bg-zinc-800 rounded-full overflow-hidden">
-                          <motion.div 
-                            initial={{ width: 0 }}
-                            animate={{ width: `${percentage}%` }}
-                            className="h-full bg-[#0052CC] rounded-full"
-                          />
+                      <div className="space-y-2 pt-2">
+                        <div className="flex justify-between items-center text-[10px] font-black uppercase tracking-widest bg-zinc-800/50 p-3 rounded-2xl border border-zinc-700/50">
+                          <span className="text-zinc-400">Funding Required</span>
+                          <span className="text-primary-fixed-dim text-sm">₦{student.totalGoal.toLocaleString()}</span>
                         </div>
                       </div>
                     </div>

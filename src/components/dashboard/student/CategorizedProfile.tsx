@@ -84,7 +84,7 @@ export function CategorizedProfile({ compact = false }: { compact?: boolean }) {
                <div className="absolute left-0 top-1.5 w-3.5 h-3.5 rounded-full bg-emerald-500 border-4 border-emerald-50" />
                <p className="text-[10px] font-black text-emerald-600 uppercase tracking-widest leading-none mb-1">{edu.year}</p>
                <p className={cn("font-headline font-black text-zinc-200", compact ? "text-xs" : "text-sm")}>{edu.school}</p>
-               <p className="text-[11px] text-zinc-500 font-medium">{edu.degree}</p>
+               <p className="text-[11px] text-zinc-400 font-medium">{edu.degree}</p>
              </div>
            ))}
         </div>

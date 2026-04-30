@@ -1,4 +1,3 @@
-import { GoldenAfricaGlobe } from '@/components/ui/GoldenAfricaGlobe';
 import { RedesignedHero } from '@/components/home/RedesignedHero';
 import { ImpactTypography } from '@/components/home/ImpactTypography';
 import { AboutSection } from '@/components/home/AboutSection';
@@ -12,9 +11,6 @@ import { QuickApplySection } from '@/components/home/QuickApplySection';
 export default function Home() {
   return (
     <main className="min-h-screen relative overflow-x-hidden">
-      {/* 0. Absolute Background (The Oracle) */}
-      <GoldenAfricaGlobe />
-      
       {/* 1. Redesigned Hero Section */}
       <RedesignedHero />
 

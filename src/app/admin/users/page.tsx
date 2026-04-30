@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { DashboardLayout } from '@/components/layout/DashboardLayout';
 import { getAllProfiles } from '@/lib/actions/admin';
 
 
@@ -37,8 +36,7 @@ export default function AdminUsers() {
   };
 
   return (
-    <DashboardLayout>
-      <div className="space-y-10">
+    <div className="space-y-10">
         <header className="flex flex-col md:flex-row md:items-center justify-between gap-8">
           <div>
             <h2 className="text-3xl font-bold text-white mb-2">Platform Registry</h2>
@@ -120,8 +118,7 @@ export default function AdminUsers() {
               )}
             </tbody>
           </table>
-        </div>
       </div>
-    </DashboardLayout>
+    </div>
   );
 }

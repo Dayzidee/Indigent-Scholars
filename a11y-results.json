@@ -1,0 +1,125 @@
+[
+  {
+    "id": "color-contrast",
+    "impact": "serious",
+    "tags": [
+      "cat.color",
+      "wcag2aa",
+      "wcag143",
+      "TTv5",
+      "TT13.c",
+      "EN-301-549",
+      "EN-9.1.4.3",
+      "ACT",
+      "RGAAv4",
+      "RGAA-3.2.1"
+    ],
+    "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+    "help": "Elements must meet minimum color contrast ratio thresholds",
+    "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=playwright",
+    "nodes": [
+      {
+        "any": [
+          {
+            "id": "color-contrast",
+            "data": {
+              "fgColor": "#0052cc",
+              "bgColor": "#0c0c0e",
+              "contrastRatio": 2.86,
+              "fontSize": "45.0pt (60px)",
+              "fontWeight": "bold",
+              "messageKey": null,
+              "expectedContrastRatio": "3:1"
+            },
+            "relatedNodes": [
+              {
+                "html": "<body class=\"min-h-full flex flex-col font-body bg-surface text-on-surface selection:bg-secondary-container\">",
+                "target": [
+                  "body"
+                ]
+              }
+            ],
+            "impact": "serious",
+            "message": "Element has insufficient color contrast of 2.86 (foreground color: #0052cc, background color: #0c0c0e, font size: 45.0pt (60px), font weight: bold). Expected contrast ratio of 3:1"
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "serious",
+        "html": "<span class=\"text-[#0052CC]\">Impact</span>",
+        "target": [
+          ".leading-\\[1\\.1\\].md\\:text-6xl > .text-\\[\\#0052CC\\]"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.86 (foreground color: #0052cc, background color: #0c0c0e, font size: 45.0pt (60px), font weight: bold). Expected contrast ratio of 3:1"
+      },
+      {
+        "any": [
+          {
+            "id": "color-contrast",
+            "data": {
+              "fgColor": "#71717b",
+              "bgColor": "#0c0c0e",
+              "contrastRatio": 4.04,
+              "fontSize": "9.0pt (12px)",
+              "fontWeight": "bold",
+              "messageKey": null,
+              "expectedContrastRatio": "4.5:1"
+            },
+            "relatedNodes": [
+              {
+                "html": "<body class=\"min-h-full flex flex-col font-body bg-surface text-on-surface selection:bg-secondary-container\">",
+                "target": [
+                  "body"
+                ]
+              }
+            ],
+            "impact": "serious",
+            "message": "Element has insufficient color contrast of 4.04 (foreground color: #71717b, background color: #0c0c0e, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "serious",
+        "html": "<a class=\"inline-flex items-center gap-4 text-zinc-500 hover:text-white transition-all text-xs font-black uppercase tracking-[0.4em] group\" href=\"/apply\">Want to become a verified scholar?<span class=\"text-[#0052CC] group-hover:translate-x-2 transition-transform\">Apply Now</span></a>",
+        "target": [
+          ".tracking-\\[0\\.4em\\]"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.04 (foreground color: #71717b, background color: #0c0c0e, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "any": [
+          {
+            "id": "color-contrast",
+            "data": {
+              "fgColor": "#0052cc",
+              "bgColor": "#0c0c0e",
+              "contrastRatio": 2.86,
+              "fontSize": "9.0pt (12px)",
+              "fontWeight": "bold",
+              "messageKey": null,
+              "expectedContrastRatio": "4.5:1"
+            },
+            "relatedNodes": [
+              {
+                "html": "<body class=\"min-h-full flex flex-col font-body bg-surface text-on-surface selection:bg-secondary-container\">",
+                "target": [
+                  "body"
+                ]
+              }
+            ],
+            "impact": "serious",
+            "message": "Element has insufficient color contrast of 2.86 (foreground color: #0052cc, background color: #0c0c0e, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "serious",
+        "html": "<span class=\"text-[#0052CC] group-hover:translate-x-2 transition-transform\">Apply Now</span>",
+        "target": [
+          ".group-hover\\:translate-x-2"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.86 (foreground color: #0052cc, background color: #0c0c0e, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+      }
+    ]
+  }
+]

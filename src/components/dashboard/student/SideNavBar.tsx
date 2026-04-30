@@ -27,7 +27,7 @@ const profileCard = (
     </div>
     <div className="min-w-0">
       <p className="text-sm font-bold text-on-surface truncate font-headline">Amara Okafor</p>
-      <p className="text-[10px] text-zinc-500 uppercase font-black font-headline tracking-wider truncate">Verified Scholar</p>
+      <p className="text-[10px] text-zinc-400 uppercase font-black font-headline tracking-wider truncate">Verified Scholar</p>
     </div>
   </div>
 )

@@ -1,0 +1,3261 @@
+[
+  {
+    "id": "color-contrast",
+    "impact": "serious",
+    "tags": [
+      "cat.color",
+      "wcag2aa",
+      "wcag143",
+      "TTv5",
+      "TT13.c",
+      "EN-301-549",
+      "EN-9.1.4.3",
+      "ACT",
+      "RGAAv4",
+      "RGAA-3.2.1"
+    ],
+    "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+    "help": "Elements must meet minimum color contrast ratio thresholds",
+    "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=playwright",
+    "nodes": [
+      {
+        "any": [
+          {
+            "id": "color-contrast",
+            "data": {
+              "fgColor": "#0052cc",
+              "bgColor": "#18181b",
+              "contrastRatio": 2.59,
+              "fontSize": "7.5pt (10px)",
+              "fontWeight": "bold",
+              "messageKey": null,
+              "expectedContrastRatio": "4.5:1"
+            },
+            "relatedNodes": [
+              {
+                "html": "<main class=\"pt-32 pb-20 px-6 min-h-screen bg-zinc-900 relative z-[2]\">",
+                "target": [
+                  ".pt-32"
+                ]
+              }
+            ],
+            "impact": "serious",
+            "message": "Element has insufficient color contrast of 2.59 (foreground color: #0052cc, background color: #18181b, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "serious",
+        "html": "<span class=\"text-[#0052CC] font-bold tracking-[0.2em] text-[10px] uppercase font-label\">Institutional Excellence</span>",
+        "target": [
+          ".space-y-4 > .tracking-\\[0\\.2em\\].text-\\[\\#0052CC\\].font-label"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.59 (foreground color: #0052cc, background color: #18181b, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "any": [
+          {
+            "id": "color-contrast",
+            "data": {
+              "fgColor": "#0052cc",
+              "bgColor": "#18181b",
+              "contrastRatio": 2.59,
+              "fontSize": "9.0pt (12px)",
+              "fontWeight": "bold",
+              "messageKey": null,
+              "expectedContrastRatio": "4.5:1"
+            },
+            "relatedNodes": [
+              {
+                "html": "<div class=\"lg:col-span-7 bg-zinc-900 rounded-[40px] p-8 lg:p-14 shadow-2xl shadow-blue-900/5 border border-zinc-800\">",
+                "target": [
+                  ".lg\\:col-span-7"
+                ]
+              }
+            ],
+            "impact": "serious",
+            "message": "Element has insufficient color contrast of 2.59 (foreground color: #0052cc, background color: #18181b, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "serious",
+        "html": "<h3 class=\"text-xs font-black uppercase tracking-[0.2em] text-[#0052CC] font-label\">General Information</h3>",
+        "target": [
+          ".space-y-8:nth-child(2) > .gap-3.items-center.flex > .tracking-\\[0\\.2em\\]"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.59 (foreground color: #0052cc, background color: #18181b, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "any": [
+          {
+            "id": "color-contrast",
+            "data": {
+              "fgColor": "#71717a",
+              "bgColor": "#1c1c20",
+              "contrastRatio": 3.51,
+              "fontSize": "7.5pt (10px)",
+              "fontWeight": "bold",
+              "messageKey": null,
+              "expectedContrastRatio": "4.5:1"
+            },
+            "relatedNodes": [
+              {
+                "html": "<div class=\"relative flex items-center min-h-[56px] rounded-xl border-2 transition-all duration-200 border-zinc-700 bg-zinc-800/30 group-hover:border-zinc-600\">",
+                "target": [
+                  ".space-y-8:nth-child(2) > .md\\:grid-cols-2.grid-cols-1.grid:nth-child(2) > .group.w-full.relative:nth-child(1) > .bg-zinc-800\\/30.min-h-\\[56px\\].rounded-xl"
+                ]
+              },
+              {
+                "html": "<div class=\"lg:col-span-7 bg-zinc-900 rounded-[40px] p-8 lg:p-14 shadow-2xl shadow-blue-900/5 border border-zinc-800\">",
+                "target": [
+                  ".lg\\:col-span-7"
+                ]
+              }
+            ],
+            "impact": "serious",
+            "message": "Element has insufficient color contrast of 3.51 (foreground color: #71717a, background color: #1c1c20, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "serious",
+        "html": "<label class=\"absolute pointer-events-none font-bold uppercase tracking-wider text-[10px] select-none left-12\" style=\"color:#71717a;transform:none\">Full Legal Name</label>",
+        "target": [
+          ".space-y-8:nth-child(2) > .md\\:grid-cols-2.grid-cols-1.grid:nth-child(2) > .group.w-full.relative:nth-child(1) > .bg-zinc-800\\/30.min-h-\\[56px\\].rounded-xl > .left-12.tracking-wider.select-none"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.51 (foreground color: #71717a, background color: #1c1c20, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "any": [
+          {
+            "id": "color-contrast",
+            "data": {
+              "fgColor": "#71717a",
+              "bgColor": "#1c1c20",
+              "contrastRatio": 3.51,
+              "fontSize": "7.5pt (10px)",
+              "fontWeight": "bold",
+              "messageKey": null,
+              "expectedContrastRatio": "4.5:1"
+            },
+            "relatedNodes": [
+              {
+                "html": "<div class=\"relative flex items-center min-h-[56px] rounded-xl border-2 transition-all duration-200 border-zinc-700 bg-zinc-800/30 group-hover:border-zinc-600\">",
+                "target": [
+                  ".space-y-8:nth-child(2) > .md\\:grid-cols-2.grid-cols-1.grid:nth-child(2) > .group.w-full.relative:nth-child(2) > .bg-zinc-800\\/30.min-h-\\[56px\\].rounded-xl"
+                ]
+              },
+              {
+                "html": "<div class=\"lg:col-span-7 bg-zinc-900 rounded-[40px] p-8 lg:p-14 shadow-2xl shadow-blue-900/5 border border-zinc-800\">",
+                "target": [
+                  ".lg\\:col-span-7"
+                ]
+              }
+            ],
+            "impact": "serious",
+            "message": "Element has insufficient color contrast of 3.51 (foreground color: #71717a, background color: #1c1c20, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "serious",
+        "html": "<label class=\"absolute pointer-events-none font-bold uppercase tracking-wider text-[10px] select-none left-12\" style=\"color:#71717a;transform:none\">Email Address</label>",
+        "target": [
+          ".space-y-8:nth-child(2) > .md\\:grid-cols-2.grid-cols-1.grid:nth-child(2) > .group.w-full.relative:nth-child(2) > .bg-zinc-800\\/30.min-h-\\[56px\\].rounded-xl > .left-12.tracking-wider.select-none"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.51 (foreground color: #71717a, background color: #1c1c20, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "any": [
+          {
+            "id": "color-contrast",
+            "data": {
+              "fgColor": "#71717a",
+              "bgColor": "#1c1c20",
+              "contrastRatio": 3.51,
+              "fontSize": "7.5pt (10px)",
+              "fontWeight": "bold",
+              "messageKey": null,
+              "expectedContrastRatio": "4.5:1"
+            },
+            "relatedNodes": [
+              {
+                "html": "<div class=\"relative flex items-center min-h-[56px] rounded-xl border-2 transition-all duration-200 border-zinc-700 bg-zinc-800/30 group-hover:border-zinc-600\">",
+                "target": [
+                  ".space-y-8:nth-child(2) > .md\\:grid-cols-2.grid-cols-1.grid:nth-child(3) > .group.w-full.relative:nth-child(1) > .bg-zinc-800\\/30.min-h-\\[56px\\].rounded-xl"
+                ]
+              },
+              {
+                "html": "<div class=\"lg:col-span-7 bg-zinc-900 rounded-[40px] p-8 lg:p-14 shadow-2xl shadow-blue-900/5 border border-zinc-800\">",
+                "target": [
+                  ".lg\\:col-span-7"
+                ]
+              }
+            ],
+            "impact": "serious",
+            "message": "Element has insufficient color contrast of 3.51 (foreground color: #71717a, background color: #1c1c20, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "serious",
+        "html": "<label class=\"absolute pointer-events-none font-bold uppercase tracking-wider text-[10px] select-none left-12\" style=\"color:#71717a;transform:none\">Phone Number</label>",
+        "target": [
+          ".space-y-8:nth-child(2) > .md\\:grid-cols-2.grid-cols-1.grid:nth-child(3) > .group.w-full.relative:nth-child(1) > .bg-zinc-800\\/30.min-h-\\[56px\\].rounded-xl > .left-12.tracking-wider.select-none"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.51 (foreground color: #71717a, background color: #1c1c20, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "any": [
+          {
+            "id": "color-contrast",
+            "data": {
+              "fgColor": "#71717a",
+              "bgColor": "#1c1c20",
+              "contrastRatio": 3.51,
+              "fontSize": "7.5pt (10px)",
+              "fontWeight": "bold",
+              "messageKey": null,
+              "expectedContrastRatio": "4.5:1"
+            },
+            "relatedNodes": [
+              {
+                "html": "<div class=\"relative flex items-center min-h-[56px] rounded-xl border-2 transition-all duration-200 cursor-pointer border-zinc-700 bg-zinc-800/30 group-hover:border-zinc-600\">",
+                "target": [
+                  ".md\\:grid-cols-2.grid-cols-1.grid:nth-child(3) > .z-10.group.w-full > .cursor-pointer.bg-zinc-800\\/30.min-h-\\[56px\\]"
+                ]
+              },
+              {
+                "html": "<div class=\"lg:col-span-7 bg-zinc-900 rounded-[40px] p-8 lg:p-14 shadow-2xl shadow-blue-900/5 border border-zinc-800\">",
+                "target": [
+                  ".lg\\:col-span-7"
+                ]
+              }
+            ],
+            "impact": "serious",
+            "message": "Element has insufficient color contrast of 3.51 (foreground color: #71717a, background color: #1c1c20, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "serious",
+        "html": "<label class=\"absolute pointer-events-none font-bold uppercase tracking-wider text-[10px] select-none left-12\" style=\"color:#71717a;transform:none\">Gender</label>",
+        "target": [
+          ".md\\:grid-cols-2.grid-cols-1.grid:nth-child(3) > .z-10.group.w-full > .cursor-pointer.bg-zinc-800\\/30.min-h-\\[56px\\] > .left-12.tracking-wider.select-none"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.51 (foreground color: #71717a, background color: #1c1c20, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "any": [
+          {
+            "id": "color-contrast",
+            "data": {
+              "fgColor": "#71717a",
+              "bgColor": "#18181b",
+              "contrastRatio": 3.66,
+              "fontSize": "7.5pt (10px)",
+              "fontWeight": "bold",
+              "messageKey": null,
+              "expectedContrastRatio": "4.5:1"
+            },
+            "relatedNodes": [
+              {
+                "html": "<label class=\"absolute left-4 pointer-events-none font-bold uppercase tracking-wider text-[10px] select-none bg-zinc-900 px-2 py-0.5 rounded-sm z-10\" style=\"color:#71717a;transform:translateX(-32px) translateY(-24px) scale(0.85)\">Date of Birth</label>",
+                "target": [
+                  ".group.w-full.relative:nth-child(1) > .bg-zinc-900.min-h-\\[56px\\].rounded-xl > .left-4.px-2.py-0\\.5"
+                ]
+              }
+            ],
+            "impact": "serious",
+            "message": "Element has insufficient color contrast of 3.66 (foreground color: #71717a, background color: #18181b, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "serious",
+        "html": "<label class=\"absolute left-4 pointer-events-none font-bold uppercase tracking-wider text-[10px] select-none bg-zinc-900 px-2 py-0.5 rounded-sm z-10\" style=\"color:#71717a;transform:translateX(-32px) translateY(-24px) scale(0.85)\">Date of Birth</label>",
+        "target": [
+          ".group.w-full.relative:nth-child(1) > .bg-zinc-900.min-h-\\[56px\\].rounded-xl > .left-4.px-2.py-0\\.5"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.66 (foreground color: #71717a, background color: #18181b, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "any": [
+          {
+            "id": "color-contrast",
+            "data": {
+              "fgColor": "#71717a",
+              "bgColor": "#1c1c20",
+              "contrastRatio": 3.51,
+              "fontSize": "7.5pt (10px)",
+              "fontWeight": "bold",
+              "messageKey": null,
+              "expectedContrastRatio": "4.5:1"
+            },
+            "relatedNodes": [
+              {
+                "html": "<div class=\"relative flex items-center min-h-[56px] rounded-xl border-2 transition-all duration-200 cursor-pointer border-zinc-700 bg-zinc-800/30 group-hover:border-zinc-600\">",
+                "target": [
+                  ".space-y-8:nth-child(2) > .md\\:grid-cols-3.grid-cols-1.grid > .z-10.group.w-full:nth-child(2) > .cursor-pointer.bg-zinc-800\\/30.min-h-\\[56px\\]"
+                ]
+              },
+              {
+                "html": "<div class=\"lg:col-span-7 bg-zinc-900 rounded-[40px] p-8 lg:p-14 shadow-2xl shadow-blue-900/5 border border-zinc-800\">",
+                "target": [
+                  ".lg\\:col-span-7"
+                ]
+              }
+            ],
+            "impact": "serious",
+            "message": "Element has insufficient color contrast of 3.51 (foreground color: #71717a, background color: #1c1c20, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "serious",
+        "html": "<label class=\"absolute pointer-events-none font-bold uppercase tracking-wider text-[10px] select-none left-12\" style=\"color:#71717a;transform:none\">Marital Status</label>",
+        "target": [
+          ".space-y-8:nth-child(2) > .md\\:grid-cols-3.grid-cols-1.grid > .z-10.group.w-full:nth-child(2) > .cursor-pointer.bg-zinc-800\\/30.min-h-\\[56px\\] > .left-12.tracking-wider.select-none"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.51 (foreground color: #71717a, background color: #1c1c20, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "any": [
+          {
+            "id": "color-contrast",
+            "data": {
+              "fgColor": "#71717a",
+              "bgColor": "#18181b",
+              "contrastRatio": 3.66,
+              "fontSize": "7.5pt (10px)",
+              "fontWeight": "bold",
+              "messageKey": null,
+              "expectedContrastRatio": "4.5:1"
+            },
+            "relatedNodes": [
+              {
+                "html": "<label class=\"absolute left-4 pointer-events-none font-bold uppercase tracking-wider text-[10px] select-none bg-zinc-900 px-2 py-0.5 rounded-sm z-10\" style=\"color:#71717a;transform:translateX(-32px) translateY(-24px) scale(0.85)\">Nationality</label>",
+                "target": [
+                  ".cursor-pointer.bg-zinc-900.min-h-\\[56px\\] > .left-4.px-2.py-0\\.5"
+                ]
+              }
+            ],
+            "impact": "serious",
+            "message": "Element has insufficient color contrast of 3.66 (foreground color: #71717a, background color: #18181b, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "serious",
+        "html": "<label class=\"absolute left-4 pointer-events-none font-bold uppercase tracking-wider text-[10px] select-none bg-zinc-900 px-2 py-0.5 rounded-sm z-10\" style=\"color:#71717a;transform:translateX(-32px) translateY(-24px) scale(0.85)\">Nationality</label>",
+        "target": [
+          ".cursor-pointer.bg-zinc-900.min-h-\\[56px\\] > .left-4.px-2.py-0\\.5"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.66 (foreground color: #71717a, background color: #18181b, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "any": [
+          {
+            "id": "color-contrast",
+            "data": {
+              "fgColor": "#71717a",
+              "bgColor": "#1c1c20",
+              "contrastRatio": 3.51,
+              "fontSize": "7.5pt (10px)",
+              "fontWeight": "bold",
+              "messageKey": null,
+              "expectedContrastRatio": "4.5:1"
+            },
+            "relatedNodes": [
+              {
+                "html": "<div class=\"relative flex items-center min-h-[56px] rounded-xl border-2 transition-all duration-200 border-zinc-700 bg-zinc-800/30 group-hover:border-zinc-600\">",
+                "target": [
+                  ".space-y-8:nth-child(2) > .group.w-full.relative > .bg-zinc-800\\/30.min-h-\\[56px\\].rounded-xl"
+                ]
+              },
+              {
+                "html": "<div class=\"lg:col-span-7 bg-zinc-900 rounded-[40px] p-8 lg:p-14 shadow-2xl shadow-blue-900/5 border border-zinc-800\">",
+                "target": [
+                  ".lg\\:col-span-7"
+                ]
+              }
+            ],
+            "impact": "serious",
+            "message": "Element has insufficient color contrast of 3.51 (foreground color: #71717a, background color: #1c1c20, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "serious",
+        "html": "<label class=\"absolute pointer-events-none font-bold uppercase tracking-wider text-[10px] select-none left-12\" style=\"color:#71717a;transform:none\">Create Password</label>",
+        "target": [
+          ".space-y-8:nth-child(2) > .group.w-full.relative > .bg-zinc-800\\/30.min-h-\\[56px\\].rounded-xl > .left-12.tracking-wider.select-none"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.51 (foreground color: #71717a, background color: #1c1c20, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "any": [
+          {
+            "id": "color-contrast",
+            "data": {
+              "fgColor": "#0052cc",
+              "bgColor": "#18181b",
+              "contrastRatio": 2.59,
+              "fontSize": "9.0pt (12px)",
+              "fontWeight": "bold",
+              "messageKey": null,
+              "expectedContrastRatio": "4.5:1"
+            },
+            "relatedNodes": [
+              {
+                "html": "<div class=\"lg:col-span-7 bg-zinc-900 rounded-[40px] p-8 lg:p-14 shadow-2xl shadow-blue-900/5 border border-zinc-800\">",
+                "target": [
+                  ".lg\\:col-span-7"
+                ]
+              }
+            ],
+            "impact": "serious",
+            "message": "Element has insufficient color contrast of 2.59 (foreground color: #0052cc, background color: #18181b, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "serious",
+        "html": "<h3 class=\"text-xs font-black uppercase tracking-[0.2em] text-[#0052CC] font-label\">Residential Address</h3>",
+        "target": [
+          ".space-y-8:nth-child(3) > .gap-3.items-center.flex > .tracking-\\[0\\.2em\\]"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.59 (foreground color: #0052cc, background color: #18181b, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "any": [
+          {
+            "id": "color-contrast",
+            "data": {
+              "fgColor": "#71717a",
+              "bgColor": "#1c1c20",
+              "contrastRatio": 3.51,
+              "fontSize": "7.5pt (10px)",
+              "fontWeight": "bold",
+              "messageKey": null,
+              "expectedContrastRatio": "4.5:1"
+            },
+            "relatedNodes": [
+              {
+                "html": "<div class=\"relative flex items-center min-h-[56px] rounded-xl border-2 transition-all duration-200 border-zinc-700 bg-zinc-800/30 group-hover:border-zinc-600\">",
+                "target": [
+                  ".space-y-8:nth-child(3) > .group.w-full.relative > .bg-zinc-800\\/30.min-h-\\[56px\\].rounded-xl"
+                ]
+              },
+              {
+                "html": "<div class=\"lg:col-span-7 bg-zinc-900 rounded-[40px] p-8 lg:p-14 shadow-2xl shadow-blue-900/5 border border-zinc-800\">",
+                "target": [
+                  ".lg\\:col-span-7"
+                ]
+              }
+            ],
+            "impact": "serious",
+            "message": "Element has insufficient color contrast of 3.51 (foreground color: #71717a, background color: #1c1c20, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "serious",
+        "html": "<label class=\"absolute pointer-events-none font-bold uppercase tracking-wider text-[10px] select-none left-12\" style=\"color:#71717a;transform:none\">Street Address</label>",
+        "target": [
+          ".space-y-8:nth-child(3) > .group.w-full.relative > .bg-zinc-800\\/30.min-h-\\[56px\\].rounded-xl > .left-12.tracking-wider.select-none"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.51 (foreground color: #71717a, background color: #1c1c20, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "any": [
+          {
+            "id": "color-contrast",
+            "data": {
+              "fgColor": "#71717a",
+              "bgColor": "#1c1c20",
+              "contrastRatio": 3.51,
+              "fontSize": "7.5pt (10px)",
+              "fontWeight": "bold",
+              "messageKey": null,
+              "expectedContrastRatio": "4.5:1"
+            },
+            "relatedNodes": [
+              {
+                "html": "<div class=\"relative flex items-center min-h-[56px] rounded-xl border-2 transition-all duration-200 border-zinc-700 bg-zinc-800/30 group-hover:border-zinc-600\">",
+                "target": [
+                  ".space-y-8:nth-child(3) > .md\\:grid-cols-3.grid-cols-1.grid > .group.w-full.relative:nth-child(1) > .bg-zinc-800\\/30.min-h-\\[56px\\].rounded-xl"
+                ]
+              },
+              {
+                "html": "<div class=\"lg:col-span-7 bg-zinc-900 rounded-[40px] p-8 lg:p-14 shadow-2xl shadow-blue-900/5 border border-zinc-800\">",
+                "target": [
+                  ".lg\\:col-span-7"
+                ]
+              }
+            ],
+            "impact": "serious",
+            "message": "Element has insufficient color contrast of 3.51 (foreground color: #71717a, background color: #1c1c20, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "serious",
+        "html": "<label class=\"absolute pointer-events-none font-bold uppercase tracking-wider text-[10px] select-none left-12\" style=\"color:#71717a;transform:none\">City</label>",
+        "target": [
+          ".space-y-8:nth-child(3) > .md\\:grid-cols-3.grid-cols-1.grid > .group.w-full.relative:nth-child(1) > .bg-zinc-800\\/30.min-h-\\[56px\\].rounded-xl > .left-12.tracking-wider.select-none"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.51 (foreground color: #71717a, background color: #1c1c20, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "any": [
+          {
+            "id": "color-contrast",
+            "data": {
+              "fgColor": "#71717a",
+              "bgColor": "#1c1c20",
+              "contrastRatio": 3.51,
+              "fontSize": "7.5pt (10px)",
+              "fontWeight": "bold",
+              "messageKey": null,
+              "expectedContrastRatio": "4.5:1"
+            },
+            "relatedNodes": [
+              {
+                "html": "<div class=\"relative flex items-center min-h-[56px] rounded-xl border-2 transition-all duration-200 cursor-pointer border-zinc-700 bg-zinc-800/30 group-hover:border-zinc-600\">",
+                "target": [
+                  ".space-y-8:nth-child(3) > .md\\:grid-cols-3.grid-cols-1.grid > .z-10.group.w-full > .cursor-pointer.bg-zinc-800\\/30.min-h-\\[56px\\]"
+                ]
+              },
+              {
+                "html": "<div class=\"lg:col-span-7 bg-zinc-900 rounded-[40px] p-8 lg:p-14 shadow-2xl shadow-blue-900/5 border border-zinc-800\">",
+                "target": [
+                  ".lg\\:col-span-7"
+                ]
+              }
+            ],
+            "impact": "serious",
+            "message": "Element has insufficient color contrast of 3.51 (foreground color: #71717a, background color: #1c1c20, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "serious",
+        "html": "<label class=\"absolute pointer-events-none font-bold uppercase tracking-wider text-[10px] select-none left-12\" style=\"color:#71717a;transform:none\">State</label>",
+        "target": [
+          ".space-y-8:nth-child(3) > .md\\:grid-cols-3.grid-cols-1.grid > .z-10.group.w-full > .cursor-pointer.bg-zinc-800\\/30.min-h-\\[56px\\] > .left-12.tracking-wider.select-none"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.51 (foreground color: #71717a, background color: #1c1c20, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "any": [
+          {
+            "id": "color-contrast",
+            "data": {
+              "fgColor": "#71717a",
+              "bgColor": "#1c1c20",
+              "contrastRatio": 3.51,
+              "fontSize": "7.5pt (10px)",
+              "fontWeight": "bold",
+              "messageKey": null,
+              "expectedContrastRatio": "4.5:1"
+            },
+            "relatedNodes": [
+              {
+                "html": "<div class=\"relative flex items-center min-h-[56px] rounded-xl border-2 transition-all duration-200 border-zinc-700 bg-zinc-800/30 group-hover:border-zinc-600\">",
+                "target": [
+                  ".space-y-8:nth-child(3) > .md\\:grid-cols-3.grid-cols-1.grid > .group.w-full.relative:nth-child(3) > .bg-zinc-800\\/30.min-h-\\[56px\\].rounded-xl"
+                ]
+              },
+              {
+                "html": "<div class=\"lg:col-span-7 bg-zinc-900 rounded-[40px] p-8 lg:p-14 shadow-2xl shadow-blue-900/5 border border-zinc-800\">",
+                "target": [
+                  ".lg\\:col-span-7"
+                ]
+              }
+            ],
+            "impact": "serious",
+            "message": "Element has insufficient color contrast of 3.51 (foreground color: #71717a, background color: #1c1c20, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "serious",
+        "html": "<label class=\"absolute pointer-events-none font-bold uppercase tracking-wider text-[10px] select-none left-12\" style=\"color:#71717a;transform:none\">Zip/Postal Code</label>",
+        "target": [
+          ".space-y-8:nth-child(3) > .md\\:grid-cols-3.grid-cols-1.grid > .group.w-full.relative:nth-child(3) > .bg-zinc-800\\/30.min-h-\\[56px\\].rounded-xl > .left-12.tracking-wider.select-none"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.51 (foreground color: #71717a, background color: #1c1c20, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "any": [
+          {
+            "id": "color-contrast",
+            "data": {
+              "fgColor": "#0052cc",
+              "bgColor": "#18181b",
+              "contrastRatio": 2.59,
+              "fontSize": "9.0pt (12px)",
+              "fontWeight": "bold",
+              "messageKey": null,
+              "expectedContrastRatio": "4.5:1"
+            },
+            "relatedNodes": [
+              {
+                "html": "<div class=\"lg:col-span-7 bg-zinc-900 rounded-[40px] p-8 lg:p-14 shadow-2xl shadow-blue-900/5 border border-zinc-800\">",
+                "target": [
+                  ".lg\\:col-span-7"
+                ]
+              }
+            ],
+            "impact": "serious",
+            "message": "Element has insufficient color contrast of 2.59 (foreground color: #0052cc, background color: #18181b, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "serious",
+        "html": "<h3 class=\"text-xs font-black uppercase tracking-[0.2em] text-[#0052CC] font-label\">Origins Information</h3>",
+        "target": [
+          ".space-y-8:nth-child(4) > .gap-3.items-center.flex > .tracking-\\[0\\.2em\\]"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.59 (foreground color: #0052cc, background color: #18181b, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "any": [
+          {
+            "id": "color-contrast",
+            "data": {
+              "fgColor": "#71717a",
+              "bgColor": "#1c1c20",
+              "contrastRatio": 3.51,
+              "fontSize": "7.5pt (10px)",
+              "fontWeight": "bold",
+              "messageKey": null,
+              "expectedContrastRatio": "4.5:1"
+            },
+            "relatedNodes": [
+              {
+                "html": "<div class=\"relative flex items-center min-h-[56px] rounded-xl border-2 transition-all duration-200 cursor-pointer border-zinc-700 bg-zinc-800/30 group-hover:border-zinc-600\">",
+                "target": [
+                  ".space-y-8:nth-child(4) > .md\\:grid-cols-2.grid-cols-1.grid > .z-10.group.w-full:nth-child(1) > .cursor-pointer.bg-zinc-800\\/30.min-h-\\[56px\\]"
+                ]
+              },
+              {
+                "html": "<div class=\"lg:col-span-7 bg-zinc-900 rounded-[40px] p-8 lg:p-14 shadow-2xl shadow-blue-900/5 border border-zinc-800\">",
+                "target": [
+                  ".lg\\:col-span-7"
+                ]
+              }
+            ],
+            "impact": "serious",
+            "message": "Element has insufficient color contrast of 3.51 (foreground color: #71717a, background color: #1c1c20, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "serious",
+        "html": "<label class=\"absolute pointer-events-none font-bold uppercase tracking-wider text-[10px] select-none left-12\" style=\"color:#71717a;transform:none\">State of Origin</label>",
+        "target": [
+          ".space-y-8:nth-child(4) > .md\\:grid-cols-2.grid-cols-1.grid > .z-10.group.w-full:nth-child(1) > .cursor-pointer.bg-zinc-800\\/30.min-h-\\[56px\\] > .left-12.tracking-wider.select-none"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.51 (foreground color: #71717a, background color: #1c1c20, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "any": [
+          {
+            "id": "color-contrast",
+            "data": {
+              "fgColor": "#49494f",
+              "bgColor": "#202023",
+              "contrastRatio": 1.81,
+              "fontSize": "7.5pt (10px)",
+              "fontWeight": "bold",
+              "messageKey": null,
+              "expectedContrastRatio": "4.5:1"
+            },
+            "relatedNodes": [
+              {
+                "html": "<div class=\"relative flex items-center min-h-[56px] rounded-xl border-2 transition-all duration-200 border-zinc-700 group-hover:border-zinc-600 opacity-50 cursor-not-allowed bg-zinc-800\">",
+                "target": [
+                  ".opacity-50"
+                ]
+              },
+              {
+                "html": "<div class=\"lg:col-span-7 bg-zinc-900 rounded-[40px] p-8 lg:p-14 shadow-2xl shadow-blue-900/5 border border-zinc-800\">",
+                "target": [
+                  ".lg\\:col-span-7"
+                ]
+              }
+            ],
+            "impact": "serious",
+            "message": "Element has insufficient color contrast of 1.81 (foreground color: #49494f, background color: #202023, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "serious",
+        "html": "<label class=\"absolute pointer-events-none font-bold uppercase tracking-wider text-[10px] select-none left-12\" style=\"color:#71717a;transform:none\">LGA of Origin</label>",
+        "target": [
+          ".opacity-50 > .left-12.tracking-wider.select-none"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.81 (foreground color: #49494f, background color: #202023, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "any": [
+          {
+            "id": "color-contrast",
+            "data": {
+              "fgColor": "#0052cc",
+              "bgColor": "#18181b",
+              "contrastRatio": 2.59,
+              "fontSize": "9.0pt (12px)",
+              "fontWeight": "bold",
+              "messageKey": null,
+              "expectedContrastRatio": "4.5:1"
+            },
+            "relatedNodes": [
+              {
+                "html": "<div class=\"lg:col-span-7 bg-zinc-900 rounded-[40px] p-8 lg:p-14 shadow-2xl shadow-blue-900/5 border border-zinc-800\">",
+                "target": [
+                  ".lg\\:col-span-7"
+                ]
+              }
+            ],
+            "impact": "serious",
+            "message": "Element has insufficient color contrast of 2.59 (foreground color: #0052cc, background color: #18181b, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "serious",
+        "html": "<h3 class=\"text-xs font-black uppercase tracking-[0.2em] text-[#0052CC] font-label\">Institutional Profile</h3>",
+        "target": [
+          ".space-y-8:nth-child(5) > .gap-3.items-center.flex > .tracking-\\[0\\.2em\\]"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.59 (foreground color: #0052cc, background color: #18181b, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "any": [
+          {
+            "id": "color-contrast",
+            "data": {
+              "fgColor": "#71717a",
+              "bgColor": "#1c1c20",
+              "contrastRatio": 3.51,
+              "fontSize": "7.5pt (10px)",
+              "fontWeight": "bold",
+              "messageKey": null,
+              "expectedContrastRatio": "4.5:1"
+            },
+            "relatedNodes": [
+              {
+                "html": "<div class=\"relative flex items-center min-h-[56px] rounded-xl border-2 transition-all duration-200 border-zinc-700 bg-zinc-800/30 group-hover:border-zinc-600\">",
+                "target": [
+                  ".space-y-8:nth-child(5) > .group.w-full.relative > .bg-zinc-800\\/30.min-h-\\[56px\\].rounded-xl"
+                ]
+              },
+              {
+                "html": "<div class=\"lg:col-span-7 bg-zinc-900 rounded-[40px] p-8 lg:p-14 shadow-2xl shadow-blue-900/5 border border-zinc-800\">",
+                "target": [
+                  ".lg\\:col-span-7"
+                ]
+              }
+            ],
+            "impact": "serious",
+            "message": "Element has insufficient color contrast of 3.51 (foreground color: #71717a, background color: #1c1c20, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "serious",
+        "html": "<label class=\"absolute pointer-events-none font-bold uppercase tracking-wider text-[10px] select-none left-12\" style=\"color:#71717a;transform:none\">University Name</label>",
+        "target": [
+          ".space-y-8:nth-child(5) > .group.w-full.relative > .bg-zinc-800\\/30.min-h-\\[56px\\].rounded-xl > .left-12.tracking-wider.select-none"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.51 (foreground color: #71717a, background color: #1c1c20, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "any": [
+          {
+            "id": "color-contrast",
+            "data": {
+              "fgColor": "#71717a",
+              "bgColor": "#1c1c20",
+              "contrastRatio": 3.51,
+              "fontSize": "7.5pt (10px)",
+              "fontWeight": "bold",
+              "messageKey": null,
+              "expectedContrastRatio": "4.5:1"
+            },
+            "relatedNodes": [
+              {
+                "html": "<div class=\"relative flex items-center min-h-[56px] rounded-xl border-2 transition-all duration-200 border-zinc-700 bg-zinc-800/30 group-hover:border-zinc-600\">",
+                "target": [
+                  ".space-y-8:nth-child(5) > .md\\:grid-cols-2.grid-cols-1.grid:nth-child(3) > .group.w-full.relative:nth-child(1) > .bg-zinc-800\\/30.min-h-\\[56px\\].rounded-xl"
+                ]
+              },
+              {
+                "html": "<div class=\"lg:col-span-7 bg-zinc-900 rounded-[40px] p-8 lg:p-14 shadow-2xl shadow-blue-900/5 border border-zinc-800\">",
+                "target": [
+                  ".lg\\:col-span-7"
+                ]
+              }
+            ],
+            "impact": "serious",
+            "message": "Element has insufficient color contrast of 3.51 (foreground color: #71717a, background color: #1c1c20, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "serious",
+        "html": "<label class=\"absolute pointer-events-none font-bold uppercase tracking-wider text-[10px] select-none left-12\" style=\"color:#71717a;transform:none\">Field of Study</label>",
+        "target": [
+          ".space-y-8:nth-child(5) > .md\\:grid-cols-2.grid-cols-1.grid:nth-child(3) > .group.w-full.relative:nth-child(1) > .bg-zinc-800\\/30.min-h-\\[56px\\].rounded-xl > .left-12.tracking-wider.select-none"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.51 (foreground color: #71717a, background color: #1c1c20, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "any": [
+          {
+            "id": "color-contrast",
+            "data": {
+              "fgColor": "#71717a",
+              "bgColor": "#1c1c20",
+              "contrastRatio": 3.51,
+              "fontSize": "7.5pt (10px)",
+              "fontWeight": "bold",
+              "messageKey": null,
+              "expectedContrastRatio": "4.5:1"
+            },
+            "relatedNodes": [
+              {
+                "html": "<div class=\"relative flex items-center min-h-[56px] rounded-xl border-2 transition-all duration-200 border-zinc-700 bg-zinc-800/30 group-hover:border-zinc-600\">",
+                "target": [
+                  ".space-y-8:nth-child(5) > .md\\:grid-cols-2.grid-cols-1.grid:nth-child(3) > .group.w-full.relative:nth-child(2) > .bg-zinc-800\\/30.min-h-\\[56px\\].rounded-xl"
+                ]
+              },
+              {
+                "html": "<div class=\"lg:col-span-7 bg-zinc-900 rounded-[40px] p-8 lg:p-14 shadow-2xl shadow-blue-900/5 border border-zinc-800\">",
+                "target": [
+                  ".lg\\:col-span-7"
+                ]
+              }
+            ],
+            "impact": "serious",
+            "message": "Element has insufficient color contrast of 3.51 (foreground color: #71717a, background color: #1c1c20, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "serious",
+        "html": "<label class=\"absolute pointer-events-none font-bold uppercase tracking-wider text-[10px] select-none left-12\" style=\"color:#71717a;transform:none\">Program of Study</label>",
+        "target": [
+          ".space-y-8:nth-child(5) > .md\\:grid-cols-2.grid-cols-1.grid:nth-child(3) > .group.w-full.relative:nth-child(2) > .bg-zinc-800\\/30.min-h-\\[56px\\].rounded-xl > .left-12.tracking-wider.select-none"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.51 (foreground color: #71717a, background color: #1c1c20, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "any": [
+          {
+            "id": "color-contrast",
+            "data": {
+              "fgColor": "#71717a",
+              "bgColor": "#1c1c20",
+              "contrastRatio": 3.51,
+              "fontSize": "7.5pt (10px)",
+              "fontWeight": "bold",
+              "messageKey": null,
+              "expectedContrastRatio": "4.5:1"
+            },
+            "relatedNodes": [
+              {
+                "html": "<div class=\"relative flex items-center min-h-[56px] rounded-xl border-2 transition-all duration-200 cursor-pointer border-zinc-700 bg-zinc-800/30 group-hover:border-zinc-600\">",
+                "target": [
+                  ".md\\:grid-cols-2.grid-cols-1.grid:nth-child(4) > .z-10.group.w-full:nth-child(1) > .cursor-pointer.bg-zinc-800\\/30.min-h-\\[56px\\]"
+                ]
+              },
+              {
+                "html": "<div class=\"lg:col-span-7 bg-zinc-900 rounded-[40px] p-8 lg:p-14 shadow-2xl shadow-blue-900/5 border border-zinc-800\">",
+                "target": [
+                  ".lg\\:col-span-7"
+                ]
+              }
+            ],
+            "impact": "serious",
+            "message": "Element has insufficient color contrast of 3.51 (foreground color: #71717a, background color: #1c1c20, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "serious",
+        "html": "<label class=\"absolute pointer-events-none font-bold uppercase tracking-wider text-[10px] select-none left-12\" style=\"color:#71717a;transform:none\">Current Level</label>",
+        "target": [
+          ".md\\:grid-cols-2.grid-cols-1.grid:nth-child(4) > .z-10.group.w-full:nth-child(1) > .cursor-pointer.bg-zinc-800\\/30.min-h-\\[56px\\] > .left-12.tracking-wider.select-none"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.51 (foreground color: #71717a, background color: #1c1c20, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "any": [
+          {
+            "id": "color-contrast",
+            "data": {
+              "fgColor": "#71717a",
+              "bgColor": "#1c1c20",
+              "contrastRatio": 3.51,
+              "fontSize": "7.5pt (10px)",
+              "fontWeight": "bold",
+              "messageKey": null,
+              "expectedContrastRatio": "4.5:1"
+            },
+            "relatedNodes": [
+              {
+                "html": "<div class=\"relative flex items-center min-h-[56px] rounded-xl border-2 transition-all duration-200 cursor-pointer border-zinc-700 bg-zinc-800/30 group-hover:border-zinc-600\">",
+                "target": [
+                  ".md\\:grid-cols-2.grid-cols-1.grid:nth-child(4) > .z-10.group.w-full:nth-child(2) > .cursor-pointer.bg-zinc-800\\/30.min-h-\\[56px\\]"
+                ]
+              },
+              {
+                "html": "<div class=\"lg:col-span-7 bg-zinc-900 rounded-[40px] p-8 lg:p-14 shadow-2xl shadow-blue-900/5 border border-zinc-800\">",
+                "target": [
+                  ".lg\\:col-span-7"
+                ]
+              }
+            ],
+            "impact": "serious",
+            "message": "Element has insufficient color contrast of 3.51 (foreground color: #71717a, background color: #1c1c20, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "serious",
+        "html": "<label class=\"absolute pointer-events-none font-bold uppercase tracking-wider text-[10px] select-none left-12\" style=\"color:#71717a;transform:none\">Year of Study</label>",
+        "target": [
+          ".md\\:grid-cols-2.grid-cols-1.grid:nth-child(4) > .z-10.group.w-full:nth-child(2) > .cursor-pointer.bg-zinc-800\\/30.min-h-\\[56px\\] > .left-12.tracking-wider.select-none"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.51 (foreground color: #71717a, background color: #1c1c20, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "any": [
+          {
+            "id": "color-contrast",
+            "data": {
+              "fgColor": "#0052cc",
+              "bgColor": "#18181b",
+              "contrastRatio": 2.59,
+              "fontSize": "9.0pt (12px)",
+              "fontWeight": "bold",
+              "messageKey": null,
+              "expectedContrastRatio": "4.5:1"
+            },
+            "relatedNodes": [
+              {
+                "html": "<div class=\"lg:col-span-7 bg-zinc-900 rounded-[40px] p-8 lg:p-14 shadow-2xl shadow-blue-900/5 border border-zinc-800\">",
+                "target": [
+                  ".lg\\:col-span-7"
+                ]
+              }
+            ],
+            "impact": "serious",
+            "message": "Element has insufficient color contrast of 2.59 (foreground color: #0052cc, background color: #18181b, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "serious",
+        "html": "<h3 class=\"text-xs font-black uppercase tracking-[0.2em] text-[#0052CC] font-label\">Education History</h3>",
+        "target": [
+          ".justify-between.items-center.flex > .gap-3.items-center.flex > .tracking-\\[0\\.2em\\]"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.59 (foreground color: #0052cc, background color: #18181b, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "any": [
+          {
+            "id": "color-contrast",
+            "data": {
+              "fgColor": "#71717a",
+              "bgColor": "#222225",
+              "contrastRatio": 3.28,
+              "fontSize": "7.5pt (10px)",
+              "fontWeight": "bold",
+              "messageKey": null,
+              "expectedContrastRatio": "4.5:1"
+            },
+            "relatedNodes": [
+              {
+                "html": "<div class=\"relative flex items-center min-h-[56px] rounded-xl border-2 transition-all duration-200 border-zinc-700 bg-zinc-800/30 group-hover:border-zinc-600\">",
+                "target": [
+                  ".rounded-3xl.md\\:grid-cols-3.bg-zinc-800\\/50 > .group.w-full.relative:nth-child(1) > .bg-zinc-800\\/30.min-h-\\[56px\\].rounded-xl"
+                ]
+              },
+              {
+                "html": "<div class=\"p-6 rounded-3xl bg-zinc-800/50 border border-zinc-800 grid grid-cols-1 md:grid-cols-3 gap-6 relative group\">",
+                "target": [
+                  ".rounded-3xl.md\\:grid-cols-3.bg-zinc-800\\/50"
+                ]
+              },
+              {
+                "html": "<div class=\"lg:col-span-7 bg-zinc-900 rounded-[40px] p-8 lg:p-14 shadow-2xl shadow-blue-900/5 border border-zinc-800\">",
+                "target": [
+                  ".lg\\:col-span-7"
+                ]
+              }
+            ],
+            "impact": "serious",
+            "message": "Element has insufficient color contrast of 3.28 (foreground color: #71717a, background color: #222225, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "serious",
+        "html": "<label class=\"absolute pointer-events-none font-bold uppercase tracking-wider text-[10px] select-none left-12\" style=\"color:#71717a;transform:none\">Institution Name</label>",
+        "target": [
+          ".rounded-3xl.md\\:grid-cols-3.bg-zinc-800\\/50 > .group.w-full.relative:nth-child(1) > .bg-zinc-800\\/30.min-h-\\[56px\\].rounded-xl > .left-12.tracking-wider.select-none"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.28 (foreground color: #71717a, background color: #222225, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "any": [
+          {
+            "id": "color-contrast",
+            "data": {
+              "fgColor": "#71717a",
+              "bgColor": "#222225",
+              "contrastRatio": 3.28,
+              "fontSize": "7.5pt (10px)",
+              "fontWeight": "bold",
+              "messageKey": null,
+              "expectedContrastRatio": "4.5:1"
+            },
+            "relatedNodes": [
+              {
+                "html": "<div class=\"relative flex items-center min-h-[56px] rounded-xl border-2 transition-all duration-200 border-zinc-700 bg-zinc-800/30 group-hover:border-zinc-600\">",
+                "target": [
+                  ".rounded-3xl.md\\:grid-cols-3.bg-zinc-800\\/50 > .group.w-full.relative:nth-child(2) > .bg-zinc-800\\/30.min-h-\\[56px\\].rounded-xl"
+                ]
+              },
+              {
+                "html": "<div class=\"p-6 rounded-3xl bg-zinc-800/50 border border-zinc-800 grid grid-cols-1 md:grid-cols-3 gap-6 relative group\">",
+                "target": [
+                  ".rounded-3xl.md\\:grid-cols-3.bg-zinc-800\\/50"
+                ]
+              },
+              {
+                "html": "<div class=\"lg:col-span-7 bg-zinc-900 rounded-[40px] p-8 lg:p-14 shadow-2xl shadow-blue-900/5 border border-zinc-800\">",
+                "target": [
+                  ".lg\\:col-span-7"
+                ]
+              }
+            ],
+            "impact": "serious",
+            "message": "Element has insufficient color contrast of 3.28 (foreground color: #71717a, background color: #222225, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "serious",
+        "html": "<label class=\"absolute pointer-events-none font-bold uppercase tracking-wider text-[10px] select-none left-12\" style=\"color:#71717a;transform:none\">Duration</label>",
+        "target": [
+          ".rounded-3xl.md\\:grid-cols-3.bg-zinc-800\\/50 > .group.w-full.relative:nth-child(2) > .bg-zinc-800\\/30.min-h-\\[56px\\].rounded-xl > .left-12.tracking-wider.select-none"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.28 (foreground color: #71717a, background color: #222225, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "any": [
+          {
+            "id": "color-contrast",
+            "data": {
+              "fgColor": "#71717a",
+              "bgColor": "#222225",
+              "contrastRatio": 3.28,
+              "fontSize": "7.5pt (10px)",
+              "fontWeight": "bold",
+              "messageKey": null,
+              "expectedContrastRatio": "4.5:1"
+            },
+            "relatedNodes": [
+              {
+                "html": "<div class=\"relative flex items-center min-h-[56px] rounded-xl border-2 transition-all duration-200 border-zinc-700 bg-zinc-800/30 group-hover:border-zinc-600\">",
+                "target": [
+                  ".rounded-3xl.md\\:grid-cols-3.bg-zinc-800\\/50 > .group.w-full.relative:nth-child(3) > .bg-zinc-800\\/30.min-h-\\[56px\\].rounded-xl"
+                ]
+              },
+              {
+                "html": "<div class=\"p-6 rounded-3xl bg-zinc-800/50 border border-zinc-800 grid grid-cols-1 md:grid-cols-3 gap-6 relative group\">",
+                "target": [
+                  ".rounded-3xl.md\\:grid-cols-3.bg-zinc-800\\/50"
+                ]
+              },
+              {
+                "html": "<div class=\"lg:col-span-7 bg-zinc-900 rounded-[40px] p-8 lg:p-14 shadow-2xl shadow-blue-900/5 border border-zinc-800\">",
+                "target": [
+                  ".lg\\:col-span-7"
+                ]
+              }
+            ],
+            "impact": "serious",
+            "message": "Element has insufficient color contrast of 3.28 (foreground color: #71717a, background color: #222225, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "serious",
+        "html": "<label class=\"absolute pointer-events-none font-bold uppercase tracking-wider text-[10px] select-none left-12\" style=\"color:#71717a;transform:none\">Certificate</label>",
+        "target": [
+          ".rounded-3xl.md\\:grid-cols-3.bg-zinc-800\\/50 > .group.w-full.relative:nth-child(3) > .bg-zinc-800\\/30.min-h-\\[56px\\].rounded-xl > .left-12.tracking-wider.select-none"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.28 (foreground color: #71717a, background color: #222225, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "any": [
+          {
+            "id": "color-contrast",
+            "data": {
+              "fgColor": "#0052cc",
+              "bgColor": "#18181b",
+              "contrastRatio": 2.59,
+              "fontSize": "9.0pt (12px)",
+              "fontWeight": "bold",
+              "messageKey": null,
+              "expectedContrastRatio": "4.5:1"
+            },
+            "relatedNodes": [
+              {
+                "html": "<div class=\"lg:col-span-7 bg-zinc-900 rounded-[40px] p-8 lg:p-14 shadow-2xl shadow-blue-900/5 border border-zinc-800\">",
+                "target": [
+                  ".lg\\:col-span-7"
+                ]
+              }
+            ],
+            "impact": "serious",
+            "message": "Element has insufficient color contrast of 2.59 (foreground color: #0052cc, background color: #18181b, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "serious",
+        "html": "<h3 class=\"text-xs font-black uppercase tracking-[0.2em] text-[#0052CC] font-label\">Academic Identifiers</h3>",
+        "target": [
+          ".space-y-8:nth-child(7) > .gap-3.items-center.flex > .tracking-\\[0\\.2em\\]"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.59 (foreground color: #0052cc, background color: #18181b, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "any": [
+          {
+            "id": "color-contrast",
+            "data": {
+              "fgColor": "#71717a",
+              "bgColor": "#1c1c20",
+              "contrastRatio": 3.51,
+              "fontSize": "7.5pt (10px)",
+              "fontWeight": "bold",
+              "messageKey": null,
+              "expectedContrastRatio": "4.5:1"
+            },
+            "relatedNodes": [
+              {
+                "html": "<div class=\"relative flex items-center min-h-[56px] rounded-xl border-2 transition-all duration-200 border-zinc-700 bg-zinc-800/30 group-hover:border-zinc-600\">",
+                "target": [
+                  ".space-y-8:nth-child(7) > .md\\:grid-cols-2.grid-cols-1.grid:nth-child(2) > .group.w-full.relative:nth-child(1) > .bg-zinc-800\\/30.min-h-\\[56px\\].rounded-xl"
+                ]
+              },
+              {
+                "html": "<div class=\"lg:col-span-7 bg-zinc-900 rounded-[40px] p-8 lg:p-14 shadow-2xl shadow-blue-900/5 border border-zinc-800\">",
+                "target": [
+                  ".lg\\:col-span-7"
+                ]
+              }
+            ],
+            "impact": "serious",
+            "message": "Element has insufficient color contrast of 3.51 (foreground color: #71717a, background color: #1c1c20, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "serious",
+        "html": "<label class=\"absolute pointer-events-none font-bold uppercase tracking-wider text-[10px] select-none left-12\" style=\"color:#71717a;transform:none\">JAMB Reg Number</label>",
+        "target": [
+          ".space-y-8:nth-child(7) > .md\\:grid-cols-2.grid-cols-1.grid:nth-child(2) > .group.w-full.relative:nth-child(1) > .bg-zinc-800\\/30.min-h-\\[56px\\].rounded-xl > .left-12.tracking-wider.select-none"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.51 (foreground color: #71717a, background color: #1c1c20, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "any": [
+          {
+            "id": "color-contrast",
+            "data": {
+              "fgColor": "#71717a",
+              "bgColor": "#1c1c20",
+              "contrastRatio": 3.51,
+              "fontSize": "7.5pt (10px)",
+              "fontWeight": "bold",
+              "messageKey": null,
+              "expectedContrastRatio": "4.5:1"
+            },
+            "relatedNodes": [
+              {
+                "html": "<div class=\"relative flex items-center min-h-[56px] rounded-xl border-2 transition-all duration-200 border-zinc-700 bg-zinc-800/30 group-hover:border-zinc-600\">",
+                "target": [
+                  ".space-y-8:nth-child(7) > .md\\:grid-cols-2.grid-cols-1.grid:nth-child(2) > .group.w-full.relative:nth-child(2) > .bg-zinc-800\\/30.min-h-\\[56px\\].rounded-xl"
+                ]
+              },
+              {
+                "html": "<div class=\"lg:col-span-7 bg-zinc-900 rounded-[40px] p-8 lg:p-14 shadow-2xl shadow-blue-900/5 border border-zinc-800\">",
+                "target": [
+                  ".lg\\:col-span-7"
+                ]
+              }
+            ],
+            "impact": "serious",
+            "message": "Element has insufficient color contrast of 3.51 (foreground color: #71717a, background color: #1c1c20, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "serious",
+        "html": "<label class=\"absolute pointer-events-none font-bold uppercase tracking-wider text-[10px] select-none left-12\" style=\"color:#71717a;transform:none\">Matriculation Number</label>",
+        "target": [
+          ".space-y-8:nth-child(7) > .md\\:grid-cols-2.grid-cols-1.grid:nth-child(2) > .group.w-full.relative:nth-child(2) > .bg-zinc-800\\/30.min-h-\\[56px\\].rounded-xl > .left-12.tracking-wider.select-none"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.51 (foreground color: #71717a, background color: #1c1c20, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "any": [
+          {
+            "id": "color-contrast",
+            "data": {
+              "fgColor": "#71717a",
+              "bgColor": "#1c1c20",
+              "contrastRatio": 3.51,
+              "fontSize": "7.5pt (10px)",
+              "fontWeight": "bold",
+              "messageKey": null,
+              "expectedContrastRatio": "4.5:1"
+            },
+            "relatedNodes": [
+              {
+                "html": "<div class=\"relative flex items-center min-h-[56px] rounded-xl border-2 transition-all duration-200 border-zinc-700 bg-zinc-800/30 group-hover:border-zinc-600\">",
+                "target": [
+                  ".space-y-8:nth-child(7) > .md\\:grid-cols-2.grid-cols-1.grid:nth-child(3) > .group.w-full.relative:nth-child(1) > .bg-zinc-800\\/30.min-h-\\[56px\\].rounded-xl"
+                ]
+              },
+              {
+                "html": "<div class=\"lg:col-span-7 bg-zinc-900 rounded-[40px] p-8 lg:p-14 shadow-2xl shadow-blue-900/5 border border-zinc-800\">",
+                "target": [
+                  ".lg\\:col-span-7"
+                ]
+              }
+            ],
+            "impact": "serious",
+            "message": "Element has insufficient color contrast of 3.51 (foreground color: #71717a, background color: #1c1c20, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "serious",
+        "html": "<label class=\"absolute pointer-events-none font-bold uppercase tracking-wider text-[10px] select-none left-12\" style=\"color:#71717a;transform:none\">WAEC Scratch PIN</label>",
+        "target": [
+          ".space-y-8:nth-child(7) > .md\\:grid-cols-2.grid-cols-1.grid:nth-child(3) > .group.w-full.relative:nth-child(1) > .bg-zinc-800\\/30.min-h-\\[56px\\].rounded-xl > .left-12.tracking-wider.select-none"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.51 (foreground color: #71717a, background color: #1c1c20, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "any": [
+          {
+            "id": "color-contrast",
+            "data": {
+              "fgColor": "#71717a",
+              "bgColor": "#1c1c20",
+              "contrastRatio": 3.51,
+              "fontSize": "7.5pt (10px)",
+              "fontWeight": "bold",
+              "messageKey": null,
+              "expectedContrastRatio": "4.5:1"
+            },
+            "relatedNodes": [
+              {
+                "html": "<div class=\"relative flex items-center min-h-[56px] rounded-xl border-2 transition-all duration-200 border-zinc-700 bg-zinc-800/30 group-hover:border-zinc-600\">",
+                "target": [
+                  ".space-y-8:nth-child(7) > .md\\:grid-cols-2.grid-cols-1.grid:nth-child(3) > .group.w-full.relative:nth-child(2) > .bg-zinc-800\\/30.min-h-\\[56px\\].rounded-xl"
+                ]
+              },
+              {
+                "html": "<div class=\"lg:col-span-7 bg-zinc-900 rounded-[40px] p-8 lg:p-14 shadow-2xl shadow-blue-900/5 border border-zinc-800\">",
+                "target": [
+                  ".lg\\:col-span-7"
+                ]
+              }
+            ],
+            "impact": "serious",
+            "message": "Element has insufficient color contrast of 3.51 (foreground color: #71717a, background color: #1c1c20, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "serious",
+        "html": "<label class=\"absolute pointer-events-none font-bold uppercase tracking-wider text-[10px] select-none left-12\" style=\"color:#71717a;transform:none\">WAEC Serial Number</label>",
+        "target": [
+          ".space-y-8:nth-child(7) > .md\\:grid-cols-2.grid-cols-1.grid:nth-child(3) > .group.w-full.relative:nth-child(2) > .bg-zinc-800\\/30.min-h-\\[56px\\].rounded-xl > .left-12.tracking-wider.select-none"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.51 (foreground color: #71717a, background color: #1c1c20, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "any": [
+          {
+            "id": "color-contrast",
+            "data": {
+              "fgColor": "#0052cc",
+              "bgColor": "#18181b",
+              "contrastRatio": 2.59,
+              "fontSize": "9.0pt (12px)",
+              "fontWeight": "bold",
+              "messageKey": null,
+              "expectedContrastRatio": "4.5:1"
+            },
+            "relatedNodes": [
+              {
+                "html": "<div class=\"lg:col-span-7 bg-zinc-900 rounded-[40px] p-8 lg:p-14 shadow-2xl shadow-blue-900/5 border border-zinc-800\">",
+                "target": [
+                  ".lg\\:col-span-7"
+                ]
+              }
+            ],
+            "impact": "serious",
+            "message": "Element has insufficient color contrast of 2.59 (foreground color: #0052cc, background color: #18181b, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "serious",
+        "html": "<h3 class=\"text-xs font-black uppercase tracking-[0.2em] text-[#0052CC] font-label\">Performance &amp; Emergency</h3>",
+        "target": [
+          ".space-y-8:nth-child(8) > .gap-3.items-center.flex > .tracking-\\[0\\.2em\\]"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.59 (foreground color: #0052cc, background color: #18181b, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "any": [
+          {
+            "id": "color-contrast",
+            "data": {
+              "fgColor": "#71717a",
+              "bgColor": "#1c1c20",
+              "contrastRatio": 3.51,
+              "fontSize": "7.5pt (10px)",
+              "fontWeight": "bold",
+              "messageKey": null,
+              "expectedContrastRatio": "4.5:1"
+            },
+            "relatedNodes": [
+              {
+                "html": "<div class=\"relative flex items-center min-h-[56px] rounded-xl border-2 transition-all duration-200 cursor-pointer border-zinc-700 bg-zinc-800/30 group-hover:border-zinc-600\">",
+                "target": [
+                  ".space-y-8:nth-child(8) > .md\\:grid-cols-2.grid-cols-1.grid:nth-child(2) > .z-10.group.w-full > .cursor-pointer.bg-zinc-800\\/30.min-h-\\[56px\\]"
+                ]
+              },
+              {
+                "html": "<div class=\"lg:col-span-7 bg-zinc-900 rounded-[40px] p-8 lg:p-14 shadow-2xl shadow-blue-900/5 border border-zinc-800\">",
+                "target": [
+                  ".lg\\:col-span-7"
+                ]
+              }
+            ],
+            "impact": "serious",
+            "message": "Element has insufficient color contrast of 3.51 (foreground color: #71717a, background color: #1c1c20, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "serious",
+        "html": "<label class=\"absolute pointer-events-none font-bold uppercase tracking-wider text-[10px] select-none left-12\" style=\"color:#71717a;transform:none\">Last Level Completed</label>",
+        "target": [
+          ".space-y-8:nth-child(8) > .md\\:grid-cols-2.grid-cols-1.grid:nth-child(2) > .z-10.group.w-full > .cursor-pointer.bg-zinc-800\\/30.min-h-\\[56px\\] > .left-12.tracking-wider.select-none"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.51 (foreground color: #71717a, background color: #1c1c20, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "any": [
+          {
+            "id": "color-contrast",
+            "data": {
+              "fgColor": "#71717a",
+              "bgColor": "#1c1c20",
+              "contrastRatio": 3.51,
+              "fontSize": "7.5pt (10px)",
+              "fontWeight": "bold",
+              "messageKey": null,
+              "expectedContrastRatio": "4.5:1"
+            },
+            "relatedNodes": [
+              {
+                "html": "<div class=\"relative flex items-center min-h-[56px] rounded-xl border-2 transition-all duration-200 border-zinc-700 bg-zinc-800/30 group-hover:border-zinc-600\">",
+                "target": [
+                  ".space-y-8:nth-child(8) > .md\\:grid-cols-2.grid-cols-1.grid:nth-child(2) > .group.w-full.relative:nth-child(2) > .bg-zinc-800\\/30.min-h-\\[56px\\].rounded-xl"
+                ]
+              },
+              {
+                "html": "<div class=\"lg:col-span-7 bg-zinc-900 rounded-[40px] p-8 lg:p-14 shadow-2xl shadow-blue-900/5 border border-zinc-800\">",
+                "target": [
+                  ".lg\\:col-span-7"
+                ]
+              }
+            ],
+            "impact": "serious",
+            "message": "Element has insufficient color contrast of 3.51 (foreground color: #71717a, background color: #1c1c20, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "serious",
+        "html": "<label class=\"absolute pointer-events-none font-bold uppercase tracking-wider text-[10px] select-none left-12\" style=\"color:#71717a;transform:none\">Recent GPA</label>",
+        "target": [
+          ".space-y-8:nth-child(8) > .md\\:grid-cols-2.grid-cols-1.grid:nth-child(2) > .group.w-full.relative:nth-child(2) > .bg-zinc-800\\/30.min-h-\\[56px\\].rounded-xl > .left-12.tracking-wider.select-none"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.51 (foreground color: #71717a, background color: #1c1c20, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "any": [
+          {
+            "id": "color-contrast",
+            "data": {
+              "fgColor": "#71717a",
+              "bgColor": "#1c1c20",
+              "contrastRatio": 3.51,
+              "fontSize": "7.5pt (10px)",
+              "fontWeight": "bold",
+              "messageKey": null,
+              "expectedContrastRatio": "4.5:1"
+            },
+            "relatedNodes": [
+              {
+                "html": "<div class=\"relative flex items-center min-h-[56px] rounded-xl border-2 transition-all duration-200 border-zinc-700 bg-zinc-800/30 group-hover:border-zinc-600\">",
+                "target": [
+                  ".space-y-8:nth-child(8) > .md\\:grid-cols-2.grid-cols-1.grid:nth-child(3) > .group.w-full.relative:nth-child(1) > .bg-zinc-800\\/30.min-h-\\[56px\\].rounded-xl"
+                ]
+              },
+              {
+                "html": "<div class=\"lg:col-span-7 bg-zinc-900 rounded-[40px] p-8 lg:p-14 shadow-2xl shadow-blue-900/5 border border-zinc-800\">",
+                "target": [
+                  ".lg\\:col-span-7"
+                ]
+              }
+            ],
+            "impact": "serious",
+            "message": "Element has insufficient color contrast of 3.51 (foreground color: #71717a, background color: #1c1c20, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "serious",
+        "html": "<label class=\"absolute pointer-events-none font-bold uppercase tracking-wider text-[10px] select-none left-12\" style=\"color:#71717a;transform:none\">Emergency Contact Name</label>",
+        "target": [
+          ".space-y-8:nth-child(8) > .md\\:grid-cols-2.grid-cols-1.grid:nth-child(3) > .group.w-full.relative:nth-child(1) > .bg-zinc-800\\/30.min-h-\\[56px\\].rounded-xl > .left-12.tracking-wider.select-none"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.51 (foreground color: #71717a, background color: #1c1c20, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "any": [
+          {
+            "id": "color-contrast",
+            "data": {
+              "fgColor": "#71717a",
+              "bgColor": "#1c1c20",
+              "contrastRatio": 3.51,
+              "fontSize": "7.5pt (10px)",
+              "fontWeight": "bold",
+              "messageKey": null,
+              "expectedContrastRatio": "4.5:1"
+            },
+            "relatedNodes": [
+              {
+                "html": "<div class=\"relative flex items-center min-h-[56px] rounded-xl border-2 transition-all duration-200 border-zinc-700 bg-zinc-800/30 group-hover:border-zinc-600\">",
+                "target": [
+                  ".space-y-8:nth-child(8) > .md\\:grid-cols-2.grid-cols-1.grid:nth-child(3) > .group.w-full.relative:nth-child(2) > .bg-zinc-800\\/30.min-h-\\[56px\\].rounded-xl"
+                ]
+              },
+              {
+                "html": "<div class=\"lg:col-span-7 bg-zinc-900 rounded-[40px] p-8 lg:p-14 shadow-2xl shadow-blue-900/5 border border-zinc-800\">",
+                "target": [
+                  ".lg\\:col-span-7"
+                ]
+              }
+            ],
+            "impact": "serious",
+            "message": "Element has insufficient color contrast of 3.51 (foreground color: #71717a, background color: #1c1c20, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "serious",
+        "html": "<label class=\"absolute pointer-events-none font-bold uppercase tracking-wider text-[10px] select-none left-12\" style=\"color:#71717a;transform:none\">Emergency Contact Phone</label>",
+        "target": [
+          ".space-y-8:nth-child(8) > .md\\:grid-cols-2.grid-cols-1.grid:nth-child(3) > .group.w-full.relative:nth-child(2) > .bg-zinc-800\\/30.min-h-\\[56px\\].rounded-xl > .left-12.tracking-wider.select-none"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.51 (foreground color: #71717a, background color: #1c1c20, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "any": [
+          {
+            "id": "color-contrast",
+            "data": {
+              "fgColor": "#0052cc",
+              "bgColor": "#18181b",
+              "contrastRatio": 2.59,
+              "fontSize": "9.0pt (12px)",
+              "fontWeight": "bold",
+              "messageKey": null,
+              "expectedContrastRatio": "4.5:1"
+            },
+            "relatedNodes": [
+              {
+                "html": "<div class=\"lg:col-span-7 bg-zinc-900 rounded-[40px] p-8 lg:p-14 shadow-2xl shadow-blue-900/5 border border-zinc-800\">",
+                "target": [
+                  ".lg\\:col-span-7"
+                ]
+              }
+            ],
+            "impact": "serious",
+            "message": "Element has insufficient color contrast of 2.59 (foreground color: #0052cc, background color: #18181b, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "serious",
+        "html": "<h3 class=\"text-xs font-black uppercase tracking-[0.2em] text-[#0052CC] font-label\">Document Vault</h3>",
+        "target": [
+          ".space-y-8:nth-child(9) > .gap-3.items-center.flex > .tracking-\\[0\\.2em\\]"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.59 (foreground color: #0052cc, background color: #18181b, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "any": [
+          {
+            "id": "color-contrast",
+            "data": {
+              "fgColor": "#0052cc",
+              "bgColor": "#18181b",
+              "contrastRatio": 2.59,
+              "fontSize": "9.0pt (12px)",
+              "fontWeight": "bold",
+              "messageKey": null,
+              "expectedContrastRatio": "4.5:1"
+            },
+            "relatedNodes": [
+              {
+                "html": "<div class=\"lg:col-span-7 bg-zinc-900 rounded-[40px] p-8 lg:p-14 shadow-2xl shadow-blue-900/5 border border-zinc-800\">",
+                "target": [
+                  ".lg\\:col-span-7"
+                ]
+              }
+            ],
+            "impact": "serious",
+            "message": "Element has insufficient color contrast of 2.59 (foreground color: #0052cc, background color: #18181b, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "serious",
+        "html": "<h3 class=\"text-xs font-black uppercase tracking-[0.2em] text-[#0052CC] font-label\">Personal Summary</h3>",
+        "target": [
+          ".pt-8 > .gap-3.items-center.flex > .tracking-\\[0\\.2em\\]"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.59 (foreground color: #0052cc, background color: #18181b, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "any": [
+          {
+            "id": "color-contrast",
+            "data": {
+              "fgColor": "#71717a",
+              "bgColor": "#1c1c20",
+              "contrastRatio": 3.51,
+              "fontSize": "7.5pt (10px)",
+              "fontWeight": "bold",
+              "messageKey": null,
+              "expectedContrastRatio": "4.5:1"
+            },
+            "relatedNodes": [
+              {
+                "html": "<div class=\"relative flex items-center min-h-[56px] rounded-xl border-2 transition-all duration-200 border-zinc-700 bg-zinc-800/30 group-hover:border-zinc-600\">",
+                "target": [
+                  ".space-y-6 > .group.w-full.relative > .bg-zinc-800\\/30.min-h-\\[56px\\].rounded-xl"
+                ]
+              },
+              {
+                "html": "<div class=\"lg:col-span-7 bg-zinc-900 rounded-[40px] p-8 lg:p-14 shadow-2xl shadow-blue-900/5 border border-zinc-800\">",
+                "target": [
+                  ".lg\\:col-span-7"
+                ]
+              }
+            ],
+            "impact": "serious",
+            "message": "Element has insufficient color contrast of 3.51 (foreground color: #71717a, background color: #1c1c20, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "serious",
+        "html": "<label class=\"absolute pointer-events-none font-bold uppercase tracking-wider text-[10px] select-none left-12\" style=\"color:#71717a;transform:none\">Core Skills (Comma separated)</label>",
+        "target": [
+          ".space-y-6 > .group.w-full.relative > .bg-zinc-800\\/30.min-h-\\[56px\\].rounded-xl > .left-12.tracking-wider.select-none"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.51 (foreground color: #71717a, background color: #1c1c20, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "any": [
+          {
+            "id": "color-contrast",
+            "data": {
+              "fgColor": "#0052cc",
+              "bgColor": "#18181b",
+              "contrastRatio": 2.59,
+              "fontSize": "8.3pt (11px)",
+              "fontWeight": "bold",
+              "messageKey": null,
+              "expectedContrastRatio": "4.5:1"
+            },
+            "relatedNodes": [
+              {
+                "html": "<div class=\"lg:col-span-7 bg-zinc-900 rounded-[40px] p-8 lg:p-14 shadow-2xl shadow-blue-900/5 border border-zinc-800\">",
+                "target": [
+                  ".lg\\:col-span-7"
+                ]
+              }
+            ],
+            "impact": "serious",
+            "message": "Element has insufficient color contrast of 2.59 (foreground color: #0052cc, background color: #18181b, font size: 8.3pt (11px), font weight: bold). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "serious",
+        "html": "<a class=\"text-[#0052CC] hover:underline\" href=\"#\">Global Terms</a>",
+        "target": [
+          "a[href=\"#\"]"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.59 (foreground color: #0052cc, background color: #18181b, font size: 8.3pt (11px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "any": [
+          {
+            "id": "color-contrast",
+            "data": {
+              "fgColor": "#0052cc",
+              "bgColor": "#27272a",
+              "contrastRatio": 2.18,
+              "fontSize": "13.5pt (18px)",
+              "fontWeight": "bold",
+              "messageKey": null,
+              "expectedContrastRatio": "4.5:1"
+            },
+            "relatedNodes": [
+              {
+                "html": "<div class=\"mt-10 p-6 rounded-3xl bg-zinc-800 border border-zinc-800 flex flex-col items-center gap-3\">",
+                "target": [
+                  ".mt-10"
+                ]
+              }
+            ],
+            "impact": "serious",
+            "message": "Element has insufficient color contrast of 2.18 (foreground color: #0052cc, background color: #27272a, font size: 13.5pt (18px), font weight: bold). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "serious",
+        "html": "<a class=\"text-[#0052CC] font-black font-headline text-lg hover:underline transition-all\" href=\"/login\">Log in to Dashboard</a>",
+        "target": [
+          ".hover\\:underline.font-headline[href$=\"login\"]"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.18 (foreground color: #0052cc, background color: #27272a, font size: 13.5pt (18px), font weight: bold). Expected contrast ratio of 4.5:1"
+      }
+    ]
+  },
+  {
+    "id": "label",
+    "impact": "critical",
+    "tags": [
+      "cat.forms",
+      "wcag2a",
+      "wcag412",
+      "section508",
+      "section508.22.n",
+      "TTv5",
+      "TT5.c",
+      "EN-301-549",
+      "EN-9.4.1.2",
+      "ACT",
+      "RGAAv4",
+      "RGAA-11.1.1"
+    ],
+    "description": "Ensure every form element has a label",
+    "help": "Form elements must have labels",
+    "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/label?application=playwright",
+    "nodes": [
+      {
+        "any": [
+          {
+            "id": "implicit-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element does not have an implicit (wrapped) <label>"
+          },
+          {
+            "id": "explicit-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element does not have an explicit <label>"
+          },
+          {
+            "id": "aria-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "aria-label attribute does not exist or is empty"
+          },
+          {
+            "id": "aria-labelledby",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+          },
+          {
+            "id": "non-empty-title",
+            "data": {
+              "messageKey": "noAttr"
+            },
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element has no title attribute"
+          },
+          {
+            "id": "non-empty-placeholder",
+            "data": {
+              "messageKey": "emptyAttr"
+            },
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element has an empty placeholder attribute"
+          },
+          {
+            "id": "presentational-role",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "critical",
+        "html": "<input required=\"\" placeholder=\"\" class=\"flex-1 w-full bg-transparent px-4 py-4 text-sm font-medium text-zinc-100 focus:outline-none pl-2\" name=\"full_name\" value=\"\">",
+        "target": [
+          "input[name=\"full_name\"]"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has an empty placeholder attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+      },
+      {
+        "any": [
+          {
+            "id": "implicit-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element does not have an implicit (wrapped) <label>"
+          },
+          {
+            "id": "explicit-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element does not have an explicit <label>"
+          },
+          {
+            "id": "aria-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "aria-label attribute does not exist or is empty"
+          },
+          {
+            "id": "aria-labelledby",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+          },
+          {
+            "id": "non-empty-title",
+            "data": {
+              "messageKey": "noAttr"
+            },
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element has no title attribute"
+          },
+          {
+            "id": "non-empty-placeholder",
+            "data": {
+              "messageKey": "emptyAttr"
+            },
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element has an empty placeholder attribute"
+          },
+          {
+            "id": "presentational-role",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "critical",
+        "html": "<input type=\"email\" required=\"\" placeholder=\"\" class=\"flex-1 w-full bg-transparent px-4 py-4 text-sm font-medium text-zinc-100 focus:outline-none pl-2\" name=\"email\" value=\"\">",
+        "target": [
+          "input[type=\"email\"]"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has an empty placeholder attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+      },
+      {
+        "any": [
+          {
+            "id": "implicit-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element does not have an implicit (wrapped) <label>"
+          },
+          {
+            "id": "explicit-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element does not have an explicit <label>"
+          },
+          {
+            "id": "aria-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "aria-label attribute does not exist or is empty"
+          },
+          {
+            "id": "aria-labelledby",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+          },
+          {
+            "id": "non-empty-title",
+            "data": {
+              "messageKey": "noAttr"
+            },
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element has no title attribute"
+          },
+          {
+            "id": "non-empty-placeholder",
+            "data": {
+              "messageKey": "emptyAttr"
+            },
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element has an empty placeholder attribute"
+          },
+          {
+            "id": "presentational-role",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "critical",
+        "html": "<input required=\"\" placeholder=\"\" class=\"flex-1 w-full bg-transparent px-4 py-4 text-sm font-medium text-zinc-100 focus:outline-none pl-2\" name=\"phone\" value=\"\">",
+        "target": [
+          "input[name=\"phone\"]"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has an empty placeholder attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+      },
+      {
+        "any": [
+          {
+            "id": "implicit-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element does not have an implicit (wrapped) <label>"
+          },
+          {
+            "id": "explicit-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element does not have an explicit <label>"
+          },
+          {
+            "id": "aria-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "aria-label attribute does not exist or is empty"
+          },
+          {
+            "id": "aria-labelledby",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+          },
+          {
+            "id": "non-empty-title",
+            "data": {
+              "messageKey": "noAttr"
+            },
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element has no title attribute"
+          },
+          {
+            "id": "non-empty-placeholder",
+            "data": {
+              "messageKey": "noAttr"
+            },
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element has no placeholder attribute"
+          },
+          {
+            "id": "presentational-role",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "critical",
+        "html": "<input type=\"date\" required=\"\" class=\"flex-1 w-full bg-transparent px-4 py-4 text-sm font-medium text-zinc-100 focus:outline-none pl-2\" name=\"date_of_birth\" value=\"\">",
+        "target": [
+          "input[type=\"date\"]"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+      },
+      {
+        "any": [
+          {
+            "id": "implicit-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element does not have an implicit (wrapped) <label>"
+          },
+          {
+            "id": "explicit-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element does not have an explicit <label>"
+          },
+          {
+            "id": "aria-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "aria-label attribute does not exist or is empty"
+          },
+          {
+            "id": "aria-labelledby",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+          },
+          {
+            "id": "non-empty-title",
+            "data": {
+              "messageKey": "noAttr"
+            },
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element has no title attribute"
+          },
+          {
+            "id": "non-empty-placeholder",
+            "data": {
+              "messageKey": "emptyAttr"
+            },
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element has an empty placeholder attribute"
+          },
+          {
+            "id": "presentational-role",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "critical",
+        "html": "<input type=\"password\" required=\"\" minlength=\"8\" placeholder=\"\" class=\"flex-1 w-full bg-transparent px-4 py-4 text-sm font-medium text-zinc-100 focus:outline-none pl-2\" name=\"password\" value=\"\">",
+        "target": [
+          "input[type=\"password\"]"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has an empty placeholder attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+      },
+      {
+        "any": [
+          {
+            "id": "implicit-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element does not have an implicit (wrapped) <label>"
+          },
+          {
+            "id": "explicit-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element does not have an explicit <label>"
+          },
+          {
+            "id": "aria-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "aria-label attribute does not exist or is empty"
+          },
+          {
+            "id": "aria-labelledby",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+          },
+          {
+            "id": "non-empty-title",
+            "data": {
+              "messageKey": "noAttr"
+            },
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element has no title attribute"
+          },
+          {
+            "id": "non-empty-placeholder",
+            "data": {
+              "messageKey": "emptyAttr"
+            },
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element has an empty placeholder attribute"
+          },
+          {
+            "id": "presentational-role",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "critical",
+        "html": "<input required=\"\" placeholder=\"\" class=\"flex-1 w-full bg-transparent px-4 py-4 text-sm font-medium text-zinc-100 focus:outline-none pl-2\" name=\"residential_street\" value=\"\">",
+        "target": [
+          "input[name=\"residential_street\"]"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has an empty placeholder attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+      },
+      {
+        "any": [
+          {
+            "id": "implicit-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element does not have an implicit (wrapped) <label>"
+          },
+          {
+            "id": "explicit-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element does not have an explicit <label>"
+          },
+          {
+            "id": "aria-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "aria-label attribute does not exist or is empty"
+          },
+          {
+            "id": "aria-labelledby",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+          },
+          {
+            "id": "non-empty-title",
+            "data": {
+              "messageKey": "noAttr"
+            },
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element has no title attribute"
+          },
+          {
+            "id": "non-empty-placeholder",
+            "data": {
+              "messageKey": "emptyAttr"
+            },
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element has an empty placeholder attribute"
+          },
+          {
+            "id": "presentational-role",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "critical",
+        "html": "<input required=\"\" placeholder=\"\" class=\"flex-1 w-full bg-transparent px-4 py-4 text-sm font-medium text-zinc-100 focus:outline-none pl-2\" name=\"residential_city\" value=\"\">",
+        "target": [
+          "input[name=\"residential_city\"]"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has an empty placeholder attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+      },
+      {
+        "any": [
+          {
+            "id": "implicit-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element does not have an implicit (wrapped) <label>"
+          },
+          {
+            "id": "explicit-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element does not have an explicit <label>"
+          },
+          {
+            "id": "aria-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "aria-label attribute does not exist or is empty"
+          },
+          {
+            "id": "aria-labelledby",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+          },
+          {
+            "id": "non-empty-title",
+            "data": {
+              "messageKey": "noAttr"
+            },
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element has no title attribute"
+          },
+          {
+            "id": "non-empty-placeholder",
+            "data": {
+              "messageKey": "emptyAttr"
+            },
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element has an empty placeholder attribute"
+          },
+          {
+            "id": "presentational-role",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "critical",
+        "html": "<input placeholder=\"\" class=\"flex-1 w-full bg-transparent px-4 py-4 text-sm font-medium text-zinc-100 focus:outline-none pl-2\" name=\"residential_zip\" value=\"\">",
+        "target": [
+          "input[name=\"residential_zip\"]"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has an empty placeholder attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+      },
+      {
+        "any": [
+          {
+            "id": "implicit-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element does not have an implicit (wrapped) <label>"
+          },
+          {
+            "id": "explicit-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element does not have an explicit <label>"
+          },
+          {
+            "id": "aria-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "aria-label attribute does not exist or is empty"
+          },
+          {
+            "id": "aria-labelledby",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+          },
+          {
+            "id": "non-empty-title",
+            "data": {
+              "messageKey": "noAttr"
+            },
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element has no title attribute"
+          },
+          {
+            "id": "non-empty-placeholder",
+            "data": {
+              "messageKey": "emptyAttr"
+            },
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element has an empty placeholder attribute"
+          },
+          {
+            "id": "presentational-role",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "critical",
+        "html": "<input required=\"\" placeholder=\"\" class=\"flex-1 w-full bg-transparent px-4 py-4 text-sm font-medium text-zinc-100 focus:outline-none pl-2\" name=\"university\" value=\"\">",
+        "target": [
+          "input[name=\"university\"]"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has an empty placeholder attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+      },
+      {
+        "any": [
+          {
+            "id": "implicit-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element does not have an implicit (wrapped) <label>"
+          },
+          {
+            "id": "explicit-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element does not have an explicit <label>"
+          },
+          {
+            "id": "aria-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "aria-label attribute does not exist or is empty"
+          },
+          {
+            "id": "aria-labelledby",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+          },
+          {
+            "id": "non-empty-title",
+            "data": {
+              "messageKey": "noAttr"
+            },
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element has no title attribute"
+          },
+          {
+            "id": "non-empty-placeholder",
+            "data": {
+              "messageKey": "emptyAttr"
+            },
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element has an empty placeholder attribute"
+          },
+          {
+            "id": "presentational-role",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "critical",
+        "html": "<input required=\"\" placeholder=\"\" class=\"flex-1 w-full bg-transparent px-4 py-4 text-sm font-medium text-zinc-100 focus:outline-none pl-2\" name=\"field_of_study\" value=\"\">",
+        "target": [
+          "input[name=\"field_of_study\"]"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has an empty placeholder attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+      },
+      {
+        "any": [
+          {
+            "id": "implicit-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element does not have an implicit (wrapped) <label>"
+          },
+          {
+            "id": "explicit-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element does not have an explicit <label>"
+          },
+          {
+            "id": "aria-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "aria-label attribute does not exist or is empty"
+          },
+          {
+            "id": "aria-labelledby",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+          },
+          {
+            "id": "non-empty-title",
+            "data": {
+              "messageKey": "noAttr"
+            },
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element has no title attribute"
+          },
+          {
+            "id": "non-empty-placeholder",
+            "data": {
+              "messageKey": "emptyAttr"
+            },
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element has an empty placeholder attribute"
+          },
+          {
+            "id": "presentational-role",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "critical",
+        "html": "<input required=\"\" placeholder=\"\" class=\"flex-1 w-full bg-transparent px-4 py-4 text-sm font-medium text-zinc-100 focus:outline-none pl-2\" name=\"program_of_study\" value=\"\">",
+        "target": [
+          "input[name=\"program_of_study\"]"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has an empty placeholder attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+      },
+      {
+        "any": [
+          {
+            "id": "implicit-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element does not have an implicit (wrapped) <label>"
+          },
+          {
+            "id": "explicit-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element does not have an explicit <label>"
+          },
+          {
+            "id": "aria-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "aria-label attribute does not exist or is empty"
+          },
+          {
+            "id": "aria-labelledby",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+          },
+          {
+            "id": "non-empty-title",
+            "data": {
+              "messageKey": "noAttr"
+            },
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element has no title attribute"
+          },
+          {
+            "id": "non-empty-placeholder",
+            "data": {
+              "messageKey": "emptyAttr"
+            },
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element has an empty placeholder attribute"
+          },
+          {
+            "id": "presentational-role",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "critical",
+        "html": "<input placeholder=\"\" class=\"flex-1 w-full bg-transparent px-4 py-4 text-sm font-medium text-zinc-100 focus:outline-none pl-2\" value=\"\">",
+        "target": [
+          ".rounded-3xl.md\\:grid-cols-3.bg-zinc-800\\/50 > .group.w-full.relative:nth-child(1) > .bg-zinc-800\\/30.min-h-\\[56px\\].rounded-xl > .bg-transparent.focus\\:outline-none[placeholder=\"\"]"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has an empty placeholder attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+      },
+      {
+        "any": [
+          {
+            "id": "implicit-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element does not have an implicit (wrapped) <label>"
+          },
+          {
+            "id": "explicit-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element does not have an explicit <label>"
+          },
+          {
+            "id": "aria-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "aria-label attribute does not exist or is empty"
+          },
+          {
+            "id": "aria-labelledby",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+          },
+          {
+            "id": "non-empty-title",
+            "data": {
+              "messageKey": "noAttr"
+            },
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element has no title attribute"
+          },
+          {
+            "id": "non-empty-placeholder",
+            "data": {
+              "messageKey": "emptyAttr"
+            },
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element has an empty placeholder attribute"
+          },
+          {
+            "id": "presentational-role",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "critical",
+        "html": "<input placeholder=\"\" class=\"flex-1 w-full bg-transparent px-4 py-4 text-sm font-medium text-zinc-100 focus:outline-none pl-2\" value=\"\">",
+        "target": [
+          ".rounded-3xl.md\\:grid-cols-3.bg-zinc-800\\/50 > .group.w-full.relative:nth-child(2) > .bg-zinc-800\\/30.min-h-\\[56px\\].rounded-xl > .bg-transparent.focus\\:outline-none[placeholder=\"\"]"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has an empty placeholder attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+      },
+      {
+        "any": [
+          {
+            "id": "implicit-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element does not have an implicit (wrapped) <label>"
+          },
+          {
+            "id": "explicit-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element does not have an explicit <label>"
+          },
+          {
+            "id": "aria-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "aria-label attribute does not exist or is empty"
+          },
+          {
+            "id": "aria-labelledby",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+          },
+          {
+            "id": "non-empty-title",
+            "data": {
+              "messageKey": "noAttr"
+            },
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element has no title attribute"
+          },
+          {
+            "id": "non-empty-placeholder",
+            "data": {
+              "messageKey": "emptyAttr"
+            },
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element has an empty placeholder attribute"
+          },
+          {
+            "id": "presentational-role",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "critical",
+        "html": "<input placeholder=\"\" class=\"flex-1 w-full bg-transparent px-4 py-4 text-sm font-medium text-zinc-100 focus:outline-none pl-2\" value=\"\">",
+        "target": [
+          ".rounded-3xl.md\\:grid-cols-3.bg-zinc-800\\/50 > .group.w-full.relative:nth-child(3) > .bg-zinc-800\\/30.min-h-\\[56px\\].rounded-xl > .bg-transparent.focus\\:outline-none[placeholder=\"\"]"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has an empty placeholder attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+      },
+      {
+        "any": [
+          {
+            "id": "implicit-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element does not have an implicit (wrapped) <label>"
+          },
+          {
+            "id": "explicit-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element does not have an explicit <label>"
+          },
+          {
+            "id": "aria-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "aria-label attribute does not exist or is empty"
+          },
+          {
+            "id": "aria-labelledby",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+          },
+          {
+            "id": "non-empty-title",
+            "data": {
+              "messageKey": "noAttr"
+            },
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element has no title attribute"
+          },
+          {
+            "id": "non-empty-placeholder",
+            "data": {
+              "messageKey": "emptyAttr"
+            },
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element has an empty placeholder attribute"
+          },
+          {
+            "id": "presentational-role",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "critical",
+        "html": "<input placeholder=\"\" class=\"flex-1 w-full bg-transparent px-4 py-4 text-sm font-medium text-zinc-100 focus:outline-none pl-2\" name=\"jamb_reg_number\" value=\"\">",
+        "target": [
+          "input[name=\"jamb_reg_number\"]"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has an empty placeholder attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+      },
+      {
+        "any": [
+          {
+            "id": "implicit-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element does not have an implicit (wrapped) <label>"
+          },
+          {
+            "id": "explicit-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element does not have an explicit <label>"
+          },
+          {
+            "id": "aria-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "aria-label attribute does not exist or is empty"
+          },
+          {
+            "id": "aria-labelledby",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+          },
+          {
+            "id": "non-empty-title",
+            "data": {
+              "messageKey": "noAttr"
+            },
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element has no title attribute"
+          },
+          {
+            "id": "non-empty-placeholder",
+            "data": {
+              "messageKey": "emptyAttr"
+            },
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element has an empty placeholder attribute"
+          },
+          {
+            "id": "presentational-role",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "critical",
+        "html": "<input placeholder=\"\" class=\"flex-1 w-full bg-transparent px-4 py-4 text-sm font-medium text-zinc-100 focus:outline-none pl-2\" name=\"matric_number\" value=\"\">",
+        "target": [
+          "input[name=\"matric_number\"]"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has an empty placeholder attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+      },
+      {
+        "any": [
+          {
+            "id": "implicit-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element does not have an implicit (wrapped) <label>"
+          },
+          {
+            "id": "explicit-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element does not have an explicit <label>"
+          },
+          {
+            "id": "aria-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "aria-label attribute does not exist or is empty"
+          },
+          {
+            "id": "aria-labelledby",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+          },
+          {
+            "id": "non-empty-title",
+            "data": {
+              "messageKey": "noAttr"
+            },
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element has no title attribute"
+          },
+          {
+            "id": "non-empty-placeholder",
+            "data": {
+              "messageKey": "emptyAttr"
+            },
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element has an empty placeholder attribute"
+          },
+          {
+            "id": "presentational-role",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "critical",
+        "html": "<input placeholder=\"\" class=\"flex-1 w-full bg-transparent px-4 py-4 text-sm font-medium text-zinc-100 focus:outline-none pl-2\" name=\"waec_pin\" value=\"\">",
+        "target": [
+          "input[name=\"waec_pin\"]"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has an empty placeholder attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+      },
+      {
+        "any": [
+          {
+            "id": "implicit-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element does not have an implicit (wrapped) <label>"
+          },
+          {
+            "id": "explicit-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element does not have an explicit <label>"
+          },
+          {
+            "id": "aria-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "aria-label attribute does not exist or is empty"
+          },
+          {
+            "id": "aria-labelledby",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+          },
+          {
+            "id": "non-empty-title",
+            "data": {
+              "messageKey": "noAttr"
+            },
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element has no title attribute"
+          },
+          {
+            "id": "non-empty-placeholder",
+            "data": {
+              "messageKey": "emptyAttr"
+            },
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element has an empty placeholder attribute"
+          },
+          {
+            "id": "presentational-role",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "critical",
+        "html": "<input placeholder=\"\" class=\"flex-1 w-full bg-transparent px-4 py-4 text-sm font-medium text-zinc-100 focus:outline-none pl-2\" name=\"waec_serial\" value=\"\">",
+        "target": [
+          "input[name=\"waec_serial\"]"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has an empty placeholder attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+      },
+      {
+        "any": [
+          {
+            "id": "implicit-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element does not have an implicit (wrapped) <label>"
+          },
+          {
+            "id": "explicit-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element does not have an explicit <label>"
+          },
+          {
+            "id": "aria-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "aria-label attribute does not exist or is empty"
+          },
+          {
+            "id": "aria-labelledby",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+          },
+          {
+            "id": "non-empty-title",
+            "data": {
+              "messageKey": "noAttr"
+            },
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element has no title attribute"
+          },
+          {
+            "id": "non-empty-placeholder",
+            "data": {
+              "messageKey": "emptyAttr"
+            },
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element has an empty placeholder attribute"
+          },
+          {
+            "id": "presentational-role",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "critical",
+        "html": "<input placeholder=\"\" class=\"flex-1 w-full bg-transparent px-4 py-4 text-sm font-medium text-zinc-100 focus:outline-none pl-2\" name=\"last_gpa\" value=\"\">",
+        "target": [
+          "input[name=\"last_gpa\"]"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has an empty placeholder attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+      },
+      {
+        "any": [
+          {
+            "id": "implicit-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element does not have an implicit (wrapped) <label>"
+          },
+          {
+            "id": "explicit-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element does not have an explicit <label>"
+          },
+          {
+            "id": "aria-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "aria-label attribute does not exist or is empty"
+          },
+          {
+            "id": "aria-labelledby",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+          },
+          {
+            "id": "non-empty-title",
+            "data": {
+              "messageKey": "noAttr"
+            },
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element has no title attribute"
+          },
+          {
+            "id": "non-empty-placeholder",
+            "data": {
+              "messageKey": "emptyAttr"
+            },
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element has an empty placeholder attribute"
+          },
+          {
+            "id": "presentational-role",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "critical",
+        "html": "<input placeholder=\"\" class=\"flex-1 w-full bg-transparent px-4 py-4 text-sm font-medium text-zinc-100 focus:outline-none pl-2\" name=\"emergency_contact_name\" value=\"\">",
+        "target": [
+          "input[name=\"emergency_contact_name\"]"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has an empty placeholder attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+      },
+      {
+        "any": [
+          {
+            "id": "implicit-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element does not have an implicit (wrapped) <label>"
+          },
+          {
+            "id": "explicit-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element does not have an explicit <label>"
+          },
+          {
+            "id": "aria-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "aria-label attribute does not exist or is empty"
+          },
+          {
+            "id": "aria-labelledby",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+          },
+          {
+            "id": "non-empty-title",
+            "data": {
+              "messageKey": "noAttr"
+            },
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element has no title attribute"
+          },
+          {
+            "id": "non-empty-placeholder",
+            "data": {
+              "messageKey": "emptyAttr"
+            },
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element has an empty placeholder attribute"
+          },
+          {
+            "id": "presentational-role",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "critical",
+        "html": "<input placeholder=\"\" class=\"flex-1 w-full bg-transparent px-4 py-4 text-sm font-medium text-zinc-100 focus:outline-none pl-2\" name=\"emergency_contact_phone\" value=\"\">",
+        "target": [
+          "input[name=\"emergency_contact_phone\"]"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has an empty placeholder attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+      },
+      {
+        "any": [
+          {
+            "id": "implicit-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element does not have an implicit (wrapped) <label>"
+          },
+          {
+            "id": "explicit-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element does not have an explicit <label>"
+          },
+          {
+            "id": "aria-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "aria-label attribute does not exist or is empty"
+          },
+          {
+            "id": "aria-labelledby",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+          },
+          {
+            "id": "non-empty-title",
+            "data": {
+              "messageKey": "noAttr"
+            },
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element has no title attribute"
+          },
+          {
+            "id": "non-empty-placeholder",
+            "data": {
+              "messageKey": "emptyAttr"
+            },
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element has an empty placeholder attribute"
+          },
+          {
+            "id": "presentational-role",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "critical",
+        "html": "<input placeholder=\"\" class=\"flex-1 w-full bg-transparent px-4 py-4 text-sm font-medium text-zinc-100 focus:outline-none pl-2\" name=\"skills\" value=\"\">",
+        "target": [
+          "input[name=\"skills\"]"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has an empty placeholder attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+      },
+      {
+        "any": [
+          {
+            "id": "implicit-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element does not have an implicit (wrapped) <label>"
+          },
+          {
+            "id": "explicit-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element does not have an explicit <label>"
+          },
+          {
+            "id": "aria-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "aria-label attribute does not exist or is empty"
+          },
+          {
+            "id": "aria-labelledby",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+          },
+          {
+            "id": "non-empty-title",
+            "data": {
+              "messageKey": "noAttr"
+            },
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element has no title attribute"
+          },
+          {
+            "id": "non-empty-placeholder",
+            "data": {
+              "messageKey": "noAttr"
+            },
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element has no placeholder attribute"
+          },
+          {
+            "id": "presentational-role",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "critical",
+        "html": "<input required=\"\" class=\"peer appearance-none w-6 h-6 border-2 border-zinc-700 rounded-lg checked:border-[#0052CC] checked:bg-[#0052CC] transition-all cursor-pointer\" type=\"checkbox\">",
+        "target": [
+          ".peer"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+      }
+    ]
+  },
+  {
+    "id": "link-in-text-block",
+    "impact": "serious",
+    "tags": [
+      "cat.color",
+      "wcag2a",
+      "wcag141",
+      "TTv5",
+      "TT13.a",
+      "EN-301-549",
+      "EN-9.1.4.1",
+      "RGAAv4",
+      "RGAA-10.6.1"
+    ],
+    "description": "Ensure links are distinguished from surrounding text in a way that does not rely on color",
+    "help": "Links must be distinguishable without relying on color",
+    "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/link-in-text-block?application=playwright",
+    "nodes": [
+      {
+        "any": [
+          {
+            "id": "link-in-text-block",
+            "data": {
+              "messageKey": "fgContrast",
+              "contrastRatio": 2.6,
+              "requiredContrastRatio": 3,
+              "nodeColor": "#0052cc",
+              "parentColor": "#9f9fa9"
+            },
+            "relatedNodes": [
+              {
+                "html": "<p class=\"text-[11px] text-zinc-400 font-bold uppercase tracking-widest leading-relaxed\">I certify that all records provided match my official institutional data and I agree to the <a class=\"text-[#0052CC] hover:underline\" href=\"#\">Global Terms</a>.</p>",
+                "target": [
+                  ".text-\\[11px\\]"
+                ]
+              }
+            ],
+            "impact": "serious",
+            "message": "The link has insufficient color contrast of 2.6:1 with the surrounding text. (Minimum contrast is 3:1, link text: #0052cc, surrounding text: #9f9fa9)"
+          },
+          {
+            "id": "link-in-text-block-style",
+            "data": null,
+            "relatedNodes": [
+              {
+                "html": "<p class=\"text-[11px] text-zinc-400 font-bold uppercase tracking-widest leading-relaxed\">I certify that all records provided match my official institutional data and I agree to the <a class=\"text-[#0052CC] hover:underline\" href=\"#\">Global Terms</a>.</p>",
+                "target": [
+                  ".text-\\[11px\\]"
+                ]
+              }
+            ],
+            "impact": "serious",
+            "message": "The link has no styling (such as underline) to distinguish it from the surrounding text"
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "serious",
+        "html": "<a class=\"text-[#0052CC] hover:underline\" href=\"#\">Global Terms</a>",
+        "target": [
+          "a[href=\"#\"]"
+        ],
+        "failureSummary": "Fix any of the following:\n  The link has insufficient color contrast of 2.6:1 with the surrounding text. (Minimum contrast is 3:1, link text: #0052cc, surrounding text: #9f9fa9)\n  The link has no styling (such as underline) to distinguish it from the surrounding text"
+      }
+    ]
+  }
+]

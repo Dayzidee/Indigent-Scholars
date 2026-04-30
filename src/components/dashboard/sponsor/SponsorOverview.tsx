@@ -27,7 +27,7 @@ export function SponsorOverview() {
       <section className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-8">
         <div className="space-y-2">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold font-headline tracking-tight text-zinc-100 leading-tight">Impact Overview</h2>
-          <p className="text-zinc-500 max-w-xl font-body leading-relaxed text-xs md:text-sm">
+          <p className="text-zinc-400 max-w-xl font-body leading-relaxed text-xs md:text-sm">
             Tracking your architectural legacy in Nigerian education. Your contributions have enabled 42 scholars this semester.
           </p>
         </div>
@@ -87,9 +87,9 @@ export function SponsorOverview() {
           
           <div className="relative z-10 flex flex-col md:flex-row justify-between gap-8 md:gap-16 mb-12">
             <div className="space-y-2 flex-1">
-              <label className="text-[10px] font-bold uppercase tracking-[0.25em] text-zinc-500 font-label">Lifetime Funding Impact</label>
+              <label className="text-[10px] font-bold uppercase tracking-[0.25em] text-zinc-400 font-label">Lifetime Funding Impact</label>
               <div className="flex flex-wrap items-center gap-4">
-                <span className="text-4xl md:text-5xl lg:text-6xl font-bold font-headline text-[#0052CC] leading-none tracking-tighter">₦24,850,000</span>
+                <span className="text-4xl md:text-5xl lg:text-6xl font-bold font-headline text-[#0052CC] leading-none tracking-tighter">₦72,400,000</span>
                 <div className="flex items-center gap-1.5 bg-emerald-950/30 text-emerald-500 px-4 py-2 rounded-full border border-emerald-900/20">
                   <span className="material-symbols-outlined text-[10px] font-black">trending_up</span>
                   <span className="text-[10px] font-black uppercase tracking-widest">Growth +12.5%</span>
@@ -98,7 +98,7 @@ export function SponsorOverview() {
             </div>
             
             <div className="space-y-2 md:border-l md:pl-16 border-zinc-800/50 flex-1">
-              <label className="text-[10px] font-bold uppercase tracking-[0.25em] text-zinc-500 font-label">Active Scholars Supported</label>
+              <label className="text-[10px] font-bold uppercase tracking-[0.25em] text-zinc-400 font-label">Active Scholars Supported</label>
               <div className="flex items-baseline gap-4 relative">
                 <span className="text-4xl md:text-5xl lg:text-6xl font-bold font-headline text-zinc-100 leading-none tracking-tighter">142</span>
                 <span className="text-[10px] font-black uppercase tracking-[0.2em] text-[#D4AF37] bg-[#D4AF37]/5 px-4 py-2 rounded-full border border-[#D4AF37]/20">
@@ -126,7 +126,7 @@ export function SponsorOverview() {
                 </div>
               ))}
             </div>
-            <div className="absolute bottom-[-40px] w-full flex justify-between text-[11px] font-black text-zinc-500 uppercase tracking-[0.3em] px-4 font-label">
+            <div className="absolute bottom-[-40px] w-full flex justify-between text-[11px] font-black text-zinc-400 uppercase tracking-[0.3em] px-4 font-label">
               <span>Oct</span><span>Nov</span><span>Dec</span><span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span>
             </div>
           </div>
@@ -150,24 +150,11 @@ export function SponsorOverview() {
               </p>
             </div>
 
-            <div className="relative z-10 space-y-5">
-              <div className="flex justify-between text-[10px] font-black uppercase tracking-[0.25em] font-label text-white/90">
-                <span>Progress to Milestone</span>
-                <span>94%</span>
-              </div>
-              <div className="h-4 w-full bg-black/10 rounded-full overflow-hidden p-1 border border-white/10">
-                <motion.div 
-                  initial={{ width: 0 }}
-                  animate={{ width: '94%' }}
-                  transition={{ duration: 1.5, ease: "easeOut" }}
-                  className="h-full bg-white rounded-full shadow-[0_0_15px_rgba(255,255,255,0.6)]"
-                ></motion.div>
-              </div>
-            </div>
+
           </div>
 
-          {/* CEO Ads Banner - Large & Prominent */}
-          <div className="col-span-12 md:col-span-8 bg-zinc-900 rounded-3xl lg:rounded-[40px] relative overflow-hidden border border-zinc-800 shadow-2xl group min-h-[360px]">
+          {/* Promotional / Ads Banner */}
+          <div className="col-span-12 md:col-span-8 bg-zinc-900 rounded-3xl lg:rounded-[40px] relative overflow-hidden border border-zinc-800 shadow-2xl group min-h-[360px] flex flex-col">
             {/* Background Image / Pattern */}
             <div className="absolute inset-0 opacity-20 grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105">
                <Image 
@@ -177,16 +164,35 @@ export function SponsorOverview() {
                 className="object-cover"
                />
             </div>
-            <div className="absolute inset-0 bg-gradient-to-r from-zinc-950 via-zinc-950/80 to-transparent z-10" />
+            <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/80 to-zinc-950/40 z-10 md:bg-gradient-to-r" />
             
-            <div className="relative z-20 h-full p-8 sm:p-12 flex flex-col justify-between items-start">
-               <div className="space-y-4 max-w-lg">
-                  <div className="flex items-center gap-3">
-                    <span className="bg-[#0052CC] text-white text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-widest">Featured Event</span>
-                    <span className="text-zinc-500 text-[10px] font-bold uppercase tracking-widest">Lagos • Dec 2024</span>
+            <div className="relative z-20 h-full p-6 sm:p-12 flex flex-col justify-between">
+               {/* CEO Badge - Made responsive, no longer absolute overlapping text on mobile */}
+               <div className="flex justify-end mb-6 md:absolute md:top-8 md:right-8 md:mb-0">
+                 <div className="flex items-center gap-3 bg-zinc-900/80 backdrop-blur-md p-3 rounded-2xl border border-zinc-800 shadow-lg">
+                    <div className="w-10 h-10 rounded-xl bg-zinc-800 overflow-hidden shrink-0 border border-zinc-700">
+                       <Image 
+                         src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&auto=format&fit=crop" 
+                         alt="CEO" 
+                         width={100} 
+                         height={100} 
+                         className="w-full h-full object-cover"
+                       />
+                    </div>
+                    <div className="pr-2 text-left">
+                       <p className="text-[10px] font-black text-zinc-100 leading-tight">CEO Message</p>
+                       <p className="text-[9px] font-bold text-zinc-400 uppercase tracking-widest">Official Notice</p>
+                    </div>
+                 </div>
+               </div>
+
+               <div className="space-y-4 max-w-lg mt-auto md:mt-0">
+                  <div className="flex items-center gap-3 flex-wrap">
+                    <span className="bg-[#0052CC] text-white text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-widest">Sponsor Spotlight</span>
+                    <span className="text-zinc-400 text-[10px] font-bold uppercase tracking-widest">Exclusive Invitation</span>
                   </div>
-                  <h3 className="text-3xl md:text-5xl font-black font-headline text-zinc-100 leading-[1] tracking-tighter">
-                    Indigent Excellence <br />
+                  <h3 className="text-3xl md:text-5xl font-black font-headline text-zinc-100 leading-[1.1] tracking-tighter">
+                    Indigent Excellence <br className="hidden md:block" />
                     <span className="text-[#0052CC]">Summit 2024</span>
                   </h3>
                   <p className="text-sm md:text-base text-zinc-400 font-medium leading-relaxed">
@@ -194,31 +200,14 @@ export function SponsorOverview() {
                   </p>
                </div>
 
-               <div className="flex flex-wrap gap-4 w-full sm:w-auto">
-                  <Button className="font-black text-xs uppercase tracking-widest px-8 py-6 rounded-2xl bg-[#0052CC] hover:bg-[#0040A3] shadow-xl shadow-[#0052CC]/20 group/btn">
+               <div className="flex flex-col sm:flex-row flex-wrap gap-4 w-full mt-8 md:mt-10">
+                  <Button className="w-full sm:w-auto font-black text-xs uppercase tracking-widest px-8 py-6 rounded-2xl bg-[#0052CC] hover:bg-[#0040A3] shadow-xl shadow-[#0052CC]/20 group/btn">
                     Register Interest
                     <span className="material-symbols-outlined ml-2 text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
                   </Button>
-                  <Button variant="outline" className="font-black text-xs uppercase tracking-widest px-8 py-6 rounded-2xl border-zinc-800 hover:bg-zinc-800 text-zinc-300">
+                  <Button variant="outline" className="w-full sm:w-auto font-black text-xs uppercase tracking-widest px-8 py-6 rounded-2xl border-zinc-800 hover:bg-zinc-800 text-zinc-300">
                     Download Agenda
                   </Button>
-               </div>
-            </div>
-
-            {/* CEO Badge */}
-            <div className="absolute top-8 right-8 z-20 flex items-center gap-3 bg-zinc-900/80 backdrop-blur-md p-3 rounded-2xl border border-zinc-800">
-               <div className="w-10 h-10 rounded-xl bg-zinc-800 overflow-hidden shrink-0 border border-zinc-700">
-                  <Image 
-                    src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&auto=format&fit=crop" 
-                    alt="CEO" 
-                    width={100} 
-                    height={100} 
-                    className="w-full h-full object-cover"
-                  />
-               </div>
-               <div className="pr-2">
-                  <p className="text-[10px] font-black text-zinc-100 leading-tight">CEO Message</p>
-                  <p className="text-[9px] font-bold text-zinc-500 uppercase tracking-widest">Official Notice</p>
                </div>
             </div>
           </div>
@@ -304,16 +293,23 @@ export function SponsorOverview() {
                 </div>
 
                 {/* Financial Zone */}
-                <div className="md:text-right flex flex-col justify-between items-start md:items-end gap-6 md:min-w-[200px] bg-zinc-950/50 p-6 rounded-[32px] border border-zinc-800/50 self-start md:self-stretch lg:self-center">
+            <div className="md:text-right flex flex-col justify-between items-start md:items-end gap-6 md:min-w-[200px] bg-zinc-950/50 p-6 rounded-[32px] border border-zinc-800/50 self-start md:self-stretch lg:self-center">
                   <div className="space-y-1">
                     <p className="text-[10px] font-black text-zinc-500 uppercase tracking-widest">Sponsored Amount</p>
                     <p className="font-black font-headline text-2xl lg:text-3xl text-[#0052CC] tracking-tighter">{scholar.amount}</p>
                   </div>
-                  <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-950/20 border border-emerald-900/30 text-emerald-500">
-                    <span className="material-symbols-outlined text-sm font-black">verified</span>
-                    <span className="text-[10px] font-black uppercase tracking-widest">Settled</span>
+                  <div className="flex flex-col gap-2 items-end">
+                    <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-950/20 border border-emerald-900/30 text-emerald-500">
+                      <span className="material-symbols-outlined text-sm font-black">verified</span>
+                      <span className="text-[10px] font-black uppercase tracking-widest">Settled</span>
+                    </div>
+                    <div className="flex items-center gap-1.5 text-[8px] font-black text-[#0052CC] uppercase tracking-widest bg-[#0052CC]/5 px-3 py-1 rounded-lg border border-[#0052CC]/20">
+                      <span className="material-symbols-outlined text-[10px]">person_check</span>
+                      Sole Benefactor
+                    </div>
                   </div>
                 </div>
+
               </div>
 
               {/* Decorative Blur */}

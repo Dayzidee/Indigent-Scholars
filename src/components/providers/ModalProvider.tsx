@@ -57,7 +57,7 @@ export function ModalProvider({ children }: { children: ReactNode }) {
             
             <div className="flex-1">
               <h3 className="font-semibold text-zinc-100 dark:text-zinc-100">{modalTitle}</h3>
-              <p className="text-sm text-zinc-500 dark:text-zinc-400 mt-1">{modalMessage}</p>
+              <p className="text-sm text-zinc-400 dark:text-zinc-400 mt-1">{modalMessage}</p>
             </div>
             
             <button

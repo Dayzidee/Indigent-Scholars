@@ -45,7 +45,7 @@ export default function ChooseYourPathPage() {
                 </li>
               </ul>
             </div>
-            <button className="w-full py-4 px-6 bg-[#0052CC] text-white font-headline font-extrabold rounded-xl hover:bg-[#003D9B] hover:shadow-xl hover:shadow-primary/20 transition-all transform active:scale-95 duration-300 flex items-center justify-center gap-2 group-hover:-translate-y-1">
+            <button className="w-full py-4 px-6 bg-primary-container text-white font-headline font-extrabold rounded-xl hover:bg-primary-fixed-dim hover:text-on-primary-fixed hover:shadow-xl hover:shadow-primary/20 transition-all transform active:scale-95 duration-300 flex items-center justify-center gap-2 group-hover:-translate-y-1">
               Select &amp; Continue
               <span className="material-symbols-outlined">arrow_forward</span>
             </button>
@@ -78,7 +78,7 @@ export default function ChooseYourPathPage() {
                 </li>
               </ul>
             </div>
-            <button className="w-full py-4 px-6 bg-zinc-900 text-secondary-fixed-dim font-headline font-extrabold rounded-xl hover:bg-secondary-container hover:text-secondary-fixed-dim hover:shadow-xl transition-all transform active:scale-95 duration-300 flex items-center justify-center gap-2 group-hover:-translate-y-1">
+            <button className="w-full py-4 px-6 bg-zinc-900 text-secondary-fixed-dim font-headline font-extrabold rounded-xl hover:bg-secondary-container hover:text-on-secondary-container hover:shadow-xl transition-all transform active:scale-95 duration-300 flex items-center justify-center gap-2 group-hover:-translate-y-1">
               Select &amp; Continue
               <span className="material-symbols-outlined">arrow_forward</span>
             </button>
@@ -87,7 +87,7 @@ export default function ChooseYourPathPage() {
 
         {/* Footer Text Hint */}
         <p className="mt-12 text-center text-on-surface-variant font-label text-sm">
-          Already have an account? <Link href="/login" className="text-primary-fixed-dim font-bold hover:underline">Log in here</Link>
+          Already have an account? <Link href="/login" className="text-primary-fixed-dim font-bold hover:underline">Sign in here</Link>
         </p>
       </div>
     </main>

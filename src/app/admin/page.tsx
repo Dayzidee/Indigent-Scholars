@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { DashboardLayout } from '@/components/layout/DashboardLayout';
 import { getGlobalStats } from '@/lib/actions/admin';
 import Link from 'next/link';
 
@@ -35,8 +34,7 @@ export default function AdminDashboard() {
 
 
   return (
-    <DashboardLayout>
-      <div className="space-y-10">
+    <div className="space-y-10">
         {/* Real-time Telemetry Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {metricCards.map((card, i) => (
@@ -128,7 +126,7 @@ export default function AdminDashboard() {
           </div>
         </div>
       </div>
-    </DashboardLayout>
+    </div>
   );
 }
 

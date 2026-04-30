@@ -55,7 +55,7 @@ export function IncompleteView() {
                     className="h-full bg-amber-500"
                    />
                 </div>
-                <p className="text-zinc-500 text-[10px] font-medium leading-relaxed pt-2">Complete your profile to unlock verified scholarship opportunities.</p>
+                <p className="text-zinc-400 text-[10px] font-medium leading-relaxed pt-2">Complete your profile to unlock verified scholarship opportunities.</p>
               </div>
 
               <div className="mt-8 pt-6 border-t border-zinc-800">
@@ -98,7 +98,7 @@ export function IncompleteView() {
             </div>
 
             <div className="mt-8 pt-6 border-t border-zinc-800/5">
-                <p className="text-[9px] font-black uppercase tracking-widest text-zinc-500 mb-2">Vault Utilization</p>
+                <p className="text-[9px] font-black uppercase tracking-widest text-zinc-400 mb-2">Vault Utilization</p>
                 <div className="w-full h-1 bg-white/10 rounded-full overflow-hidden">
                    <div className="h-full bg-emerald-400 w-[33%]" />
                 </div>

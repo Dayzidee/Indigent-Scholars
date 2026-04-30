@@ -413,22 +413,22 @@ function StudentRegisterContent() {
             <div className="pt-10 border-t border-zinc-800">
               <div className="flex items-start gap-4 mb-10 group cursor-pointer">
                 <div className="relative flex items-center">
-                  <input required className="peer appearance-none w-6 h-6 border-2 border-zinc-700 rounded-lg checked:border-[#0052CC] checked:bg-[#0052CC] transition-all cursor-pointer" type="checkbox" />
+                  <input id="terms-agreement" required className="peer appearance-none w-6 h-6 border-2 border-zinc-700 rounded-lg checked:border-[#0052CC] checked:bg-[#0052CC] transition-all cursor-pointer" type="checkbox" />
                   <span className="material-symbols-outlined absolute inset-0 text-white text-lg scale-0 peer-checked:scale-100 transition-transform pointer-events-none flex items-center justify-center font-bold">check</span>
                 </div>
-                <p className="text-[11px] text-zinc-400 font-bold uppercase tracking-widest leading-relaxed">
-                  I certify that all records provided match my official institutional data and I agree to the <Link className="text-[#0052CC] hover:underline" href="#">Global Terms</Link>.
-                </p>
+                <label htmlFor="terms-agreement" className="text-[11px] text-zinc-400 font-bold uppercase tracking-widest leading-relaxed cursor-pointer">
+                  I certify that all records provided match my official institutional data and I agree to the <Link className="text-[#0052CC] underline hover:no-underline" href="#">Global Terms</Link>.
+                </label>
               </div>
               
               <Button type="submit" size="xl" className="w-full py-7" iconRight="arrow_forward" isLoading={isLoading}>
                 Establish Scholar Account
               </Button>
 
-              <div className="mt-10 p-6 rounded-3xl bg-zinc-800 border border-zinc-800 flex flex-col items-center gap-3">
+              <div className="mt-10 p-6 rounded-3xl bg-zinc-900 border border-zinc-800 flex flex-col items-center gap-3">
                  <p className="text-zinc-400 text-xs font-bold uppercase tracking-widest leading-none">Already have a profile?</p>
                  <Link className="text-[#0052CC] font-black font-headline text-lg hover:underline transition-all" href="/login">
-                   Log in to Dashboard
+                   Sign in to Dashboard
                  </Link>
               </div>
             </div>

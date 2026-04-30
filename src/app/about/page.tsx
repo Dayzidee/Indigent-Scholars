@@ -42,7 +42,7 @@ export default function AboutPage() {
               Connecting brilliant indigent scholars with visionaries who believe that access to education is the ultimate catalyst for nation-building.
             </p>
             <div className="flex flex-wrap gap-6">
-              <button className="bg-[#0052CC] text-white px-10 py-5 rounded-[24px] font-black text-sm uppercase tracking-widest flex items-center gap-3 hover:bg-[#0065ff] transition-all shadow-xl shadow-[#0052CC]/20">
+              <button className="bg-[#0052CC] text-white px-10 py-5 rounded-[24px] font-black text-sm uppercase tracking-widest flex items-center gap-3 hover:bg-[#2563eb] transition-all shadow-xl shadow-[#0052CC]/20">
                 Partner With Us
                 <span className="material-symbols-outlined text-lg">arrow_forward</span>
               </button>
@@ -109,9 +109,15 @@ export default function AboutPage() {
  
             <Card className="bg-white/5 backdrop-blur-2xl p-12 rounded-[48px] border border-white/10 shadow-2xl relative overflow-hidden group">
               <div className="grid grid-cols-2 gap-8 mb-10">
-                {['favorite', 'bolt', 'auto_awesome', 'trending_up'].map((icon, i) => (
-                  <div key={i} className="space-y-2">
-                    <span className="material-symbols-outlined text-[#0052CC] text-2xl">{icon}</span>
+                {[
+                  { icon: 'favorite', label: 'Integrity' },
+                  { icon: 'bolt', label: 'Impact' },
+                  { icon: 'auto_awesome', label: 'Excellence' },
+                  { icon: 'trending_up', label: 'Transparency' }
+                ].map((item, i) => (
+                  <div key={i} className="flex flex-col gap-2">
+                    <span className="material-symbols-outlined text-[#0052CC] text-2xl">{item.icon}</span>
+                    <span className="text-[10px] font-black uppercase tracking-widest text-zinc-100">{item.label}</span>
                   </div>
                 ))}
               </div>
@@ -192,7 +198,7 @@ export default function AboutPage() {
 
       {/* CTA Section - Sophisticated Inlay */}
       <section className="py-32 px-8">
-        <div className="max-w-7xl mx-auto relative rounded-[64px] bg-[#0052CC] p-20 text-center overflow-hidden group">
+          <div className="max-w-7xl mx-auto relative rounded-[64px] bg-[#0052CC] p-20 text-center overflow-hidden group">
           <SlideIn direction="up">
             <h2 className="text-5xl md:text-7xl font-headline font-black text-white mb-8 tracking-tighter leading-none">Ready to sponsor<br/> a future?</h2>
             <p className="text-blue-100 text-xl mb-12 max-w-2xl mx-auto font-medium">Join hundreds of visionaries making a difference in the lives of Nigeria&apos;s most brilliant indigent scholars.</p>

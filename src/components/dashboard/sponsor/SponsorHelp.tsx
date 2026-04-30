@@ -57,7 +57,7 @@ export function SponsorHelp() {
               <span className="material-symbols-outlined text-2xl md:text-3xl">{cat.icon}</span>
             </div>
             <h3 className="text-lg md:text-xl font-bold text-zinc-100 mb-1 md:mb-2 font-headline">{cat.title}</h3>
-            <p className="text-zinc-500 font-body text-xs md:text-sm leading-relaxed">{cat.description}</p>
+            <p className="text-zinc-400 font-body text-xs md:text-sm leading-relaxed">{cat.description}</p>
           </motion.div>
         ))}
       </section>
@@ -69,7 +69,7 @@ export function SponsorHelp() {
           {faqs.map((faq, i) => (
             <div key={i} className="bg-zinc-900 p-6 md:p-8 rounded-3xl lg:rounded-[32px] border border-zinc-800 hover:border-[#0052CC]/20 transition-all">
               <h4 className="font-black text-lg text-zinc-100 mb-3 font-headline leading-tight">{faq.question}</h4>
-              <p className="text-zinc-500 text-sm font-body leading-relaxed">{faq.answer}</p>
+              <p className="text-zinc-400 text-sm font-body leading-relaxed">{faq.answer}</p>
             </div>
           ))}
         </div>

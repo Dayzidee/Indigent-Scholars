@@ -42,7 +42,7 @@ export function FinancialCarousel() {
       {/* Donor Carousel */}
       <div className="relative group">
         <div className="flex justify-between items-center mb-6">
-          <p className="text-zinc-500 text-[10px] font-black uppercase tracking-[0.2em]">Individual Contributions</p>
+          <p className="text-zinc-400 text-[10px] font-black uppercase tracking-[0.2em]">Individual Contributions</p>
           <div className="flex gap-2">
              <button className="w-8 h-8 rounded-full border border-zinc-800 flex items-center justify-center text-zinc-400 hover:bg-zinc-800 transition-colors">
                <span className="material-symbols-outlined text-sm">chevron_left</span>

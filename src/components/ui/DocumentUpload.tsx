@@ -100,7 +100,7 @@ export function DocumentUpload({
           )}>
             {file ? file.name : label}
           </h4>
-          <p className="text-[10px] text-zinc-500 font-bold uppercase tracking-widest opacity-60">
+          <p className="text-[10px] text-zinc-400 font-bold uppercase tracking-widest opacity-80">
             {file ? `${(file.size / 1024 / 1024).toFixed(2)} MB` : description}
           </p>
         </div>

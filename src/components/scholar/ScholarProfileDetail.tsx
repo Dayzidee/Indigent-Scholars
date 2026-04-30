@@ -77,7 +77,7 @@ export function ScholarProfileDetail({ student, accessLevel }: ScholarProfileDet
               {student.name}
             </h1>
             
-            <p className="font-headline text-2xl text-zinc-500 mb-10 leading-snug max-w-2xl font-medium">
+            <p className="font-headline text-2xl text-zinc-400 mb-10 leading-snug max-w-2xl font-medium">
               {student.bio}
             </p>
 
@@ -135,7 +135,7 @@ export function ScholarProfileDetail({ student, accessLevel }: ScholarProfileDet
                     <span className="material-symbols-outlined text-3xl">school</span>
                   </div>
                   <h3 className="font-headline font-black text-xl text-zinc-100 mb-2">Degree Program</h3>
-                  <p className="text-zinc-500 font-medium mb-4">{student.field}</p>
+                  <p className="text-zinc-400 font-medium mb-4">{student.field}</p>
                   <div className="mt-auto pt-4 border-t border-zinc-800">
                     <p className="text-[10px] font-black text-zinc-400 uppercase tracking-widest mb-1">Current Standing</p>
                     <p className="text-2xl font-headline font-black text-[#0052CC]">GPA {student.gpa} / 5.00</p>
@@ -280,20 +280,10 @@ export function ScholarProfileDetail({ student, accessLevel }: ScholarProfileDet
               <Card className="p-6 sm:p-10 rounded-3xl lg:rounded-[40px] border border-[#0052CC]/10 bg-zinc-900 shadow-none relative overflow-hidden">
                 <h3 className="font-headline font-black text-xl text-zinc-100 mb-8 tracking-tight">Contribution Status</h3>
                 
-                <div className="mb-10">
-                  <div className="flex justify-between items-end mb-4">
-                    <span className="text-4xl font-headline font-black text-[#0052CC] tracking-tighter">₦{student.raisedAmount.toLocaleString()}</span>
-                    <span className="text-[10px] font-black text-zinc-400 uppercase tracking-widest">{Math.round(percentage)}% Raised</span>
-                  </div>
-                  <div className="w-full h-4 bg-zinc-800 rounded-full overflow-hidden p-1">
-                    <motion.div 
-                      initial={{ width: 0 }}
-                      animate={{ width: `${percentage}%` }}
-                      transition={{ duration: 1, ease: "easeOut" }}
-                      className="h-full bg-[#0052CC] rounded-full shadow-[0_0_15px_rgba(0,82,204,0.3)]"
-                    />
-                  </div>
-                  <p className="mt-4 text-[10px] font-black text-zinc-400 uppercase tracking-[0.2em]">₦{(student.totalGoal - student.raisedAmount).toLocaleString()} TO TARGET</p>
+                <div className="mb-10 bg-zinc-800/50 p-6 rounded-2xl border border-zinc-800">
+                    <p className="text-zinc-300 text-sm font-medium leading-relaxed">
+                        <strong className="text-white font-headline">{student.name}</strong> needs <strong className="text-blue-400">₦{student.totalGoal.toLocaleString()}</strong> for tuition and related academic fees.
+                    </p>
                 </div>
 
                 <div className="space-y-4">
@@ -311,23 +301,7 @@ export function ScholarProfileDetail({ student, accessLevel }: ScholarProfileDet
                   </Button>
                 </div>
 
-                <div className="mt-10 pt-8 border-t border-zinc-800">
-                   <h4 className="text-[10px] font-black text-zinc-400 uppercase tracking-[0.2em] mb-6">Recent Backers</h4>
-                   <div className="space-y-6">
-                      {student.sponsors.map((spo, i) => (
-                        <div key={i} className="flex items-center gap-4">
-                           <div className="w-10 h-10 rounded-xl bg-zinc-800 flex items-center justify-center text-xs font-black text-zinc-400">
-                             {spo.name.charAt(0)}
-                           </div>
-                           <div className="flex-1 min-w-0">
-                              <p className="text-sm font-black text-zinc-100 truncate">{spo.name}</p>
-                              <p className="text-[10px] font-bold text-[#0052CC] uppercase tracking-widest">Sponsored ₦{spo.amount.toLocaleString()}</p>
-                           </div>
-                        </div>
-                      ))}
-                   </div>
-                   <button className="w-full mt-8 text-[10px] font-black text-[#0052CC] uppercase tracking-widest hover:underline">View All Financial Supporters</button>
-                </div>
+
               </Card>
 
               {/* Prestige Info Card */}

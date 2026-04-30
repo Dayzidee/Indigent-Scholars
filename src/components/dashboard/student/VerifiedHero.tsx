@@ -35,19 +35,19 @@ export function VerifiedHero({ student }: VerifiedHeroProps) {
 
           <div className="grid grid-cols-2 gap-4 py-6 border-y border-zinc-800">
             <div>
-              <p className="text-[10px] text-zinc-500 font-bold uppercase tracking-widest mb-1">Institution</p>
+              <p className="text-[10px] text-zinc-400 font-bold uppercase tracking-widest mb-1">Institution</p>
               <p className="text-sm font-bold text-zinc-200">{student.university}</p>
             </div>
             <div>
-              <p className="text-[10px] text-zinc-500 font-bold uppercase tracking-widest mb-1">Field of Study</p>
+              <p className="text-[10px] text-zinc-400 font-bold uppercase tracking-widest mb-1">Field of Study</p>
               <p className="text-sm font-bold text-zinc-200">{student.field}</p>
             </div>
             <div>
-              <p className="text-[10px] text-zinc-500 font-bold uppercase tracking-widest mb-1">Matriculation</p>
+              <p className="text-[10px] text-zinc-400 font-bold uppercase tracking-widest mb-1">Matriculation</p>
               <p className="text-sm font-bold text-zinc-200">{student.matric}</p>
             </div>
             <div>
-              <p className="text-[10px] text-zinc-500 font-bold uppercase tracking-widest mb-1">Current GPA</p>
+              <p className="text-[10px] text-zinc-400 font-bold uppercase tracking-widest mb-1">Current GPA</p>
               <p className="text-sm font-bold text-emerald-400">{student.gpa}</p>
             </div>
           </div>

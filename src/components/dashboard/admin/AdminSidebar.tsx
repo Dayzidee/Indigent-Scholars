@@ -85,7 +85,7 @@ export function AdminSidebar({ isOpen, onClose }: AdminSidebarProps) {
         </nav>
 
         <div className="px-4 mt-auto space-y-4">
-          <button className="w-full bg-[#0052CC] hover:bg-[#0047b3] text-white py-3 rounded-xl font-bold text-xs shadow-lg shadow-blue-900/20 flex items-center justify-center gap-2 transition-all hover:scale-[1.02] active:scale-[0.98]">
+          <button className="w-full bg-[#0052CC] hover:bg-[#2563eb] text-white py-3 rounded-xl font-bold text-xs shadow-lg shadow-blue-900/20 flex items-center justify-center gap-2 transition-all hover:scale-[1.02] active:scale-[0.98]">
             <PlusCircle className="w-4 h-4" />
             New Scholarship
           </button>

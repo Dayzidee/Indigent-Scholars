@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export function TransparencySection() {
   return (
@@ -49,8 +50,10 @@ export function TransparencySection() {
           </div>
           <div className="relative">
             <div className="aspect-square rounded-[3rem] overflow-hidden shadow-2xl relative z-10 border-[12px] border-zinc-800/10 backdrop-blur-3xl ring-1 ring-zinc-800/10">
-              <img
+              <Image
                 alt="Tracking Dashboard Preview"
+                width={800}
+                height={800}
                 className="w-full h-full object-cover transition-transform duration-1000 hover:scale-110"
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaNWvza_o4siDQ7caCwyqedHTv4umJgfdcum-QFgBnv-YvH_Y-IJxD_eBBzQiKqeeqXjU02NRHLacSugxX9rZze5srRboPlACtGqjLlkrXRlGkkfEnLjjUidIiyIHfQLQmPA3k7Y_-1vmowDpf8H0iFmYn1d_Xxm-2PuuEfH1u5G-xlCSTRioWU_ju5_J_3j5IaTtQjt3fU_GFEWUKNkIBWozQ4Hi7yKZn_0EIgk3lJP8GLADWqBFzPmbaC-9oQ-HxZ15wboBSbKv1"
               />

@@ -68,7 +68,7 @@ export function SponsorTopNavBar({ onMenuClick }: SponsorTopNavBarProps) {
             value={searchValue}
             onChange={(e) => setSearchValue(e.target.value)}
             placeholder="Search scholars, transactions..."
-            className="w-full bg-zinc-800 border-transparent rounded-full py-2.5 pl-12 pr-4 text-xs font-medium text-zinc-200 focus:bg-zinc-800 focus:ring-2 focus:ring-[#0052CC]/10 focus:border-[#0052CC]/20 transition-all font-body placeholder:text-zinc-500"
+            className="w-full bg-zinc-800 border-transparent rounded-full py-2.5 pl-12 pr-4 text-xs font-medium text-zinc-200 focus:bg-zinc-800 focus:ring-2 focus:ring-[#0052CC]/10 focus:border-[#0052CC]/20 transition-all font-body placeholder:text-zinc-400"
           />
         </div>
       </div>
@@ -77,7 +77,7 @@ export function SponsorTopNavBar({ onMenuClick }: SponsorTopNavBarProps) {
       <div className="flex items-center gap-2 lg:gap-4">
         <Link 
           href="/dashboard/sponsor/help"
-          className="hidden sm:flex items-center gap-2 px-4 py-2 text-xs font-bold text-zinc-500 hover:text-[#0052CC] transition-colors font-headline uppercase tracking-wider"
+          className="hidden sm:flex items-center gap-2 px-4 py-2 text-xs font-bold text-zinc-400 hover:text-[#0052CC] transition-colors font-headline uppercase tracking-wider"
         >
           <span className="material-symbols-outlined text-lg">contact_support</span>
           <span className="hidden xl:inline">Support</span>
