@@ -5,7 +5,6 @@ import { motion } from 'framer-motion'
 import { Card } from '@/components/ui/card'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/Button'
-import { FundingTracker } from './FundingTracker'
 import { STUDENTS_DATA } from '@/lib/constants/mock-data'
 
 export function IncompleteView() {
@@ -138,14 +137,12 @@ export function IncompleteView() {
 
       </div>
 
-      {/* PREMIUM FUNDING TRACKER (REPLACED OPPORTUNITIES) */}
-      <FundingTracker 
-        receivedAmount={0}
-        totalAmount={STUDENTS_DATA[0].totalGoal}
-        phase="Phase 0: Registration in Progress"
-        nextMilestone={0}
-        sponsors={[]}
-      />
+      {/* FUNDING TRACKER LOCKED */}
+      <div className="p-8 rounded-[40px] bg-zinc-900 border border-zinc-800 text-center">
+        <span className="material-symbols-outlined text-4xl text-zinc-700 mb-4">lock</span>
+        <h3 className="text-lg font-black font-headline text-zinc-400 tracking-tight">Funding Status Locked</h3>
+        <p className="text-sm font-medium text-zinc-500 mt-2">Complete your profile registration to access your funding dashboard.</p>
+      </div>
 
     </div>
   )

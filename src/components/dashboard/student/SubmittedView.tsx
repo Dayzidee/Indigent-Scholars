@@ -4,7 +4,6 @@ import { motion } from 'framer-motion'
 import { Card } from '@/components/ui/card'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/Button'
-import { FundingTracker } from './FundingTracker'
 import { STUDENTS_DATA } from '@/lib/constants/mock-data'
 
 export function SubmittedView() {
@@ -158,14 +157,12 @@ export function SubmittedView() {
 
       </div>
 
-      {/* PREMIUM FUNDING TRACKER (REPLACED OPPORTUNITIES) */}
-      <FundingTracker 
-        receivedAmount={STUDENTS_DATA[0].raisedAmount}
-        totalAmount={STUDENTS_DATA[0].totalGoal}
-        phase="Phase 2: Verifying Documents"
-        nextMilestone={500000}
-        sponsors={STUDENTS_DATA[0].sponsors}
-      />
+      {/* FUNDING TRACKER LOCKED */}
+      <div className="p-8 rounded-[40px] bg-zinc-900 border border-zinc-800 text-center">
+        <span className="material-symbols-outlined text-4xl text-amber-700/50 mb-4 animate-pulse">hourglass_top</span>
+        <h3 className="text-lg font-black font-headline text-zinc-400 tracking-tight">Funding Status Locked Pending Verification</h3>
+        <p className="text-sm font-medium text-zinc-500 mt-2">Your profile is currently under review. Funding features will unlock automatically upon approval.</p>
+      </div>
 
     </div>
   )

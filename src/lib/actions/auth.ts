@@ -2,6 +2,7 @@
 
 import { createClient } from '@/lib/supabase/server';
 import { redirect } from 'next/navigation';
+import { cookies } from 'next/headers';
 
 /**
  * Handles user sign in
@@ -12,10 +13,9 @@ export async function signInAction(formData: FormData) {
   
   // Simple Admin Bypass
   if (email === 'admin@indigent.com' && password === 'admin') {
-    const { cookies } = await import('next/headers');
     const cookieStore = await cookies();
     cookieStore.set('admin_bypass', 'true', { path: '/' });
-    return redirect('/admin');
+    redirect('/admin');
   }
 
   const supabase = await createClient();
