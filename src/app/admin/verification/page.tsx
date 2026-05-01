@@ -1,10 +1,7 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import { createBrowserClient } from '@supabase/ssr';
-import { verifyApplication } from '@/lib/actions/admin';
+import { useState } from 'react';
 import { toast } from 'sonner';
-
 
 interface PendingApplication {
   id: string;
@@ -19,34 +16,31 @@ interface PendingApplication {
 }
 
 export default function AdminVerification() {
-  const [pendingApps, setPendingApps] = useState<PendingApplication[]>([]);
-
-  const supabase = createBrowserClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-  );
-
-  useEffect(() => {
-    async function loadPending() {
-      const { data } = await supabase
-        .from('student_applications')
-        .select(`
-          *,
-          profiles (
-            full_name,
-            email
-          )
-        `)
-        .eq('status', 'pending');
-      
-      setPendingApps((data as unknown as PendingApplication[]) || []);
+  const [pendingApps, setPendingApps] = useState<PendingApplication[]>([
+    {
+      id: 'app_1',
+      status: 'pending',
+      school_info: { university: 'University of Lagos' },
+      profiles: { full_name: 'Adeola Johnson', email: 'adeola@example.com' }
+    },
+    {
+      id: 'app_2',
+      status: 'pending',
+      school_info: { university: 'Obafemi Awolowo University' },
+      profiles: { full_name: 'Ibrahim Musa', email: 'ibrahim@example.com' }
+    },
+    {
+      id: 'app_3',
+      status: 'pending',
+      school_info: { university: 'Ahmadu Bello University' },
+      profiles: { full_name: 'Ngozi Eze', email: 'ngozi@example.com' }
     }
-    loadPending();
-  }, [supabase]);
+  ]);
 
   const handleAction = async (appId: string, status: 'verified' | 'rejected' | 'requested_changes') => {
     try {
-      await verifyApplication(appId, status, 'Approved via Admin Panel');
+      // Simulate network delay for demo
+      await new Promise(resolve => setTimeout(resolve, 500));
       toast.success(`Application ${status} successfully`);
       setPendingApps(prev => prev.filter(app => app.id !== appId));
     } catch (e) {

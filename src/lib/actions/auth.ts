@@ -8,15 +8,8 @@ import { cookies } from 'next/headers';
  * Handles user sign in
  */
 export async function signInAction(formData: FormData) {
-  const email = formData.get('email') as string;
+  const email = (formData.get('email') as string)?.trim();
   const password = formData.get('password') as string;
-  
-  // Simple Admin Bypass
-  if (email === 'admin@indigent.com' && password === 'admin') {
-    const cookieStore = await cookies();
-    cookieStore.set('admin_bypass', 'true', { path: '/' });
-    redirect('/admin');
-  }
 
   const supabase = await createClient();
 
@@ -24,7 +17,6 @@ export async function signInAction(formData: FormData) {
     email,
     password,
   });
-
   if (error) {
     return redirect(`/login?error=${encodeURIComponent(error.message)}`);
   }

@@ -80,3 +80,8 @@ scripts/
 /test-results/
 .agents/
 /tests/
+
+# Editor and AI Tools
+.gemini/
+.vscode/
+.idea/

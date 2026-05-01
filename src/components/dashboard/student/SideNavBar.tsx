@@ -41,7 +41,7 @@ export function SideNavBar({ isOpen, onClose }: SideNavBarProps) {
       brandLabel="INDIGENT-SC"
       portalLabel="Scholar Portal"
       ctaLabel="Apply for Funding"
-      ctaHref="/dashboard/student/application"
+      ctaHref="/dashboard/student/apply-funding"
       isOpen={isOpen}
       onClose={onClose}
       profileCard={profileCard}

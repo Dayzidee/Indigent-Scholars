@@ -1,8 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import { getAllProfiles } from '@/lib/actions/admin';
-
+import { useState } from 'react';
 
 interface UserProfile {
   id: string;
@@ -12,19 +10,13 @@ interface UserProfile {
 }
 
 export default function AdminUsers() {
-  const [profiles, setProfiles] = useState<UserProfile[]>([]);
-
-  useEffect(() => {
-    async function loadProfiles() {
-      try {
-        const data = await getAllProfiles();
-        setProfiles(data || []);
-      } catch (e) {
-        console.error(e);
-      }
-    }
-    loadProfiles();
-  }, []);
+  const [profiles] = useState<UserProfile[]>([
+    { id: 'usr_1a2b3c', role: 'admin', full_name: 'System Admin', email: 'admin@indigent.com' },
+    { id: 'usr_4d5e6f', role: 'student', full_name: 'Adeola Johnson', email: 'adeola.j@student.edu.ng' },
+    { id: 'usr_7g8h9i', role: 'sponsor', full_name: 'TechCorp Africa', email: 'csr@techcorp.com' },
+    { id: 'usr_0j1k2l', role: 'student', full_name: 'Ibrahim Musa', email: 'ibrahim.m@uni.edu.ng' },
+    { id: 'usr_3m4n5o', role: 'student', full_name: 'Ngozi Eze', email: 'ngozi.eze@scholar.edu.ng' },
+  ]);
 
   const getRoleBadge = (role: string) => {
     switch(role) {
