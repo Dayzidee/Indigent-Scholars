@@ -40,7 +40,8 @@ export async function updateSession(request: NextRequest) {
   const isDashboardRoute = 
     request.nextUrl.pathname === '/dashboard' ||
     request.nextUrl.pathname.startsWith('/dashboard/') || 
-    request.nextUrl.pathname.startsWith('/admin')
+    request.nextUrl.pathname.startsWith('/admin') ||
+    request.nextUrl.pathname.startsWith('/super-admin')
 
   // Performance Optimization 1: Skip middleware logic for completely public routes
   // (Home page and About page don't need session handling at all)
@@ -96,17 +97,31 @@ export async function updateSession(request: NextRequest) {
     const role = profile?.role
     const path = request.nextUrl.pathname
 
-    // Student trying to access sponsor/admin routes
-    if (role === 'student' && (path.startsWith('/dashboard/sponsor') || path.startsWith('/admin'))) {
+    // Super Admin: redirect /dashboard to /super-admin
+    if (role === 'super_admin' && path === '/dashboard') {
+      const url = request.nextUrl.clone()
+      url.pathname = '/super-admin'
+      return NextResponse.redirect(url)
+    }
+
+    // Student trying to access sponsor/admin/super-admin routes
+    if (role === 'student' && (path.startsWith('/dashboard/sponsor') || path.startsWith('/admin') || path.startsWith('/super-admin'))) {
       const url = request.nextUrl.clone()
       url.pathname = '/dashboard/student'
       return NextResponse.redirect(url)
     }
 
-    // Sponsor trying to access student/admin routes
-    if (role === 'sponsor' && (path.startsWith('/dashboard/student') || path.startsWith('/admin'))) {
+    // Sponsor trying to access student/admin/super-admin routes
+    if (role === 'sponsor' && (path.startsWith('/dashboard/student') || path.startsWith('/admin') || path.startsWith('/super-admin'))) {
       const url = request.nextUrl.clone()
       url.pathname = '/dashboard/sponsor'
+      return NextResponse.redirect(url)
+    }
+
+    // Regular admin cannot access super-admin routes
+    if (role === 'admin' && path.startsWith('/super-admin')) {
+      const url = request.nextUrl.clone()
+      url.pathname = '/admin'
       return NextResponse.redirect(url)
     }
 

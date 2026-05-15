@@ -1,8 +1,11 @@
 import { getUser, createClient } from '@/lib/supabase/server';
 import { redirect } from 'next/navigation';
-import { AdminLayoutWrapper } from '@/components/admin/AdminLayoutWrapper';
+import { SuperAdminLayoutWrapper } from '@/components/admin/SuperAdminLayoutWrapper';
 
-export default async function AdminLayout({
+/**
+ * Super Admin layout — server component that gates access to super_admin role only.
+ */
+export default async function SuperAdminLayout({
   children,
 }: {
   children: React.ReactNode;
@@ -20,14 +23,13 @@ export default async function AdminLayout({
     .eq('id', user.id)
     .single();
 
-  if (!profile || (profile.role !== 'admin' && profile.role !== 'super_admin')) {
-    // Redirect non-admins to their respective dashboards or login
+  if (!profile || profile.role !== 'super_admin') {
     return redirect('/dashboard');
   }
 
   return (
-    <AdminLayoutWrapper>
+    <SuperAdminLayoutWrapper>
       {children}
-    </AdminLayoutWrapper>
+    </SuperAdminLayoutWrapper>
   );
 }
