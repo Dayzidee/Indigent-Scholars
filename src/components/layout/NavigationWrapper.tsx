@@ -7,7 +7,7 @@ import { GoldenAfricaGlobe } from "@/components/ui/GoldenAfricaGlobe";
 
 export function NavigationWrapper({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
-  const isDashboard = pathname?.startsWith('/dashboard') || pathname?.startsWith('/admin')
+  const isDashboard = pathname?.startsWith('/dashboard') || pathname?.startsWith('/admin') || pathname?.startsWith('/super-admin')
 
   return (
     <>
