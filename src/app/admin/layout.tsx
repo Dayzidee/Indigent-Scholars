@@ -1,7 +1,7 @@
 import { getUser, createClient } from '@/lib/supabase/server';
 import { redirect } from 'next/navigation';
 import { AdminLayoutWrapper } from '@/components/admin/AdminLayoutWrapper';
-
+import { AdminRoleProvider } from '@/components/admin/AdminRoleContext';
 export default async function AdminLayout({
   children,
 }: {
@@ -26,8 +26,10 @@ export default async function AdminLayout({
   }
 
   return (
-    <AdminLayoutWrapper>
-      {children}
-    </AdminLayoutWrapper>
+    <AdminRoleProvider role={profile.role}>
+      <AdminLayoutWrapper>
+        {children}
+      </AdminLayoutWrapper>
+    </AdminRoleProvider>
   );
 }

@@ -1,6 +1,7 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
+import { useAdminRole } from '@/components/admin/AdminRoleContext';
 
 interface UserProfile {
   id: string;
@@ -10,16 +11,24 @@ interface UserProfile {
 }
 
 export default function AdminUsers() {
-  const [profiles] = useState<UserProfile[]>([
-    { id: 'usr_1a2b3c', role: 'admin', full_name: 'System Admin', email: 'admin@indigent.com' },
+  const { role: currentRole } = useAdminRole();
+
+  const allProfiles = useMemo(() => [
     { id: 'usr_4d5e6f', role: 'student', full_name: 'Adeola Johnson', email: 'adeola.j@student.edu.ng' },
     { id: 'usr_7g8h9i', role: 'sponsor', full_name: 'TechCorp Africa', email: 'csr@techcorp.com' },
     { id: 'usr_0j1k2l', role: 'student', full_name: 'Ibrahim Musa', email: 'ibrahim.m@uni.edu.ng' },
     { id: 'usr_3m4n5o', role: 'student', full_name: 'Ngozi Eze', email: 'ngozi.eze@scholar.edu.ng' },
-  ]);
+    { id: 'usr_8p9q0r', role: 'super_admin', full_name: 'Super Admin', email: 'super@scholar.edu.ng' },
+    { id: 'usr_1s2t3u', role: 'admin', full_name: 'Regular Admin', email: 'regular_admin@scholar.edu.ng' },
+  ], []);
+
+  const profiles = useMemo(() => {
+    return allProfiles.filter(p => currentRole === 'super_admin' || (p.role !== 'admin' && p.role !== 'super_admin'));
+  }, [allProfiles, currentRole]);
 
   const getRoleBadge = (role: string) => {
     switch(role) {
+      case 'super_admin': return <span className="px-2 py-0.5 rounded text-[10px] font-black uppercase tracking-widest bg-amber-500/10 text-amber-500 border border-amber-500/20">Super Admin</span>;
       case 'admin': return <span className="px-2 py-0.5 rounded text-[10px] font-black uppercase tracking-widest bg-rose-500/10 text-rose-500 border border-rose-500/20">Admin</span>;
       case 'sponsor': return <span className="px-2 py-0.5 rounded text-[10px] font-black uppercase tracking-widest bg-indigo-500/10 text-indigo-500 border border-indigo-500/20">Sponsor</span>;
       case 'student': return <span className="px-2 py-0.5 rounded text-[10px] font-black uppercase tracking-widest bg-teal-500/10 text-teal-500 border border-teal-500/20">Scholar</span>;

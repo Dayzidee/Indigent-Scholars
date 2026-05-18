@@ -4,6 +4,7 @@ import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
+import { useAdminRole } from '@/components/admin/AdminRoleContext'
 
 interface AdminHeaderProps {
   onMenuClick: () => void
@@ -11,8 +12,9 @@ interface AdminHeaderProps {
 
 export function AdminHeader({ onMenuClick }: AdminHeaderProps) {
   const pathname = usePathname()
-  const [userName] = useState<string>('System Admin')
-  const [role] = useState<string>('Super Admin')
+  const [userName] = useState<string>('Admin User')
+  const { role: userRole } = useAdminRole()
+  const displayRole = userRole === 'super_admin' ? 'Super Admin' : 'Admin'
 
   // Use mock data to avoid latency
   useEffect(() => {
@@ -29,7 +31,7 @@ export function AdminHeader({ onMenuClick }: AdminHeaderProps) {
       'verification': 'Verification Center',
       'users': 'User CRM',
       'financials': 'Financial Command Ledger',
-      'settings': 'Platform Settings'
+      'settings': userRole === 'super_admin' ? 'Platform Settings' : 'Account Settings'
     }
 
     return titleMap[lastSegment] || lastSegment.charAt(0).toUpperCase() + lastSegment.slice(1)
@@ -83,7 +85,7 @@ export function AdminHeader({ onMenuClick }: AdminHeaderProps) {
           <div className="flex items-center gap-3 pl-2 sm:pl-4 sm:border-l sm:border-slate-800">
             <div className="text-right hidden xl:block">
               <p className="text-sm font-bold text-white capitalize">{userName}</p>
-              <p className="text-[10px] text-teal-400 font-semibold tracking-wider uppercase">{role}</p>
+              <p className="text-[10px] text-teal-400 font-semibold tracking-wider uppercase">{displayRole}</p>
             </div>
             <div className="w-9 h-9 rounded-full bg-gradient-to-br from-teal-500/20 to-indigo-500/20 border border-slate-700 flex items-center justify-center">
               <span className="material-symbols-outlined text-[20px] text-teal-400">shield_person</span>

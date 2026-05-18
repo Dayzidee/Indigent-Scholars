@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useAdminRole } from '@/components/admin/AdminRoleContext';
 
 interface DashboardStats {
   totalFunds: number;
@@ -15,6 +16,7 @@ export default function AdminDashboard() {
     studentsFunded: 1240,
     pendingVerifications: 24,
   });
+  const { role } = useAdminRole();
 
   return (
     <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
@@ -44,23 +46,25 @@ export default function AdminDashboard() {
       </div>
 
       {/* Top Row Metrics: Bento Grid Layout */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+      <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-${role === 'super_admin' ? '4' : '2'} gap-6 mb-8`}>
         {/* Metric 1: Funds */}
-        <div className="bg-slate-900 p-6 rounded-xl shadow-lg border border-slate-800 hover:border-teal-500/30 transition-all group">
-          <div className="flex items-center justify-between mb-4">
-            <div className="w-10 h-10 bg-teal-500/10 text-teal-400 rounded-lg flex items-center justify-center">
-              <span className="material-symbols-outlined">payments</span>
+        {role === 'super_admin' && (
+          <div className="bg-slate-900 p-6 rounded-xl shadow-lg border border-slate-800 hover:border-teal-500/30 transition-all group">
+            <div className="flex items-center justify-between mb-4">
+              <div className="w-10 h-10 bg-teal-500/10 text-teal-400 rounded-lg flex items-center justify-center">
+                <span className="material-symbols-outlined">payments</span>
+              </div>
+              <span className="text-xs font-bold text-teal-400 flex items-center gap-1 bg-teal-500/10 px-2 py-1 rounded-full">
+                +12.5% <span className="material-symbols-outlined text-xs">trending_up</span>
+              </span>
             </div>
-            <span className="text-xs font-bold text-teal-400 flex items-center gap-1 bg-teal-500/10 px-2 py-1 rounded-full">
-              +12.5% <span className="material-symbols-outlined text-xs">trending_up</span>
-            </span>
+            <p className="text-slate-500 text-xs font-bold uppercase tracking-wider mb-1">Total Funds Raised</p>
+            <h3 className="text-2xl font-black text-white tracking-tight">₦{(stats?.totalFunds || 42500000).toLocaleString()}</h3>
+            <div className="mt-4 w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
+              <div className="bg-teal-500 h-full w-3/4 rounded-full"></div>
+            </div>
           </div>
-          <p className="text-slate-500 text-xs font-bold uppercase tracking-wider mb-1">Total Funds Raised</p>
-          <h3 className="text-2xl font-black text-white tracking-tight">₦{(stats?.totalFunds || 42500000).toLocaleString()}</h3>
-          <div className="mt-4 w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
-            <div className="bg-teal-500 h-full w-3/4 rounded-full"></div>
-          </div>
-        </div>
+        )}
 
         {/* Metric 2: Students */}
         <div className="bg-slate-900 p-6 rounded-xl shadow-lg border border-slate-800 hover:border-indigo-500/30 transition-all group">
@@ -101,27 +105,29 @@ export default function AdminDashboard() {
         </div>
 
         {/* Metric 4: Success Rate */}
-        <div className="bg-gradient-to-br from-indigo-900/40 to-slate-900 p-6 rounded-xl shadow-lg border border-indigo-500/20 text-white">
-          <div className="flex items-center justify-between mb-4">
-            <div className="w-10 h-10 bg-white/10 text-teal-400 rounded-lg flex items-center justify-center">
-              <span className="material-symbols-outlined">bolt</span>
+        {role === 'super_admin' && (
+          <div className="bg-gradient-to-br from-indigo-900/40 to-slate-900 p-6 rounded-xl shadow-lg border border-indigo-500/20 text-white">
+            <div className="flex items-center justify-between mb-4">
+              <div className="w-10 h-10 bg-white/10 text-teal-400 rounded-lg flex items-center justify-center">
+                <span className="material-symbols-outlined">bolt</span>
+              </div>
+            </div>
+            <p className="text-indigo-200/70 text-xs font-bold uppercase tracking-wider mb-1">Paystack Success Rate</p>
+            <h3 className="text-2xl font-black text-white tracking-tight">98.2%</h3>
+            <div className="mt-4 flex items-center gap-2">
+              <div className="flex-1 bg-white/10 h-1 rounded-full overflow-hidden">
+                <div className="bg-teal-400 h-full w-[98%]"></div>
+              </div>
+              <span className="text-[10px] font-bold text-teal-400">Stable</span>
             </div>
           </div>
-          <p className="text-indigo-200/70 text-xs font-bold uppercase tracking-wider mb-1">Paystack Success Rate</p>
-          <h3 className="text-2xl font-black text-white tracking-tight">98.2%</h3>
-          <div className="mt-4 flex items-center gap-2">
-            <div className="flex-1 bg-white/10 h-1 rounded-full overflow-hidden">
-              <div className="bg-teal-400 h-full w-[98%]"></div>
-            </div>
-            <span className="text-[10px] font-bold text-teal-400">Stable</span>
-          </div>
-        </div>
+        )}
       </div>
 
       {/* Charts Section */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div className={`grid grid-cols-1 ${role === 'super_admin' ? 'lg:grid-cols-3' : 'lg:grid-cols-1'} gap-8`}>
         {/* User Signups: Line Graph Area */}
-        <div className="lg:col-span-2 bg-slate-900 p-8 rounded-2xl shadow-lg border border-slate-800">
+        <div className={`${role === 'super_admin' ? 'lg:col-span-2' : ''} bg-slate-900 p-8 rounded-2xl shadow-lg border border-slate-800`}>
           <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-8 gap-4">
             <div>
               <h4 className="text-lg font-bold text-white">User Acquisition Growth</h4>
@@ -162,42 +168,44 @@ export default function AdminDashboard() {
         </div>
 
         {/* Funding Volume: Bar Chart Area */}
-        <div className="bg-slate-900 p-8 rounded-2xl shadow-lg border border-slate-800">
-          <div className="mb-8">
-            <h4 className="text-lg font-bold text-white">Funding Volume</h4>
-            <p className="text-sm text-slate-400">Last 30 days distribution</p>
-          </div>
+        {role === 'super_admin' && (
+          <div className="bg-slate-900 p-8 rounded-2xl shadow-lg border border-slate-800">
+            <div className="mb-8">
+              <h4 className="text-lg font-bold text-white">Funding Volume</h4>
+              <p className="text-sm text-slate-400">Last 30 days distribution</p>
+            </div>
 
-          <div className="space-y-6">
-            {[
-              { label: 'Tuition Fees', value: '₦28.4M', width: '65%', color: 'bg-teal-500' },
-              { label: 'Learning Materials', value: '₦8.2M', width: '35%', color: 'bg-indigo-500' },
-              { label: 'Accommodation', value: '₦4.1M', width: '20%', color: 'bg-amber-500' },
-              { label: 'Research Grants', value: '₦1.8M', width: '10%', color: 'bg-rose-500' },
-            ].map((item, i) => (
-              <div key={i}>
-                <div className="flex justify-between items-center mb-2">
-                  <span className="text-xs font-bold text-slate-300">{item.label}</span>
-                  <span className={`text-xs font-bold ${item.color.replace('bg-', 'text-')}`}>{item.value}</span>
+            <div className="space-y-6">
+              {[
+                { label: 'Tuition Fees', value: '₦28.4M', width: '65%', color: 'bg-teal-500' },
+                { label: 'Learning Materials', value: '₦8.2M', width: '35%', color: 'bg-indigo-500' },
+                { label: 'Accommodation', value: '₦4.1M', width: '20%', color: 'bg-amber-500' },
+                { label: 'Research Grants', value: '₦1.8M', width: '10%', color: 'bg-rose-500' },
+              ].map((item, i) => (
+                <div key={i}>
+                  <div className="flex justify-between items-center mb-2">
+                    <span className="text-xs font-bold text-slate-300">{item.label}</span>
+                    <span className={`text-xs font-bold ${item.color.replace('bg-', 'text-')}`}>{item.value}</span>
+                  </div>
+                  <div className="w-full bg-slate-800 h-3 rounded-full overflow-hidden">
+                    <div className={`${item.color} h-full rounded-full`} style={{ width: item.width }}></div>
+                  </div>
                 </div>
-                <div className="w-full bg-slate-800 h-3 rounded-full overflow-hidden">
-                  <div className={`${item.color} h-full rounded-full`} style={{ width: item.width }}></div>
-                </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
 
-          <div className="mt-10 p-4 bg-slate-800/50 rounded-xl border border-slate-700/50">
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 bg-teal-500/10 text-teal-400 rounded-full flex items-center justify-center shrink-0">
-                <span className="material-symbols-outlined text-sm">auto_graph</span>
+            <div className="mt-10 p-4 bg-slate-800/50 rounded-xl border border-slate-700/50">
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 bg-teal-500/10 text-teal-400 rounded-full flex items-center justify-center shrink-0">
+                  <span className="material-symbols-outlined text-sm">auto_graph</span>
+                </div>
+                <p className="text-[11px] font-medium leading-tight text-slate-400">
+                  Funding volume has increased by <span className="text-teal-400 font-bold">14%</span> compared to the previous month.
+                </p>
               </div>
-              <p className="text-[11px] font-medium leading-tight text-slate-400">
-                Funding volume has increased by <span className="text-teal-400 font-bold">14%</span> compared to the previous month.
-              </p>
             </div>
           </div>
-        </div>
+        )}
       </div>
 
       {/* Recent Logs (High Density Layout) */}

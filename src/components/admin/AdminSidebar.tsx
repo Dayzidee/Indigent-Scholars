@@ -25,7 +25,6 @@ export function AdminSidebar({ isOpen, setIsOpen }: AdminSidebarProps) {
     { name: 'Overview', href: '/admin', icon: 'dashboard' },
     { name: 'Verification', href: '/admin/verification', icon: 'verified_user' },
     { name: 'CRM', href: '/admin/users', icon: 'groups' },
-    { name: 'Financials', href: '/admin/financials', icon: 'payments' },
     { name: 'Settings', href: '/admin/settings', icon: 'settings' },
   ]
 
